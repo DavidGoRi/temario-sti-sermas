@@ -41,12 +41,12 @@
 - La mutua colaboradora con la Seguridad Social
 @ BOE-A-1995-24292#16
 
-? Ante un riesgo grave e inminente, el trabajador:
-+ Tiene derecho a interrumpir su actividad y abandonar el lugar de trabajo si es necesario
-- Debe esperar la orden del empresario para abandonar el puesto
-- Solo puede interrumpir la actividad si lo autoriza el delegado de prevención
-- Puede ser sancionado si abandona el puesto
-@ BOE-A-1995-24292#21
+? Según el art. 19 de la Ley 31/1995, la formación en prevención que debe recibir cada trabajador se imparte:
++ Dentro de la jornada de trabajo o, si no es posible, en otras horas descontando ese tiempo de la jornada, y sin coste para el trabajador
+- Fuera de la jornada y a cargo del trabajador
+- Solo una vez, al ser contratado
+- Solo si la pide el comité de seguridad y salud
+= La formación debe ser teórica y práctica, suficiente y adecuada, al contratar y cuando cambien las funciones, los equipos o las tecnologías.
 
 ? La vigilancia periódica de la salud de los trabajadores, según el art. 22 de la Ley 31/1995:
 + Solo puede hacerse con el consentimiento del trabajador, salvo excepciones previo informe de los representantes

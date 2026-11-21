@@ -40,11 +40,12 @@
 - OMI-AP en todos los centros
 - Abucasis
 
-? El índice maestro de pacientes (MPI) sirve para:
-+ Identificar de forma única a cada paciente y relacionar sus distintos identificadores en todos los sistemas
-- Guardar las imágenes médicas
-- Calcular los GRD
-- Gestionar los turnos del personal
+? Las siglas HIS designan:
++ El sistema de información hospitalario
+- La historia clínica resumida
+- El sistema de archivo de imágenes
+- El índice maestro de pacientes
+= HIS (Hospital Information System) gestiona la actividad del hospital: admisión, citación, hospitalización y facturación, entre otras.
 
 ? El sistema de información de laboratorio se conoce por las siglas:
 + LIS

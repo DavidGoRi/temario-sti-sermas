@@ -12,11 +12,12 @@
 - 10
 = 1·8 + 0·4 + 1·2 + 1·1 = 11.
 
-? El número hexadecimal FF equivale en decimal a:
-+ 255
-- 256
-- 240
-- 15
+? El número decimal 200 expresado en binario es:
++ 11001000
+- 11000100
+- 10101000
+- 11100000
+= 200 = 128 + 64 + 8, es decir, 2⁷ + 2⁶ + 2³.
 
 ? En complemento a 2 con 8 bits, el rango de valores representables es:
 + De −128 a 127

@@ -22,11 +22,12 @@
 - 1 y 100 exclusivamente
 - Cualquier valor negativo
 
-? Las pruebas que comprueban que un cambio no ha estropeado lo que ya funcionaba son las de:
-+ Regresión
+? Las pruebas rápidas que comprueban que las funciones básicas de una nueva versión funcionan, antes de seguir con pruebas más completas, son las de:
++ Humo (smoke testing)
+- Regresión
+- Estrés
 - Aceptación
-- Carga
-- Humo exclusivamente
+= Si la prueba de humo falla, la versión se rechaza sin gastar tiempo en el resto de pruebas.
 
 ? Las pruebas de aceptación las realiza o valida principalmente:
 + El usuario o cliente, para comprobar que el sistema cumple sus requisitos

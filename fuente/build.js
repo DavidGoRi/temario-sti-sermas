@@ -95,7 +95,7 @@ if (fs.existsSync(dirP)) for (const f of fs.readdirSync(dirP).filter(f => /^\d\d
 }
 fs.writeFileSync(path.join(R, "preguntas.js"), `var PREGUNTAS=${JSON.stringify(PQ)};\n`);
 
-for (const f of ["datos.js", "diagramas.js", "examenes.js", "trampas.js", "tablas.js", "nemotecnias.js", "noticias.js", "icono.svg", "manifest.webmanifest"]) fs.copyFileSync(path.join(F, f), path.join(R, f));
+for (const f of ["datos.js", "diagramas.js", "examenes.js", "trampas.js", "tablas.js", "nemotecnias.js", "noticias.js", "siglas.js", "icono.svg", "manifest.webmanifest"]) fs.copyFileSync(path.join(F, f), path.join(R, f));
 fs.writeFileSync(path.join(R, "sw.js"), fs.readFileSync(path.join(F, "sw.js"), "utf8").replace("VERSION", Date.now().toString(36)));
 const pagina = fs.readFileSync(path.join(F, "index.html"), "utf8");
 fs.writeFileSync(path.join(R, "index.html"),
@@ -110,6 +110,6 @@ if (pub) {
     for (const f of fs.readdirSync(path.join(R, d))) fs.copyFileSync(path.join(R, d, f), path.join(pub, d, f));
   }
   fs.copyFileSync(path.join(F, "index.html"), path.join(pub, "index.html"));
-  for (const f of ["datos.js", "diagramas.js", "examenes.js", "trampas.js", "tablas.js", "nemotecnias.js", "noticias.js", "preguntas.js"]) fs.copyFileSync(path.join(R, f), path.join(pub, f));
+  for (const f of ["datos.js", "diagramas.js", "examenes.js", "trampas.js", "tablas.js", "nemotecnias.js", "noticias.js", "siglas.js", "preguntas.js", "icono.svg", "manifest.webmanifest"]) fs.copyFileSync(path.join(R, f), path.join(pub, f));
   console.log("Publicación preparada en", pub);
 }

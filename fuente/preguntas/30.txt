@@ -52,11 +52,12 @@
 - Imágenes de baja resolución
 - Fallos del hardware
 
-? El Reglamento europeo de Inteligencia Artificial es el:
-+ Reglamento (UE) 2024/1689
-- Reglamento (UE) 2016/679
-- Reglamento (UE) 910/2014
-- Reglamento (UE) 2022/2065
+? La métrica que combina la precisión y la sensibilidad (exhaustividad) en su media armónica es:
++ La puntuación F1
+- La exactitud
+- La especificidad
+- El área bajo la curva ROC
+= F1 = 2 · precisión · sensibilidad / (precisión + sensibilidad). Es útil cuando las clases están desequilibradas.
 
 ? El Reglamento de IA clasifica como de «riesgo inaceptable», y por tanto prohibidos, sistemas como:
 + La puntuación social de personas por las autoridades

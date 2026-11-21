@@ -1,6 +1,6 @@
 /* Uso sin conexión (solo en la versión web de GitHub Pages).
    Las páginas y los datos se sirven desde la red cuando hay conexión y se guardan en caché;
-   sin conexión se usa la copia guardada. build.js sustituye mwqqrxoy en cada compilación. */
+   sin conexión se usa la copia guardada. build.js sustituye mwqrv3wq en cada compilación. */
 const CACHE = "temario-sti-VERSION";
 const BASICOS = ["./", "index.html", "datos.js", "preguntas.js", "nemotecnias.js", "examenes.js", "noticias.js", "temas/indice.js", "leyes/indice.js", "icono.svg"];
 self.addEventListener("install", e => {

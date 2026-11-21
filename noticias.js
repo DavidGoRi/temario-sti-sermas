@@ -7,6 +7,7 @@
 var NOTICIAS={
 actualizado:"2026-11-21",
 estado:{plazas:39,cupo:"36 de cupo general y 3 de discapacidad",fase:"Listas provisionales de admitidos y excluidos (ampliación de plazas)",examen:null,lugar:null},
+leyes:{},
 lista:[
  {id:"2026-11-20-provisionales",fecha:"2026-11-20",tipo:"provisionales",
   titulo:"Nuevas listas provisionales de admitidos y excluidos",

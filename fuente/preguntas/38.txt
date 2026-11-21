@@ -28,11 +28,12 @@
 - Adware
 - Ransomware de doble extorsión
 
-? Una APT se caracteriza por ser:
-+ Un ataque dirigido, sofisticado y prolongado, a menudo patrocinado por un Estado
-- Un virus masivo sin objetivo concreto
-- Un ataque de denegación de servicio de corta duración
-- Un correo de spam
+? El ransomware de doble extorsión consiste en:
++ Cifrar los datos de la víctima y, además, robarlos y amenazar con publicarlos si no paga
+- Cifrar dos veces los mismos ficheros
+- Atacar a dos víctimas a la vez con el mismo malware
+- Pedir dos rescates por la misma clave
+= Por eso las copias de seguridad no bastan: también hay que evitar la fuga de datos (cifrado en reposo, DLP, segmentación).
 
 ? La primera fase de la Cyber Kill Chain es:
 + El reconocimiento

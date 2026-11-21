@@ -1,9 +1,9 @@
-? El RGPD es aplicable desde el:
-+ 25 de mayo de 2018
-- 25 de mayo de 2016
-- 7 de diciembre de 2018
-- 1 de enero de 2019
-@ RGPD#99
+? El derecho de supresión del art. 17 del RGPD se conoce también como:
++ Derecho al olvido
+- Derecho a la portabilidad
+- Derecho a la limitación del tratamiento
+- Derecho de oposición
+= Permite pedir que se borren los datos cuando ya no son necesarios, se retira el consentimiento o el tratamiento es ilícito, entre otros casos.
 
 ? Según el RGPD, los datos seudonimizados:
 + Siguen siendo datos personales

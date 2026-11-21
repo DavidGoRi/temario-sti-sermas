@@ -113,9 +113,9 @@
 - Certificado de sede
 - OCSP
 
-? La Ley española de servicios electrónicos de confianza es la:
-+ Ley 6/2020, de 11 de noviembre
-- Ley 59/2003, de firma electrónica
-- Ley 11/2007, de acceso electrónico
-- Ley 34/2002
-@ BOE-A-2020-14046#1
+? El formato de firma electrónica válido para cualquier tipo de fichero, basado en CMS (PKCS#7), es:
++ CAdES
+- PAdES
+- XAdES
+- JAdES
+= PAdES es para PDF, XAdES para XML y JAdES para JSON.

@@ -627,7 +627,7 @@ q:[
 ["Hibernate es:",["Un ORM o motor de persistencia para Java","Un SGBD NoSQL","Un driver ODBC","Un motor de búsqueda"],"Implementa JPA."],
 ["La operación del álgebra relacional que elige columnas es la:",["Proyección (π)","Selección (σ)","Producto cartesiano","Unión"],"La selección filtra filas."],
 ["La estructura básica de un motor de búsqueda de texto como Lucene es el:",["Índice invertido","Árbol B+","Hash de páginas","Índice bitmap"],"Asocia cada término a los documentos que lo contienen."],
-["El teorema CAP dice que un sistema distribuido no puede garantizar a la vez:",["Consistencia, disponibilidad y tolerancia a particiones","Atomicidad, consistencia y durabilidad","Escalabilidad, seguridad y rendimiento","Réplica, sharding y caché"],"Solo dos de las tres."],
+["La operación del álgebra relacional que combina las filas de dos relaciones cuyos atributos comunes tienen el mismo valor es la:",["Reunión natural (⋈)","Proyección (π)","Diferencia (−)","Selección (σ)"],"La reunión natural equivale a un producto cartesiano seguido de una selección por igualdad de los atributos comunes y una proyección que elimina las columnas repetidas."],
 ["Para prevenir la inyección SQL se recomiendan:",["Las sentencias preparadas con parámetros","Concatenar cadenas con cuidado","Los índices hash","Desactivar los registros"],"Separan el código SQL de los datos."],
 ["El índice adecuado para columnas de baja cardinalidad en un data warehouse es el:",["Bitmap","Hash","Agrupado único","Invertido"],"Por ejemplo, columnas como sexo o provincia."]
 ]},

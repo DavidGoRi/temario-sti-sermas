@@ -64,11 +64,12 @@
 - Cifrado de discos
 - Enrutamiento de red
 
-? OpenID Connect añade a OAuth 2.0:
-+ Una capa de autenticación con un token de identidad (JWT)
-- El cifrado de los discos
-- Un protocolo de VPN
-- Un servicio de directorio LDAP
+? En Active Directory, el catálogo global atiende las consultas LDAP por defecto en el puerto:
++ 3268
+- 389
+- 88
+- 636
+= 3268 para el catálogo global y 3269 para el catálogo global sobre TLS; 389 es LDAP normal y 636, LDAPS.
 
 ? SAML 2.0 es un estándar de federación basado en:
 + Aserciones XML firmadas que el proveedor de identidad envía al proveedor de servicio
@@ -100,11 +101,12 @@
 - La VPN se divide entre dos usuarios
 - Se usan dos VPN a la vez
 
-? El modelo Zero Trust se resume en:
-+ Nunca confiar, verificar siempre, también dentro de la red interna
-- Confiar en todo lo que está dentro del cortafuegos
-- No usar contraseñas
-- Bloquear todo el tráfico de Internet
+? El acceso justo a tiempo (JIT) en la gestión de cuentas privilegiadas consiste en:
++ Conceder los permisos elevados solo cuando se necesitan y durante un tiempo limitado
+- Dar permisos de administrador permanentes a los técnicos
+- Revisar los accesos una vez al año
+- Compartir una única cuenta de administrador entre el equipo
+= Reduce la superficie de ataque: fuera de esa ventana, la cuenta no tiene privilegios que robar.
 
 ? Para administrar equipos de red de forma segura se debe usar:
 + SSH, HTTPS y SNMPv3, desde una red de gestión aislada

@@ -19,12 +19,12 @@
 - El Consejo Territorial de Salud
 @ BOE-A-2002-4375#72
 
-? La Ley 11/2017 de la Comunidad de Madrid regula:
-+ El buen gobierno y la profesionalización de la gestión de los centros y organizaciones sanitarias del SERMAS
-- El Estatuto del personal estatutario del SERMAS
-- La libertad de elección de médico y hospital
-- La transparencia de toda la Administración autonómica
-@ BOE-A-2018-1610#1
+? El SUMMA 112 es, dentro del Servicio Madrileño de Salud:
++ La organización que atiende las urgencias y emergencias sanitarias extrahospitalarias
+- Un hospital de la red pública
+- La central de compras del SERMAS
+- El servicio de inspección sanitaria
+= Es una de las organizaciones del SERMAS que cita el art. 3 de la Ley 11/2017, junto a los hospitales y las direcciones territoriales de atención primaria.
 
 ? Según el art. 3 de la Ley 11/2017, son organizaciones del Servicio Madrileño de Salud:
 + Los hospitales, las Direcciones Territoriales de Atención Primaria, la Unidad Central de Radiodiagnóstico y el SUMMA 112

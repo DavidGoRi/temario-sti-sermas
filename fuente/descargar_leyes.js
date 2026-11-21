@@ -1,5 +1,5 @@
 // Descarga los textos consolidados del BOE (API de datos abiertos) y genera ../leyes/<id>.js
-// Uso: node descargar_leyes.js
+// Uso: node descargar_leyes.js [ID ...]   (sin argumentos descarga todas; con identificadores, solo esas)
 const fs = require("fs"), path = require("path");
 const API = "https://www.boe.es/datosabiertos/api/legislacion-consolidada/id/";
 const OUT = path.join(__dirname, "..", "leyes");
@@ -85,8 +85,9 @@ async function bajar(ley) {
 }
 
 (async () => {
-  const indice = [];
+  const indice = [], solo = process.argv.slice(2);
   for (const ley of LEYES) {
+    if (solo.length && !solo.includes(ley.id)) { indice.push({ id: ley.id, c: ley.c, temas: ley.temas }); continue; }
     try { const r = await bajar(ley); console.log(r.id, r.arts, "preceptos", r.kb, "KB"); indice.push({ id: ley.id, c: ley.c, temas: ley.temas }); }
     catch (e) { console.log(ley.id, "ERROR", e.message); }
     await new Promise(r => setTimeout(r, 400));

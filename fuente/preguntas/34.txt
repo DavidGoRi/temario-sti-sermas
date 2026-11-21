@@ -65,11 +65,12 @@
 - Ficheros binarios DICOM
 - Documentos PDF firmados
 
-? IHE se caracteriza por:
-+ Definir perfiles de integración que explican cómo usar estándares existentes, sin crear estándares nuevos
-- Crear nuevos formatos de imagen
-- Ser un fabricante de PACS
-- Regular por ley la historia clínica
+? El perfil IHE que permite buscar a un paciente en un registro central a partir de sus datos demográficos (nombre, fecha de nacimiento…) es:
++ PDQ (Patient Demographics Query)
+- PIX
+- XDS
+- ATNA
+= PIX relaciona identificadores de un mismo paciente; PDQ consulta los datos demográficos.
 
 ? El perfil IHE para compartir documentos clínicos entre organizaciones mediante un registro y repositorios es:
 + XDS
