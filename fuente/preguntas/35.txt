@@ -1,0 +1,112 @@
+? El Esquema Nacional de Seguridad vigente se regula en el:
++ Real Decreto 311/2022, de 3 de mayo
+- Real Decreto 3/2010, de 8 de enero
+- Real Decreto 4/2010, de 8 de enero
+- Real Decreto 203/2021, de 30 de marzo
+@ BOE-A-2022-7191#1
+
+? El ENS se aplica:
++ A todo el sector público y a los proveedores privados que le prestan servicios o soluciones
+- Solo a la Administración General del Estado
+- Solo a los sistemas que tratan información clasificada
+- Solo a las empresas privadas de ciberseguridad
+@ BOE-A-2022-7191#2
+
+? ¿Cuántos principios básicos enumera el art. 5 del ENS?
++ Siete
+- Cinco
+- Diez
+- Tres
+@ BOE-A-2022-7191#5
+
+? Según el ENS, el responsable de la seguridad y el responsable del sistema:
++ Deben ser personas distintas y sin dependencia jerárquica entre ellas
+- Pueden ser la misma persona siempre
+- Deben depender jerárquicamente uno del otro
+- Los nombra el CCN
+@ BOE-A-2022-7191#13
+
+? En el ENS, quien determina los requisitos de seguridad de la información tratada es:
++ El responsable de la información
+- El responsable del sistema
+- El administrador de seguridad
+- El responsable del servicio
+@ BOE-A-2022-7191#13
+
+? Las dimensiones de seguridad del ENS son:
++ Confidencialidad, integridad, trazabilidad, autenticidad y disponibilidad
+- Confidencialidad, integridad y disponibilidad únicamente
+- Autenticación, autorización y auditoría
+- Prevención, detección, respuesta y conservación
+@ BOE-A-2022-7191#40
+
+? La categoría de seguridad de un sistema es ALTA cuando:
++ Alguna dimensión de alguna información o servicio alcanza el nivel ALTO
+- La mayoría de las dimensiones tienen nivel ALTO
+- Todas las dimensiones tienen nivel ALTO
+- El sistema trata más de un millón de datos
+@ BOE-A-2022-7191#40
+
+? En el ENS, la categoría del sistema la determina:
++ El responsable de la seguridad, a partir de las valoraciones de los responsables de la información y del servicio
+- El responsable del sistema
+- El CCN
+- El delegado de protección de datos
+@ BOE-A-2022-7191#41
+
+? El documento que recoge las medidas de seguridad seleccionadas, firmado por el responsable de la seguridad, es:
++ La Declaración de Aplicabilidad
+- La política de seguridad
+- El documento de seguridad
+- El análisis de riesgos
+@ BOE-A-2022-7191#28
+
+? Los sistemas del ámbito del ENS deben someterse a una auditoría ordinaria al menos:
++ Cada dos años
+- Cada año
+- Cada tres años
+- Cada cinco años
+@ BOE-A-2022-7191#31
+
+? Un sistema de categoría MEDIA o ALTA acredita su cumplimiento del ENS mediante:
++ Una certificación de conformidad emitida por una entidad de certificación acreditada
+- Una declaración responsable del propio organismo
+- Un informe del delegado de protección de datos
+- La firma del responsable del sistema
+@ BOE-A-2022-7191#38
+
+? Las medidas de seguridad del anexo II del ENS se agrupan en:
++ Marco organizativo (org), marco operacional (op) y medidas de protección (mp)
+- Medidas físicas, lógicas y personales
+- Prevención, detección y corrección
+- Básicas, medias y altas
+
+? El organismo adscrito al CNI que articula la respuesta a incidentes en el sector público es el:
++ CCN-CERT
+- INCIBE-CERT
+- ESPDEF-CERT
+- AEPD
+
+? La metodología de análisis y gestión de riesgos de la Administración española es:
++ MAGERIT, con la herramienta PILAR del CCN
+- ITIL, con la herramienta GLPI
+- Métrica v3, con la herramienta LUCIA
+- COBIT, con la herramienta INES
+
+? La guía CCN-STIC dedicada a la gestión de ciberincidentes es la:
++ 817
+- 803
+- 808
+- 825
+
+? La Directiva europea que sustituyó a la NIS y amplía las obligaciones de ciberseguridad a más sectores, incluida la sanidad, es la:
++ Directiva (UE) 2022/2555 (NIS2)
+- Directiva (UE) 2016/680
+- Directiva 95/46/CE
+- Directiva 2000/31/CE
+
+? El documento de seguridad con niveles básico, medio y alto era una obligación del:
++ Real Decreto 1720/2007, reglamento de la antigua LOPD
+- RGPD
+- RD 311/2022
+- RD 3/2010

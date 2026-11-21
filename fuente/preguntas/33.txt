@@ -1,0 +1,107 @@
+? La telemedicina asíncrona («almacenar y enviar»):
++ Captura la información y la envía para que el especialista la revise después, como en la teledermatología
+- Exige que paciente y médico estén conectados a la vez
+- Solo se usa en las urgencias
+- No permite enviar imágenes
+
+? El seguimiento remoto en el domicilio de las constantes de pacientes crónicos con dispositivos conectados es la:
++ Telemonitorización
+- Teleconsulta síncrona
+- Telecirugía
+- Teleformación
+
+? La ley básica que regula la historia clínica es la:
++ Ley 41/2002, de 14 de noviembre, de autonomía del paciente
+- Ley 14/1986, General de Sanidad
+- Ley Orgánica 3/2018
+- Ley 16/2003, de cohesión y calidad del SNS
+@ BOE-A-2002-22188#14
+
+? Según la Ley 41/2002, la historia clínica debe ser única por paciente:
++ Al menos en el ámbito de cada centro
+- En todo el Sistema Nacional de Salud obligatoriamente
+- Por cada proceso asistencial
+- Por cada especialidad
+@ BOE-A-2002-22188#14
+
+? La documentación clínica debe conservarse, como mínimo, durante:
++ Cinco años desde la fecha del alta de cada proceso asistencial
+- Dos años desde el alta
+- Diez años desde la apertura de la historia
+- Quince años desde el fallecimiento del paciente
+@ BOE-A-2002-22188#17
+
+? El derecho de acceso del paciente a su historia clínica no puede ejercitarse en perjuicio de:
++ La confidencialidad de terceros y del derecho de los profesionales a reservar sus anotaciones subjetivas
+- La organización del centro
+- La intimidad del propio paciente
+- Ningún límite: el acceso es total
+@ BOE-A-2002-22188#18
+
+? El uso de la historia clínica con fines de investigación o docencia obliga, como regla general, a:
++ Separar los datos de identificación del paciente de los clínico-asistenciales para preservar el anonimato
+- Pedir permiso al juez
+- Usar solo historias en papel
+- Publicar los nombres de los pacientes
+@ BOE-A-2002-22188#16
+
+? ¿Cuál de estos documentos forma parte del contenido mínimo de la historia clínica según el art. 15 de la Ley 41/2002?
++ El consentimiento informado
+- La nómina del médico
+- El contrato de la limpieza
+- La factura del hospital
+@ BOE-A-2002-22188#15
+
+? La receta médica en papel y electrónica se regula en el:
++ Real Decreto 1718/2010, de 17 de diciembre
+- Real Decreto 183/2004, de 30 de enero
+- Real Decreto 1093/2010, de 3 de septiembre
+- Real Decreto 954/2015, de 23 de octubre
+
+? En la Comunidad de Madrid, la prescripción en la historia clínica se realiza con el:
++ Módulo Único de Prescripción (MUP)
+- Sistema Manchester
+- CIBELES
+- PACS
+
+? El sistema que almacena, distribuye y permite visualizar las imágenes médicas digitales es el:
++ PACS
+- RIS
+- LIS
+- CMBD
+
+? El servicio DICOM con el que la modalidad obtiene del RIS la lista de pacientes citados es:
++ Modality Worklist (MWL)
+- C-STORE
+- C-FIND de imágenes
+- Storage Commitment
+
+? Un VNA (Vendor Neutral Archive) es:
++ Un archivo de imágenes independiente del fabricante del PACS, que puede reunir estudios de varios servicios
+- Un visor web de imágenes
+- Una modalidad de radiología
+- Un estándar de cifrado
+
+? El conjunto mínimo de datos de los informes clínicos del SNS se aprobó por el:
++ Real Decreto 1093/2010, de 3 de septiembre
+- Real Decreto 1718/2010
+- Real Decreto 183/2004
+- Real Decreto 4/2010
+
+? La Historia Clínica Digital del SNS:
++ Permite consultar los informes clínicos generados en otras comunidades a través del Nodo de Interoperabilidad, sin ser una base de datos centralizada
+- Es una base de datos central con todas las historias de España
+- Solo la pueden ver los ciudadanos
+- Sustituye a las historias clínicas autonómicas
+
+? En la Historia Clínica Digital del SNS, el ciudadano puede:
++ Ocultar determinados informes y consultar quién ha accedido a su información
+- Modificar los diagnósticos de sus informes
+- Borrar su historia clínica
+- Impedir el acceso en urgencias en todo caso
+
+? El informe de la HCDSNS que resume alergias, problemas activos, medicación, vacunas y antecedentes es la:
++ Historia Clínica Resumida
+- Informe Clínico de Alta
+- Informe de Cuidados de Enfermería
+- Informe de Urgencias

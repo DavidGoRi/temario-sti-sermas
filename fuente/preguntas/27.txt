@@ -1,0 +1,91 @@
+? En un cable de par trenzado de categoría 6, la longitud máxima del enlace permanente horizontal más latiguillos (canal) es de:
++ 100 metros
+- 50 metros
+- 185 metros
+- 500 metros
+
+? La norma de cableado estructurado de edificios comerciales más citada es:
++ ANSI/TIA-568 (y la ISO/IEC 11801)
+- IEEE 802.11
+- RFC 1918
+- ISO 9001
+
+? La fibra óptica monomodo, frente a la multimodo:
++ Permite mayores distancias, con un núcleo más fino y una sola trayectoria de luz
+- Permite menores distancias
+- Tiene un núcleo más grueso
+- Usa LED como fuente siempre
+
+? En el cableado estructurado, el subsistema que une los distintos armarios de planta con el principal del edificio es el:
++ Cableado vertical o troncal (backbone)
+- Cableado horizontal
+- Área de trabajo
+- Latiguillo de usuario
+
+? El estándar Wi-Fi 6 corresponde a:
++ IEEE 802.11ax
+- IEEE 802.11ac
+- IEEE 802.11n
+- IEEE 802.11g
+= Wi-Fi 4 = 802.11n; Wi-Fi 5 = 802.11ac; Wi-Fi 6/6E = 802.11ax; Wi-Fi 7 = 802.11be.
+
+? Wi-Fi 6E añade a Wi-Fi 6 la banda de:
++ 6 GHz
+- 2,4 GHz
+- 5 GHz
+- 60 GHz
+
+? El protocolo de seguridad Wi-Fi más actual, que usa SAE en lugar de clave precompartida, es:
++ WPA3
+- WPA2-PSK
+- WEP
+- WPA
+
+? El estándar IEEE de las VLAN (etiquetado de tramas) es:
++ 802.1Q
+- 802.1X
+- 802.3af
+- 802.11i
+
+? El estándar que alimenta dispositivos (teléfonos IP, puntos de acceso) por el cable de red es:
++ PoE (IEEE 802.3af/at/bt)
+- 802.1X
+- 802.11ax
+- SFP
+
+? El protocolo que evita bucles en una red de switches es:
++ STP (Spanning Tree Protocol)
+- OSPF
+- BGP
+- VRRP
+
+? Una red WAN se caracteriza por:
++ Cubrir áreas geográficas extensas, uniendo redes de distintas ubicaciones
+- Limitarse a un edificio
+- Unir dispositivos personales a pocos metros
+- No usar operadores de telecomunicaciones
+
+? La tecnología de acceso por fibra hasta el hogar más extendida en España es:
++ FTTH con GPON
+- ADSL
+- RDSI
+- Frame Relay
+
+? El protocolo de enrutamiento de estado de enlace muy usado dentro de una organización es:
++ OSPF
+- RIP
+- BGP
+- STP
+= RIP es de vector distancia y BGP, el de enrutamiento entre sistemas autónomos de Internet.
+
+? La autenticación de dispositivos en la red cableada o Wi-Fi corporativa basada en puerto se hace con:
++ IEEE 802.1X y un servidor RADIUS
+- WEP
+- DHCP
+- NAT
+
+? Los conectores habituales del cable de par trenzado son:
++ RJ-45
+- RJ-11
+- LC
+- BNC

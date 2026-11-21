@@ -1,0 +1,112 @@
+? La Ley de Contratos del Sector Público vigente es la:
++ Ley 9/2017, de 8 de noviembre
+- Ley 30/2007, de 30 de octubre
+- Real Decreto Legislativo 3/2011, de 14 de noviembre
+- Ley 40/2015, de 1 de octubre
+= La Ley 30/2007 y el RDLeg 3/2011 (TRLCSP) son las normas anteriores.
+@ BOE-A-2017-12902#1
+
+? ¿Cuál de estos NO es uno de los principios que, según el art. 1 de la LCSP, debe garantizar la contratación pública?
++ La preferencia por las empresas de la propia Comunidad Autónoma
+- La libertad de acceso a las licitaciones
+- La publicidad y transparencia de los procedimientos
+- La no discriminación e igualdad de trato entre los licitadores
+@ BOE-A-2017-12902#1
+
+? Son contratos del sector público, según el art. 2 de la LCSP:
++ Los contratos onerosos, cualquiera que sea su naturaleza jurídica, que celebren las entidades del art. 3
+- Solo los contratos administrativos celebrados por las Administraciones públicas
+- Todos los contratos, onerosos o gratuitos, del sector público
+- Los contratos cuyo valor supere los umbrales europeos
+@ BOE-A-2017-12902#2
+
+? Un contrato tiene carácter oneroso, según la LCSP, cuando:
++ El contratista obtiene algún tipo de beneficio económico, directo o indirecto
+- La Administración paga un precio en dinero
+- Supera el importe de un contrato menor
+- Se financia con fondos europeos
+@ BOE-A-2017-12902#2
+
+? La adquisición de un programa de ordenador desarrollado a medida para el SERMAS es, según la LCSP, un contrato de:
++ Servicios
+- Suministro
+- Obras
+- Concesión de servicios
+= La adquisición de programas de ordenador o la cesión de su derecho de uso es suministro, salvo los desarrollados a medida, que son servicios (art. 16.3.b).
+@ BOE-A-2017-12902#16
+
+? La compra de 500 ordenadores portátiles para los centros de salud es un contrato de:
++ Suministro
+- Servicios
+- Obras
+- Concesión de servicios
+@ BOE-A-2017-12902#16
+
+? Son contratos de servicios aquellos cuyo objeto son:
++ Prestaciones de hacer consistentes en el desarrollo de una actividad o dirigidas a obtener un resultado distinto de una obra o un suministro
+- La adquisición o el arrendamiento de bienes muebles
+- La realización de una obra a cambio del derecho a explotarla
+- La gestión de un servicio público con transferencia del riesgo operacional
+@ BOE-A-2017-12902#17
+
+? ¿Qué NO puede ser objeto de un contrato de servicios según el art. 17 de la LCSP?
++ Los servicios que impliquen ejercicio de la autoridad inherente a los poderes públicos
+- El mantenimiento de equipos informáticos
+- El soporte técnico a usuarios
+- La consultoría en ciberseguridad
+@ BOE-A-2017-12902#17
+
+? La característica que distingue la concesión de servicios del contrato de servicios es:
++ La transferencia al concesionario del riesgo operacional en la explotación del servicio
+- Que el servicio se presta a los ciudadanos
+- Que su duración es superior a un año
+- Que lo adjudica siempre el Consejo de Ministros
+@ BOE-A-2017-12902#15
+
+? El contrato que contiene prestaciones correspondientes a otro u otros de distinta clase es el contrato:
++ Mixto
+- Complejo
+- Atípico
+- Marco
+@ BOE-A-2017-12902#18
+
+? Los contratos de obras, suministro y servicios celebrados por una Administración pública tienen, como regla general, carácter:
++ Administrativo
+- Privado
+- Laboral
+- Mercantil
+@ BOE-A-2017-12902#25
+
+? Los contratos celebrados por entidades del sector público que son poder adjudicador pero no Administración pública tienen carácter:
++ Privado
+- Administrativo
+- Administrativo especial
+- Mixto
+@ BOE-A-2017-12902#26
+
+? Las cuestiones relativas a la preparación, adjudicación, efectos, modificación y extinción de los contratos administrativos corresponden al orden jurisdiccional:
++ Contencioso-administrativo
+- Civil
+- Social
+- Mercantil
+@ BOE-A-2017-12902#27
+
+? Los contratos menores, según el art. 118 de la LCSP, son los de valor estimado inferior a:
++ 40.000 euros en obras y 15.000 euros en suministros y servicios
+- 50.000 euros en obras y 18.000 euros en suministros y servicios
+- 15.000 euros en obras y 40.000 euros en suministros y servicios
+- 60.000 euros en obras y 25.000 euros en suministros y servicios
+= Además, no pueden durar más de un año ni prorrogarse.
+
+? ¿Cuál de estos NO es un procedimiento de adjudicación previsto en la LCSP?
++ La subasta a la baja
+- El procedimiento abierto
+- El procedimiento restringido
+- El diálogo competitivo
+= Procedimientos: abierto (y abierto simplificado), restringido, con negociación, diálogo competitivo, asociación para la innovación y concurso de proyectos.
+
+? En el procedimiento abierto:
++ Todo empresario interesado puede presentar una proposición, sin negociación de los términos del contrato
+- Solo pueden presentar proposiciones los empresarios invitados por el órgano de contratación
+- Se negocian las condiciones con varios candidatos
+- Se dialoga con los candidatos para definir la solución técnica

@@ -1,0 +1,97 @@
+? En el patrón MVC, el componente que gestiona los datos y la lógica de negocio es:
++ El modelo
+- La vista
+- El controlador
+- El router
+
+? En MVC, el componente que recibe las peticiones del usuario y coordina el modelo y la vista es:
++ El controlador
+- La vista
+- El modelo
+- La base de datos
+
+? Spring es un framework de:
++ Java
+- Python
+- PHP
+- JavaScript de navegador
+= Django y Flask son de Python; Laravel y Symfony, de PHP; Angular, React y Vue, de JavaScript/TypeScript.
+
+? Angular, React y Vue.js son tecnologías para el desarrollo:
++ Front-end (en el navegador)
+- De bases de datos
+- De sistemas operativos
+- De redes
+
+? Una API REST se caracteriza por:
++ Usar los métodos HTTP sobre recursos identificados por URL, sin estado en el servidor
+- Usar siempre mensajes SOAP en XML
+- Mantener la sesión del usuario en el servidor obligatoriamente
+- Funcionar solo con FTP
+
+? El método HTTP idempotente que se usa para reemplazar un recurso completo es:
++ PUT
+- POST
+- PATCH
+- CONNECT
+
+? El código de estado HTTP que indica «recurso no encontrado» es:
++ 404
+- 200
+- 500
+- 301
+= 2xx éxito, 3xx redirección, 4xx error del cliente (401 no autenticado, 403 prohibido, 404 no encontrado) y 5xx error del servidor.
+
+? El código HTTP 403 significa:
++ Prohibido: el servidor entiende la petición pero se niega a autorizarla
+- No autenticado
+- Error interno del servidor
+- Petición correcta
+
+? Una aplicación de una sola página (SPA):
++ Carga una única página HTML y actualiza su contenido dinámicamente con JavaScript
+- Tiene una sola línea de código
+- No usa JavaScript
+- Se ejecuta solo en el servidor
+
+? Una aplicación web progresiva (PWA) puede:
++ Instalarse como una aplicación y funcionar sin conexión gracias a los service workers
+- Funcionar solo en Windows
+- Ejecutarse sin navegador ni sistema operativo
+- Acceder a cualquier fichero del equipo sin permiso
+
+? La arquitectura de microservicios:
++ Divide la aplicación en servicios pequeños e independientes que se comunican por API
+- Agrupa toda la aplicación en un único bloque
+- Elimina el uso de API
+- Solo funciona en mainframes
+
+? El formato de intercambio de datos más usado en las API web actuales es:
++ JSON
+- CSV
+- EDIFACT
+- XLS
+
+? CSS sirve para:
++ Definir la presentación y el diseño de las páginas web
+- Programar la lógica del servidor
+- Consultar la base de datos
+- Cifrar las comunicaciones
+
+? El diseño web adaptable (responsive) consiste en:
++ Que la página se ajuste a distintos tamaños de pantalla, por ejemplo con media queries
+- Tener una versión distinta de la web para cada dispositivo
+- Usar solo tablas para maquetar
+- Desactivar el zoom en móviles
+
+? Node.js permite:
++ Ejecutar JavaScript en el servidor
+- Ejecutar Java en el navegador
+- Diseñar bases de datos relacionales
+- Compilar C++ a bytecode
+
+? Flutter y React Native se utilizan para:
++ Desarrollar aplicaciones móviles multiplataforma con un único código
+- Diseñar redes
+- Hacer copias de seguridad
+- Gestionar servidores de correo

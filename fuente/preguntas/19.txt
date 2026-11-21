@@ -1,0 +1,96 @@
+? En el ciclo de vida en cascada:
++ Cada fase empieza cuando termina la anterior
+- Se entrega el producto en iteraciones cortas
+- El análisis de riesgos dirige cada vuelta
+- No hay fase de pruebas
+
+? El modelo en espiral de Boehm se caracteriza por:
++ Iteraciones en las que el análisis de riesgos es protagonista
+- No tener iteraciones
+- Eliminar la documentación
+- Entregar todo al final
+
+? El modelo en V:
++ Relaciona cada fase de desarrollo con su fase de pruebas correspondiente
+- Elimina las pruebas unitarias
+- Se usa solo en metodologías ágiles
+- Es igual que el prototipado
+
+? Métrica v3 es:
++ La metodología de planificación, desarrollo y mantenimiento de sistemas de información de la Administración española
+- Una norma ISO de calidad del software
+- Una metodología ágil
+- Un estándar de métricas de rendimiento de red
+
+? ¿Cuál es el proceso principal de Métrica v3 que comprende el estudio de viabilidad del sistema?
++ EVS
+- ASI
+- DSI
+- CSI
+= Procesos de desarrollo: EVS (viabilidad), ASI (análisis), DSI (diseño), CSI (construcción) e IAS (implantación y aceptación). Además, PSI (planificación) y MSI (mantenimiento).
+
+? En Scrum, el responsable de maximizar el valor del producto y gestionar la pila del producto es:
++ El Product Owner
+- El Scrum Master
+- El equipo de desarrollo
+- El cliente final
+
+? En Scrum, la iteración de duración fija (normalmente de una a cuatro semanas) es:
++ El sprint
+- El incremento
+- La retrospectiva
+- La épica
+
+? La reunión diaria de Scrum, de 15 minutos como máximo, es:
++ El Daily Scrum
+- La revisión del sprint
+- La planificación del sprint
+- La retrospectiva
+
+? El método ágil que visualiza el flujo de trabajo en un tablero y limita el trabajo en curso (WIP) es:
++ Kanban
+- Scrum
+- XP (programación extrema)
+- Métrica v3
+
+? La programación extrema (XP) promueve, entre otras prácticas:
++ La programación en parejas y el desarrollo dirigido por pruebas
+- La documentación exhaustiva previa
+- Entregas anuales
+- El diseño completo antes de programar
+
+? El manifiesto ágil valora más:
++ Los individuos y sus interacciones que los procesos y las herramientas
+- La documentación exhaustiva que el software funcionando
+- Seguir un plan que responder al cambio
+- La negociación contractual que la colaboración con el cliente
+
+? DevOps busca:
++ Integrar desarrollo y operaciones para entregar software de forma frecuente y fiable mediante automatización (CI/CD)
+- Separar totalmente desarrollo y sistemas
+- Eliminar las pruebas automáticas
+- Sustituir las metodologías ágiles por cascada
+
+? DevSecOps añade a DevOps:
++ La seguridad integrada en todo el ciclo, desde el principio («shift left»)
+- Una fase de seguridad solo al final
+- La eliminación de los controles de seguridad
+- Un equipo de seguridad aislado
+
+? Los requisitos que describen cómo debe comportarse el sistema (rendimiento, seguridad, usabilidad) y no qué hace se llaman:
++ No funcionales
+- Funcionales
+- De usuario
+- De negocio
+
+? En UML, el diagrama que muestra los actores y las funcionalidades que el sistema les ofrece es el de:
++ Casos de uso
+- Clases
+- Secuencia
+- Despliegue
+
+? El mantenimiento que adapta el software a cambios del entorno (nuevo sistema operativo, nueva ley) se denomina:
++ Adaptativo
+- Correctivo
+- Perfectivo
+- Preventivo

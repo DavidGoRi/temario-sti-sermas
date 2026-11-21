@@ -1,0 +1,133 @@
+? Según el art. 9 de la Ley 39/2015, los interesados pueden identificarse electrónicamente ante las Administraciones mediante:
++ Certificados cualificados de firma o de sello, sistemas de clave concertada y otros sistemas que se consideren válidos
+- Solo el DNI electrónico
+- Solo certificados emitidos por la FNMT
+- Cualquier correo electrónico verificado
+@ BOE-A-2015-10565#9
+
+? Según el art. 11 de la Ley 39/2015, con carácter general las Administraciones solo requieren a los interesados el uso obligatorio de firma para:
++ Formular solicitudes, presentar declaraciones responsables o comunicaciones, interponer recursos, desistir de acciones y renunciar a derechos
+- Cualquier trámite del procedimiento
+- Consultar el estado de su expediente
+- Acceder a la sede electrónica
+= Para el resto de actuaciones basta con acreditar la identidad.
+@ BOE-A-2015-10565#11
+
+? La vigencia máxima de los certificados cualificados, según la Ley 6/2020, es de:
++ Cinco años
+- Tres años
+- Cuatro años
+- Diez años
+@ BOE-A-2020-14046#4
+
+? Los documentos que los interesados dirijan a los órganos de las Administraciones pueden presentarse, entre otros lugares, en:
++ El registro electrónico de cualquier Administración, las oficinas de Correos, las representaciones diplomáticas y las oficinas de asistencia en materia de registros
+- Solo en el registro del órgano al que se dirigen
+- Solo en la sede electrónica de la Administración competente
+- En cualquier oficina bancaria
+@ BOE-A-2015-10565#16
+
+? El registro electrónico de cada Administración, a efectos del cómputo de plazos:
++ Funciona todos los días del año durante las 24 horas, y la presentación en día inhábil se entiende hecha a primera hora del primer día hábil siguiente
+- Solo funciona en días hábiles de 9 a 14 horas
+- Considera hábiles los sábados
+- No admite presentaciones en días inhábiles
+@ BOE-A-2015-10565#31
+
+? Si una notificación en papel no puede entregarse en el domicilio porque nadie se hace cargo, se repetirá:
++ Una sola vez, en una hora distinta dentro de los tres días siguientes
+- Dos veces más, en días consecutivos
+- Una vez, a la misma hora, al día siguiente
+- No se repite: se publica directamente en el BOE
+@ BOE-A-2015-10565#42
+
+? Cuando los interesados en un procedimiento sean desconocidos, se ignore el lugar de la notificación o, intentada, no se haya podido practicar, la notificación se hará:
++ Por medio de un anuncio publicado en el Boletín Oficial del Estado
+- Por medio de un anuncio en el tablón de edictos del ayuntamiento únicamente
+- En la sede electrónica del órgano, sin más
+- Por teléfono, dejando constancia
+@ BOE-A-2015-10565#44
+
+? Las notificaciones por medios electrónicos se practican mediante:
++ Comparecencia en la sede electrónica de la Administración, en la dirección electrónica habilitada única o por ambos sistemas
+- Envío por correo electrónico con el documento adjunto
+- Mensaje SMS con el contenido del acto
+- Publicación en el portal de transparencia
+@ BOE-A-2015-10565#43
+
+? La falta de práctica del aviso de puesta a disposición de una notificación electrónica (por correo o SMS):
++ No impide que la notificación sea considerada plenamente válida
+- Anula la notificación
+- Obliga a repetir la notificación en papel
+- Amplía el plazo en diez días
+@ BOE-A-2015-10565#41
+
+? Las notificaciones electrónicas se entienden practicadas en el momento en que:
++ Se produce el acceso a su contenido
+- Se pone la notificación a disposición del interesado
+- Se envía el aviso por correo electrónico
+- Pasan cinco días desde la puesta a disposición
+@ BOE-A-2015-10565#43
+
+? Un certificado electrónico de empleado público identifica:
++ Al titular, su cargo o puesto y el órgano u organismo en el que presta servicios
+- Solo al órgano, sin identificar a la persona
+- A la persona como ciudadano particular
+- Al dispositivo desde el que trabaja
+@ BOE-A-2021-5032#22
+
+? Las copias auténticas de documentos privados realizadas por las Administraciones públicas:
++ Surten únicamente efectos administrativos
+- Tienen la misma validez que el original en cualquier ámbito
+- Carecen de valor si son electrónicas
+- Solo valen ante los tribunales
+@ BOE-A-2015-10565#27
+
+? La Oficina de Asistencia en Materia de Registros, además de recibir documentos, puede:
++ Asistir en el uso de medios electrónicos, digitalizar documentos en papel e identificar o firmar en nombre del interesado mediante funcionario habilitado
+- Resolver los procedimientos que se le presentan
+- Imponer sanciones por presentación incorrecta
+- Emitir certificados cualificados de firma
+@ BOE-A-2015-10565#12
+
+? Pueden hacerse cargo de una notificación en papel en el domicilio del interesado, si este no está:
++ Cualquier persona mayor de catorce años que se encuentre en el domicilio y haga constar su identidad
+- Solo el cónyuge
+- Cualquier persona mayor de edad, sin identificarse
+- Nadie: se devuelve siempre
+@ BOE-A-2015-10565#42
+
+? Todas las notificaciones que se practiquen en papel deberán:
++ Ponerse también a disposición del interesado en la sede electrónica
+- Enviarse por duplicado
+- Publicarse en el BOE
+- Firmarse con firma manuscrita del titular del órgano
+@ BOE-A-2015-10565#42
+
+? El Tablón Edictal Único, donde se publican los anuncios de notificaciones infructuosas, está en:
++ El Boletín Oficial del Estado
+- Cada ayuntamiento
+- La sede de cada ministerio
+- El Diario Oficial de la Unión Europea
+@ BOE-A-2015-10565#44
+
+? El registro electrónico se rige, a efectos de cómputo de plazos, por:
++ La fecha y hora oficial de la sede electrónica de acceso
+- La hora del ordenador del interesado
+- La fecha del matasellos
+- La hora en que lo revise el funcionario
+@ BOE-A-2015-10565#31
+
+? Los documentos que los interesados presenten en papel en una oficina de asistencia en materia de registros:
++ Se digitalizan y se incorporan al expediente electrónico, devolviendo los originales salvo excepciones
+- Se archivan en papel sin digitalizar
+- Se destruyen inmediatamente
+- Se remiten por correo al órgano competente
+@ BOE-A-2015-10565#16
+
+? Las copias auténticas realizadas por una Administración pública tienen:
++ La misma validez y eficacia que los documentos originales
+- Menos valor que el original
+- Solo valor informativo
+- Validez de tres meses
+@ BOE-A-2015-10565#27

@@ -1,0 +1,114 @@
+? La interoperabilidad que garantiza que emisor y receptor entiendan lo mismo, mediante terminologías comunes, es la:
++ Semántica
+- Técnica
+- Sintáctica
+- Organizativa
+
+? La terminología clínica más completa, con cientos de miles de conceptos relacionados, es:
++ SNOMED CT
+- CIE-10-ES
+- LOINC
+- ATC
+
+? LOINC se usa para codificar:
++ Pruebas de laboratorio y observaciones clínicas
+- Medicamentos
+- Diagnósticos de atención primaria
+- Imágenes radiológicas
+
+? La clasificación anatómica, terapéutica y química de los medicamentos es la:
++ ATC
+- LOINC
+- CIAP-2
+- NANDA
+
+? HL7 CDA es:
++ Un estándar basado en XML para la estructura y semántica de los documentos clínicos
+- Un protocolo de red para imágenes
+- Un sistema de mensajería en texto delimitado
+- Una terminología de diagnósticos
+
+? En CDA, el nivel en el que el cuerpo incluye entradas estructuradas y codificadas procesables por máquina es el:
++ Nivel 3
+- Nivel 1
+- Nivel 2
+- Nivel 0
+
+? Los ficheros DICOM contienen:
++ Los datos de la imagen y los metadatos del paciente, el estudio, la serie y el equipo
+- Solo la imagen en formato JPEG
+- Solo el informe del radiólogo
+- Solo los datos del paciente
+
+? El servicio DICOM que envía imágenes de la modalidad al PACS es:
++ C-STORE
+- C-ECHO
+- C-FIND
+- MPPS
+
+? En HL7 v2, el segmento que identifica al paciente es:
++ PID
+- MSH
+- OBX
+- PV1
+= MSH es la cabecera del mensaje; PV1, la visita; OBX, el resultado de una observación.
+
+? El mensaje HL7 v2 que transmite resultados de pruebas es el de tipo:
++ ORU
+- ADT
+- ORM
+- SIU
+
+? HL7 FHIR se basa en:
++ Recursos con API REST y formatos JSON o XML
+- Mensajes de texto con barras verticales
+- Ficheros binarios DICOM
+- Documentos PDF firmados
+
+? IHE se caracteriza por:
++ Definir perfiles de integración que explican cómo usar estándares existentes, sin crear estándares nuevos
+- Crear nuevos formatos de imagen
+- Ser un fabricante de PACS
+- Regular por ley la historia clínica
+
+? El perfil IHE para compartir documentos clínicos entre organizaciones mediante un registro y repositorios es:
++ XDS
+- PIX
+- ATNA
+- SWF
+
+? El perfil IHE que relaciona los distintos identificadores de un mismo paciente en varios sistemas es:
++ PIX
+- PDQ
+- XDS
+- CT
+
+? El comité europeo de normalización en informática sanitaria es el:
++ CEN/TC 251
+- ISO/TC 215
+- AEN/CTN 139
+- IEEE 802
+
+? La norma EN ISO 13606 regula:
++ La comunicación de la historia clínica electrónica con un modelo dual: modelo de referencia y arquetipos
+- La seguridad de la información sanitaria
+- Las imágenes médicas
+- La receta electrónica
+
+? El comité español de normalización de las TIC para la salud es el:
++ CTN 139 de UNE (antiguo AEN/CTN 139 de AENOR)
+- CEN/TC 251
+- CCN-STIC 800
+- ISO/TC 215
+
+? La familia de normas que define la comunicación de dispositivos personales de salud (tensiómetros, glucómetros, pulsioxímetros) es:
++ ISO/IEEE 11073
+- IEEE 802.11
+- ISO 27799
+- DICOM
+
+? La Continua Health Alliance, hoy integrada en la PCHAlliance, promovía:
++ La interoperabilidad de los dispositivos de salud personal conectada para la telemonitorización
+- La normalización de la historia clínica en papel
+- Las redes MPLS sanitarias
+- El cifrado de las imágenes médicas

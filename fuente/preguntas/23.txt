@@ -1,0 +1,114 @@
+? En Microsoft 365, un inquilino (tenant) es:
++ La instancia dedicada de los servicios de Microsoft en la nube de una organización, con su propio directorio Entra ID
+- Una licencia individual de Office
+- Un servidor de Exchange local
+- Un grupo de seguridad de Active Directory
+
+? El servicio de Microsoft 365 para el correo electrónico es:
++ Exchange Online
+- SharePoint Online
+- OneDrive
+- Teams
+
+? El servicio de Microsoft 365 para sitios de colaboración y bibliotecas de documentos es:
++ SharePoint Online
+- Exchange Online
+- Intune
+- Power BI
+
+? La herramienta que sincroniza las identidades del Active Directory local con Microsoft Entra ID es:
++ Microsoft Entra Connect
+- Exchange Admin Center
+- Windows Update
+- SCCM
+
+? El formato de documentos abiertos estándar ISO/IEC 26300, usado por LibreOffice, es:
++ ODF (OpenDocument)
+- OOXML
+- PDF/A
+- RTF
+= OOXML (ISO/IEC 29500) es el formato de Microsoft Office (.docx, .xlsx, .pptx).
+
+? El formato PDF/A está pensado para:
++ El archivo y la conservación a largo plazo de documentos
+- La edición colaborativa
+- Los documentos con macros
+- La compresión de imágenes
+
+? La herramienta ofimática para cálculos con celdas, fórmulas y gráficos es:
++ La hoja de cálculo
+- El procesador de textos
+- El gestor de presentaciones
+- El cliente de correo
+
+? En Excel, la función que busca un valor en la primera columna de un rango y devuelve el de otra columna de la misma fila es:
++ BUSCARV (o la más moderna BUSCARX)
+- SUMAR.SI
+- CONTAR
+- CONCATENAR
+
+? La autenticación multifactor en Microsoft 365 se gestiona principalmente con:
++ Las directivas de acceso condicional de Microsoft Entra ID
+- Las macros de Excel
+- Los permisos de SharePoint
+- El Visor de eventos
+
+? La herramienta de Microsoft para la gestión de dispositivos y aplicaciones (MDM/MAM) es:
++ Microsoft Intune
+- Microsoft Visio
+- Microsoft Project
+- Microsoft Access
+
+? Las etiquetas de confidencialidad y la prevención de pérdida de datos (DLP) en Microsoft 365 se gestionan en:
++ Microsoft Purview
+- Microsoft Teams
+- OneNote
+- Outlook
+
+? Un servicio de directorio permite:
++ Almacenar y gestionar de forma centralizada usuarios, grupos y recursos, y autenticarlos
+- Navegar por Internet
+- Editar documentos en grupo
+- Comprimir ficheros
+
+? Las alternativas libres a Microsoft Office más extendidas son:
++ LibreOffice y OnlyOffice
+- Notepad++ y 7-Zip
+- GIMP e Inkscape
+- Thunderbird y Firefox
+
+? La administración centralizada de la configuración de Office en los equipos de un dominio se hace con:
++ Directivas de grupo (plantillas administrativas) o directivas en la nube de Microsoft 365 Apps
+- El Panel de control de cada equipo a mano
+- El registro de Windows de cada usuario editado manualmente
+- La hoja de cálculo de inventario
+
+? En Microsoft Teams, los canales se organizan dentro de:
++ Equipos (teams), que tienen detrás un grupo de Microsoft 365
+- Buzones de Exchange
+- Unidades organizativas de Active Directory
+- Hojas de Excel
+
+? OneDrive para la empresa sirve para:
++ Almacenar y sincronizar los ficheros personales de trabajo de cada usuario en la nube
+- Enviar correo masivo
+- Gestionar el dominio de Active Directory
+- Crear máquinas virtuales
+
+? En una hoja de cálculo, una referencia absoluta como $A$1:
++ No cambia al copiar la fórmula a otras celdas
+- Cambia de fila y columna al copiar
+- Solo se puede usar en gráficos
+- Indica una celda protegida
+
+? La combinación de correspondencia en un procesador de textos permite:
++ Generar documentos personalizados a partir de una plantilla y una fuente de datos
+- Unir dos documentos en uno
+- Corregir la ortografía
+- Cifrar documentos
+
+? El licenciamiento de Microsoft 365 se gestiona principalmente:
++ Por usuario, asignando licencias desde el centro de administración
+- Por número de ordenadores únicamente
+- Por servidor físico
+- Sin licencias

@@ -1,0 +1,97 @@
+? La parte del sistema operativo que se ejecuta en modo privilegiado y gestiona procesos, memoria y dispositivos es:
++ El núcleo (kernel)
+- El intérprete de órdenes (shell)
+- El gestor de arranque
+- El entorno de escritorio
+
+? En Linux, la orden que cambia los permisos de un fichero es:
++ chmod
+- chown
+- chgrp
+- umask
+= chown cambia el propietario y chgrp el grupo.
+
+? Los permisos 754 en Linux significan:
++ Propietario rwx, grupo r-x, otros r--
+- Propietario rw-, grupo r-x, otros r--
+- Propietario rwx, grupo rw-, otros r-x
+- Propietario r-x, grupo rwx, otros r--
+
+? ¿Qué directorio de Linux contiene los ficheros de configuración del sistema?
++ /etc
+- /var
+- /usr
+- /opt
+
+? En los sistemas Linux con systemd, la orden para reiniciar un servicio es:
++ systemctl restart servicio
+- service-restart servicio
+- init 6 servicio
+- chkconfig servicio restart
+
+? ¿Qué orden de Linux muestra los procesos en ejecución en tiempo real?
++ top
+- ls
+- grep
+- df
+
+? La orden de Linux que muestra el espacio libre de los sistemas de ficheros es:
++ df -h
+- du -s
+- free -m
+- lsblk -f
+= du muestra lo que ocupan los directorios y free, la memoria.
+
+? En Windows, la consola de administración de equipos y la herramienta para ver los registros del sistema son:
++ compmgmt.msc y el Visor de eventos (eventvwr.msc)
+- regedit y taskmgr
+- gpedit.msc y diskpart
+- msconfig y cmd
+
+? El sistema de ficheros nativo de Windows que admite permisos, cifrado (EFS) y registro en diario es:
++ NTFS
+- FAT32
+- exFAT
+- ext4
+
+? ¿Qué herramienta de Windows permite automatizar tareas con scripts orientados a objetos?
++ PowerShell
+- Bloc de notas
+- Paint
+- WordPad
+
+? La planificación de tareas periódicas en Linux se hace con:
++ cron (crontab)
+- at exclusivamente
+- systemd-journald
+- ifconfig
+
+? La memoria virtual permite:
++ Usar espacio en disco como extensión de la memoria principal, mediante paginación
+- Duplicar la velocidad de la RAM
+- Ejecutar programas sin CPU
+- Compartir la caché entre equipos
+
+? Un interbloqueo (deadlock) se produce cuando:
++ Varios procesos esperan indefinidamente recursos que retienen otros procesos del mismo grupo
+- Un proceso consume toda la CPU
+- La memoria se llena
+- Un proceso termina de forma inesperada
+
+? El sistema operativo para móviles basado en el núcleo Linux es:
++ Android
+- iOS
+- Windows Phone
+- HarmonyOS en todas sus versiones
+
+? Las herramientas de gestión de dispositivos móviles corporativos (por ejemplo, Microsoft Intune) se conocen como:
++ MDM o UEM
+- ERP
+- CRM
+- SIEM
+
+? La orden de Linux que muestra la configuración de red en las distribuciones actuales es:
++ ip addr
+- ipconfig /all
+- netsh
+- route print

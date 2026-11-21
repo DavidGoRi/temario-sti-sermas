@@ -1,0 +1,155 @@
+? Según el art. 4 de la Ley 31/1995, la posibilidad de que un trabajador sufra un determinado daño derivado del trabajo es:
++ El riesgo laboral
+- La prevención
+- El daño derivado del trabajo
+- El riesgo grave e inminente
+@ BOE-A-1995-24292#4
+
+? Para calificar la gravedad de un riesgo laboral se valoran conjuntamente:
++ La probabilidad de que se produzca el daño y su severidad
+- El número de trabajadores expuestos y el coste de las medidas
+- La duración de la exposición y la edad del trabajador
+- La frecuencia de los accidentes y las sanciones previas
+@ BOE-A-1995-24292#4
+
+? El deber de protección de los trabajadores frente a los riesgos laborales, según el art. 14 de la Ley 31/1995:
++ Corresponde al empresario y es igualmente un deber de las Administraciones públicas respecto de su personal
+- Corresponde únicamente al servicio de prevención
+- Corresponde a cada trabajador respecto de sí mismo
+- Solo existe en las empresas privadas
+@ BOE-A-1995-24292#14
+
+? ¿Cuál es el primer principio general de la acción preventiva del art. 15 de la Ley 31/1995?
++ Evitar los riesgos
+- Evaluar los riesgos
+- Proteger individualmente a los trabajadores
+- Formar a los trabajadores
+= Después: evaluar los que no se puedan evitar, combatirlos en su origen, adaptar el trabajo a la persona, tener en cuenta la técnica, sustituir lo peligroso, planificar, anteponer la protección colectiva a la individual y dar instrucciones.
+@ BOE-A-1995-24292#15
+
+? Según los principios de la acción preventiva, frente a la protección individual se debe:
++ Adoptar medidas que antepongan la protección colectiva
+- Priorizar siempre los equipos de protección individual
+- Elegir la opción más barata
+- Dejar la decisión al trabajador
+@ BOE-A-1995-24292#15
+
+? El instrumento que integra la prevención en el sistema general de gestión de la empresa es:
++ El plan de prevención de riesgos laborales
+- El servicio de prevención ajeno
+- El comité de seguridad y salud
+- La mutua colaboradora con la Seguridad Social
+@ BOE-A-1995-24292#16
+
+? Ante un riesgo grave e inminente, el trabajador:
++ Tiene derecho a interrumpir su actividad y abandonar el lugar de trabajo si es necesario
+- Debe esperar la orden del empresario para abandonar el puesto
+- Solo puede interrumpir la actividad si lo autoriza el delegado de prevención
+- Puede ser sancionado si abandona el puesto
+@ BOE-A-1995-24292#21
+
+? La vigilancia periódica de la salud de los trabajadores, según el art. 22 de la Ley 31/1995:
++ Solo puede hacerse con el consentimiento del trabajador, salvo excepciones previo informe de los representantes
+- Es siempre obligatoria para el trabajador
+- Es voluntaria para el empresario
+- Solo se hace al inicio de la relación laboral
+@ BOE-A-1995-24292#22
+
+? Los resultados de la vigilancia de la salud:
++ Se comunican al trabajador y no pueden usarse con fines discriminatorios ni en su perjuicio
+- Se entregan íntegros al empresario
+- Se publican en el tablón del centro
+- Solo los conoce la mutua
+@ BOE-A-1995-24292#22
+
+? Corresponde a cada trabajador, según el art. 29 de la Ley 31/1995:
++ Velar por su propia seguridad y salud y por la de las personas a las que pueda afectar su actividad
+- Elaborar la evaluación de riesgos de su puesto
+- Financiar sus equipos de protección individual
+- Designar al servicio de prevención
+@ BOE-A-1995-24292#29
+
+? ¿Cuál de estas NO es una modalidad de organización de la actividad preventiva?
++ Delegar la prevención en el comité de empresa
+- Designar a uno o varios trabajadores
+- Constituir un servicio de prevención propio
+- Concertar un servicio de prevención ajeno
+= El empresario también puede asumirla personalmente en empresas pequeñas (Reglamento de los Servicios de Prevención, RD 39/1997).
+@ BOE-A-1995-24292#30
+
+? Los Delegados de Prevención son designados:
++ Por y entre los representantes del personal, con arreglo a una escala según el número de trabajadores
+- Por el empresario entre los trabajadores con formación en prevención
+- Por la Inspección de Trabajo
+- Por sorteo entre toda la plantilla
+@ BOE-A-1995-24292#35
+
+? En una empresa o centro de 50 a 100 trabajadores corresponden:
++ 2 Delegados de Prevención
+- 1 Delegado de Prevención
+- 3 Delegados de Prevención
+- 4 Delegados de Prevención
+@ BOE-A-1995-24292#35
+
+? El Comité de Seguridad y Salud se constituye en las empresas o centros que cuenten con:
++ 50 o más trabajadores
+- 6 o más trabajadores
+- 100 o más trabajadores
+- 250 o más trabajadores
+@ BOE-A-1995-24292#38
+
+? El Comité de Seguridad y Salud es un órgano:
++ Paritario y colegiado, formado por los Delegados de Prevención y por el empresario o sus representantes en igual número
+- Unipersonal, del que forma parte solo el técnico de prevención
+- Formado exclusivamente por los representantes de los trabajadores
+- Externo, dependiente de la Inspección de Trabajo
+@ BOE-A-1995-24292#38
+
+? El empresario debe consultar a los trabajadores, con la debida antelación, sobre la introducción de nuevas tecnologías en cuanto a:
++ Sus consecuencias para la seguridad y la salud de los trabajadores
+- Su coste económico
+- Las licencias de software
+- Ninguna: no es materia de consulta
+@ BOE-A-1995-24292#33
+
+? ¿Sobre quién recae el coste de las medidas relativas a la seguridad y la salud en el trabajo?
++ Sobre el empresario: no puede recaer en modo alguno sobre los trabajadores
+- Se reparte al 50 % entre empresario y trabajadores
+- Sobre la mutua
+- Sobre los trabajadores que usan los equipos
+@ BOE-A-1995-24292#14
+
+? La evaluación inicial de riesgos debe tener en cuenta, con carácter general:
++ La naturaleza de la actividad y los trabajadores que deban desempeñar los puestos
+- Solo los accidentes ocurridos el año anterior
+- Únicamente la opinión del comité de empresa
+- El coste de las medidas preventivas
+@ BOE-A-1995-24292#16
+
+? Los Delegados de Prevención, entre otras competencias, pueden:
++ Ejercer una labor de vigilancia y control sobre el cumplimiento de la normativa de prevención
+- Imponer sanciones a la empresa
+- Contratar al servicio de prevención ajeno
+- Paralizar la actividad de toda la empresa en cualquier caso
+@ BOE-A-1995-24292#36
+
+? El Comité de Seguridad y Salud debe participar en:
++ La elaboración, puesta en práctica y evaluación de los planes y programas de prevención
+- La elaboración de las nóminas
+- La selección del personal
+- La negociación del convenio colectivo
+@ BOE-A-1995-24292#39
+
+? El incumplimiento por los trabajadores de sus obligaciones en materia de prevención tiene la consideración de:
++ Incumplimiento laboral o, en el caso del personal al servicio de las Administraciones, falta disciplinaria
+- Delito en todo caso
+- Infracción muy grave sancionada por la Inspección
+- Simple recomendación sin consecuencias
+@ BOE-A-1995-24292#29
+
+? La norma que regula los servicios de prevención es el:
++ Real Decreto 39/1997
+- Real Decreto 488/1997
+- Real Decreto 486/1997
+- Real Decreto 773/1997
+= El RD 488/1997 trata las pantallas de visualización; el 486/1997, los lugares de trabajo; el 773/1997, los equipos de protección individual.

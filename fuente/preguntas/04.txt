@@ -1,0 +1,161 @@
+? El Servicio Madrileño de Salud es:
++ Un ente de derecho público con personalidad jurídica propia, adscrito a la Consejería de Sanidad
+- Una Dirección General de la Consejería de Sanidad sin personalidad jurídica
+- Una sociedad mercantil pública de la Comunidad de Madrid
+- Un organismo autónomo de la Administración General del Estado
+@ BOE-A-2002-4375#59
+
+? ¿Qué ley creó el Servicio Madrileño de Salud?
++ La Ley 12/2001, de Ordenación Sanitaria de la Comunidad de Madrid
+- La Ley 11/2017, de Buen Gobierno y Profesionalización de la Gestión
+- La Ley 14/1986, General de Sanidad
+- La Ley 6/2009, de libertad de elección
+@ BOE-A-2002-4375#58
+
+? El órgano de gobierno del SERMAS, presidido por el titular de la Consejería de Sanidad, es:
++ El Consejo de Administración
+- La Junta de Gobierno
+- La Comisión de Dirección
+- El Consejo Territorial de Salud
+@ BOE-A-2002-4375#72
+
+? La Ley 11/2017 de la Comunidad de Madrid regula:
++ El buen gobierno y la profesionalización de la gestión de los centros y organizaciones sanitarias del SERMAS
+- El Estatuto del personal estatutario del SERMAS
+- La libertad de elección de médico y hospital
+- La transparencia de toda la Administración autonómica
+@ BOE-A-2018-1610#1
+
+? Según el art. 3 de la Ley 11/2017, son organizaciones del Servicio Madrileño de Salud:
++ Los hospitales, las Direcciones Territoriales de Atención Primaria, la Unidad Central de Radiodiagnóstico y el SUMMA 112
+- Los hospitales y los centros de salud, cada uno por separado
+- Solo los hospitales del SERMAS
+- Los hospitales públicos y los privados concertados
+@ BOE-A-2018-1610#3
+
+? El órgano colegiado de gobierno de cada organización del SERMAS, con la misión de la superior administración del centro, es:
++ La Junta de Gobierno
+- La Junta Técnica Asistencial
+- La Comisión de Dirección
+- El Consejo de Administración
+@ BOE-A-2018-1610#4
+
+? Según el art. 5 de la Ley 11/2017, la Junta de Gobierno está compuesta como máximo por:
++ Un presidente, un vicepresidente y 11 vocales
+- Un presidente y 7 vocales
+- Un presidente, un vicepresidente y 15 vocales
+- Un presidente, dos vicepresidentes y 9 vocales
+= Curiosidad: el mismo artículo detalla 6 vocales del SERMAS, 4 por convocatoria pública y 2 de la Federación de Municipios (12 en total), pero el texto legal dice «11 vocales». En el examen, responde lo que dice la ley.
+@ BOE-A-2018-1610#5
+
+? ¿Cuántos vocales de la Junta de Gobierno se designan mediante convocatoria pública de la Dirección General del SERMAS?
++ Cuatro, de los que al menos dos deben ser profesionales sanitarios
+- Seis, todos profesionales sanitarios
+- Dos, a propuesta de la Federación de Municipios de Madrid
+- Cinco, elegidos por la Asamblea de Madrid
+@ BOE-A-2018-1610#5
+
+? Los dos vocales de la Junta de Gobierno que representan a los ciudadanos se designan a propuesta de:
++ La Federación de Municipios de Madrid
+- Las asociaciones de pacientes
+- La Asamblea de Madrid
+- El Consejo de Consumidores y Usuarios
+@ BOE-A-2018-1610#5
+
+? Las Juntas de Gobierno se reúnen con carácter ordinario:
++ Al menos una vez al trimestre
+- Al menos una vez al mes
+- Al menos una vez al semestre
+- Una vez al año para aprobar las cuentas
+@ BOE-A-2018-1610#7
+
+? El nombramiento y cese de los directores gerentes de las organizaciones del SERMAS corresponde a:
++ El Consejo de Administración del SERMAS, a propuesta del Director General del SERMAS
+- El Consejero de Sanidad, a propuesta de la Junta de Gobierno
+- La Junta de Gobierno de cada organización, mediante convocatoria pública
+- El Consejo de Gobierno de la Comunidad de Madrid
+@ BOE-A-2018-1610#9
+
+? Según la Ley 11/2017, ¿pueden ser directores gerentes personas sin vinculación previa con la Administración?
++ Sí, y están sujetos a evaluación continua, pudiendo ser relevados si es negativa
+- No, deben ser funcionarios o personal estatutario fijo
+- Solo si superan un concurso de méritos convocado por el SERMAS
+- Solo en los hospitales con forma de fundación
+@ BOE-A-2018-1610#9
+
+? El órgano colegiado de participación de los profesionales y de asesoramiento de la Dirección Gerencia es:
++ La Junta Técnica Asistencial
+- La Comisión de Dirección
+- El Consejo Territorial de Salud
+- La Junta de Gobierno
+@ BOE-A-2018-1610#13
+
+? En los hospitales, la Junta Técnica Asistencial está presidida por:
++ El director médico
+- El director gerente
+- El presidente de la Junta de Gobierno
+- El jefe de servicio más antiguo
+@ BOE-A-2018-1610#13
+
+? Los órganos de participación y coordinación de la gestión sanitaria y sociosanitaria con los ciudadanos previstos en la Ley 11/2017 son:
++ Los Consejos Territoriales de Salud
+- Las Comisiones Técnicas Consultivas
+- Las Juntas Técnicas Asistenciales
+- Los Consejos de Salud de Zona
+@ BOE-A-2018-1610#17
+
+? El instrumento que vincula la financiación de cada organización del SERMAS con su actividad, calidad y resultados es:
++ El contrato programa
+- El plan estratégico de la Consejería
+- El presupuesto por programas de la Comunidad
+- El Código de Transparencia, Ética y Buen Gobierno
+@ BOE-A-2018-1610#24
+
+? La Comisión de Dirección de las organizaciones del SERMAS está presidida por:
++ El director gerente o el director territorial
+- El presidente de la Junta de Gobierno
+- El director médico
+- El Consejero de Sanidad
+@ BOE-A-2018-1610#12
+
+? En las Direcciones Territoriales de Atención Primaria, la Junta Técnica Asistencial está presidida por:
++ El director territorial
+- El director médico del hospital de referencia
+- El presidente de la Junta de Gobierno
+- El coordinador del centro de salud más grande
+@ BOE-A-2018-1610#13
+
+? Las Comisiones Técnicas Consultivas de la Ley 11/2017 tienen funciones de:
++ Asesoramiento e informe en cuestiones técnicas, sobre todo clínico-asistenciales
+- Gobierno y dirección del centro
+- Contratación de personal
+- Inspección sanitaria
+@ BOE-A-2018-1610#16
+
+? Según el art. 23 de la Ley 11/2017, las organizaciones del SERMAS actúan bajo el principio de:
++ Autonomía de gestión, dentro del marco normativo general aprobado por el SERMAS
+- Dependencia total de la Consejería
+- Libre mercado
+- Gestión privada
+@ BOE-A-2018-1610#23
+
+? La Ley 11/2017 prevé que la Dirección General del SERMAS pueda autorizar, para mejorar la eficiencia o la calidad:
++ Experiencias piloto y nuevas formas de organización, con evaluación y plazo de duración
+- La privatización de los centros
+- La creación de nuevas categorías de personal estatutario
+- La supresión de la Junta de Gobierno
+@ BOE-A-2018-1610#25
+
+? El vicepresidente de la Junta de Gobierno de una organización del SERMAS se nombra:
++ Por el presidente del Consejo de Administración del SERMAS, a propuesta de la Junta de Gobierno, entre los vocales
+- Por el Consejero de Sanidad libremente
+- Por elección de los profesionales del centro
+- Por el director gerente
+@ BOE-A-2018-1610#5
+
+? Los directores gerentes del SERMAS pueden ser relevados de su puesto si:
++ La evaluación en el desempeño de sus funciones es negativa
+- Cambia el Gobierno de la Comunidad, en todo caso
+- Lo pide la Junta Técnica Asistencial
+- Cumplen dos años en el cargo
+@ BOE-A-2018-1610#9

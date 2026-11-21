@@ -1,0 +1,149 @@
+? Según el art. 38 de la Ley 40/2015, la sede electrónica es:
++ La dirección electrónica, disponible para los ciudadanos a través de redes de telecomunicaciones, cuya titularidad corresponde a una Administración pública u organismo público
+- El punto de acceso electrónico que permite acceder a la información publicada por una Administración
+- El área personalizada del ciudadano para consultar sus expedientes
+- El registro electrónico general de una Administración
+= La definición de la segunda opción corresponde al portal de internet (art. 39); la tercera, a la Carpeta Ciudadana.
+@ BOE-A-2015-10566#38
+
+? El punto de acceso electrónico que permite el acceso a través de internet a la información publicada y, en su caso, a la sede electrónica es, según la Ley 40/2015:
++ El portal de internet
+- La sede electrónica
+- El Punto de Acceso General
+- La Carpeta Ciudadana
+@ BOE-A-2015-10566#39
+
+? Las Administraciones públicas pueden identificarse electrónicamente, según el art. 40 de la Ley 40/2015, mediante:
++ Un sello electrónico basado en un certificado electrónico cualificado
+- El DNI electrónico del titular del órgano
+- Un código seguro de verificación exclusivamente
+- Usuario y contraseña de la sede electrónica
+@ BOE-A-2015-10566#40
+
+? Se entiende por actuación administrativa automatizada:
++ Cualquier acto realizado íntegramente por medios electrónicos en un procedimiento en el que no ha intervenido de forma directa un empleado público
+- Cualquier acto firmado electrónicamente por un empleado público
+- La tramitación de un procedimiento por la sede electrónica
+- El envío masivo de notificaciones postales
+@ BOE-A-2015-10566#41
+
+? Para la actuación administrativa automatizada, cada Administración puede utilizar como sistemas de firma (art. 42 Ley 40/2015):
++ El sello electrónico de Administración pública, órgano u organismo y el código seguro de verificación (CSV)
+- La firma manuscrita digitalizada del titular del órgano
+- El certificado de empleado público del jefe del servicio
+- Cl@ve PIN
+@ BOE-A-2015-10566#42
+
+? Según el art. 46 de la Ley 40/2015, todos los documentos utilizados en las actuaciones administrativas se almacenarán:
++ Por medios electrónicos, salvo cuando no sea posible
+- En papel y en formato electrónico
+- En el archivo histórico provincial
+- En el formato que elija cada órgano
+@ BOE-A-2015-10566#46
+
+? El Esquema Nacional de Interoperabilidad y el Esquema Nacional de Seguridad se prevén en el:
++ Art. 156 de la Ley 40/2015
+- Art. 13 de la Ley 39/2015
+- Art. 41 de la Ley 40/2015
+- Art. 70 de la Ley 39/2015
+@ BOE-A-2015-10566#156
+
+? Según el art. 157 de la Ley 40/2015, las Administraciones pondrán a disposición de cualquier otra que lo solicite:
++ Las aplicaciones desarrolladas por sus servicios o contratadas de cuyos derechos de propiedad intelectual sean titulares
+- Sus bases de datos de personal
+- Sus certificados de sello electrónico
+- Sus contraseñas de administración
+= Es el principio de reutilización de sistemas y aplicaciones; el art. 158 añade los directorios de aplicaciones para su libre reutilización (transferencia de tecnología).
+@ BOE-A-2015-10566#157
+
+? Según el art. 13 de la Ley 39/2015, las personas tienen derecho a comunicarse con las Administraciones públicas a través de:
++ Un Punto de Acceso General electrónico de la Administración
+- Cualquier dirección de correo electrónico de los empleados
+- Las redes sociales oficiales
+- Solo la sede electrónica de cada organismo
+@ BOE-A-2015-10565#13
+
+? Los interesados tienen derecho a no aportar documentos:
++ Que ya se encuentren en poder de la Administración actuante o hayan sido elaborados por cualquier Administración
+- En ningún caso, si lo exige la norma del procedimiento
+- Que no estén firmados electrónicamente
+- Salvo que la Administración lo exija con carácter general
+@ BOE-A-2015-10565#28
+
+? El reglamento estatal de actuación y funcionamiento del sector público por medios electrónicos se aprobó por:
++ El Real Decreto 203/2021, de 30 de marzo
+- El Real Decreto 4/2010, de 8 de enero
+- El Real Decreto 311/2022, de 3 de mayo
+- El Real Decreto 1671/2009, de 6 de noviembre
+= El RD 1671/2009 era el reglamento de la Ley 11/2007, ya derogado. El RD 4/2010 regula el ENI y el RD 311/2022 el ENS.
+@ BOE-A-2021-5032#1
+
+? La Carpeta Ciudadana del sector público estatal es, según el RD 203/2021:
++ El área personalizada de las personas interesadas, a la que acceden identificándose, para consultar sus expedientes, notificaciones y datos
+- El portal de transparencia del Gobierno
+- El registro de funcionarios habilitados
+- El tablón de edictos electrónico
+@ BOE-A-2021-5032#8
+
+? La Dirección Electrónica Habilitada única (DEHú) sirve para:
++ Acceder en un único punto a las notificaciones electrónicas de las distintas Administraciones adheridas
+- Presentar documentos en cualquier registro
+- Firmar electrónicamente documentos en la nube
+- Verificar copias auténticas
+@ BOE-A-2021-5032#44
+
+? Cada Administración dispondrá, según el art. 16 de la Ley 39/2015, de un:
++ Registro Electrónico General, donde se asienta todo documento presentado o recibido en cualquiera de sus órganos
+- Registro por cada órgano, sin conexión entre ellos
+- Registro en papel complementado por uno electrónico opcional
+- Registro único para todas las Administraciones del Estado
+@ BOE-A-2015-10565#16
+
+? El Registro Electrónico General de Apoderamientos permite inscribir:
++ Los poderes generales otorgados por los interesados a favor de representantes para actuar ante las Administraciones
+- Los nombramientos de altos cargos
+- Las firmas manuscritas de los empleados públicos
+- Los certificados de sello electrónico
+@ BOE-A-2015-10565#6
+
+? El Punto de Acceso General electrónico de la Administración General del Estado es:
++ administracion.gob.es
+- La sede electrónica de cada ministerio
+- El Boletín Oficial del Estado
+- La Plataforma de Contratación del Sector Público
+@ BOE-A-2021-5032#7
+
+? La sede electrónica asociada es:
++ La que se crea para uno o varios órganos u organismos, vinculada a una sede electrónica principal
+- Una sede de una empresa privada
+- La página personal de un empleado público
+- El tablón de anuncios físico
+@ BOE-A-2021-5032#10
+
+? Según el art. 3 de la Ley 40/2015, las Administraciones públicas se relacionarán entre sí y con sus órganos a través de:
++ Medios electrónicos, que aseguren la interoperabilidad y seguridad de los sistemas
+- Correo postal certificado
+- Fax
+- Mensajería privada
+@ BOE-A-2015-10566#3
+
+? La transmisión de datos entre Administraciones (art. 155 de la Ley 40/2015) debe respetar:
++ La normativa de protección de datos, limitándose a los datos que necesite cada Administración para sus funciones
+- Solo la voluntad del ciudadano
+- Ningún límite
+- Únicamente el ENS
+@ BOE-A-2015-10566#155
+
+? Las Administraciones deben mantener directorios actualizados de aplicaciones para su libre reutilización según el:
++ Art. 158 de la Ley 40/2015 (transferencia de tecnología)
+- Art. 13 de la Ley 39/2015
+- Art. 38 de la Ley 40/2015
+- Art. 16 de la Ley 39/2015
+@ BOE-A-2015-10566#158
+
+? ¿Qué es el código seguro de verificación (CSV)?
++ Un código que identifica un documento electrónico y permite comprobar su integridad en la sede electrónica
+- Una contraseña de acceso a la sede
+- El número de registro de entrada
+- La clave privada de un certificado
+@ BOE-A-2021-5032#21

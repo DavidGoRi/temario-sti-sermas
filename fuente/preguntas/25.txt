@@ -1,0 +1,91 @@
+? Un hipervisor de tipo 1 (bare metal):
++ Se ejecuta directamente sobre el hardware, sin sistema operativo anfitrión
+- Se ejecuta como una aplicación sobre un sistema operativo
+- Solo virtualiza aplicaciones
+- Es lo mismo que un contenedor
+= Ejemplos tipo 1: VMware ESXi, Hyper-V, KVM, Xen. Tipo 2: VirtualBox, VMware Workstation.
+
+? Los contenedores (por ejemplo, Docker), frente a las máquinas virtuales:
++ Comparten el núcleo del sistema operativo anfitrión y son más ligeros
+- Incluyen cada uno su propio sistema operativo completo
+- Necesitan un hipervisor de tipo 2
+- No pueden ejecutarse en la nube
+
+? La herramienta más extendida para orquestar contenedores es:
++ Kubernetes
+- Ansible
+- Jenkins
+- Nagios
+
+? La virtualización del escritorio (VDI) consiste en:
++ Ejecutar los escritorios de los usuarios en servidores centrales y acceder a ellos en remoto
+- Instalar varios sistemas operativos en un mismo portátil
+- Usar dos monitores
+- Virtualizar solo el almacenamiento
+
+? Una red SAN (Storage Area Network) ofrece:
++ Almacenamiento a nivel de bloque por una red dedicada (Fibre Channel o iSCSI)
+- Ficheros compartidos por SMB o NFS
+- Acceso web a documentos
+- Copias de seguridad en cinta exclusivamente
+= Un NAS ofrece almacenamiento a nivel de fichero (SMB/CIFS, NFS).
+
+? El protocolo de compartición de ficheros nativo de Windows es:
++ SMB (CIFS)
+- NFS
+- iSCSI
+- FTP
+
+? En el modelo de servicio IaaS, el cliente gestiona:
++ El sistema operativo, el middleware y las aplicaciones; el proveedor, la infraestructura física y la virtualización
+- Solo los datos de la aplicación
+- Todo, incluido el hardware
+- Nada: solo usa la aplicación
+
+? Microsoft 365 y Gmail son ejemplos de:
++ SaaS
+- PaaS
+- IaaS
+- On-premise
+
+? La nube que combina infraestructura privada y pública con portabilidad entre ellas es la:
++ Nube híbrida
+- Nube comunitaria
+- Nube pública
+- Multinube sin conexión
+
+? El modelo de responsabilidad compartida en la nube significa que:
++ El proveedor protege la infraestructura de la nube y el cliente es responsable de lo que pone en ella (datos, identidades, configuración)
+- El proveedor es responsable de todo
+- El cliente es responsable de la seguridad física del CPD
+- Nadie es responsable de los datos
+
+? El nivel de RAID con paridad doble, que soporta el fallo de dos discos, es:
++ RAID 6
+- RAID 5
+- RAID 1
+- RAID 0
+
+? La técnica que asigna a una máquina virtual más almacenamiento del que ocupa realmente, reservándolo a medida que se usa, es:
++ El aprovisionamiento ligero (thin provisioning)
+- La deduplicación
+- El RAID 0
+- La instantánea (snapshot)
+
+? Una instantánea (snapshot) de una máquina virtual:
++ Conserva su estado en un momento dado, pero no sustituye a una copia de seguridad
+- Es una copia de seguridad completa e independiente
+- Borra los datos antiguos
+- Solo funciona en contenedores
+
+? La nube del sector público para las Administraciones en España incluye servicios ofrecidos por:
++ La Secretaría General de Administración Digital (por ejemplo, la nube SARA) y los proveedores con cualificación ENS
+- Solo empresas sin certificación
+- Exclusivamente proveedores de fuera de la UE
+- Los ayuntamientos
+
+? La explotación de los sistemas incluye tareas como:
++ La monitorización, las copias de seguridad, la planificación de trabajos y la gestión de la capacidad
+- El análisis de requisitos
+- El diseño de la base de datos
+- La redacción del pliego de contratación

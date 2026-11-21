@@ -1,0 +1,110 @@
+? ¿En qué capa del modelo OSI trabaja un router?
++ Capa 3, de red
+- Capa 2, de enlace
+- Capa 4, de transporte
+- Capa 1, física
+
+? Un switch tradicional toma sus decisiones de reenvío según:
++ Las direcciones MAC (capa 2)
+- Las direcciones IP (capa 3)
+- Los puertos TCP (capa 4)
+- El contenido HTTP (capa 7)
+
+? La unidad de datos de la capa de transporte con TCP se llama:
++ Segmento
+- Trama
+- Paquete
+- Bit
+
+? ¿Qué protocolo resuelve direcciones IPv4 en direcciones MAC?
++ ARP
+- DNS
+- DHCP
+- ICMP
+
+? TCP, frente a UDP:
++ Está orientado a conexión y garantiza la entrega ordenada y fiable
+- No está orientado a conexión y es más rápido
+- Funciona en la capa de red
+- No usa puertos
+= UDP es no orientado a conexión y sin garantías; se usa en DNS, VoIP, streaming o DHCP.
+
+? El establecimiento de una conexión TCP se realiza mediante:
++ El saludo a tres vías: SYN, SYN-ACK, ACK
+- Un único paquete SYN
+- Cuatro mensajes FIN
+- Un intercambio ARP
+
+? ¿Qué puerto usa por defecto HTTPS?
++ 443
+- 80
+- 22
+- 8443
+
+? ¿Qué puerto usa por defecto el DNS?
++ 53
+- 25
+- 67
+- 110
+
+? Una red con máscara /26 tiene cuántas direcciones de host utilizables?
++ 62
+- 64
+- 30
+- 126
+= 2^(32−26) = 64 direcciones, menos la de red y la de difusión.
+
+? La máscara 255.255.255.0 equivale en notación CIDR a:
++ /24
+- /16
+- /8
+- /32
+
+? ¿Cuál de estas direcciones es privada según la RFC 1918?
++ 172.20.5.1
+- 172.32.5.1
+- 192.169.1.1
+- 11.0.0.1
+= Rangos privados: 10.0.0.0/8, 172.16.0.0/12 (172.16 a 172.31) y 192.168.0.0/16.
+
+? Una dirección IPv6 tiene una longitud de:
++ 128 bits
+- 64 bits
+- 32 bits
+- 48 bits
+
+? El protocolo que asigna automáticamente la configuración IP a los equipos es:
++ DHCP
+- DNS
+- NAT
+- SNMP
+
+? El protocolo que usan las órdenes ping y traceroute es:
++ ICMP
+- UDP sobre el puerto 7
+- ARP
+- IGMP
+
+? La topología en la que todos los equipos se conectan a un nodo central es:
++ En estrella
+- En bus
+- En anillo
+- En malla
+
+? En el modelo TCP/IP, la capa de aplicación agrupa las capas OSI de:
++ Aplicación, presentación y sesión
+- Aplicación y transporte
+- Sesión y transporte
+- Aplicación únicamente
+
+? El estándar IEEE de las redes Ethernet cableadas es el:
++ 802.3
+- 802.11
+- 802.1Q
+- 802.15
+
+? La traducción de direcciones privadas a una pública para salir a Internet se llama:
++ NAT
+- DNS
+- VLAN
+- ARP

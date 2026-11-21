@@ -1,0 +1,126 @@
+? El aprendizaje automático supervisado se caracteriza por:
++ Entrenar el modelo con datos etiquetados, de los que se conoce la respuesta correcta
+- Entrenar sin etiquetas, buscando grupos
+- Aprender por recompensas y castigos
+- No necesitar datos
+
+? Agrupar pacientes con características parecidas sin categorías previas es una tarea de aprendizaje:
++ No supervisado (clustering)
+- Supervisado de clasificación
+- Por refuerzo
+- De regresión
+
+? El aprendizaje por refuerzo consiste en:
++ Un agente que aprende a actuar en un entorno maximizando una recompensa
+- Clasificar datos etiquetados
+- Reducir la dimensión de los datos
+- Traducir textos
+
+? El aprendizaje profundo (deep learning) usa:
++ Redes neuronales artificiales con muchas capas
+- Árboles de decisión de un nivel
+- Reglas escritas a mano exclusivamente
+- Solo regresión lineal
+
+? Los modelos de lenguaje grandes (LLM) como GPT o Claude se basan en la arquitectura:
++ Transformer, con mecanismos de atención
+- Perceptrón simple
+- Árbol de decisión
+- Red de Hopfield
+
+? El sobreajuste (overfitting) de un modelo significa que:
++ Funciona muy bien con los datos de entrenamiento pero generaliza mal con datos nuevos
+- Funciona mal con los datos de entrenamiento
+- Tiene pocos parámetros
+- Está demasiado regularizado
+
+? El procesamiento del lenguaje natural (PLN) se ocupa de:
++ Que las máquinas entiendan y generen lenguaje humano
+- Procesar imágenes médicas
+- Controlar robots industriales
+- Comprimir vídeo
+
+? La técnica RAG (generación aumentada por recuperación) consiste en:
++ Dar al modelo de lenguaje documentos recuperados de una fuente propia para que base en ellos su respuesta
+- Entrenar el modelo desde cero
+- Reducir el tamaño del modelo
+- Traducir el modelo a otro idioma
+
+? Las «alucinaciones» de un modelo de IA generativa son:
++ Respuestas plausibles pero falsas o inventadas
+- Errores de conexión
+- Imágenes de baja resolución
+- Fallos del hardware
+
+? El Reglamento europeo de Inteligencia Artificial es el:
++ Reglamento (UE) 2024/1689
+- Reglamento (UE) 2016/679
+- Reglamento (UE) 910/2014
+- Reglamento (UE) 2022/2065
+
+? El Reglamento de IA clasifica como de «riesgo inaceptable», y por tanto prohibidos, sistemas como:
++ La puntuación social de personas por las autoridades
+- Los filtros antispam
+- Los videojuegos con IA
+- Los traductores automáticos
+
+? Según el Reglamento de IA, un sistema de IA que se usa como componente de seguridad de un producto sanitario es, en general, de:
++ Alto riesgo
+- Riesgo mínimo
+- Riesgo inaceptable
+- Riesgo de transparencia únicamente
+
+? Una aplicación habitual de la IA en la imagen médica es:
++ Detectar y priorizar hallazgos en radiografías, mamografías o TC para apoyar al radiólogo
+- Sustituir la firma del radiólogo
+- Gestionar las nóminas del hospital
+- Asignar direcciones IP
+
+? La métrica que indica qué proporción de los casos positivos reales detecta un modelo es la:
++ Sensibilidad (recall)
+- Precisión
+- Especificidad
+- Exactitud
+= La especificidad mide los negativos reales correctamente identificados; la precisión, los positivos predichos que eran ciertos.
+
+? En la Administración, los asistentes virtuales (chatbots) y la clasificación automática de documentos son ejemplos de:
++ Aplicaciones de IA en la administración electrónica
+- Sistemas prohibidos por el Reglamento de IA
+- Herramientas de virtualización
+- Protocolos de red
+
+? En un modelo de clasificación, la matriz de confusión muestra:
++ Los verdaderos y falsos positivos y negativos
+- La arquitectura de la red neuronal
+- El tiempo de entrenamiento
+- La cantidad de datos
+
+? Una red neuronal convolucional (CNN) es especialmente adecuada para:
++ Imágenes
+- Hojas de cálculo
+- Ficheros de texto plano sin estructura
+- Bases de datos relacionales
+
+? La IA generativa se caracteriza por:
++ Crear contenido nuevo (texto, imágenes, audio, código) a partir de lo aprendido
+- Solo clasificar datos
+- Solo controlar robots
+- No usar datos de entrenamiento
+
+? El «prompt» en un modelo de lenguaje es:
++ La instrucción o texto de entrada que se le da al modelo
+- El resultado que genera el modelo
+- El conjunto de datos de entrenamiento
+- El hardware donde se ejecuta
+
+? Según el Reglamento europeo de IA, quien interactúa con un chatbot debe:
++ Ser informado de que está interactuando con un sistema de IA (obligación de transparencia)
+- Firmar un contrato
+- Ser mayor de 25 años
+- Pagar una tasa
+
+? El sesgo en un modelo de IA puede provenir de:
++ Datos de entrenamiento no representativos o con prejuicios
+- Usar demasiada memoria
+- Tener una pantalla pequeña
+- La velocidad de internet

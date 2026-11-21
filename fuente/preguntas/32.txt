@@ -1,0 +1,96 @@
+? El Conjunto Mínimo Básico de Datos (CMBD) registra:
++ Cada episodio de hospitalización con sus datos administrativos y sus diagnósticos y procedimientos codificados
+- Solo las consultas de atención primaria
+- Los datos económicos de cada hospital
+- Las nóminas del personal
+
+? La clasificación con la que se codifican en España los diagnósticos y procedimientos del CMBD es:
++ CIE-10-ES
+- CIAP-2
+- SNOMED CT
+- ATC
+
+? Los GRD (Grupos Relacionados por el Diagnóstico) clasifican a los pacientes hospitalizados según:
++ Su consumo de recursos, y sirven para la financiación y la comparación entre hospitales
+- Su lugar de residencia
+- Su edad exclusivamente
+- El médico que los atiende
+
+? La red estatal que coordina la vigilancia epidemiológica en España es:
++ La RENAVE (Red Nacional de Vigilancia Epidemiológica)
+- La red SARA
+- El CCN-CERT
+- El SNOMED
+
+? Las enfermedades de declaración obligatoria (EDO) son aquellas que:
++ Los médicos deben notificar a salud pública para tomar medidas de control
+- Solo se registran en la historia clínica
+- Dan derecho a una baja laboral automática
+- Se declaran solo en los hospitales privados
+
+? La clasificación propia de la atención primaria para codificar motivos de consulta y problemas de salud es:
++ CIAP-2
+- CIE-10-ES Procedimientos
+- LOINC
+- DICOM
+
+? La historia clínica electrónica única de la atención primaria del SERMAS es:
++ AP-Madrid
+- Diraya
+- OMI-AP en todos los centros
+- Abucasis
+
+? El índice maestro de pacientes (MPI) sirve para:
++ Identificar de forma única a cada paciente y relacionar sus distintos identificadores en todos los sistemas
+- Guardar las imágenes médicas
+- Calcular los GRD
+- Gestionar los turnos del personal
+
+? El sistema de información de laboratorio se conoce por las siglas:
++ LIS
+- RIS
+- PACS
+- HIS
+
+? El sistema de triaje de urgencias muy extendido que clasifica a los pacientes en niveles de prioridad por colores es el:
++ Sistema Manchester
+- Sistema Glasgow
+- Sistema APACHE
+- Sistema Apgar
+
+? El sistema de información poblacional de la Comunidad de Madrid se llama:
++ CIBELES
+- CIPA
+- BDPP-SNS
+- MUP
+= El CIPA es el código de identificación personal autonómico que figura en la tarjeta sanitaria; la BDPP-SNS es la base de datos de población protegida estatal; el MUP, el módulo único de prescripción.
+
+? La tarjeta sanitaria individual se regula, con carácter básico, en el:
++ Real Decreto 183/2004, de 30 de enero
+- Real Decreto 1718/2010, de 17 de diciembre
+- Real Decreto 1093/2010, de 3 de septiembre
+- Real Decreto 311/2022, de 3 de mayo
+
+? El código personal invariable que identifica a cada persona en todo el Sistema Nacional de Salud es:
++ El código SNS (CIP-SNS) de la Base de Datos de Población Protegida
+- El número de historia clínica de cada hospital
+- El número de la Seguridad Social exclusivamente
+- El CIPA de cada Comunidad
+
+? En la contabilidad presupuestaria pública, las fases de la ejecución del gasto son:
++ Autorización, disposición o compromiso, reconocimiento de la obligación y propuesta de pago (A, D, O, P)
+- Pedido, factura, pago y archivo
+- Presupuesto, contrato, recepción y cierre
+- Iniciación, instrucción, resolución y ejecución
+
+? La reposición del material en las unidades mediante dos compartimentos y la lectura de un código al vaciarse uno es el sistema de:
++ Doble cajón (kanban)
+- Inventario anual
+- Almacén central único
+- Compra directa por el médico
+
+? Los mensajes HL7 v2 de tipo ADT sirven para comunicar:
++ Admisiones, altas y traslados de pacientes y cambios en sus datos demográficos
+- Resultados de laboratorio
+- Imágenes radiológicas
+- Facturas a proveedores

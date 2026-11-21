@@ -1,0 +1,96 @@
+? La arquitectura ANSI/SPARC distingue tres niveles de abstracción:
++ Externo, conceptual e interno
+- Físico, lógico y de red
+- Presentación, negocio y datos
+- Usuario, programador y administrador
+
+? La independencia física de los datos permite:
++ Cambiar el almacenamiento sin modificar el esquema conceptual
+- Cambiar el esquema conceptual sin modificar las vistas
+- Cambiar de SGBD sin migrar datos
+- Que los usuarios no vean los datos
+
+? En el modelo entidad-relación, una entidad débil es:
++ La que depende de otra para existir o identificarse
+- La que no tiene atributos
+- La que tiene cardinalidad uno a uno
+- La que solo tiene clave foránea
+
+? En el modelo relacional, una clave foránea (ajena) es:
++ Un atributo que referencia la clave primaria de otra relación, garantizando la integridad referencial
+- La clave primaria de la propia tabla
+- Un índice único
+- Un campo cifrado
+
+? Una relación está en primera forma normal (1FN) si:
++ Todos sus atributos son atómicos, sin grupos repetitivos
+- No tiene dependencias transitivas
+- Todo atributo no clave depende de toda la clave
+- Todo determinante es clave candidata
+
+? Una tabla en 2FN pasa a 3FN cuando se eliminan:
++ Las dependencias transitivas de atributos no clave respecto de la clave
+- Los grupos repetitivos
+- Las dependencias parciales de la clave
+- Las dependencias multivaluadas
+
+? La forma normal de Boyce-Codd (FNBC) exige que:
++ Todo determinante sea clave candidata
+- No haya valores nulos
+- Todas las claves sean simples
+- No haya claves foráneas
+
+? Las sentencias SQL CREATE, ALTER y DROP pertenecen al:
++ DDL (lenguaje de definición de datos)
+- DML (lenguaje de manipulación de datos)
+- DCL (lenguaje de control de datos)
+- TCL (control de transacciones)
+
+? Las sentencias SQL GRANT y REVOKE pertenecen al:
++ DCL (lenguaje de control de datos)
+- DDL
+- DML
+- TCL
+
+? ¿Qué cláusula de SQL filtra los grupos obtenidos con GROUP BY?
++ HAVING
+- WHERE
+- ORDER BY
+- DISTINCT
+
+? Un LEFT JOIN entre A y B devuelve:
++ Todas las filas de A y las coincidentes de B, con nulos donde no hay coincidencia
+- Solo las filas que coinciden en A y B
+- Todas las filas de B y las coincidentes de A
+- El producto cartesiano de A y B
+
+? La sentencia SQL que deshace los cambios de la transacción en curso es:
++ ROLLBACK
+- COMMIT
+- SAVEPOINT
+- TRUNCATE
+
+? ¿Qué devuelve SELECT COUNT(*) FROM pacientes?
++ El número de filas de la tabla pacientes
+- La suma de todos los valores numéricos
+- El número de columnas
+- Solo las filas sin valores nulos en ninguna columna
+
+? La integridad de entidad exige que:
++ La clave primaria no tome valores nulos y sea única
+- Las claves foráneas apunten a filas existentes
+- Los datos estén cifrados
+- No haya índices duplicados
+
+? Una vista en SQL es:
++ Una tabla virtual definida por una consulta, que no almacena datos propios (salvo las materializadas)
+- Una copia física de una tabla
+- Un índice compuesto
+- Un usuario de solo lectura
+
+? La operación del álgebra relacional que selecciona filas que cumplen una condición es:
++ La selección (σ)
+- La proyección (π)
+- El producto cartesiano (×)
+- La unión (∪)
+= La proyección elige columnas.

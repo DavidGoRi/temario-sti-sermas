@@ -1,0 +1,153 @@
+? Según el art. 14.2 de la Ley 39/2015, NO está obligado a relacionarse electrónicamente con las Administraciones:
++ Una persona física que no ejerce una actividad profesional con colegiación obligatoria
+- Una persona jurídica
+- Un empleado público en los trámites que realice por su condición de empleado público
+- Una entidad sin personalidad jurídica
+@ BOE-A-2015-10565#14
+
+? El plazo máximo para resolver y notificar, cuando las normas reguladoras del procedimiento no lo fijan, es de:
++ Tres meses
+- Seis meses
+- Un mes
+- Dos meses
+@ BOE-A-2015-10565#21
+
+? El plazo máximo para resolver que fije la norma reguladora del procedimiento no podrá exceder de seis meses, salvo que:
++ Una norma con rango de ley establezca uno mayor o así venga previsto en el Derecho de la Unión Europea
+- Lo acuerde el órgano competente por resolución motivada
+- El interesado lo solicite
+- Se trate de un procedimiento iniciado de oficio
+@ BOE-A-2015-10565#21
+
+? En los procedimientos iniciados a solicitud del interesado, el silencio administrativo es, como regla general:
++ Estimatorio
+- Desestimatorio
+- Estimatorio solo si lo prevé una norma con rango de ley
+- Inexistente: la Administración siempre debe resolver
+@ BOE-A-2015-10565#24
+
+? ¿En cuál de estos procedimientos iniciados a solicitud del interesado el silencio es desestimatorio?
++ Los de responsabilidad patrimonial de las Administraciones públicas
+- Los de concesión de licencias de actividad no reguladas especialmente
+- Los de solicitud de un permiso sin efectos sobre el dominio público
+- Todos los iniciados por personas físicas
+@ BOE-A-2015-10565#24
+
+? En los procedimientos iniciados de oficio de los que pudieran derivarse efectos desfavorables (sancionadores o de gravamen), el vencimiento del plazo sin resolución produce:
++ La caducidad
+- La estimación por silencio
+- La desestimación por silencio
+- La prescripción de la infracción
+@ BOE-A-2015-10565#25
+
+? Cuando los plazos se señalan por días, salvo que una ley o el Derecho de la UE dispongan otra cosa, se entiende que son:
++ Hábiles, excluyendo los sábados, los domingos y los festivos
+- Naturales
+- Hábiles, excluyendo solo los domingos y los festivos
+- Hábiles, excluyendo los sábados y los domingos, pero no los festivos
+@ BOE-A-2015-10565#30
+
+? Si el plazo se fija en meses o años y en el mes de vencimiento no hay día equivalente al inicial, el plazo expira:
++ El último día del mes
+- El primer día del mes siguiente
+- El día hábil siguiente al último del mes
+- Tantos días después como falten
+@ BOE-A-2015-10565#30
+
+? La ampliación de los plazos establecidos, según el art. 32 de la Ley 39/2015:
++ No puede exceder de la mitad de los mismos
+- Puede duplicar el plazo inicial
+- No puede exceder de un mes
+- Es siempre recurrible
+@ BOE-A-2015-10565#32
+
+? Contra el acuerdo que declare la aplicación de la tramitación de urgencia:
++ No cabe recurso alguno, sin perjuicio del que proceda contra la resolución que ponga fin al procedimiento
+- Cabe recurso de alzada
+- Cabe recurso potestativo de reposición
+- Cabe recurso extraordinario de revisión
+@ BOE-A-2015-10565#33
+
+? Toda notificación debe cursarse dentro del plazo de:
++ Diez días a partir de la fecha en que el acto haya sido dictado
+- Cinco días desde que se dicta el acto
+- Quince días desde que se dicta el acto
+- Un mes desde que se dicta el acto
+@ BOE-A-2015-10565#40
+
+? Una notificación por medios electrónicos se entiende rechazada cuando:
++ Transcurren diez días naturales desde su puesta a disposición sin que se acceda a su contenido
+- Transcurren diez días hábiles sin que se acceda a su contenido
+- Transcurren quince días naturales sin acceder
+- El interesado no responde en cinco días
+@ BOE-A-2015-10565#43
+
+? Es causa de NULIDAD de pleno derecho del acto administrativo:
++ Haber sido dictado por un órgano manifiestamente incompetente por razón de la materia o del territorio
+- La desviación de poder
+- El defecto de forma que no produce indefensión
+- La realización de actuaciones fuera del tiempo establecido
+@ BOE-A-2015-10565#47
+
+? Los actos que incurren en cualquier infracción del ordenamiento jurídico, incluso la desviación de poder, son:
++ Anulables
+- Nulos de pleno derecho
+- Inexistentes
+- Válidos si no se recurren en plazo
+@ BOE-A-2015-10565#48
+
+? Los actos anulables pueden ser:
++ Convalidados por la Administración subsanando los vicios de que adolezcan
+- Convalidados solo si son nulos
+- Revisados de oficio en cualquier momento
+- Declarados nulos por el propio interesado
+@ BOE-A-2015-10565#52
+
+? Si una solicitud no reúne los requisitos exigidos, se requiere al interesado para que la subsane en un plazo de:
++ Diez días, con indicación de que, si no lo hace, se le tendrá por desistido
+- Cinco días, con indicación de que se archivará
+- Quince días, con indicación de que se le tendrá por desistido
+- Un mes, con indicación de que caducará el procedimiento
+@ BOE-A-2015-10565#68
+
+? En el trámite de audiencia, los interesados disponen de un plazo para alegar y presentar documentos:
++ No inferior a diez días ni superior a quince
+- No inferior a cinco días ni superior a diez
+- De veinte días como mínimo
+- De un mes
+@ BOE-A-2015-10565#82
+
+? El plazo para formular alegaciones en el trámite de información pública no podrá ser inferior a:
++ Veinte días
+- Diez días
+- Quince días
+- Un mes
+@ BOE-A-2015-10565#83
+
+? Salvo disposición expresa en contrario, los informes serán:
++ Facultativos y no vinculantes, emitidos en el plazo de diez días
+- Preceptivos y vinculantes, emitidos en quince días
+- Preceptivos y no vinculantes, emitidos en un mes
+- Facultativos y vinculantes, emitidos en diez días
+@ BOE-A-2015-10565#80
+
+? El plazo para interponer el recurso de alzada contra un acto expreso es de:
++ Un mes
+- Dos meses
+- Tres meses
+- Quince días
+@ BOE-A-2015-10565#122
+
+? El plazo máximo para dictar y notificar la resolución del recurso de alzada es de:
++ Tres meses; pasado ese plazo sin resolución, se entiende desestimado (salvo alzada contra silencio)
+- Un mes; pasado ese plazo, se entiende estimado
+- Seis meses; pasado ese plazo, caduca
+- Tres meses; pasado ese plazo, se entiende estimado
+@ BOE-A-2015-10565#122
+
+? El recurso potestativo de reposición se interpone ante:
++ El mismo órgano que dictó el acto, que pone fin a la vía administrativa
+- El órgano superior jerárquico del que dictó el acto
+- El Tribunal Superior de Justicia
+- El Defensor del Pueblo
+@ BOE-A-2015-10565#123

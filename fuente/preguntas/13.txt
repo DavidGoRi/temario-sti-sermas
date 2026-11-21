@@ -1,0 +1,107 @@
+? ¿Cuántos bytes tiene un kibibyte (KiB)?
++ 1024
+- 1000
+- 1048
+- 512
+= Los prefijos binarios (KiB, MiB, GiB) son potencias de 2; los del Sistema Internacional (kB, MB, GB) son potencias de 10.
+
+? El número binario 1011 equivale en decimal a:
++ 11
+- 13
+- 9
+- 10
+= 1·8 + 0·4 + 1·2 + 1·1 = 11.
+
+? El número hexadecimal FF equivale en decimal a:
++ 255
+- 256
+- 240
+- 15
+
+? En complemento a 2 con 8 bits, el rango de valores representables es:
++ De −128 a 127
+- De −127 a 127
+- De 0 a 255
+- De −255 a 255
+
+? ¿Qué codificación de caracteres usa entre 1 y 4 bytes por carácter y es compatible con ASCII?
++ UTF-8
+- UTF-16
+- ISO-8859-1
+- EBCDIC
+
+? El estándar IEEE 754 define:
++ La representación de números en coma flotante
+- La codificación de caracteres Unicode
+- El formato de las tramas Ethernet
+- La representación en BCD
+= Precisión simple de 32 bits (1 de signo, 8 de exponente, 23 de mantisa) y doble de 64 bits.
+
+? Una pila (stack) es una estructura de datos de tipo:
++ LIFO: el último en entrar es el primero en salir
+- FIFO: el primero en entrar es el primero en salir
+- De acceso aleatorio por índice
+- Ordenada por prioridad
+= La cola (queue) es FIFO; la cola de prioridad saca el elemento de mayor prioridad.
+
+? En un árbol binario de búsqueda equilibrado con n elementos, la búsqueda tiene una complejidad de:
++ O(log n)
+- O(n)
+- O(1)
+- O(n log n)
+
+? ¿Qué estructura de datos permite, en promedio, buscar, insertar y borrar en tiempo constante O(1)?
++ La tabla hash
+- La lista enlazada ordenada
+- El árbol binario de búsqueda
+- El montículo (heap)
+
+? Un tipo abstracto de datos (TAD) se define por:
++ Sus valores y las operaciones permitidas sobre ellos, con independencia de su implementación
+- Su representación física en memoria
+- El lenguaje de programación en el que se implementa
+- El tamaño en bytes de sus elementos
+
+? El algoritmo de ordenación quicksort tiene una complejidad media y en el peor caso de:
++ O(n log n) de media y O(n²) en el peor caso
+- O(n) de media y O(n log n) en el peor caso
+- O(n²) en ambos casos
+- O(log n) de media y O(n) en el peor caso
+
+? ¿Qué algoritmo de ordenación garantiza O(n log n) en el peor caso y es estable?
++ Mergesort (ordenación por mezcla)
+- Quicksort
+- Ordenación por selección
+- Heapsort
+= Heapsort también es O(n log n) en el peor caso, pero no es estable.
+
+? Un grafo en el que las aristas tienen sentido se denomina:
++ Grafo dirigido (digrafo)
+- Grafo completo
+- Grafo conexo
+- Árbol
+
+? En una organización de ficheros secuencial:
++ Los registros se almacenan uno tras otro y para llegar a uno hay que recorrer los anteriores
+- Se accede directamente a cualquier registro por su dirección calculada
+- Se usa un índice para acceder a los registros
+- Los registros se organizan en un árbol B
+= En la organización directa o aleatoria la dirección se calcula con una función hash; en la indexada, se usa un índice.
+
+? La búsqueda binaria (dicotómica) requiere que el vector esté:
++ Ordenado
+- Desordenado
+- Implementado como lista enlazada
+- Almacenado en disco
+
+? ¿Qué forma de representar un número usa 4 bits por cada dígito decimal?
++ BCD (decimal codificado en binario)
+- Complemento a 1
+- Coma flotante
+- Gray
+
+? Un algoritmo debe cumplir, entre otras, la propiedad de ser:
++ Finito: terminar tras un número finito de pasos
+- Recursivo
+- Paralelo
+- Orientado a objetos

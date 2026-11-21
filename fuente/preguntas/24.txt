@@ -1,0 +1,116 @@
+? En ITIL, el objetivo principal de la gestión de incidencias es:
++ Restaurar el servicio normal lo antes posible, minimizando el impacto
+- Encontrar la causa raíz de los fallos
+- Planificar los cambios
+- Gestionar las licencias
+
+? La prioridad de una incidencia se calcula normalmente a partir de:
++ El impacto y la urgencia
+- La antigüedad del usuario
+- El número de llamadas
+- El coste del equipo
+
+? La práctica de ITIL que busca la causa raíz de las incidencias para evitar que se repitan es la gestión de:
++ Problemas
+- Cambios
+- Niveles de servicio
+- Configuración
+
+? Un error conocido (known error) en ITIL es:
++ Un problema con causa raíz diagnosticada y, a menudo, con solución temporal documentada
+- Una incidencia cerrada
+- Un cambio fallido
+- Un usuario que repite incidencias
+
+? El acuerdo entre el proveedor de TI y el cliente que fija los niveles de servicio comprometidos es el:
++ SLA (acuerdo de nivel de servicio)
+- OLA (acuerdo de nivel operativo)
+- UC (contrato de soporte)
+- CMDB
+= El OLA es entre áreas internas del proveedor; el contrato de soporte (UC), con un proveedor externo.
+
+? La CMDB es:
++ La base de datos de gestión de la configuración, con los elementos de configuración (CI) y sus relaciones
+- La base de datos de incidencias
+- El catálogo de servicios para usuarios
+- La base de conocimiento
+
+? Una petición de servicio (por ejemplo, el alta de un usuario o un ratón nuevo) se distingue de una incidencia en que:
++ No es una interrupción del servicio, sino una solicitud estándar
+- Es más urgente
+- Siempre la atiende el tercer nivel
+- No se registra
+
+? El escalado funcional de una incidencia consiste en:
++ Pasarla a un grupo de soporte con más conocimientos técnicos
+- Informar a la dirección
+- Cerrarla sin resolver
+- Cambiar su prioridad
+
+? Herramientas ITSM habituales son:
++ ServiceNow, Jira Service Management, GLPI u OTRS/Znuny
+- Wireshark y nmap
+- Photoshop y GIMP
+- MySQL y PostgreSQL
+
+? El mantenimiento que se realiza para evitar averías antes de que ocurran es el:
++ Preventivo
+- Correctivo
+- Adaptativo
+- Evolutivo
+
+? GLPI es:
++ Una herramienta libre de gestión de activos e incidencias (ITSM)
+- Un sistema operativo
+- Un antivirus
+- Un gestor de bases de datos
+
+? Un sistema de gestión de flujos de trabajo (workflow) permite:
++ Automatizar procesos, encaminando tareas y documentos entre personas según reglas
+- Monitorizar la temperatura del CPD
+- Cifrar el correo
+- Gestionar la red Wi-Fi
+
+? El indicador que mide el porcentaje de incidencias resueltas en el primer contacto es:
++ FCR (First Contact Resolution)
+- MTBF
+- RPO
+- CVSS
+= El MTBF es el tiempo medio entre fallos y el MTTR, el tiempo medio de reparación.
+
+? ITIL 4 organiza la gestión de servicios en torno a:
++ El sistema de valor del servicio y 34 prácticas de gestión
+- Cinco libros del ciclo de vida exclusivamente
+- Un único proceso de incidencias
+- La norma ISO 27001
+
+? El catálogo de servicios de TI contiene:
++ La descripción de los servicios que TI ofrece a los usuarios, con sus condiciones
+- El inventario de cables de red
+- Las nóminas del departamento
+- Los manuales de los equipos
+
+? La gestión de cambios de ITIL tiene como objetivo:
++ Maximizar los cambios exitosos evaluando riesgos y autorizándolos de forma controlada
+- Impedir cualquier cambio
+- Registrar las incidencias
+- Gestionar las compras
+
+? El comité que evalúa y aprueba los cambios importantes se conoce tradicionalmente como:
++ CAB (Change Advisory Board)
+- SLA
+- CMDB
+- SOC
+
+? Una solución temporal que restaura el servicio sin eliminar la causa raíz es un:
++ Workaround (solución provisional)
+- Error conocido
+- Cambio normal
+- Acuerdo de nivel operativo
+
+? El MTTR (Mean Time To Repair) mide:
++ El tiempo medio que se tarda en reparar o restaurar un servicio tras un fallo
+- El tiempo medio entre fallos
+- El coste medio de una avería
+- El número medio de incidencias por día
+= El MTBF mide el tiempo medio entre fallos.

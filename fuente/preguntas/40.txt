@@ -1,0 +1,121 @@
+? Para firmar digitalmente un documento se usa:
++ La clave privada del firmante, y se verifica con su clave pública
+- La clave pública del firmante
+- La clave pública del destinatario
+- Una clave simétrica compartida
+
+? La firma digital NO garantiza por sí misma:
++ La confidencialidad del documento
+- La integridad
+- La autenticidad del firmante
+- El no repudio
+
+? El formato estándar de los certificados digitales es:
++ X.509 v3
+- PKCS#10
+- X.400
+- ISO 7816
+
+? ¿Qué contiene un certificado digital?
++ La clave pública del titular, sus datos, el emisor, la validez y la firma de la CA
+- La clave privada del titular
+- La contraseña del titular
+- Solo el nombre del titular
+
+? El formato de fichero que contiene el certificado junto con la clave privada, protegido con contraseña, es:
++ PKCS#12 (.p12 o .pfx)
+- PEM con solo el certificado
+- PKCS#10
+- PKCS#7 (.p7b)
+
+? La solicitud de certificado que se envía a la CA tiene el formato:
++ PKCS#10 (CSR)
+- PKCS#12
+- X.509
+- DER
+
+? La ventaja principal de una tarjeta criptográfica es que:
++ La clave privada se genera y se usa dentro del chip, sin salir nunca de él
+- No necesita PIN
+- Permite copiar la clave privada fácilmente
+- No necesita certificado
+
+? El DNI electrónico lo regula el:
++ Real Decreto 1553/2005
+- Real Decreto 1718/2010
+- Real Decreto 311/2022
+- Real Decreto 183/2004
+
+? El DNI electrónico contiene:
++ Un certificado de autenticación y otro de firma
+- Solo un certificado de cifrado
+- Un certificado de sello de órgano
+- Un certificado de servidor TLS
+
+? Según eIDAS, la firma electrónica que tiene efecto jurídico equivalente a la firma manuscrita es la:
++ Cualificada
+- Avanzada
+- Simple
+- Biométrica
+
+? La firma electrónica cualificada es una firma avanzada que además:
++ Se crea con un dispositivo cualificado de creación de firma y se basa en un certificado cualificado
+- Se hace con usuario y contraseña
+- Incluye una imagen de la firma manuscrita
+- No necesita certificado
+
+? El formato de firma electrónica para documentos XML, usado por ejemplo en Facturae, es:
++ XAdES
+- PAdES
+- CAdES
+- JAdES
+
+? El nivel de firma que añade sellos de tiempo de archivo periódicos para conservarla a largo plazo es el:
++ B-LTA
+- B-B
+- B-T
+- B-LT
+
+? La autoridad que verifica la identidad de los solicitantes de certificados en una PKI es la:
++ Autoridad de Registro (RA)
+- Autoridad de Certificación raíz
+- Autoridad de Sellado de Tiempo
+- Autoridad de Validación
+
+? El certificado de la CA raíz:
++ Está autofirmado y se mantiene fuera de línea
+- Lo firma la CA subordinada
+- Lo firma el usuario
+- Se renueva cada día
+
+? El protocolo que permite consultar en línea el estado de revocación de un certificado concreto es:
++ OCSP
+- CRL
+- LDAP
+- SCEP
+
+? Una CRL es:
++ Una lista firmada y publicada periódicamente con los números de serie de los certificados revocados
+- Una consulta en tiempo real del estado de un certificado
+- Una solicitud de certificado
+- El certificado de la CA raíz
+
+? La aplicación del Gobierno para firmar documentos desde el equipo o desde las sedes electrónicas es:
++ AutoFirma
+- VALIDe
+- Port@firmas
+- TS@
+= VALIDe valida firmas y certificados; Port@firmas gestiona flujos de firma y TS@ emite sellos de tiempo.
+
+? El servicio que acredita que un dato existía en un momento concreto es el:
++ Sello de tiempo, emitido por una Autoridad de Sellado de Tiempo (RFC 3161)
+- Código seguro de verificación
+- Certificado de sede
+- OCSP
+
+? La Ley española de servicios electrónicos de confianza es la:
++ Ley 6/2020, de 11 de noviembre
+- Ley 59/2003, de firma electrónica
+- Ley 11/2007, de acceso electrónico
+- Ley 34/2002
+@ BOE-A-2020-14046#1

@@ -1,0 +1,113 @@
+? WDM (multiplexación por división de longitud de onda) consiste en:
++ Transmitir varias señales por una misma fibra usando longitudes de onda (colores) distintas
+- Dividir el tiempo de transmisión en ranuras
+- Repartir la señal por varias fibras
+- Comprimir los datos antes de enviarlos
+
+? La variante de WDM con canales muy próximos, que permite decenas de canales por fibra para largas distancias, es:
++ DWDM
+- CWDM
+- TDM
+- OFDM
+
+? En MPLS, los paquetes se reenvían según:
++ Etiquetas asignadas a la entrada de la red, sin consultar la dirección IP en cada salto
+- La dirección MAC de destino
+- El puerto TCP de destino
+- El nombre DNS
+
+? El router de entrada o salida de una red MPLS, que pone o quita las etiquetas, se denomina:
++ LER (Label Edge Router)
+- LSR (Label Switch Router)
+- ABR
+- DR
+
+? El camino que sigue un paquete etiquetado a través de la red MPLS se llama:
++ LSP (Label Switched Path)
+- VLAN
+- VPN SSL
+- SPF
+
+? MPLS permite ofrecer a las empresas:
++ VPN de nivel 3 (L3VPN), calidad de servicio e ingeniería de tráfico
+- Solo acceso a Internet
+- Redes Wi-Fi
+- Telefonía analógica
+
+? SD-WAN es:
++ Una WAN definida por software que gestiona de forma centralizada varios enlaces (MPLS, Internet, 4G/5G) y elige el mejor según la aplicación
+- Un tipo de fibra óptica
+- Un protocolo de enrutamiento de Internet
+- Una red local inalámbrica
+
+? La red SARA es:
++ La red de comunicaciones que interconecta las Administraciones públicas españolas entre sí y con la UE
+- Una red privada del Ministerio de Defensa exclusivamente
+- La red Wi-Fi de los hospitales
+- Un servicio de correo electrónico
+
+? La red SARA conecta las Administraciones españolas con las instituciones europeas a través de:
++ TESTA (sTESTA / TESTA-ng)
+- RedIRIS
+- GÉANT
+- Internet sin cifrado
+
+? La gestión de la red SARA corresponde a:
++ La Secretaría General de Administración Digital
+- El Centro Criptológico Nacional
+- La Comisión Nacional de los Mercados y la Competencia
+- Cada Comunidad Autónoma por separado
+
+? ¿Qué ventaja aporta SD-WAN frente a una WAN tradicional?
++ Gestión centralizada, uso de enlaces más baratos combinados y aprovisionamiento rápido de sedes
+- No necesita ningún enlace
+- Elimina la necesidad de cortafuegos
+- Solo funciona con fibra oscura
+
+? La red de investigación académica española, distinta de SARA, es:
++ RedIRIS
+- TESTA
+- Red 112
+- RENFE
+
+? Una diferencia entre CWDM y DWDM es que CWDM:
++ Usa menos canales y más separados, con equipos más baratos, para distancias cortas y medias
+- Usa más canales y más próximos
+- No usa fibra óptica
+- Solo funciona en redes inalámbricas
+
+? La conmutación de etiquetas MPLS se sitúa entre las capas:
++ 2 y 3 (a menudo se la llama «capa 2,5»)
+- 4 y 5
+- 6 y 7
+- 1 y 2
+
+? El enlace de fibra óptica alquilado sin equipos del operador, que ilumina el cliente con sus propios equipos, se denomina:
++ Fibra oscura
+- Fibra multimodo
+- ADSL
+- Frame Relay
+
+? En MPLS, los routers del núcleo que conmutan los paquetes según su etiqueta se llaman:
++ LSR (Label Switch Router)
+- LER (Label Edge Router)
+- ABR
+- NAT
+
+? La clase de servicio en MPLS permite:
++ Dar prioridad a ciertos tráficos, como la voz y el vídeo, frente a otros
+- Cifrar el tráfico
+- Asignar direcciones IP
+- Eliminar las etiquetas
+
+? Una ventaja de SD-WAN es la selección dinámica del camino, que consiste en:
++ Enviar cada aplicación por el enlace que mejor cumple sus requisitos de latencia, pérdida y ancho de banda en cada momento
+- Usar siempre el mismo enlace
+- Apagar los enlaces de respaldo
+- Repartir el tráfico al azar
+
+? La red SARA ofrece a las Administraciones, entre otros servicios:
++ Acceso a servicios comunes y a la conexión con la Unión Europea mediante una red segura
+- Internet gratuito para los ciudadanos
+- Telefonía móvil a los funcionarios
+- Televisión digital

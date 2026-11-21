@@ -1,0 +1,122 @@
+? La debilidad de un activo que puede ser aprovechada por una amenaza es una:
++ Vulnerabilidad
+- Salvaguarda
+- Amenaza
+- Impacto
+
+? El riesgo se estima habitualmente como:
++ Probabilidad × impacto
+- Amenaza + vulnerabilidad
+- Impacto − salvaguarda
+- Número de activos × coste
+
+? Un ataque de interceptación (escuchas, sniffing) afecta principalmente a la:
++ Confidencialidad
+- Disponibilidad
+- Integridad
+- Trazabilidad
+
+? Una autenticación con contraseña y código de una app del móvil es multifactor porque:
++ Combina algo que sabes con algo que tienes
+- Usa dos contraseñas
+- Usa dos dispositivos con la misma contraseña
+- Usa cifrado
+
+? El modelo de control de acceso que asigna los permisos según el puesto o función del usuario es:
++ RBAC
+- DAC
+- MAC
+- ABAC exclusivamente por ubicación
+
+? Los agentes extintores adecuados para un CPD, porque no dañan los equipos, son:
++ Los gases inertes o agentes limpios (IG-55, IG-541, FM-200, Novec 1230)
+- El agua pulverizada
+- La espuma
+- El polvo químico ABC
+
+? En criptografía simétrica, con n usuarios que se comunican entre sí hacen falta:
++ n·(n−1)/2 claves
+- 2n claves
+- n claves
+- Una sola clave
+
+? Para enviar un mensaje confidencial con criptografía asimétrica se cifra con:
++ La clave pública del destinatario
+- La clave privada del emisor
+- La clave pública del emisor
+- La clave privada del destinatario
+
+? ¿Cuál de estas funciones hash se considera segura hoy?
++ SHA-256
+- MD5
+- SHA-1
+- CRC32
+
+? Las contraseñas deben almacenarse:
++ Con una función de derivación lenta y con sal, como bcrypt o Argon2
+- Cifradas con una clave guardada junto a ellas
+- En claro en una tabla protegida
+- Con MD5 sin sal
+
+? El protocolo que se debe usar en lugar de Telnet para administrar servidores en remoto es:
++ SSH
+- FTP
+- SNMPv1
+- HTTP
+
+? IPsec, en su protocolo ESP, proporciona:
++ Confidencialidad (cifrado) e integridad
+- Solo integridad sin cifrado
+- Solo compresión
+- Solo autenticación del usuario
+
+? DNSSEC:
++ Firma las respuestas DNS para garantizar su autenticidad e integridad, pero no las cifra
+- Cifra todas las consultas DNS
+- Sustituye al protocolo DNS
+- Solo funciona con IPv6
+
+? Según la LSSI, el envío de publicidad por correo electrónico sin consentimiento previo:
++ Está prohibido, salvo relación contractual previa y productos o servicios similares
+- Está permitido siempre que se pueda darse de baja
+- Está permitido para las empresas españolas
+- Solo está prohibido por SMS
+@ BOE-A-2002-13758#21
+
+? Según la LSSI, ¿qué cookies no necesitan consentimiento?
++ Las técnicas estrictamente necesarias para prestar el servicio solicitado
+- Las de publicidad comportamental
+- Las analíticas de terceros
+- Todas, si se informa en la política de privacidad
+@ BOE-A-2002-13758#22
+
+? Las infracciones muy graves de la LSSI se sancionan con multa de:
++ 150.001 a 600.000 euros
+- 30.001 a 150.000 euros
+- Hasta 30.000 euros
+- Hasta 20 millones de euros
+@ BOE-A-2002-13758#39
+
+? El malware que se propaga solo por la red explotando vulnerabilidades, sin intervención del usuario, es un:
++ Gusano
+- Virus
+- Troyano
+- Adware
+
+? El fraude que suplanta a un directivo o proveedor para que se ordene una transferencia es:
++ El fraude del CEO (BEC)
+- El pharming
+- El smishing
+- El shoulder surfing
+
+? El ataque de denegación de servicio que deja conexiones a medio abrir para agotar la tabla del servidor es el:
++ SYN flood
+- Slowloris
+- Amplificación DNS
+- Ping de la muerte
+
+? Un ataque DDoS de amplificación consiste en:
++ Enviar pequeñas peticiones con la IP de la víctima falsificada a servidores abiertos (DNS, NTP) que responden con mucho más tráfico hacia ella
+- Infectar el equipo de la víctima con un gusano
+- Robar las contraseñas de la víctima
+- Cifrar los datos de la víctima

@@ -1,0 +1,127 @@
+? Un compilador:
++ Traduce todo el programa fuente a código objeto antes de ejecutarlo
+- Traduce y ejecuta el programa instrucción a instrucción
+- Solo comprueba la sintaxis
+- Convierte código máquina en código fuente
+= El intérprete traduce y ejecuta línea a línea.
+
+? Java se compila a:
++ Bytecode, que ejecuta la máquina virtual de Java (JVM)
+- Código máquina nativo de cada procesador
+- JavaScript
+- Código C intermedio
+
+? ¿Cuál de estos lenguajes es de tipado dinámico?
++ Python
+- Java
+- C
+- Rust
+
+? El lenguaje de programación que se ejecuta de forma nativa en los navegadores es:
++ JavaScript
+- Java
+- C#
+- PHP
+
+? C# y los lenguajes de .NET se compilan a:
++ Un lenguaje intermedio (CIL) que ejecuta el entorno CLR
+- Bytecode de la JVM
+- Código máquina directamente en todos los casos
+- JavaScript
+
+? Un lenguaje de bajo nivel, cercano al código máquina, es:
++ El ensamblador
+- Python
+- SQL
+- HTML
+
+? SQL es un lenguaje:
++ Declarativo: se indica qué datos se quieren, no cómo obtenerlos
+- Imperativo de propósito general
+- De marcado
+- Funcional puro
+
+? HTML es un lenguaje:
++ De marcado
+- De programación imperativa
+- De consulta
+- Funcional
+
+? La fase del compilador que divide el código fuente en componentes léxicos (tokens) es el análisis:
++ Léxico
+- Sintáctico
+- Semántico
+- De optimización
+
+? El recolector de basura (garbage collector) se encarga de:
++ Liberar automáticamente la memoria de los objetos que ya no se usan
+- Borrar los ficheros temporales del disco
+- Eliminar el código muerto al compilar
+- Limpiar la caché del navegador
+
+? Un entorno de desarrollo integrado (IDE) reúne:
++ Editor, compilador o intérprete, depurador y otras herramientas en una sola aplicación
+- Solo un editor de texto
+- Un servidor de aplicaciones
+- Un sistema de control de versiones exclusivamente
+
+? Git es:
++ Un sistema de control de versiones distribuido
+- Un compilador de C
+- Un servidor web
+- Un gestor de bases de datos
+
+? La herramienta que gestiona las dependencias y la construcción de proyectos Java es, por ejemplo:
++ Maven o Gradle
+- npm
+- pip
+- Composer
+= npm es de JavaScript, pip de Python y Composer de PHP.
+
+? Un lenguaje fuertemente tipado:
++ No permite operaciones entre tipos incompatibles sin conversión explícita
+- No tiene tipos
+- Solo tiene un tipo de datos
+- Siempre es interpretado
+
+? Kotlin es un lenguaje habitual para desarrollar aplicaciones de:
++ Android
+- Mainframe
+- Bases de datos
+- Hojas de estilo
+
+? Python es un lenguaje:
++ Interpretado, de tipado dinámico y multiparadigma
+- Compilado a código máquina y de tipado estático
+- Solo orientado a objetos
+- De marcado
+
+? ¿Qué lenguaje se usa habitualmente para el análisis de datos estadísticos?
++ R
+- COBOL
+- Ensamblador
+- HTML
+
+? COBOL es un lenguaje:
++ Orientado a la gestión empresarial, todavía presente en sistemas heredados (mainframes)
+- Moderno para aplicaciones móviles
+- De consulta de bases de datos
+- Para la programación de navegadores
+
+? TypeScript es:
++ Un superconjunto de JavaScript que añade tipado estático y se transpila a JavaScript
+- Un lenguaje de bases de datos
+- Una versión antigua de Java
+- Un lenguaje de marcado
+
+? La compilación «justo a tiempo» (JIT) consiste en:
++ Compilar el código intermedio a código máquina durante la ejecución
+- Compilar todo antes de ejecutar
+- Interpretar línea a línea sin compilar
+- Compilar solo de noche
+
+? Un depurador (debugger) permite:
++ Ejecutar el programa paso a paso, poner puntos de interrupción e inspeccionar variables
+- Compilar más rápido
+- Cifrar el código fuente
+- Publicar la aplicación

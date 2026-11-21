@@ -1,0 +1,118 @@
+? El RGPD es aplicable desde el:
++ 25 de mayo de 2018
+- 25 de mayo de 2016
+- 7 de diciembre de 2018
+- 1 de enero de 2019
+@ RGPD#99
+
+? Según el RGPD, los datos seudonimizados:
++ Siguen siendo datos personales
+- Dejan de ser datos personales
+- Son datos anónimos
+- Solo son personales si se publican
+@ RGPD#4
+
+? Quien determina los fines y los medios del tratamiento es el:
++ Responsable del tratamiento
+- Encargado del tratamiento
+- Delegado de protección de datos
+- Destinatario
+@ RGPD#4
+
+? ¿Cuál de estos es un principio relativo al tratamiento del art. 5 del RGPD?
++ La minimización de datos
+- La maximización del valor de los datos
+- La conservación indefinida
+- La libre cesión a terceros
+@ RGPD#5
+
+? La base jurídica habitual de la asistencia sanitaria pública para tratar datos personales es:
++ El cumplimiento de una misión de interés público y la asistencia sanitaria (arts. 6.1.e y 9.2.h)
+- El consentimiento del paciente
+- El interés legítimo del hospital
+- La ejecución de un contrato privado
+@ RGPD#9
+
+? En España, los menores pueden consentir el tratamiento de sus datos a partir de los:
++ 14 años
+- 13 años
+- 16 años
+- 18 años
+@ BOE-A-2018-16673#7
+
+? Los datos relativos a la salud son, según el RGPD:
++ Una categoría especial de datos cuyo tratamiento está prohibido salvo excepciones
+- Datos ordinarios
+- Datos públicos
+- Datos excluidos del RGPD
+@ RGPD#9
+
+? El plazo para responder a una solicitud de ejercicio de derechos es de:
++ Un mes, prorrogable dos meses más si es necesario
+- Diez días hábiles
+- Tres meses, sin prórroga
+- Quince días naturales
+@ RGPD#12
+
+? El derecho a la portabilidad de los datos NO se aplica a los tratamientos basados en:
++ El cumplimiento de una misión de interés público o el ejercicio de poderes públicos
+- El consentimiento
+- Un contrato
+- Tratamientos automatizados
+@ RGPD#20
+
+? Una violación de la seguridad de los datos personales debe notificarse a la autoridad de control:
++ Sin dilación indebida y, si es posible, en las 72 horas siguientes a tener constancia de ella, salvo que sea improbable que suponga un riesgo
+- En el plazo de un mes
+- Solo si afecta a más de mil personas
+- En 24 horas en todo caso
+@ RGPD#33
+
+? La evaluación de impacto relativa a la protección de datos es obligatoria, entre otros casos, cuando hay:
++ Un tratamiento a gran escala de categorías especiales de datos, como los de salud de un hospital
+- Cualquier tratamiento de datos de contacto
+- Un tratamiento de datos de menos de cien personas
+- Un tratamiento con consentimiento
+@ RGPD#35
+
+? Deben designar delegado de protección de datos, entre otros:
++ Las autoridades y organismos públicos y los centros sanitarios obligados a mantener historias clínicas
+- Solo las empresas de más de 250 trabajadores
+- Solo las entidades que transfieren datos fuera de la UE
+- Ninguna entidad pública
+@ BOE-A-2018-16673#34
+
+? El delegado de protección de datos:
++ No recibe instrucciones en el ejercicio de sus funciones y no puede ser destituido ni sancionado por desempeñarlas
+- Es el responsable del tratamiento
+- Debe ser siempre funcionario de carrera
+- Decide los fines del tratamiento
+@ RGPD#38
+
+? Las multas más altas del RGPD alcanzan:
++ 20 millones de euros o el 4 % del volumen de negocio anual mundial, la cuantía mayor
+- 10 millones de euros o el 2 % del volumen de negocio
+- 600.000 euros
+- 1 millón de euros
+@ RGPD#83
+
+? Cuando la infractora es una Administración pública, la AEPD:
++ Dicta una resolución de apercibimiento con las medidas correctoras, sin multa
+- Impone la multa máxima
+- Archiva siempre el procedimiento
+- Traslada el caso al Tribunal Constitucional
+@ BOE-A-2018-16673#77
+
+? Las infracciones muy graves de la LOPDGDD prescriben a los:
++ Tres años
+- Dos años
+- Un año
+- Cinco años
+@ BOE-A-2018-16673#72
+
+? El derecho a la desconexión digital en el ámbito laboral se reconoce en el:
++ Art. 88 de la LOPDGDD
+- Art. 17 del RGPD
+- Art. 18.4 de la Constitución
+- Art. 20 de la LSSI
+@ BOE-A-2018-16673#88

@@ -1,0 +1,114 @@
+? El virus que cambia su código en cada infección para evitar la detección por firmas es:
++ Polimórfico
+- De macro
+- De sector de arranque
+- Residente
+
+? La detección de malware que analiza el código buscando instrucciones sospechosas sin necesitar la firma exacta es la:
++ Heurística
+- Por firmas
+- Por listas blancas
+- Por reputación de dominios
+
+? Un EDR se diferencia de un antivirus tradicional en que:
++ Monitoriza continuamente la actividad del equipo, registra la telemetría y permite investigar y responder (por ejemplo, aislar el equipo)
+- Solo usa firmas
+- No necesita agente en el equipo
+- Solo analiza el correo
+
+? XDR amplía el EDR al:
++ Correlacionar datos de equipos, red, correo, identidades y nube
+- Eliminar la consola central
+- Analizar solo el disco
+- Sustituir el cortafuegos
+
+? El malware que se ejecuta en memoria usando herramientas legítimas como PowerShell, sin ficheros en disco, se denomina:
++ Fileless (sin fichero), con técnicas «living off the land»
+- Bomba lógica
+- Adware
+- Ransomware de doble extorsión
+
+? Una APT se caracteriza por ser:
++ Un ataque dirigido, sofisticado y prolongado, a menudo patrocinado por un Estado
+- Un virus masivo sin objetivo concreto
+- Un ataque de denegación de servicio de corta duración
+- Un correo de spam
+
+? La primera fase de la Cyber Kill Chain es:
++ El reconocimiento
+- La entrega
+- La explotación
+- El mando y control
+
+? El marco que cataloga las tácticas, técnicas y procedimientos de los atacantes es:
++ MITRE ATT&CK
+- OWASP Top 10
+- ITIL
+- COBIT
+
+? Un SIEM:
++ Recopila, normaliza y correlaciona los eventos de los sistemas para detectar ataques
+- Cifra los discos duros
+- Asigna direcciones IP
+- Gestiona las nóminas
+
+? Un cortafuegos de nueva generación (NGFW) añade a los cortafuegos tradicionales:
++ Identificación de aplicaciones con inspección profunda, control por usuario, IPS e inspección de TLS
+- Solo filtrado por puerto
+- Solo NAT
+- Funciones de servidor de correo
+
+? Un WAF protege:
++ Las aplicaciones web frente a ataques de capa 7 como la inyección SQL o el XSS
+- La red Wi-Fi
+- Los discos frente al ransomware
+- Las impresoras de red
+
+? Un IPS, a diferencia de un IDS:
++ Se sitúa en línea y bloquea el tráfico malicioso
+- Solo alerta, sin bloquear
+- Recibe una copia del tráfico por un puerto espejo
+- No usa firmas
+
+? El error de un IDS más peligroso es:
++ El falso negativo: un ataque real que no se detecta
+- El falso positivo
+- El verdadero positivo
+- El verdadero negativo
+
+? La puntuación de 0 a 10 que mide la gravedad de una vulnerabilidad es:
++ CVSS
+- CVE
+- CWE
+- KEV
+= El CVE es el identificador de la vulnerabilidad y el CWE, el tipo de debilidad.
+
+? Una prueba de intrusión se diferencia de un escaneo de vulnerabilidades en que:
++ Explota las vulnerabilidades y las encadena para demostrar el impacto real
+- Es siempre automática
+- No necesita autorización
+- Solo revisa la documentación
+
+? En una prueba de intrusión de caja negra, el auditor:
++ No tiene información previa del sistema
+- Tiene toda la información, incluido el código
+- Tiene información parcial, como credenciales de usuario
+- Trabaja dentro del equipo de desarrollo
+
+? El ejercicio que simula un adversario real durante un tiempo prolongado, sin avisar al equipo de defensa, es:
++ Un red team
+- Un blue team
+- Un escaneo de puertos
+- Una auditoría de cumplimiento
+
+? Antes de iniciar una prueba de intrusión es imprescindible:
++ Contar con autorización por escrito y un alcance definido
+- Desactivar el antivirus de toda la red
+- Avisar a todos los usuarios
+- Publicar los resultados previstos
+
+? Herramientas del CCN-CERT para detectar APT y para gestionar ciberincidentes son, respectivamente:
++ CARMEN y LUCIA
+- PILAR e INES
+- GLPI y OTRS
+- Nessus y OpenVAS

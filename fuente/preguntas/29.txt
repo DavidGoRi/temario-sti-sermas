@@ -1,0 +1,89 @@
+? Las pruebas de caja negra se basan en:
++ La especificación funcional: entradas y salidas esperadas, sin conocer el código
+- La estructura interna del código
+- La revisión del diseño de la base de datos
+- La carga del servidor
+
+? ¿Qué técnica es de caja negra?
++ Las particiones de equivalencia y el análisis de valores límite
+- La cobertura de sentencias
+- La cobertura de decisiones
+- El camino básico de McCabe
+
+? La complejidad ciclomática de McCabe sirve para:
++ Calcular el número de caminos independientes y, por tanto, el mínimo de casos de prueba de caja blanca
+- Medir el tiempo de respuesta
+- Contar las líneas de código
+- Medir la usabilidad
+
+? Para un campo que admite valores de 1 a 100, el análisis de valores límite propone probar, entre otros:
++ 0, 1, 100 y 101
+- Solo 50
+- 1 y 100 exclusivamente
+- Cualquier valor negativo
+
+? Las pruebas que comprueban que un cambio no ha estropeado lo que ya funcionaba son las de:
++ Regresión
+- Aceptación
+- Carga
+- Humo exclusivamente
+
+? Las pruebas de aceptación las realiza o valida principalmente:
++ El usuario o cliente, para comprobar que el sistema cumple sus requisitos
+- El programador de cada módulo
+- El administrador de sistemas
+- El auditor de seguridad
+
+? Las pruebas unitarias verifican:
++ El funcionamiento de cada componente o módulo de forma aislada
+- El sistema completo en producción
+- La interacción del usuario con la interfaz
+- El rendimiento con miles de usuarios
+
+? Las pruebas que miden el comportamiento del sistema con la carga prevista y por encima de ella son las de:
++ Rendimiento (carga y estrés)
+- Unitarias
+- Integración
+- Usabilidad
+
+? JUnit es:
++ Un marco de pruebas unitarias para Java
+- Un servidor de integración continua
+- Una herramienta de pruebas de carga
+- Un gestor de incidencias
+
+? Selenium se usa para:
++ Automatizar pruebas de aplicaciones web en el navegador
+- Hacer pruebas unitarias de C
+- Analizar vulnerabilidades de red
+- Gestionar la base de datos
+
+? Apache JMeter se utiliza para:
++ Pruebas de carga y rendimiento
+- Pruebas unitarias de Python
+- Control de versiones
+- Diseño de interfaces
+
+? El desarrollo dirigido por pruebas (TDD) consiste en:
++ Escribir primero la prueba que falla, después el código mínimo que la supera y finalmente refactorizar
+- Probar solo al final del proyecto
+- Que el usuario escriba las pruebas
+- No hacer pruebas unitarias
+
+? La herramienta que analiza el código sin ejecutarlo para detectar errores, vulnerabilidades y deuda técnica es, por ejemplo:
++ SonarQube (análisis estático)
+- JMeter
+- Selenium
+- Wireshark
+
+? El estándar internacional sobre pruebas de software es:
++ ISO/IEC/IEEE 29119
+- ISO 9001
+- ISO/IEC 27001
+- ISO 14001
+
+? Las pruebas alfa y beta se diferencian en que:
++ Las alfa se hacen con usuarios en el entorno del desarrollador y las beta, en el entorno real de los usuarios
+- Las alfa son automáticas y las beta manuales
+- Las alfa son de seguridad y las beta de carga
+- No hay diferencia

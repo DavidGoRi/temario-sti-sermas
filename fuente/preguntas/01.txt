@@ -1,0 +1,166 @@
+? Según el art. 1.1 de la Constitución, son valores superiores del ordenamiento jurídico:
++ La libertad, la justicia, la igualdad y el pluralismo político
+- La libertad, la seguridad, la igualdad y la solidaridad
+- La justicia, la dignidad, la igualdad y la democracia
+- La libertad, la justicia, la legalidad y la seguridad jurídica
+= Son cuatro y solo cuatro. La seguridad jurídica y la legalidad son principios del art. 9.3, no valores superiores.
+@ BOE-A-1978-31229#1
+
+? La forma política del Estado español, según el art. 1.3 de la Constitución, es:
++ La Monarquía parlamentaria
+- La Monarquía constitucional
+- El Estado social y democrático de Derecho
+- La Monarquía hereditaria
+= El Estado social y democrático de Derecho es la definición del art. 1.1; la forma política es la Monarquía parlamentaria (art. 1.3).
+@ BOE-A-1978-31229#1
+
+? ¿En qué artículo de la Constitución se regula la bandera de España?
++ Art. 4
+- Art. 3
+- Art. 5
+- Art. 2
+= Art. 3: lenguas; art. 4: bandera (roja, amarilla y roja, con la franja amarilla de doble anchura); art. 5: capital.
+@ BOE-A-1978-31229#4
+
+? Respecto del castellano, el art. 3 de la Constitución establece que todos los españoles:
++ Tienen el deber de conocerlo y el derecho a usarlo
+- Tienen el derecho de conocerlo y el deber de usarlo
+- Tienen el deber de conocerlo y de usarlo en sus relaciones con la Administración
+- Solo tienen el derecho a usarlo
+= «Todos los españoles tienen el deber de conocerla y el derecho a usarla» (art. 3.1).
+@ BOE-A-1978-31229#3
+
+? Los partidos políticos se regulan en el Título Preliminar, en concreto en el:
++ Art. 6
+- Art. 7
+- Art. 22
+- Art. 9
+= Art. 6: partidos políticos; art. 7: sindicatos y asociaciones empresariales; art. 22: derecho de asociación en general.
+@ BOE-A-1978-31229#6
+
+? Según el art. 9.3 de la Constitución, la Constitución garantiza la irretroactividad de:
++ Las disposiciones sancionadoras no favorables o restrictivas de derechos individuales
+- Todas las leyes
+- Las disposiciones sancionadoras, sean o no favorables
+- Las normas tributarias
+= Lo que no puede ser retroactivo es lo sancionador desfavorable o restrictivo de derechos individuales; lo favorable sí puede serlo.
+@ BOE-A-1978-31229#9
+
+? ¿Cuál de estos NO es uno de los principios que garantiza el art. 9.3 de la Constitución?
++ La eficacia
+- La interdicción de la arbitrariedad de los poderes públicos
+- La publicidad de las normas
+- La jerarquía normativa
+= El art. 9.3 garantiza legalidad, jerarquía normativa, publicidad de las normas, irretroactividad, seguridad jurídica, responsabilidad e interdicción de la arbitrariedad. La eficacia es un principio de la Administración (art. 103.1).
+@ BOE-A-1978-31229#9
+
+? Las normas relativas a los derechos fundamentales y libertades se interpretan, según el art. 10.2 de la Constitución, de conformidad con:
++ La Declaración Universal de Derechos Humanos y los tratados y acuerdos internacionales ratificados por España
+- La jurisprudencia del Tribunal Supremo
+- El Derecho de la Unión Europea exclusivamente
+- Las leyes orgánicas que los desarrollen
+@ BOE-A-1978-31229#10
+
+? La mayoría de edad de los españoles se fija en la Constitución en:
++ 18 años (art. 12)
+- 16 años (art. 12)
+- 18 años (art. 14)
+- No la fija la Constitución, sino el Código Civil
+@ BOE-A-1978-31229#12
+
+? La detención preventiva, según el art. 17.2 de la Constitución, no podrá durar más del tiempo estrictamente necesario y, en todo caso, como máximo:
++ 72 horas
+- 24 horas
+- 48 horas
+- 5 días
+= Pasadas 72 horas el detenido debe ser puesto en libertad o a disposición judicial.
+@ BOE-A-1978-31229#17
+
+? El procedimiento para la inmediata puesta a disposición judicial de toda persona detenida ilegalmente se denomina:
++ Habeas corpus
+- Habeas data
+- Recurso de amparo
+- Procedimiento preferente y sumario
+@ BOE-A-1978-31229#17
+
+? ¿Qué artículo de la Constitución dispone que la ley limitará el uso de la informática para garantizar el honor y la intimidad?
++ Art. 18.4
+- Art. 20.4
+- Art. 18.3
+- Art. 105.b
+= El art. 18.3 garantiza el secreto de las comunicaciones; el 18.4 es la base del derecho a la protección de datos.
+@ BOE-A-1978-31229#18
+
+? Para ejercer el derecho de reunión pacífica y sin armas (art. 21):
++ No se necesita autorización previa; para las reuniones en lugares de tránsito público y manifestaciones se da comunicación previa a la autoridad
+- Se necesita autorización previa de la Delegación del Gobierno
+- Se necesita comunicación previa en todos los casos
+- Se necesita autorización previa solo para las manifestaciones
+@ BOE-A-1978-31229#21
+
+? Las asociaciones, según el art. 22 de la Constitución, deberán inscribirse en un registro:
++ A los solos efectos de publicidad
+- Para adquirir personalidad jurídica
+- Solo si reciben fondos públicos
+- Con carácter constitutivo
+@ BOE-A-1978-31229#22
+
+? El derecho a la protección de la salud se reconoce en el art. 43, que está situado en:
++ El capítulo III del Título I: principios rectores de la política social y económica
+- La sección 1.ª del capítulo II del Título I
+- La sección 2.ª del capítulo II del Título I
+- El Título Preliminar
+= Por estar en el capítulo III, no es un derecho fundamental: solo se puede alegar ante los tribunales según las leyes que lo desarrollen (art. 53.3).
+@ BOE-A-1978-31229#43
+
+? ¿Qué derechos pueden recabarse ante el Tribunal Constitucional mediante el recurso de amparo?
++ Los del art. 14, los de la sección 1.ª del capítulo II y la objeción de conciencia del art. 30
+- Todos los del Título I
+- Todos los del capítulo II del Título I
+- Solo los de la sección 1.ª del capítulo II
+@ BOE-A-1978-31229#53
+
+? Los derechos y libertades del capítulo II del Título I solo pueden regularse por ley que, en todo caso, deberá respetar:
++ Su contenido esencial
+- La jurisprudencia constitucional
+- Los tratados internacionales
+- El principio de reserva de ley orgánica
+@ BOE-A-1978-31229#53
+
+? El Defensor del Pueblo es, según el art. 54 de la Constitución:
++ Alto comisionado de las Cortes Generales designado por estas para la defensa de los derechos del Título I
+- Un órgano del Gobierno para la defensa de los consumidores
+- Un órgano del Consejo General del Poder Judicial
+- Alto comisionado del Rey para la defensa de los derechos fundamentales
+= Se regula por ley orgánica (LO 3/1981) y supervisa la actividad de la Administración.
+@ BOE-A-1978-31229#54
+
+? ¿En qué estados excepcionales pueden suspenderse los derechos del art. 55.1 de la Constitución?
++ En los estados de excepción y de sitio
+- En los estados de alarma, excepción y sitio
+- Solo en el estado de sitio
+- En el estado de alarma y en el de excepción
+= El estado de alarma no permite suspender derechos (solo limitarlos). La suspensión del art. 55.1 es para excepción y sitio; la suspensión individual del art. 55.2, para investigaciones de bandas armadas o terroristas.
+@ BOE-A-1978-31229#55
+
+? El estado de alarma lo declara:
++ El Gobierno, por decreto acordado en Consejo de Ministros, por un plazo máximo de quince días, dando cuenta al Congreso
+- El Congreso por mayoría absoluta, a propuesta del Gobierno
+- El Gobierno, con autorización previa del Congreso, por un máximo de treinta días
+- El Rey, a propuesta del Presidente del Gobierno
+= La prórroga requiere autorización del Congreso. El de excepción necesita autorización previa del Congreso (máximo 30 días) y el de sitio, mayoría absoluta del Congreso.
+@ BOE-A-1978-31229#116
+
+? La revisión total de la Constitución o la reforma del Título Preliminar exige (art. 168):
++ Aprobación por dos tercios de cada Cámara, disolución de las Cortes, ratificación por las nuevas Cámaras y referéndum
+- Aprobación por tres quintos de cada Cámara y referéndum si lo piden una décima parte de los miembros de cualquiera de ellas
+- Mayoría absoluta del Congreso y referéndum
+- Dos tercios del Congreso y mayoría absoluta del Senado
+= Lo de los tres quintos es el procedimiento ordinario del art. 167.
+@ BOE-A-1978-31229#168
+
+? ¿Cuántos artículos tiene la Constitución Española?
++ 169
+- 159
+- 196
+- 179

@@ -1,0 +1,119 @@
+? JDBC es:
++ La API estándar de Java para acceder a bases de datos relacionales
+- Un SGBD de Oracle
+- Un lenguaje de consulta NoSQL
+- Un servidor de aplicaciones
+
+? ODBC es:
++ Una interfaz estándar e independiente del lenguaje para conectar aplicaciones con bases de datos
+- Un formato de copia de seguridad
+- Un protocolo de red
+- Un tipo de índice
+
+? Un ORM (mapeo objeto-relacional) como Hibernate o Entity Framework sirve para:
++ Traducir automáticamente entre los objetos de la aplicación y las tablas de la base de datos
+- Optimizar los índices
+- Cifrar las conexiones
+- Hacer copias de seguridad
+
+? JPA es:
++ La especificación estándar de persistencia de Java, que implementan ORM como Hibernate
+- Un lenguaje de consultas de MongoDB
+- Un motor de búsqueda
+- Un servidor web
+
+? La forma más eficaz de evitar la inyección SQL al acceder a la base de datos es:
++ Usar consultas parametrizadas (sentencias preparadas)
+- Concatenar los valores en la consulta
+- Ocultar los mensajes de error
+- Usar solo procedimientos almacenados sin parámetros
+
+? Un índice en una base de datos:
++ Acelera las búsquedas a costa de espacio y de más trabajo en las inserciones y modificaciones
+- Acelera las inserciones y ralentiza las búsquedas
+- No ocupa espacio
+- Sustituye a la clave primaria
+
+? La estructura de índice más habitual en los SGBD relacionales es:
++ El árbol B+ (B-tree)
+- La lista enlazada
+- La pila
+- El grafo dirigido
+
+? Elasticsearch y Apache Solr son motores de búsqueda basados en:
++ Índices invertidos construidos con Lucene
+- Árboles B+ relacionales
+- Tablas hash en memoria
+- Ficheros secuenciales
+
+? Un índice invertido relaciona:
++ Cada término con la lista de documentos que lo contienen
+- Cada documento con su autor
+- Cada tabla con sus claves foráneas
+- Cada usuario con sus permisos
+
+? La medida de relevancia clásica en recuperación de información que pondera la frecuencia de un término en un documento frente a su frecuencia en toda la colección es:
++ TF-IDF
+- CRC
+- SHA-256
+- BLEU
+
+? XPath y XQuery son lenguajes para:
++ Consultar y navegar por documentos XML
+- Consultar bases de datos de grafos
+- Definir hojas de estilo
+- Cifrar documentos
+
+? GraphQL es:
++ Un lenguaje de consulta para API en el que el cliente pide exactamente los datos que necesita
+- Un SGBD de grafos
+- Un formato de imagen
+- Un protocolo de red de capa 3
+
+? Un procedimiento almacenado es:
++ Un conjunto de sentencias guardado y ejecutado dentro del SGBD
+- Una copia de seguridad programada
+- Un índice especial
+- Un usuario de la base de datos
+
+? Un pool de conexiones sirve para:
++ Reutilizar conexiones abiertas a la base de datos y evitar el coste de abrir una nueva en cada petición
+- Cifrar las conexiones
+- Limitar el número de usuarios de la aplicación
+- Replicar la base de datos
+
+? En SQL, la cláusula que ordena los resultados es:
++ ORDER BY
+- GROUP BY
+- SORT
+- HAVING
+
+? Un cursor en una base de datos permite:
++ Recorrer fila a fila el resultado de una consulta
+- Cifrar la base de datos
+- Crear índices automáticamente
+- Hacer copias de seguridad
+
+? El patrón DAO (Data Access Object) sirve para:
++ Separar la lógica de acceso a los datos del resto de la aplicación
+- Diseñar la interfaz de usuario
+- Cifrar las contraseñas
+- Comprimir las respuestas HTTP
+
+? Una consulta OLAP típica:
++ Analiza grandes volúmenes de datos históricos agregados por dimensiones (cubos)
+- Inserta una sola fila de una transacción
+- Borra registros antiguos
+- Gestiona usuarios
+
+? El lenguaje de consulta de MongoDB se basa en:
++ Documentos JSON con operadores como $match o $group
+- SQL estándar
+- XPath
+- LDAP
+
+? El análisis de una consulta para elegir el mejor plan de ejecución lo hace:
++ El optimizador de consultas del SGBD
+- El usuario a mano siempre
+- El sistema operativo
+- El servidor web

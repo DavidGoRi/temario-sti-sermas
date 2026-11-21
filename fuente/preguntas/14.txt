@@ -1,0 +1,99 @@
+? En la arquitectura de Von Neumann:
++ Los datos y las instrucciones comparten la misma memoria y el mismo bus
+- Los datos y las instrucciones usan memorias y buses separados
+- No existe unidad de control
+- La memoria está dentro de la ALU
+= La arquitectura Harvard separa la memoria de instrucciones y la de datos.
+
+? La unidad de la CPU que interpreta las instrucciones y coordina al resto de componentes es:
++ La unidad de control
+- La unidad aritmético-lógica (ALU)
+- La memoria caché
+- El bus de datos
+
+? El registro que contiene la dirección de la siguiente instrucción a ejecutar es:
++ El contador de programa (PC)
+- El registro de instrucción (IR)
+- El acumulador
+- El registro de estado
+
+? ¿Qué tipo de memoria es volátil?
++ La RAM
+- La ROM
+- La memoria flash
+- El disco duro
+
+? La memoria caché se sitúa:
++ Entre la CPU y la memoria principal, para acelerar el acceso a los datos más usados
+- Entre la memoria principal y el disco
+- Dentro del disco duro exclusivamente
+- En la tarjeta gráfica únicamente
+
+? El firmware que sustituye a la BIOS en los equipos modernos, y que permite el arranque seguro (Secure Boot), es:
++ UEFI
+- CMOS
+- POST
+- GRUB
+
+? ¿Qué nivel RAID ofrece espejo (copia idéntica) en dos discos?
++ RAID 1
+- RAID 0
+- RAID 5
+- RAID 10 sin espejo
+= RAID 0 reparte sin redundancia; RAID 5 usa paridad distribuida (mínimo 3 discos); RAID 6 doble paridad; RAID 10 combina espejo y reparto.
+
+? En un RAID 5 de cuatro discos de 2 TB, la capacidad útil es de:
++ 6 TB
+- 8 TB
+- 4 TB
+- 2 TB
+= Se pierde el equivalente a un disco para la paridad: (4 − 1) × 2 TB.
+
+? La interfaz de los SSD que se conecta directamente al bus PCI Express es:
++ NVMe
+- SATA
+- IDE
+- SCSI paralelo
+
+? El conector USB-C:
++ Es reversible y admite distintos protocolos, como USB 3.x, USB4, Thunderbolt y DisplayPort
+- Solo admite USB 2.0
+- Es exclusivo de los teléfonos móviles
+- No permite alimentación eléctrica
+
+? ¿Qué periférico es de entrada y salida a la vez?
++ Una pantalla táctil
+- Un ratón
+- Una impresora
+- Un escáner
+
+? El mecanismo por el que un periférico avisa a la CPU de que necesita atención es:
++ La interrupción
+- El sondeo (polling)
+- El DMA
+- La paginación
+
+? El acceso directo a memoria (DMA) permite:
++ Transferir datos entre un periférico y la memoria sin que la CPU intervenga en cada byte
+- Ejecutar dos programas a la vez en la CPU
+- Aumentar la frecuencia de la CPU
+- Proteger la memoria de accesos no autorizados
+
+? Un procesador de arquitectura RISC se caracteriza por:
++ Un juego de instrucciones reducido y sencillo, de duración similar
+- Un juego de instrucciones muy amplio y complejo
+- No tener registros
+- No usar segmentación (pipeline)
+= Ejemplos RISC: ARM y RISC-V; la arquitectura x86 es CISC.
+
+? El componente que convierte la corriente alterna en continua para el equipo es:
++ La fuente de alimentación
+- La placa base
+- El SAI
+- El chipset
+
+? El chip TPM de un ordenador sirve para:
++ Guardar claves criptográficas de forma segura, por ejemplo para BitLocker y el arranque medido
+- Acelerar los gráficos 3D
+- Gestionar la memoria virtual
+- Controlar la velocidad de los ventiladores

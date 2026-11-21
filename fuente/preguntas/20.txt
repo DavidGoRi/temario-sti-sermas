@@ -1,0 +1,127 @@
+? Las propiedades ACID de las transacciones son:
++ Atomicidad, consistencia, aislamiento y durabilidad
+- Autenticación, confidencialidad, integridad y disponibilidad
+- Atomicidad, concurrencia, independencia y distribución
+- Accesibilidad, consistencia, integridad y durabilidad
+
+? La propiedad que garantiza que una transacción se ejecuta entera o no se ejecuta en absoluto es la:
++ Atomicidad
+- Durabilidad
+- Consistencia
+- Aislamiento
+
+? El componente del SGBD que almacena la información sobre la estructura de la base de datos (tablas, columnas, índices, usuarios) es:
++ El diccionario de datos (catálogo)
+- El registro de transacciones
+- El optimizador de consultas
+- La caché de búferes
+
+? El fichero que registra todos los cambios para poder deshacer o rehacer transacciones tras un fallo es:
++ El registro de transacciones (log, redo/undo)
+- El diccionario de datos
+- El fichero de índices
+- El fichero de configuración
+
+? El teorema CAP dice que un sistema distribuido no puede garantizar a la vez:
++ Consistencia, disponibilidad y tolerancia a particiones
+- Atomicidad, consistencia y aislamiento
+- Concurrencia, accesibilidad y persistencia
+- Cifrado, autenticación y privacidad
+
+? Las bases de datos NoSQL de tipo documental almacenan la información como:
++ Documentos JSON o BSON, como MongoDB
+- Tablas relacionales normalizadas
+- Pares clave-valor exclusivamente en memoria
+- Nodos y aristas
+= Tipos NoSQL: clave-valor (Redis), documentales (MongoDB), columnares (Cassandra) y de grafos (Neo4j).
+
+? Neo4j es una base de datos:
++ De grafos
+- Documental
+- Clave-valor
+- Relacional
+
+? ¿Cuál de estos SGBD es relacional y de código abierto?
++ PostgreSQL
+- Oracle Database
+- MongoDB
+- Microsoft SQL Server
+
+? La copia de seguridad que guarda solo lo cambiado desde la última copia completa es la:
++ Diferencial
+- Incremental
+- Completa
+- Espejo
+= La incremental guarda lo cambiado desde la última copia de cualquier tipo.
+
+? El nivel de aislamiento más estricto de SQL, que evita lecturas sucias, no repetibles y fantasma, es:
++ SERIALIZABLE
+- READ COMMITTED
+- READ UNCOMMITTED
+- REPEATABLE READ
+
+? El administrador de bases de datos (DBA) se encarga, entre otras tareas, de:
++ La seguridad, las copias, el rendimiento y la integridad de las bases de datos
+- Programar las aplicaciones de los usuarios
+- Gestionar el cableado de la red
+- Atender las incidencias de ofimática
+
+? En una arquitectura cliente-servidor de tres capas, la base de datos se sitúa en la capa de:
++ Datos
+- Presentación
+- Lógica de negocio
+- Transporte
+
+? Un data warehouse (almacén de datos) se orienta a:
++ El análisis y la toma de decisiones con datos históricos integrados (OLAP)
+- Las transacciones diarias en tiempo real (OLTP)
+- Guardar ficheros de ofimática
+- La mensajería instantánea
+
+? El mecanismo que evita que dos transacciones modifiquen a la vez el mismo dato es:
++ El bloqueo (locking) o el control de concurrencia multiversión (MVCC)
+- La normalización
+- La indexación
+- La replicación asíncrona
+
+? La replicación de bases de datos sirve para:
++ Mantener copias sincronizadas en varios servidores, para disponibilidad y reparto de carga
+- Cifrar los datos en reposo
+- Normalizar las tablas
+- Comprimir los índices
+
+? En una base de datos, la integridad referencial garantiza que:
++ Una clave foránea siempre haga referencia a una fila existente de la tabla referenciada
+- No haya valores nulos en ninguna columna
+- Todas las tablas tengan el mismo número de filas
+- Los datos estén cifrados
+
+? Un interbloqueo (deadlock) entre transacciones se produce cuando:
++ Dos o más transacciones esperan indefinidamente los bloqueos que tienen las otras
+- Una transacción termina con error
+- Se pierde la conexión con el servidor
+- Se llena el registro de transacciones
+
+? La lectura sucia (dirty read) consiste en:
++ Leer datos modificados por otra transacción que aún no se han confirmado
+- Leer datos borrados
+- Leer datos de una copia de seguridad
+- Leer datos cifrados
+
+? El nivel de aislamiento READ COMMITTED evita:
++ Las lecturas sucias, pero no las no repetibles ni las fantasma
+- Todas las anomalías
+- Solo las lecturas fantasma
+- Ninguna anomalía
+
+? Una base de datos en memoria, como Redis, destaca por:
++ Su velocidad, al guardar los datos en RAM, por lo que se usa mucho como caché
+- Guardar solo datos en papel
+- No permitir consultas
+- Ser exclusivamente relacional
+
+? La copia de seguridad incremental guarda:
++ Lo cambiado desde la última copia de cualquier tipo
+- Todo, cada vez
+- Lo cambiado desde la última copia completa
+- Solo la estructura de las tablas

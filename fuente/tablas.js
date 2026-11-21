@@ -1,0 +1,108 @@
+/* Tablas comparativas para memorizar. La última columna es la que se oculta en modo memoria y la que se pregunta en el test.
+   {id, titulo, tema, pregunta (texto para el test), cols, filas, nota} */
+var TABLAS=[
+{id:"plazos39",titulo:"Plazos de la Ley 39/2015",tema:8,pregunta:"Plazo según la Ley 39/2015",cols:["Trámite","Plazo"],filas:[
+ ["Subsanar una solicitud (art. 68)","10 días"],
+ ["Emitir un informe, salvo otra cosa (art. 80)","10 días"],
+ ["Cursar una notificación desde que se dicta el acto (art. 40)","10 días"],
+ ["Notificación electrónica rechazada si no se accede (art. 43)","10 días naturales"],
+ ["Trámite de audiencia (art. 82)","Entre 10 y 15 días"],
+ ["Información pública (art. 83)","20 días como mínimo"],
+ ["Periodo de prueba (art. 77)","Entre 10 y 30 días"],
+ ["Resolver si la norma no fija plazo (art. 21)","3 meses"],
+ ["Máximo que puede fijar una norma sin rango de ley (art. 21)","6 meses"],
+ ["Interponer alzada o reposición contra acto expreso","1 mes"],
+ ["Resolver el recurso de alzada (art. 122)","3 meses"],
+ ["Resolver el recurso de reposición (art. 124)","1 mes"],
+ ["Ampliación de plazos (art. 32)","Hasta la mitad del plazo"],
+ ["Tramitación de urgencia (art. 33)","Plazos reducidos a la mitad"]],
+ nota:"Los días son **hábiles** (sin sábados, domingos ni festivos) salvo que se diga «naturales»."},
+{id:"estmarco",titulo:"Cifras del Estatuto Marco",tema:6,pregunta:"Según el Estatuto Marco",cols:["Concepto","Cifra"],filas:[
+ ["Jornada ordinaria ininterrumpida máxima","12 horas"],
+ ["Jornada excepcional en algunos servicios","Hasta 24 horas"],
+ ["Descanso entre jornadas","12 horas"],
+ ["Descanso semanal (media)","24 horas + 12 del descanso diario"],
+ ["Vacaciones anuales","30 días naturales como mínimo"],
+ ["Jubilación forzosa","65 años (prolongable hasta 70)"],
+ ["Prescripción de sanciones muy graves","4 años"],
+ ["Prescripción de sanciones graves","2 años"],
+ ["Prescripción de sanciones leves","6 meses"],
+ ["Tras la separación del servicio, sin poder volver","6 años"],
+ ["Suspensión provisional máxima en expediente","6 meses"]]},
+{id:"ce",titulo:"Constitución: cifras y artículos clave",tema:1,pregunta:"Constitución",cols:["Concepto","Dato"],filas:[
+ ["Número de artículos","169"],
+ ["Mayoría de edad (art. 12)","18 años"],
+ ["Detención preventiva máxima (art. 17)","72 horas"],
+ ["Protección de la salud","Art. 43"],
+ ["Protección de datos (uso de la informática)","Art. 18.4"],
+ ["Tutela judicial efectiva","Art. 24"],
+ ["Igualdad ante la ley","Art. 14"],
+ ["Garantías de los derechos y recurso de amparo","Art. 53"],
+ ["Defensor del Pueblo","Art. 54"],
+ ["Suspensión de derechos","Art. 55"],
+ ["Estados de alarma, excepción y sitio","Art. 116"],
+ ["Estado de alarma: duración inicial","15 días"],
+ ["Estado de excepción: duración máxima","30 días, prorrogables otros 30"],
+ ["Reforma ordinaria (art. 167)","3/5 de cada Cámara"],
+ ["Reforma agravada (art. 168)","2/3 de cada Cámara, disolución y referéndum"]]},
+{id:"normas",titulo:"Cada norma con su número",pregunta:"¿Qué norma es?",cols:["Materia","Norma"],filas:[
+ ["Procedimiento administrativo común","Ley 39/2015"],
+ ["Régimen jurídico del sector público","Ley 40/2015"],
+ ["Contratos del sector público","Ley 9/2017"],
+ ["Transparencia (Estado)","Ley 19/2013"],
+ ["Transparencia (Comunidad de Madrid)","Ley 10/2019"],
+ ["Estatuto Marco del personal estatutario","Ley 55/2003"],
+ ["Prevención de riesgos laborales","Ley 31/1995"],
+ ["General de Sanidad","Ley 14/1986"],
+ ["Ordenación Sanitaria de Madrid (LOSCAM)","Ley 12/2001"],
+ ["Buen gobierno de los centros del SERMAS","Ley 11/2017"],
+ ["Autonomía del paciente e historia clínica","Ley 41/2002"],
+ ["Igualdad efectiva de mujeres y hombres","LO 3/2007"],
+ ["Violencia de género (Comunidad de Madrid)","Ley 5/2005"],
+ ["Protección de datos (LOPDGDD)","LO 3/2018"],
+ ["Servicios de la sociedad de la información (LSSI)","Ley 34/2002"],
+ ["Servicios electrónicos de confianza","Ley 6/2020"],
+ ["Esquema Nacional de Seguridad","RD 311/2022"],
+ ["Esquema Nacional de Interoperabilidad","RD 4/2010"],
+ ["Reglamento de actuación por medios electrónicos","RD 203/2021"],
+ ["Receta médica","RD 1718/2010"],
+ ["Tarjeta sanitaria individual","RD 183/2004"],
+ ["Informes clínicos del SNS (CMDIC)","RD 1093/2010"],
+ ["DNI electrónico","RD 1553/2005"],
+ ["Estatuto de Autonomía de Madrid","LO 3/1983"]]},
+{id:"rgpd",titulo:"Protección de datos en cifras",tema:36,pregunta:"Protección de datos",cols:["Concepto","Cifra"],filas:[
+ ["RGPD aplicable desde","25 de mayo de 2018"],
+ ["Notificar una brecha a la AEPD","72 horas"],
+ ["Responder a una solicitud de derechos","1 mes (+2 si hace falta)"],
+ ["Edad para consentir en España","14 años"],
+ ["Multa máxima por obligaciones del responsable","10 millones o 2 %"],
+ ["Multa máxima por principios y derechos","20 millones o 4 %"],
+ ["Prescripción de infracciones muy graves","3 años"],
+ ["Prescripción de infracciones graves","2 años"],
+ ["Prescripción de infracciones leves","1 año"],
+ ["Acceso repetitivo (art. 13 LOPDGDD)","Más de una vez en 6 meses"]]},
+{id:"puertos",titulo:"Puertos de red",tema:15,pregunta:"Puerto por defecto de",cols:["Servicio","Puerto"],filas:[
+ ["FTP (control)","21"],["SSH / SFTP","22"],["Telnet","23"],["SMTP","25"],["DNS","53"],["DHCP (servidor)","67"],["HTTP","80"],["Kerberos","88"],["POP3","110"],["NTP","123"],["IMAP","143"],["SNMP","161"],["LDAP","389"],["HTTPS","443"],["SMB","445"],["LDAPS","636"],["IMAPS","993"],["POP3S","995"],["DICOM","104"],["SQL Server","1433"],["MySQL","3306"],["RDP (escritorio remoto)","3389"],["PostgreSQL","5432"]]},
+{id:"raid",titulo:"Niveles RAID",tema:14,pregunta:"RAID",cols:["Nivel","Discos mínimos","Fallos que soporta","Capacidad útil"],filas:[
+ ["RAID 0 (reparto sin redundancia)","2","Ninguno","100 %"],
+ ["RAID 1 (espejo)","2","1 disco","50 %"],
+ ["RAID 5 (paridad distribuida)","3","1 disco","n − 1 discos"],
+ ["RAID 6 (doble paridad)","4","2 discos","n − 2 discos"],
+ ["RAID 10 (espejo + reparto)","4","1 por cada espejo","50 %"]]},
+{id:"prefijos",titulo:"Prefijos decimales (SI) y binarios (IEC)",tema:13,pregunta:"Equivalencia",cols:["Prefijo","Valor"],filas:[
+ ["kilobyte (kB)","10³ = 1.000 B"],["kibibyte (KiB)","2¹⁰ = 1.024 B"],["megabyte (MB)","10⁶ B"],["mebibyte (MiB)","2²⁰ = 1.048.576 B"],["gigabyte (GB)","10⁹ B"],["gibibyte (GiB)","2³⁰ B"],["terabyte (TB)","10¹² B"],["tebibyte (TiB)","2⁴⁰ B"]]},
+{id:"osi",titulo:"Capas del modelo OSI",tema:15,pregunta:"Capa OSI",cols:["Capa","Unidad o ejemplos"],filas:[
+ ["7 · Aplicación","HTTP, SMTP, DNS"],["6 · Presentación","Cifrado, compresión, formato"],["5 · Sesión","Control del diálogo"],["4 · Transporte","TCP y UDP · segmento"],["3 · Red","IP, ICMP · paquete · router"],["2 · Enlace","Ethernet, MAC · trama · switch"],["1 · Física","Bits · cables · hub"]]},
+{id:"wifi",titulo:"Generaciones Wi-Fi",tema:27,pregunta:"Estándar Wi-Fi",cols:["Nombre comercial","Estándar IEEE"],filas:[
+ ["Wi-Fi 4","802.11n"],["Wi-Fi 5","802.11ac"],["Wi-Fi 6 / 6E","802.11ax"],["Wi-Fi 7","802.11be"]],nota:"Wi-Fi 6E añade la banda de 6 GHz."},
+{id:"ens",titulo:"Esquema Nacional de Seguridad",tema:35,pregunta:"ENS",cols:["Concepto","Dato"],filas:[
+ ["Norma vigente","RD 311/2022"],["Principios básicos","7"],["Dimensiones de seguridad","5: C, I, T, A, D"],["Niveles de seguridad","Bajo, medio y alto"],["Categorías del sistema","Básica, media y alta"],["Auditoría ordinaria","Cada 2 años como mínimo"],["Quién firma la Declaración de Aplicabilidad","El responsable de la seguridad"],["Guías CCN-STIC del ENS","Serie 800"],["Guía de gestión de ciberincidentes","CCN-STIC 817"]]},
+{id:"hl7",titulo:"HL7 v2: segmentos y mensajes",tema:34,pregunta:"En HL7 v2",cols:["Elemento","Significado"],filas:[
+ ["MSH","Cabecera del mensaje"],["PID","Identificación del paciente"],["PV1","Visita del paciente"],["OBR","Petición de una prueba"],["OBX","Resultado u observación"],["ADT","Admisión, alta y traslado"],["ORM / OML","Peticiones"],["ORU","Resultados"],["SIU","Citación"],["ACK","Confirmación de recepción"]]},
+{id:"dicom",titulo:"Servicios DICOM",tema:34,pregunta:"Servicio DICOM",cols:["Servicio","Para qué sirve"],filas:[
+ ["C-STORE","Enviar y almacenar imágenes"],["C-FIND","Buscar estudios"],["C-MOVE / C-GET","Recuperar estudios"],["C-ECHO","Comprobar la conexión"],["Modality Worklist","Lista de pacientes citados para la modalidad"],["MPPS","Informar de la realización de la prueba"],["Storage Commitment","Confirmar que el archivo guarda las imágenes"]]},
+{id:"cripto",titulo:"Algoritmos criptográficos",tema:37,pregunta:"Tipo de algoritmo",cols:["Algoritmo","Tipo"],filas:[
+ ["AES","Cifrado simétrico (seguro)"],["DES","Cifrado simétrico (inseguro)"],["ChaCha20","Cifrado simétrico en flujo"],["RSA","Asimétrico (cifrado y firma)"],["ECC / ECDSA","Asimétrico de curva elíptica"],["Diffie-Hellman","Intercambio de claves"],["SHA-256","Hash seguro"],["MD5","Hash roto"],["SHA-1","Hash roto (colisiones)"],["bcrypt / Argon2","Almacenamiento de contraseñas"],["ML-KEM (Kyber)","Poscuántico: encapsulación de claves"]]},
+{id:"complejidad",titulo:"Complejidad de algoritmos",tema:13,pregunta:"Complejidad",cols:["Operación","Complejidad"],filas:[
+ ["Acceso a un vector por índice","O(1)"],["Búsqueda en tabla hash (media)","O(1)"],["Búsqueda binaria","O(log n)"],["Búsqueda secuencial","O(n)"],["Mergesort (peor caso)","O(n log n)"],["Quicksort (peor caso)","O(n²)"],["Burbuja (peor caso)","O(n²)"]]}
+];

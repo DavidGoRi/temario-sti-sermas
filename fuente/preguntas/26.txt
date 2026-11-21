@@ -1,0 +1,114 @@
+? Según la regla 3-2-1 de las copias de seguridad, hay que tener:
++ Tres copias de los datos, en dos soportes distintos, con una fuera de las instalaciones
+- Tres soportes, dos copias y un servidor
+- Tres copias diarias, dos semanales y una mensual
+- Tres discos en RAID, dos en espejo y uno de paridad
+
+? El borrado seguro de un disco magnético que se va a reutilizar se hace:
++ Sobrescribiendo todo su contenido con herramientas específicas, o desmagnetizando y destruyendo si no se reutiliza
+- Formateándolo de forma rápida
+- Borrando los ficheros y vaciando la papelera
+- Eliminando las particiones
+
+? En los discos SSD, el borrado seguro más fiable es:
++ El borrado criptográfico o la orden de borrado seguro del propio fabricante (Secure Erase)
+- Sobrescribir una vez con ceros
+- Formatear en NTFS
+- Desfragmentar el disco
+
+? El RPO (Recovery Point Objective) indica:
++ La cantidad máxima de datos que se puede perder, medida en tiempo desde la última copia
+- El tiempo máximo para recuperar el servicio
+- El número de copias que hay que guardar
+- El coste de la recuperación
+= El RTO es el tiempo máximo para restablecer el servicio.
+
+? Un proxy inverso se sitúa:
++ Delante de los servidores web, recibiendo las peticiones de Internet en su nombre
+- Delante de los usuarios para navegar por Internet
+- Dentro de la base de datos
+- En el puesto del usuario
+
+? El cortafuegos que filtra solo por IP, puerto y protocolo, cada paquete por separado, es de:
++ Filtrado de paquetes sin estado
+- Inspección de estado
+- Nueva generación
+- Aplicación web
+
+? El protocolo que permite acceder de forma segura a la línea de órdenes de un servidor remoto es:
++ SSH
+- Telnet
+- FTP
+- RDP sin cifrado
+
+? En la explotación, el registro centralizado de eventos de todos los sistemas para detectar ataques se hace con:
++ Un SIEM
+- Un ERP
+- Un CRM
+- Un IDE
+
+? La firma electrónica en la explotación de sistemas se usa, por ejemplo, para:
++ Garantizar la integridad y el origen de documentos, software y registros
+- Acelerar las copias de seguridad
+- Comprimir ficheros
+- Asignar direcciones IP
+
+? El principio de mínimo privilegio aplicado al control de acceso significa:
++ Dar a cada usuario solo los permisos imprescindibles para su trabajo
+- Dar a todos los usuarios permisos de administrador
+- Dar acceso solo a los jefes
+- Revisar los permisos una vez al año
+
+? La gestión de soportes de información en el ENS incluye:
++ Su etiquetado, cifrado, custodia, transporte seguro y borrado o destrucción
+- Solo su inventario contable
+- Únicamente la compra de discos
+- Nada: los soportes no se regulan
+
+? La herramienta que permite aplicar parches de Windows de forma centralizada en una red corporativa es, por ejemplo:
++ WSUS o Microsoft Intune / Configuration Manager
+- Wireshark
+- Nmap
+- Notepad
+
+? Un sistema de detección de intrusiones (IDS) de red:
++ Analiza una copia del tráfico y alerta de actividad sospechosa, sin bloquearla
+- Bloquea automáticamente todo el tráfico sospechoso en línea
+- Cifra las comunicaciones
+- Asigna direcciones IP
+
+? La copia de seguridad inmutable es aquella que:
++ No puede modificarse ni borrarse durante su periodo de retención, ni siquiera por un administrador
+- Se borra automáticamente al día siguiente
+- Se guarda sin cifrar
+- Solo contiene los cambios del día
+
+? Un SAI (sistema de alimentación ininterrumpida) sirve para:
++ Mantener los equipos funcionando durante un corte eléctrico y protegerlos de picos
+- Refrigerar el CPD
+- Hacer copias de seguridad
+- Cifrar las comunicaciones
+
+? La técnica de enviar la copia de seguridad a un lugar distinto del CPD principal protege sobre todo frente a:
++ Desastres que afecten a las instalaciones, como un incendio o una inundación
+- Errores de ortografía
+- Accesos de usuarios autorizados
+- Fallos de la pantalla
+
+? La gestión de soportes incluye su etiquetado según la calificación de la información porque:
++ Permite saber qué medidas de protección necesita cada soporte sin revelar su contenido
+- Es obligatorio por estética
+- Acelera la lectura del soporte
+- Sustituye al cifrado
+
+? El protocolo para sincronizar la hora de todos los sistemas, esencial para los registros, es:
++ NTP
+- SNMP
+- SMTP
+- FTP
+
+? Un honeypot es:
++ Un sistema señuelo para atraer y estudiar a los atacantes
+- Un antivirus
+- Un tipo de copia de seguridad
+- Un cortafuegos de aplicaciones

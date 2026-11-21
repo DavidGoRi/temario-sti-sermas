@@ -1,0 +1,89 @@
+? Las tres estructuras de control de la programación estructurada son:
++ Secuencial, alternativa (condicional) y repetitiva (iterativa)
+- Secuencial, recursiva y orientada a objetos
+- Condicional, salto incondicional y bucle
+- Entrada, proceso y salida
+
+? El teorema que demuestra que cualquier programa puede escribirse con secuencia, selección e iteración es el de:
++ Böhm y Jacopini
+- Turing
+- Dijkstra
+- Von Neumann
+
+? Una función que se llama a sí misma es:
++ Recursiva
+- Iterativa
+- Polimórfica
+- Anónima obligatoriamente
+
+? El bucle que se ejecuta al menos una vez porque la condición se evalúa al final es:
++ El do-while (repetir-hasta)
+- El while
+- El for
+- El for-each
+
+? La técnica de diseño «divide y vencerás» consiste en:
++ Dividir el problema en subproblemas más pequeños del mismo tipo, resolverlos y combinar las soluciones
+- Probar todas las combinaciones posibles
+- Elegir en cada paso la opción que parece mejor
+- Guardar los resultados intermedios para no recalcularlos
+
+? La técnica que guarda los resultados de los subproblemas para no recalcularlos es:
++ La programación dinámica
+- La vuelta atrás (backtracking)
+- El algoritmo voraz
+- La fuerza bruta
+
+? En la programación orientada a objetos, la ocultación de los detalles internos de un objeto tras una interfaz se llama:
++ Encapsulación
+- Herencia
+- Polimorfismo
+- Sobrecarga
+
+? La capacidad de que un mismo mensaje produzca comportamientos distintos según el objeto que lo recibe es:
++ El polimorfismo
+- La herencia
+- La encapsulación
+- La abstracción
+
+? El paradigma de programación de Haskell o de las funciones puras sin efectos secundarios es el:
++ Funcional
+- Lógico
+- Imperativo
+- Orientado a objetos
+
+? Prolog es un lenguaje del paradigma:
++ Lógico
+- Funcional
+- Orientado a objetos
+- Estructurado
+
+? El principio de diseño que pide un alto grado de cohesión y un bajo acoplamiento entre módulos busca:
++ Módulos independientes, cada uno con una responsabilidad clara
+- Módulos muy dependientes entre sí
+- Un único módulo con todo el código
+- Reducir el número de pruebas
+
+? El principio SOLID que dice que una clase debe tener una única razón para cambiar es:
++ El de responsabilidad única
+- El de abierto/cerrado
+- El de sustitución de Liskov
+- El de inversión de dependencias
+
+? Un patrón de diseño que asegura que una clase tenga una sola instancia es:
++ Singleton
+- Factory
+- Observer
+- Adapter
+
+? Pasar un parámetro por referencia significa que:
++ La función recibe la dirección de la variable y puede modificar el original
+- La función recibe una copia del valor
+- El parámetro es constante
+- El parámetro se evalúa solo si se usa
+
+? El pseudocódigo y los diagramas de flujo se utilizan para:
++ Representar algoritmos de forma independiente del lenguaje de programación
+- Compilar programas
+- Probar programas automáticamente
+- Documentar las bases de datos

@@ -1,0 +1,119 @@
+? El puerto por defecto de LDAP sobre TLS (LDAPS) es:
++ 636
+- 389
+- 88
+- 3268
+
+? En un nombre distinguido LDAP, el atributo «ou» significa:
++ Unidad organizativa
+- Usuario original
+- Objeto único
+- Organización universal
+
+? El límite de seguridad real en Active Directory es:
++ El bosque
+- La unidad organizativa
+- El dominio
+- El sitio
+
+? Las directivas de grupo (GPO) de Active Directory se aplican en el orden:
++ Local, sitio, dominio y unidad organizativa (LSDOU)
+- Dominio, local, sitio y unidad organizativa
+- Unidad organizativa, dominio, sitio y local
+- Sitio, local, unidad organizativa y dominio
+
+? ¿Cuántos roles FSMO hay en un bosque de Active Directory con un solo dominio?
++ Cinco
+- Tres
+- Dos
+- Siete
+
+? En Kerberos, el ticket que obtiene el usuario al autenticarse y que le permite pedir tickets de servicio es el:
++ TGT
+- TGS de servicio
+- SPN
+- PAC exclusivamente
+
+? Kerberos usa por defecto el puerto:
++ 88
+- 389
+- 445
+- 135
+
+? LAPS sirve para:
++ Gestionar contraseñas únicas y rotadas de la cuenta de administrador local de cada equipo
+- Cifrar los discos
+- Asignar direcciones IP
+- Sincronizar la hora
+
+? En la gestión de identidades, la fuente autoritativa del alta y la baja de los profesionales es normalmente:
++ El sistema de recursos humanos
+- El propio usuario
+- El servicio técnico
+- El proveedor de correo
+
+? PAM (Privileged Access Management) se ocupa de:
++ Las cuentas privilegiadas: bóveda de contraseñas, acceso justo a tiempo y grabación de sesiones
+- La gestión de impresoras
+- Las copias de seguridad
+- El inventario de hardware
+
+? OAuth 2.0 es un marco de:
++ Autorización delegada mediante tokens
+- Autenticación con contraseña en claro
+- Cifrado de discos
+- Enrutamiento de red
+
+? OpenID Connect añade a OAuth 2.0:
++ Una capa de autenticación con un token de identidad (JWT)
+- El cifrado de los discos
+- Un protocolo de VPN
+- Un servicio de directorio LDAP
+
+? SAML 2.0 es un estándar de federación basado en:
++ Aserciones XML firmadas que el proveedor de identidad envía al proveedor de servicio
+- Tokens JSON sin firma
+- Certificados X.509 exclusivamente
+- Contraseñas compartidas entre organizaciones
+
+? En IEEE 802.1X, el elemento que se autentica (el equipo del usuario) se llama:
++ Suplicante
+- Autenticador
+- Servidor de autenticación
+- Proxy
+
+? El método EAP más seguro para 802.1X, basado en certificados en ambos extremos, es:
++ EAP-TLS
+- PEAP con MSCHAPv2
+- EAP-MD5
+- LEAP
+
+? El protocolo de VPN obsoleto e inseguro que no debe usarse es:
++ PPTP
+- IPsec con IKEv2
+- WireGuard
+- OpenVPN
+
+? En una VPN con túnel dividido (split tunneling):
++ Solo el tráfico corporativo va por la VPN y el resto sale directamente a Internet
+- Todo el tráfico pasa por la VPN
+- La VPN se divide entre dos usuarios
+- Se usan dos VPN a la vez
+
+? El modelo Zero Trust se resume en:
++ Nunca confiar, verificar siempre, también dentro de la red interna
+- Confiar en todo lo que está dentro del cortafuegos
+- No usar contraseñas
+- Bloquear todo el tráfico de Internet
+
+? Para administrar equipos de red de forma segura se debe usar:
++ SSH, HTTPS y SNMPv3, desde una red de gestión aislada
+- Telnet y HTTP desde cualquier puesto
+- SNMPv1 con la comunidad «public»
+- FTP para transferir configuraciones
+
+? La función de los switches que impide servidores DHCP falsos en la red es:
++ DHCP snooping
+- Port mirroring
+- STP
+- PoE
