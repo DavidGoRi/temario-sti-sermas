@@ -660,6 +660,27 @@ body.conAudio .main{padding-bottom:140px}
 .imp pre{white-space:pre-wrap;font:14px/1.55 var(--f-b);margin:0 0 10px}
 .hq{cursor:default}
 @media print{body.imprimiendo .printz .mm-rama{break-inside:avoid;border:1px solid #999}.pmap{break-after:page}body.imprimiendo .printz .mm-kw a{border:1px solid #bbb}}
+/* Noticias */
+.nest{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.nest .panel{display:flex;flex-direction:column;gap:4px}
+.nest .panel>b.mono{font-size:30px;line-height:1.1}
+.nest .exf{border-color:var(--bad);background:color-mix(in srgb,var(--bad) 8%,var(--surface))}
+.nest .exf .btn{align-self:flex-start;margin-top:6px}
+@media (max-width:720px){.nest{grid-template-columns:minmax(0,1fr)}}
+.notis{display:flex;flex-direction:column;gap:12px;position:relative}
+.noti{display:flex;flex-direction:column;gap:8px;border-left:4px solid var(--bc)}
+.noti-h{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.noti-f{font-size:12.5px;color:var(--muted);font-weight:700;text-transform:capitalize}
+.noti h3{font:700 17px/1.3 var(--f-d)}
+.noti p{margin:0;font-size:14.5px}
+.noti-acc{background:var(--accent-soft);padding:8px 12px;border-radius:8px}
+.nueva{font:700 11px var(--f-b);text-transform:uppercase;letter-spacing:.05em;color:var(--accent-ink);background:var(--accent);padding:2px 8px;border-radius:20px}
+.plazo{display:flex;flex-wrap:wrap;align-items:center;gap:4px 12px;padding:8px 12px;border-radius:10px;border:1px solid var(--line);font-size:14px;margin-top:6px}
+.plazo .pe{margin-left:auto;font:700 12px var(--f-m)}
+.plazo.abierto{border-color:var(--ok);background:var(--ok-soft)}.plazo.abierto .pe{color:var(--ok)}
+.plazo.prox{border-color:var(--warn);background:var(--warn-soft)}.plazo.prox .pe{color:var(--warn)}
+.plazo.cerrado{opacity:.7}.plazo.cerrado .pe{color:var(--muted)}
+.noti-ini{display:flex;flex-direction:column;gap:2px}
 @media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
 </style>
 
@@ -690,6 +711,7 @@ body.conAudio .main{padding-bottom:140px}
 <script src="trampas.js"></script>
 <script src="tablas.js"></script>
 <script src="nemotecnias.js"></script>
+<script src="noticias.js"></script>
 <script src="temas/indice.js"></script>
 <script src="leyes/indice.js"></script>
 <script>
@@ -755,6 +777,7 @@ const ICON={
  bolt:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg>',
  doc:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg>',
  pen:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L19 9a2.8 2.8 0 0 0-4-4L4 16z"/><path d="M13.5 6.5l4 4"/></svg>',
+ news:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h13v14a2 2 0 0 0 2 2H6a2 2 0 0 1-2-2z"/><path d="M17 9h3v10a2 2 0 0 1-2 2M8 9h5M8 13h5M8 17h3"/></svg>',
  mapa:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><circle cx="4" cy="5" r="2"/><circle cx="20" cy="5" r="2"/><circle cx="4" cy="19" r="2"/><circle cx="20" cy="19" r="2"/><path d="M6 6l4 4M18 6l-4 4M6 18l4-4M18 18l-4-4"/></svg>',
  puzzle:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3h4v3a2 2 0 1 0 4 0V3h3v7h-3a2 2 0 1 0 0 4h3v7h-7v-3a2 2 0 1 0-4 0v3H3v-7h3a2 2 0 1 0 0-4H3V3h7z"/></svg>',
  chart:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>',
@@ -791,6 +814,7 @@ function renderNav(h){
   const due=Object.values(S.qb||{}).filter(r=>r.d<=diaLocal()).length;
   $("#nav").innerHTML=[
     ["inicio","Inicio",ICON.home,""],
+    ["noticias","Noticias del proceso",ICON.news,noticiasNuevas()||""],
     ["plan","Plan de estudio",ICON.cal,pend||""],
     ["estadisticas","Estadísticas y nota",ICON.chart,""],
     "Estudiar",
@@ -863,6 +887,7 @@ function route(){
   else if(h==="practicas") viewPracticas();
   else if(m=h.match(/^practicas\/(\w+)$/)) viewPracticas(m[1]);
   else if(h==="impugnar") viewImpugnar();
+  else if(h==="noticias") viewNoticias();
   else if(h==="buscar"||h.startsWith("buscar/")) viewBuscar(decodeURIComponent(h.slice(7)));
   else viewInicio();
   renderNav(h); renderToc(h);
@@ -885,6 +910,7 @@ function viewInicio(){
     <p>Todo el temario oficial en esquemas para subrayar de memoria, tarjetas con repaso espaciado y test con explicación. Tu progreso se guarda en este navegador.</p>
   </section>
   ${cuentaAtras()}
+  ${noticiasInicio()}
   ${pddHTML()}
   <section class="stats" aria-label="Tu progreso">
     <div class="stat"><span class="v mono">${nEst}<small>/40</small></span><span class="l">temas estudiados</span><div class="meter"><i style="width:${nEst/40*100}%"></i></div></div>
@@ -2302,6 +2328,55 @@ function cuentaAtras(){
   return `<section class="cuenta panel"><div class="ring" style="--p:${pct}"><div><div><b>${q}</b><small>${q===1?"día":"días"}</small></div></div></div>
     <div><span class="eyebrow">Cuenta atrás</span><h2 style="font-size:22px">${q===0?"¡Hoy es el examen! Mucha suerte":q===1?"El examen es mañana":"Faltan "+q+" días para el examen"}</h2>
     <p class="muted" style="margin:4px 0 0">${fechaLarga(fin)} · ${esc(fase)}${S.plan.fechaEstimada===false?"":" · fecha estimada por ti"}</p></div></section>`;
+}
+
+/* ---------- Noticias del proceso selectivo ---------- */
+const TIPOS_N={convocatoria:["Convocatoria","--c-leg"],provisionales:["Listas provisionales","--warn"],definitivas:["Listas definitivas","--ok"],tribunal:["Tribunal","--c-sis"],plazas:["Plazas","--c-dev"],examen:["Examen","--bad"],plantilla:["Plantilla de respuestas","--c-seg"],calificaciones:["Calificaciones","--c-san"],concurso:["Concurso de méritos","--c-bd"],nombramiento:["Nombramientos","--c-red"],otro:["Aviso","--muted"]};
+const NOT=()=>typeof NOTICIAS!=="undefined"?NOTICIAS:{lista:[],estado:{}};
+const fechaISO=iso=>new Date(diaDe(iso)*864e5).toLocaleDateString("es-ES",{day:"numeric",month:"short",year:"numeric",timeZone:"UTC"});
+function estadoPlazo(p){const h=diaLocal(),a=diaDe(p.desde),b=diaDe(p.hasta);
+  if(h<a)return {c:"prox",t:a-h===1?"empieza mañana":`empieza en ${a-h} días`};
+  if(h<=b)return {c:"abierto",t:b===h?"último día: hoy":`abierto · quedan ${b-h+1} días`};
+  return {c:"cerrado",t:"cerrado"}}
+function noticiasNuevas(){
+  const L=NOT().lista;if(!L.length)return 0;const vista=S.notiVista;
+  if(!vista)return L.filter(n=>diaDe(n.fecha)>=diaLocal()-14).length;
+  return L.filter(n=>n.fecha>vista).length;
+}
+function plazosVivos(){const r=[];NOT().lista.forEach(n=>(n.plazos||[]).forEach(p=>{const e=estadoPlazo(p);if(e.c!=="cerrado")r.push({n,p,e})}));return r.sort((a,b)=>diaDe(a.p.desde)-diaDe(b.p.desde))}
+function noticiaCard(n){const [tn,tc]=TIPOS_N[n.tipo]||TIPOS_N.otro;const nueva=S.notiVista?n.fecha>S.notiVista:diaDe(n.fecha)>=diaLocal()-14;
+  return `<article class="noti panel" style="--bc:var(${tc})" data-tipo="${n.tipo}"><div class="noti-h"><span class="noti-f mono">${fechaISO(n.fecha)}</span><span class="chip" style="--bc:var(${tc})"><i></i>${esc(tn)}</span>${nueva?'<span class="nueva">Nueva</span>':""}</div>
+    <h3>${esc(n.titulo)}</h3><p>${esc(n.resumen)}</p>
+    ${(n.plazos||[]).map(p=>{const e=estadoPlazo(p);return `<div class="plazo ${e.c}"><b>${esc(p.que)}</b><span>del ${fechaISO(p.desde)} al ${fechaISO(p.hasta)}</span><span class="pe">${e.t}</span></div>`}).join("")}
+    ${n.accion?`<p class="noti-acc"><b>Qué hacer:</b> ${esc(n.accion)}</p>`:""}
+    ${(n.enlaces||[]).length?`<div class="row noti-l">${n.enlaces.map(l=>`<a class="btn sm" href="${esc(l.u)}" target="_blank" rel="noopener">${esc(l.t)} ↗</a>`).join("")}</div>`:""}</article>`}
+function viewNoticias(){
+  const N=NOT(),E=N.estado||{},L=N.lista.slice().sort((a,b)=>a.fecha<b.fecha?1:-1),vivos=plazosVivos();
+  const ex=E.examen?diaDe(E.examen):null,hoyD=diaLocal();
+  const tipos=[...new Set(L.map(n=>n.tipo))];
+  main.innerHTML=`<div class="wrap">
+    <header class="th"><span class="eyebrow">Proceso E6231 · Comunidad de Madrid</span><h1>Noticias del proceso</h1>
+    <p class="muted" style="margin:0;max-width:66ch">Todo lo que publica el SERMAS sobre tu oposición: listas, tribunal, plazas, fecha del examen, plantillas y calificaciones, con sus plazos y enlaces oficiales. Revisado el ${fechaISO(N.actualizado||isoDe(hoyD))}; la tarea de aviso diario lo comprueba cada mañana.</p></header>
+    <section class="nest">
+      <div class="panel"><span class="eyebrow">Plazas</span><b class="mono">${E.plazas||"–"}</b><span class="muted">${esc(E.cupo||"")}</span></div>
+      <div class="panel"><span class="eyebrow">Fase actual</span><b style="font-size:16px">${esc(E.fase||"–")}</b></div>
+      <div class="panel ${ex?"exf":""}"><span class="eyebrow">Fecha del examen</span>${ex?`<b>${fechaLarga(ex)}</b><span class="muted">${ex>=hoyD?`faltan ${ex-hoyD} días`:"ya celebrado"}${E.lugar?" · "+esc(E.lugar):""}</span>${S.plan&&S.plan.fecha!==E.examen&&ex>=hoyD?`<button class="btn sm pri" id="nplan">Usar esta fecha en mi plan</button>`:""}`:`<b style="font-size:16px">Aún no publicada</b><span class="muted">Se anunciará con al menos un mes de antelación (base 9.2.b).</span>`}</div>
+    </section>
+    ${vivos.length?`<section class="panel"><h2 class="h18">Plazos abiertos o próximos</h2>${vivos.map(v=>`<div class="plazo ${v.e.c}"><b>${esc(v.p.que)}</b><span>${esc(v.n.titulo)} · del ${fechaISO(v.p.desde)} al ${fechaISO(v.p.hasta)}</span><span class="pe">${v.e.t}</span></div>`).join("")}</section>`:""}
+    <div class="pick" id="nf"><label><input type="radio" name="nt" value="" checked> Todas (${L.length})</label>${tipos.map(t=>`<label><input type="radio" name="nt" value="${t}"> ${esc(TIPOS_N[t][0])}</label>`).join("")}</div>
+    <div class="notis" id="nl">${L.map(noticiaCard).join("")}</div>
+    <section class="note"><b>Fuentes oficiales.</b> <a href="https://www.comunidad.madrid/salud/proceso-selectivo-categoria-tecnico-especialista-sistemas-tecnologias-informacion-2025" target="_blank" rel="noopener">Página del proceso en comunidad.madrid</a> · <a href="https://sede.comunidad.madrid/oferta-empleo/tecnico-especialista-sti-2025" target="_blank" rel="noopener">Ficha en la sede electrónica</a>. Ante cualquier duda, manda lo publicado allí. Los plazos se cuentan en días hábiles salvo que la resolución diga otra cosa.</section></div>`;
+  main.querySelectorAll("#nf input").forEach(i=>i.addEventListener("change",()=>main.querySelectorAll("#nl .noti").forEach(c=>c.hidden=!!i.value&&c.dataset.tipo!==i.value)));
+  const np=$("#nplan");if(np)np.addEventListener("click",()=>{S.plan.fecha=E.examen;save();location.hash="#plan"});
+  if(L.length){S.notiVista=L[0].fecha;save();setTimeout(refreshSide,50)}
+}
+function noticiasInicio(){
+  const L=NOT().lista.slice().sort((a,b)=>a.fecha<b.fecha?1:-1);if(!L.length)return "";
+  const n=L[0],v=plazosVivos()[0],nn=noticiasNuevas(),E=NOT().estado||{};
+  return `<section class="panel noti-ini"><div class="row" style="justify-content:space-between"><div><span class="eyebrow">Noticias del proceso${nn?` · <span class="nueva">${nn} ${nn===1?"nueva":"nuevas"}</span>`:""}</span><h2 style="font-size:18px">${esc(n.titulo)}</h2></div><a class="btn sm" href="#noticias">Ver todas →</a></div>
+    <p class="muted" style="margin:4px 0 0;font-size:14px">${fechaISO(n.fecha)} · ${esc(n.resumen)}</p>
+    ${v?`<div class="plazo ${v.e.c}" style="margin-top:8px"><b>${esc(v.p.que)}</b><span>del ${fechaISO(v.p.desde)} al ${fechaISO(v.p.hasta)}</span><span class="pe">${v.e.t}</span></div>`:""}
+    <p class="muted" style="margin:6px 0 0;font-size:13px">Fecha del examen: <b>${E.examen?fechaLarga(diaDe(E.examen)):"aún no publicada"}</b></p></section>`;
 }
 
 /* ---------- Fallos ---------- */

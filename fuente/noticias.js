@@ -1,0 +1,53 @@
+/* Noticias del proceso selectivo (SERMAS · Técnico Especialista STI · convocatoria 2025).
+   Fuente: https://www.comunidad.madrid/salud/proceso-selectivo-categoria-tecnico-especialista-sistemas-tecnologias-informacion-2025
+   y https://sede.comunidad.madrid/oferta-empleo/tecnico-especialista-sti-2025
+   Cada noticia: {id, fecha (AAAA-MM-DD de publicación), tipo, titulo, resumen, plazos:[{que, desde, hasta}], enlaces:[{t, u}], accion}
+   tipo: convocatoria | provisionales | definitivas | tribunal | plazas | examen | plantilla | calificaciones | concurso | nombramiento | otro
+   La tarea de aviso diario añade aquí las novedades nuevas (al principio de la lista) y actualiza «estado». */
+var NOTICIAS={
+actualizado:"2026-11-21",
+estado:{plazas:39,cupo:"36 de cupo general y 3 de discapacidad",fase:"Listas provisionales de admitidos y excluidos (ampliación de plazas)",examen:null,lugar:null},
+lista:[
+ {id:"2026-11-20-provisionales",fecha:"2026-11-20",tipo:"provisionales",
+  titulo:"Nuevas listas provisionales de admitidos y excluidos",
+  resumen:"Resolución de 18 de noviembre de 2026: relaciones provisionales de admitidos y excluidos tras la ampliación de plazas, incluidas las solicitudes del nuevo plazo.",
+  plazos:[{que:"Subsanación de errores y exclusiones",desde:"2026-11-23",hasta:"2026-12-04"}],
+  accion:"Busca tu nombre en la lista de admitidos. Si estás excluido o hay un error en tus datos, presenta la subsanación dentro del plazo.",
+  enlaces:[{t:"Resolución",u:"https://www.comunidad.madrid/docs/2026-11/rrhh-ope4019-2026-11-20-ampl-list-prov_tecn_espsistemasyti_res.pdf?VersionId=W1hH1bAadfm0yRYmUpVkyq96yP2N49Ru"},
+   {t:"Admitidos",u:"https://www.comunidad.madrid/docs/2026-11/rrhh-ope4019-2026-11-20-ampl-list-prov_tecn_espsistemasyti_adm.pdf?VersionId=7RqBENvRdlLvo2UsjWAHUYgK6f6y62C8"},
+   {t:"Excluidos",u:"https://www.comunidad.madrid/docs/2026-11/rrhh-ope4019-2026-11-20-ampl-list-prov_tecn_espsistemasyti_excl.pdf?VersionId=eSdgI2v5EhCf_3_nLLT5krD98FwDw2YW"}]},
+ {id:"2026-10-08-ampliacion",fecha:"2026-10-08",tipo:"plazas",
+  titulo:"Ampliación a 39 plazas y nuevo plazo de solicitudes",
+  resumen:"Resolución de 24 de septiembre de 2026 (BOCM n.º 240): se amplían en 23 las plazas, hasta 39 (36 de cupo general y 3 de discapacidad), con un nuevo plazo para presentar solicitudes.",
+  plazos:[{que:"Nuevo plazo de solicitudes",desde:"2026-10-09",hasta:"2026-11-10"}],
+  enlaces:[{t:"BOCM del 8-10-2026",u:"https://www.bocm.es/bocm-20261008-23"}]},
+ {id:"2026-09-04-tribunal",fecha:"2026-09-04",tipo:"tribunal",
+  titulo:"Modificación del tribunal calificador",
+  resumen:"Resolución de 28 de agosto de 2026: cambia la composición del tribunal calificador.",
+  plazos:[{que:"Recurso de alzada",desde:"2026-09-05",hasta:"2026-10-05"}],
+  enlaces:[{t:"Resolución",u:"https://www.comunidad.madrid/docs/2026-09/rrhh-3867-tecn_esp_sist_tecn_inf_2025-pdf2026-09-2026-mod_tribunal.pdf?VersionId=AhMsHMvpAOhEEHthAOH2OCWU2PUxMVKI"}]},
+ {id:"2026-07-22-definitivas",fecha:"2026-07-22",tipo:"definitivas",
+  titulo:"Listas definitivas de admitidos y excluidos",
+  resumen:"Resolución de 16 de julio de 2026 (la sede electrónica la fecha el 20 de julio): relaciones definitivas de admitidos y excluidos de la convocatoria inicial.",
+  plazos:[{que:"Recurso de alzada",desde:"2026-07-23",hasta:"2026-08-24"}],
+  enlaces:[{t:"Resolución",u:"https://www.comunidad.madrid/docs/2026-07/rrhh-20260722-list-def-tec_esp_siste_ti-2025-res.pdf?VersionId=t_283lM0eC6K6izX9MYaa1fQ4LOesGSu"},
+   {t:"Admitidos",u:"https://www.comunidad.madrid/docs/2026-07/rrhh-20260722-list-def-tec_esp_siste_ti-2025-adm.pdf?VersionId=sQxL5NABxqB5y9wM12iTnW_MTroCihy5"},
+   {t:"Excluidos",u:"https://www.comunidad.madrid/docs/2026-07/rrhh-20260722-list-def-tec_esp_siste_ti-2025-excl.pdf?VersionId=cbvNhp4LyvYV46EQ6jco0I.istrWYH_U"}]},
+ {id:"2026-05-28-tribunal",fecha:"2026-05-28",tipo:"tribunal",
+  titulo:"Composición del tribunal calificador",
+  resumen:"Resolución de 22 de mayo de 2026: nombramiento del tribunal calificador del proceso.",
+  plazos:[{que:"Recurso de alzada",desde:"2026-05-28",hasta:"2026-06-29"}],
+  enlaces:[{t:"Resolución",u:"https://www.comunidad.madrid/docs/2026-05/rrhh-20260525-3867-tecnespsistemayti-2026-res.pdf?VersionId=2E9hRPOkMfFkOIhb0q9ZczjnKvnHpynq"}]},
+ {id:"2026-04-13-provisionales",fecha:"2026-04-13",tipo:"provisionales",
+  titulo:"Primeras listas provisionales de admitidos y excluidos",
+  resumen:"Resolución de 26 de marzo de 2026: relaciones provisionales de admitidos y excluidos de la convocatoria inicial.",
+  plazos:[{que:"Subsanación",desde:"2026-04-14",hasta:"2026-04-27"}],
+  enlaces:[{t:"Resolución",u:"https://www.comunidad.madrid/docs/2026-05/rrhh-20260413-3867-tecn_esp_sist_tecn_inf_2025_res.pdf?VersionId=BXJ7t.1WuqWXlsS4L7wSyvonFz6qJ9LZ"},
+   {t:"Admitidos",u:"https://www.comunidad.madrid/docs/2026-05/rrhh-20260413-3867-tecn_esp_sist_tecn_inf_2025_admitidos.pdf?VersionId=1ALfy_TDPWUgnpbwaIZFH69JQPhs8QZz"},
+   {t:"Excluidos",u:"https://www.comunidad.madrid/docs/2026-05/rrhh-20260413-3867-tecn_esp_sist_tecn_inf_2025_excluidos.pdf?VersionId=OuaAw1Nl7mAOEIHEMiCIPqInEveLb1Xs"}]},
+ {id:"2025-07-31-convocatoria",fecha:"2025-07-31",tipo:"convocatoria",
+  titulo:"Convocatoria del proceso selectivo",
+  resumen:"Resolución de 17 de julio de 2025 (BOCM n.º 181): concurso-oposición por turno libre, grupo C1, 16 plazas (14 + 2 de discapacidad). Examen: 95 preguntas + 10 de reserva en 115 minutos; cada error resta ¼.",
+  plazos:[{que:"Plazo de solicitudes",desde:"2025-08-01",hasta:"2025-09-01"}],
+  enlaces:[{t:"BOCM del 31-7-2025",u:"https://www.bocm.es/bocm-20250731-10"},{t:"Temario oficial",u:"https://sede.comunidad.madrid/sites/default/files/ADEL/ckeditor/Ofertas%20de%20empleo%202/E6231/temario_tec._especialista_tec._y_sist._de_la_infor.pdf"}]}
+]};
