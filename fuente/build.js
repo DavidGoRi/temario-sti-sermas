@@ -95,17 +95,27 @@ if (fs.existsSync(dirP)) for (const f of fs.readdirSync(dirP).filter(f => /^\d\d
 }
 fs.writeFileSync(path.join(R, "preguntas.js"), `var PREGUNTAS=${JSON.stringify(PQ)};\n`);
 
+// Motivos de cada opción incorrecta: porque/NN.json → ../porque/NN.js (se cargan al fallar una pregunta del tema)
+const dirPq = path.join(F, "porque");
+fs.mkdirSync(path.join(R, "porque"), { recursive: true });
+let npq = 0;
+if (fs.existsSync(dirPq)) for (const f of fs.readdirSync(dirPq).filter(f => /^\d\d\.json$/.test(f))) {
+  const d = JSON.parse(fs.readFileSync(path.join(dirPq, f), "utf8")); npq += Object.keys(d).length;
+  fs.writeFileSync(path.join(R, "porque", f.replace(".json", ".js")), `(window.PORQUE=window.PORQUE||{})[${+f.slice(0, 2)}]=${JSON.stringify(d)};\n`);
+}
+
 for (const f of ["datos.js", "diagramas.js", "examenes.js", "trampas.js", "tablas.js", "nemotecnias.js", "noticias.js", "siglas.js", "icono.svg", "manifest.webmanifest"]) fs.copyFileSync(path.join(F, f), path.join(R, f));
 fs.writeFileSync(path.join(R, "sw.js"), fs.readFileSync(path.join(F, "sw.js"), "utf8").replace("VERSION", Date.now().toString(36)));
 const pagina = fs.readFileSync(path.join(F, "index.html"), "utf8");
 fs.writeFileSync(path.join(R, "index.html"),
   '<!doctype html>\n<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">\n' + pagina + "\n</html>\n");
+console.log(npq, "preguntas con motivos;");
 console.log(Object.keys(indice).length, "temas,", total.toLocaleString("es-ES"), "palabras;", nq, "preguntas nuevas;", Object.keys(expres).length, "resúmenes exprés");
 
 const pub = process.argv[2];
 if (pub) {
   fs.rmSync(pub, { recursive: true, force: true });
-  for (const d of ["temas", "leyes"]) {
+  for (const d of ["temas", "leyes", "porque"]) {
     fs.mkdirSync(path.join(pub, d), { recursive: true });
     for (const f of fs.readdirSync(path.join(R, d))) fs.copyFileSync(path.join(R, d, f), path.join(pub, d, f));
   }

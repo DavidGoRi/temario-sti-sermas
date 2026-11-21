@@ -84,6 +84,7 @@
 - UDP sobre el puerto 7
 - ARP
 - IGMP
+= Ping envía mensajes ICMP Echo. Tracert de Windows también usa ICMP; el traceroute de Linux envía por defecto sondas UDP, pero se basa en las respuestas ICMP «tiempo excedido».
 
 ? La topología en la que todos los equipos se conectan a un nodo central es:
 + En estrella

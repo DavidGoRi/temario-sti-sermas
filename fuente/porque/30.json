@@ -1,0 +1,137 @@
+{
+ "30-0": [
+  "El aprendizaje supervisado necesita datos etiquetados con la respuesta correcta; aquí no hay etiquetas previas.",
+  "El aprendizaje por refuerzo es un agente que aprende con recompensas al actuar en un entorno, no agrupando datos.",
+  "La IA simbólica razona con reglas y conocimiento explícito; no es un tipo de aprendizaje a partir de datos."
+ ],
+ "30-1": [
+  "Las redes convolucionales (CNN) destacan en imágenes; los LLM actuales no se basan en ellas.",
+  "El perceptrón simple es una neurona de una sola capa, incapaz de modelar el lenguaje.",
+  "Un árbol de decisión es un modelo clásico de clasificación por reglas; no genera texto."
+ ],
+ "30-2": [
+  "El Reglamento (UE) 2016/679 es el RGPD, de protección de datos personales.",
+  "El Reglamento (UE) 910/2014 es eIDAS, sobre identificación electrónica y servicios de confianza.",
+  "La Directiva (UE) 2022/2555 es la NIS2, sobre ciberseguridad de entidades esenciales e importantes."
+ ],
+ "30-3": [
+  "La AEPD es la Agencia Española de Protección de Datos; vigila el RGPD, no el Reglamento de IA en general.",
+  "El CCN es el Centro Criptológico Nacional, dedicado a la ciberseguridad del sector público y al ENS.",
+  "El INCIBE es el Instituto Nacional de Ciberseguridad, orientado a ciudadanos y empresas."
+ ],
+ "30-4": [
+  "RAG no reentrena el modelo; le aporta documentos en el momento de la consulta.",
+  "Comprimir la red es cuantización, poda o destilación, técnicas distintas de RAG.",
+  "La generación de imágenes por difusión es otra técnica de IA generativa, sin relación con RAG."
+ ],
+ "30-5": [
+  "Los chatbots no están entre las prácticas prohibidas, como la puntuación social o la manipulación subliminal.",
+  "Sí tienen obligaciones: el Reglamento exige informar a la persona de que habla con una IA.",
+  "El ENS es la norma española de seguridad, no una exigencia del Reglamento de IA para los chatbots."
+ ],
+ "30-6": [
+  "Entrenar sin etiquetas buscando grupos es aprendizaje no supervisado, como el clustering.",
+  "Aprender por recompensas y castigos es el aprendizaje por refuerzo.",
+  "Todo aprendizaje automático necesita datos; el supervisado, además, etiquetados."
+ ],
+ "30-7": [
+  "Asignar categorías es clasificación, la otra gran tarea del aprendizaje supervisado.",
+  "Agrupar sin etiquetas es clustering, una tarea de aprendizaje no supervisado.",
+  "Reducir variables es reducción de dimensionalidad, por ejemplo con PCA."
+ ],
+ "30-8": [
+  "Clasificar datos a partir de ejemplos etiquetados es aprendizaje supervisado, no por refuerzo.",
+  "Reducir la dimensión de los datos, por ejemplo con PCA, es una técnica no supervisada.",
+  "Traducir textos es una tarea de procesamiento del lenguaje natural, no un paradigma de aprendizaje."
+ ],
+ "30-9": [
+  "Un árbol de decisión de un nivel es un modelo muy simple, lo contrario de una red profunda.",
+  "Las reglas escritas a mano son propias de la IA simbólica y los sistemas expertos, no del aprendizaje profundo.",
+  "La regresión lineal es un modelo estadístico sencillo, sin capas ocultas."
+ ],
+ "30-10": [
+  "El perceptrón simple tiene una sola capa y no puede modelar el lenguaje.",
+  "Un árbol de decisión es un modelo de reglas para clasificar, no la base de un LLM.",
+  "La red de Hopfield es una red recurrente de memoria asociativa de los años ochenta, no la base de los LLM."
+ ],
+ "30-11": [
+  "Funcionar mal incluso con los datos de entrenamiento es subajuste (underfitting).",
+  "El sobreajuste suele darse con modelos de demasiados parámetros, no de pocos.",
+  "La regularización combate el sobreajuste; regularizar en exceso produce subajuste."
+ ],
+ "30-12": [
+  "Procesar imágenes médicas corresponde a la visión artificial, no al PLN.",
+  "El control de robots industriales es robótica, no procesamiento del lenguaje.",
+  "Comprimir vídeo es una tarea de códecs como H.264 o HEVC, no de PLN."
+ ],
+ "30-13": [
+  "Los parámetros son los pesos aprendidos durante el entrenamiento; los tokens son el texto que entra y sale.",
+  "Una frase se divide en varios tokens; el token es una unidad mucho más pequeña.",
+  "La respuesta está formada por muchos tokens que el modelo genera uno tras otro."
+ ],
+ "30-14": [
+  "Un error de conexión es un fallo de red, no una alucinación del modelo.",
+  "La baja resolución es un defecto de calidad de imagen, no una respuesta inventada.",
+  "Los fallos de hardware son averías físicas; la alucinación surge del propio modelo al generar."
+ ],
+ "30-15": [
+  "La exactitud es la proporción de aciertos sobre el total; no es la media armónica de precisión y sensibilidad.",
+  "La especificidad mide los negativos reales bien identificados; no entra en la puntuación F1.",
+  "El área bajo la curva ROC resume la capacidad de discriminar en todos los umbrales; no es la F1."
+ ],
+ "30-16": [
+  "Los filtros antispam se consideran de riesgo mínimo, sin obligaciones específicas.",
+  "Los videojuegos con IA son de riesgo mínimo según el Reglamento.",
+  "Los traductores automáticos no están prohibidos; son en general de riesgo mínimo."
+ ],
+ "30-17": [
+  "El riesgo mínimo es para usos como filtros antispam; un componente de seguridad sanitario es mucho más crítico.",
+  "El riesgo inaceptable se reserva a prácticas prohibidas, como la puntuación social; la IA sanitaria está permitida.",
+  "La transparencia es la obligación de los chatbots o contenidos generados; los productos sanitarios exigen mucho más."
+ ],
+ "30-18": [
+  "La IA apoya al radiólogo, pero la responsabilidad y la firma del informe siguen siendo humanas.",
+  "Gestionar nóminas es una tarea administrativa, no una aplicación de imagen médica.",
+  "Las direcciones IP las asigna DHCP; no es una aplicación de IA en imagen médica."
+ ],
+ "30-19": [
+  "La precisión es la proporción de positivos predichos que eran realmente positivos.",
+  "La especificidad mide la proporción de negativos reales identificados correctamente.",
+  "La exactitud mide los aciertos totales, positivos y negativos, sobre todos los casos."
+ ],
+ "30-20": [
+  "Los chatbots y la clasificación de documentos no están prohibidos; como mucho tienen obligaciones de transparencia.",
+  "La virtualización ejecuta varias máquinas sobre un mismo hardware; no tiene que ver con la IA.",
+  "Los protocolos de red, como TCP/IP o HTTP, son reglas de comunicación, no aplicaciones de IA."
+ ],
+ "30-21": [
+  "La arquitectura de la red se describe con sus capas y parámetros, no con la matriz de confusión.",
+  "El tiempo de entrenamiento es un dato de coste computacional, no un resultado de clasificación.",
+  "La cantidad de datos describe el conjunto de entrenamiento; la matriz cruza clases reales y predichas."
+ ],
+ "30-22": [
+  "Las hojas de cálculo son datos tabulares, para los que suelen ir mejor árboles o modelos de boosting.",
+  "Para texto se usan sobre todo los transformers; las CNN aprovechan la estructura espacial de las imágenes.",
+  "Las bases de datos relacionales se consultan con SQL; no son el caso de uso típico de las CNN."
+ ],
+ "30-23": [
+  "Solo clasificar es propio de la IA discriminativa; la generativa crea contenido nuevo.",
+  "Controlar robots es robótica, que puede usar IA, pero no define la IA generativa.",
+  "La IA generativa necesita enormes cantidades de datos de entrenamiento."
+ ],
+ "30-24": [
+  "El resultado que genera el modelo es la respuesta o salida, no el prompt.",
+  "Los datos de entrenamiento son los que se usaron para crear el modelo; el prompt llega en el uso.",
+  "El hardware de ejecución son las GPU o los servidores, no el prompt."
+ ],
+ "30-25": [
+  "Solo están prohibidos los de riesgo inaceptable, como la puntuación social por las autoridades.",
+  "La evaluación de conformidad previa se exige a los sistemas de alto riesgo, no a los de riesgo mínimo.",
+  "El registro en la base de datos de la UE es una obligación de los sistemas de alto riesgo."
+ ],
+ "30-26": [
+  "El uso de memoria afecta al rendimiento técnico, no a la imparcialidad del modelo.",
+  "El tamaño de la pantalla no influye en los datos ni en el entrenamiento del modelo.",
+  "La velocidad de internet afecta al tiempo de respuesta, no a los sesgos del modelo."
+ ]
+}

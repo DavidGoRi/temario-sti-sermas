@@ -1124,6 +1124,7 @@ details[open]>:not(summary){animation:aparece .3s ease both}
 mark.dm{background:var(--bad-soft);color:var(--bad);text-decoration:line-through;text-decoration-thickness:1.5px;border-radius:4px;padding:0 3px}
 mark.dp{background:var(--ok-soft);color:var(--ok);font-weight:700;border-radius:4px;padding:0 3px}
 .pq-o{margin:0;font-size:14px}
+.pq-m{margin:0;font-size:15px;line-height:1.5;font-weight:500}
 .pq-t{margin:0;padding:10px 12px;border-left:3px solid var(--accent);background:var(--accent-soft);border-radius:0 10px 10px 0;font-size:14px;line-height:1.5}
 .pq-t a{display:block;margin-top:6px;font-weight:600;font-size:13px;color:var(--accent)}
 /* Puntos débiles */
@@ -3196,11 +3197,12 @@ function porQue(it,elegida,correcta,box){
   if(otras.length){const o=otras[0];partes.push(`<p class="pq-o"><span class="pq-l">Lo que tú marcaste</span>«${md(elegida)}» es la respuesta a otra pregunta: <i>${md(o.q)}</i> <a href="#tema-${o.n}">Tema ${o.n}</a></p>`)}
   const sig=typeof SIGLAS!=="undefined"&&SIGLAS.find(s=>normTxt(s[0])===normTxt(elegida)||normTxt(elegida).startsWith(normTxt(s[0])+" "));
   if(sig)partes.push(`<p class="pq-o"><span class="pq-l">${esc(sig[0])} significa</span>${esc(sig[1])}${sig[2]?". "+esc(sig[2]):""}</p>`);
-  const pinta=()=>{let html=partes.join("");const f=fraseTemario(it.n,it.q,correcta);
+  const pinta=()=>{const PQ=(window.PORQUE||{})[it.n],k=it.o.indexOf(elegida),man=PQ&&PQ[it.id]&&k>0?PQ[it.id][k-1]:null;
+    let html=(man?`<p class="pq-m">${md(man)}</p>`:"")+partes.join("");const f=fraseTemario(it.n,it.q,correcta);
     if(f)html+=`<blockquote class="pq-t"><span class="pq-l">Lo que dice el temario (tema ${it.n})</span>${md(f)}<a href="#leer-${it.n}">Leer el tema →</a></blockquote>`;
     if(html){box.innerHTML=`<div class="pq-c"><h5>${ICON.bulb}Por qué no es «${esc(String(elegida).slice(0,80))}${String(elegida).length>80?"…":""}»</h5>${html}</div>`}};
   pinta();
-  Promise.all([cargar(`temas/${pad(it.n)}.js`),typeof SIGLAS==="undefined"?cargar("siglas.js"):null]).then(()=>{
+  Promise.all([cargar(`temas/${pad(it.n)}.js`),cargar(`porque/${pad(it.n)}.js`).catch(()=>{}),typeof SIGLAS==="undefined"?cargar("siglas.js"):null]).then(()=>{
     if(typeof SIGLAS!=="undefined"&&!sig){const s2=SIGLAS.find(s=>normTxt(s[0])===normTxt(elegida)||normTxt(elegida).startsWith(normTxt(s[0])+" "));
       if(s2)partes.push(`<p class="pq-o"><span class="pq-l">${esc(s2[0])} significa</span>${esc(s2[1])}${s2[2]?". "+esc(s2[2]):""}</p>`)}
     if(box.isConnected)pinta()}).catch(()=>{});

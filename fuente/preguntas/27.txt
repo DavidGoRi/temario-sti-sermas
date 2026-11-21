@@ -22,12 +22,12 @@
 - Área de trabajo
 - Latiguillo de usuario
 
-? El estándar Wi-Fi 6 corresponde a:
-+ IEEE 802.11ax
+? Wi-Fi 7 corresponde al estándar:
++ IEEE 802.11be
+- IEEE 802.11ax
 - IEEE 802.11ac
-- IEEE 802.11n
-- IEEE 802.11g
-= Wi-Fi 4 = 802.11n; Wi-Fi 5 = 802.11ac; Wi-Fi 6/6E = 802.11ax; Wi-Fi 7 = 802.11be.
+- IEEE 802.11ad
+= Wi-Fi 4 es 802.11n, Wi-Fi 5 es 802.11ac, Wi-Fi 6 y 6E son 802.11ax y Wi-Fi 7 es 802.11be.
 
 ? Wi-Fi 6E añade a Wi-Fi 6 la banda de:
 + 6 GHz
@@ -53,11 +53,12 @@
 - 802.11ax
 - SFP
 
-? El protocolo que evita bucles en una red de switches es:
-+ STP (Spanning Tree Protocol)
-- OSPF
-- BGP
-- VRRP
+? El estándar que permite agrupar varios puertos físicos entre dos switches como un único enlace lógico es:
++ LACP (IEEE 802.3ad, hoy 802.1AX)
+- STP (IEEE 802.1D)
+- PoE (IEEE 802.3af)
+- VLAN (IEEE 802.1Q)
+= La agregación de enlaces suma ancho de banda y da redundancia: si cae un cable, el tráfico sigue por los demás.
 
 ? Una red WAN se caracteriza por:
 + Cubrir áreas geográficas extensas, uniendo redes de distintas ubicaciones

@@ -3,7 +3,7 @@
 - El punto de acceso electrónico que permite acceder a la información publicada por una Administración
 - El área personalizada del ciudadano para consultar sus expedientes
 - El registro electrónico general de una Administración
-= La definición de la segunda opción corresponde al portal de internet (art. 39); la tercera, a la Carpeta Ciudadana.
+= El punto de acceso a la información publicada es el portal de internet (art. 39); el área personalizada es la Carpeta Ciudadana, y el registro electrónico general es otra cosa (art. 16 de la Ley 39/2015).
 @ BOE-A-2015-10566#38
 
 ? El punto de acceso electrónico que permite el acceso a través de internet a la información publicada y, en su caso, a la sede electrónica es, según la Ley 40/2015:

@@ -1,0 +1,132 @@
+{
+ "28-0": [
+  "0,8 nm (100 GHz) es la separación típica de DWDM, mucho más densa que la de CWDM.",
+  "100 nm es demasiado; con esa separación apenas cabrían canales en la ventana óptica útil.",
+  "1 nm no es la rejilla de CWDM; las separaciones del orden de 1 nm o menos son propias de DWDM."
+ ],
+ "28-1": [
+  "El LSR (Label Switch Router) está en el núcleo y solo intercambia etiquetas; no las pone ni las quita en el borde.",
+  "El LSP es el camino conmutado por etiquetas que sigue el tráfico, no un router.",
+  "La FEC es la clase de equivalencia de reenvío: el grupo de paquetes que reciben el mismo tratamiento y etiqueta."
+ ],
+ "28-2": [
+  "SD-WAN no cambia el medio físico; gestiona por software los enlaces que ya existen, sean de fibra, radio o móviles.",
+  "SD-WAN combina varios tipos de enlace, como MPLS, Internet o 4G/5G; no depende solo de MPLS.",
+  "Es lo contrario: SD-WAN suele cifrar los túneles sobre Internet, normalmente con IPsec."
+ ],
+ "28-3": [
+  "TESTA es la red de la Comisión Europea que une las administraciones de los Estados miembros, no solo las españolas.",
+  "RedIRIS es la red académica y de investigación española, no la de las Administraciones.",
+  "SIR es el Sistema de Interconexión de Registros, un servicio que funciona sobre SARA, no la red en sí."
+ ],
+ "28-4": [
+  "La OTAN tiene sus propias redes militares; TESTA es una red civil de la Unión Europea.",
+  "TESTA es europea; un ministerio español no promueve redes entre Estados miembros.",
+  "La UIT es el organismo de la ONU para las telecomunicaciones que elabora normas, no gestiona redes de la UE."
+ ],
+ "28-5": [
+  "La capa 1 es la física: señales y medios; MPLS no trabaja ahí.",
+  "La capa 4 es la de transporte, con TCP y UDP; MPLS actúa por debajo de IP.",
+  "La capa 7 es la de aplicación; MPLS no examina datos de aplicación para conmutar."
+ ],
+ "28-6": [
+  "El CCN-CERT es la capacidad de respuesta a incidentes del Centro Criptológico Nacional; protege, pero no gestiona SARA.",
+  "La FNMT emite certificados electrónicos y presta servicios de confianza; no gestiona redes.",
+  "El INCIBE atiende la ciberseguridad de ciudadanos y empresas; no gestiona la red de las Administraciones."
+ ],
+ "28-7": [
+  "Repartir el tiempo en ranuras es la multiplexación por división en el tiempo (TDM), no WDM.",
+  "WDM usa una sola fibra para varias señales; repartir por varias fibras es justo lo que evita.",
+  "WDM no comprime nada; multiplexa varias señales, cada una en su propia longitud de onda."
+ ],
+ "28-8": [
+  "CWDM usa canales muy separados, de 20 nm, con menos canales y para distancias más cortas.",
+  "TDM multiplexa por ranuras de tiempo, no por longitudes de onda.",
+  "OFDM es una modulación con muchas subportadoras ortogonales, propia de Wi-Fi, 4G o TDT, no de WDM."
+ ],
+ "28-9": [
+  "La dirección MAC se usa para conmutar tramas en capa 2 dentro de una red local, no en MPLS.",
+  "El puerto TCP identifica la aplicación en capa 4; los routers MPLS no lo consultan para reenviar.",
+  "El nombre DNS se traduce a dirección IP antes de comunicarse; ningún router reenvía por nombres."
+ ],
+ "28-10": [
+  "El LSR trabaja en el núcleo de la red MPLS conmutando etiquetas; no las pone ni las quita.",
+  "ABR es el router de frontera de área de OSPF, que une un área con el área 0.",
+  "DR es el router designado de OSPF en redes de difusión; no tiene relación con las etiquetas MPLS."
+ ],
+ "28-11": [
+  "Una VLAN es una red local virtual de capa 2 (802.1Q), no un camino de etiquetas MPLS.",
+  "Una VPN SSL es un acceso remoto cifrado con TLS, normalmente desde el navegador o un cliente.",
+  "SPF (Shortest Path First) es el algoritmo de Dijkstra que usa OSPF para calcular rutas."
+ ],
+ "28-12": [
+  "MPLS ofrece mucho más que Internet: VPN privadas entre sedes, calidad de servicio e ingeniería de tráfico.",
+  "Las redes Wi-Fi son redes locales inalámbricas 802.11; no las proporciona MPLS.",
+  "La telefonía analógica va por la red telefónica conmutada; MPLS transporta paquetes, por ejemplo de voz IP."
+ ],
+ "28-13": [
+  "SD-WAN es software de gestión de enlaces, no un medio físico como la fibra.",
+  "El protocolo de enrutamiento de Internet es BGP; SD-WAN es una arquitectura de gestión de la WAN.",
+  "Una red local inalámbrica es una WLAN o Wi-Fi; SD-WAN trata de enlaces de área extensa entre sedes."
+ ],
+ "28-14": [
+  "SARA une todas las Administraciones públicas, no solo Defensa, que tiene sus propias redes.",
+  "SARA no es una red Wi-Fi local; es una red troncal de área extensa entre Administraciones.",
+  "SARA es una red de comunicaciones sobre la que funcionan muchos servicios, no un servicio de correo."
+ ],
+ "28-15": [
+  "RedIRIS es la red académica española; no es la vía de SARA hacia las instituciones europeas.",
+  "GÉANT es la red europea de investigación y educación, a la que se conecta RedIRIS, no SARA.",
+  "SARA no usa Internet sin cifrar para este fin; se conecta a la UE por la red segura TESTA."
+ ],
+ "28-16": [
+  "El LSP es el camino que siguen los paquetes etiquetados por la red MPLS, no una tabla por cliente.",
+  "La FEC agrupa los paquetes que reciben el mismo tratamiento y la misma etiqueta.",
+  "Una VLAN separa redes en capa 2 dentro de una LAN; no es la tabla de rutas de una VPN de operador."
+ ],
+ "28-17": [
+  "SD-WAN sigue necesitando enlaces físicos; lo que hace es gestionarlos y combinarlos.",
+  "SD-WAN no sustituye a los cortafuegos; a menudo los incorpora o se integra con ellos.",
+  "SD-WAN funciona con enlaces muy diversos, como Internet, 4G/5G o MPLS, no solo con fibra oscura."
+ ],
+ "28-18": [
+  "TESTA es la red de la Comisión Europea entre administraciones de los Estados miembros, no académica.",
+  "La Red 112 es el servicio de atención de emergencias, no una red de investigación.",
+  "RENFE es el operador ferroviario español; no tiene nada que ver con las redes académicas."
+ ],
+ "28-19": [
+  "Eso describe DWDM: más canales y más próximos, para largas distancias.",
+  "CWDM también es una técnica sobre fibra óptica; multiplexa longitudes de onda de luz.",
+  "CWDM se aplica a fibra óptica, no a redes inalámbricas."
+ ],
+ "28-20": [
+  "Las capas 4 y 5 son las de transporte y sesión, muy por encima de la conmutación de etiquetas.",
+  "Las capas 6 y 7, presentación y aplicación, no intervienen en el reenvío de paquetes.",
+  "MPLS se apoya sobre la capa de enlace y bajo IP; no está entre la física y la de enlace."
+ ],
+ "28-21": [
+  "La fibra multimodo es un tipo de fibra por su núcleo, no una modalidad de alquiler sin equipos.",
+  "ADSL es un acceso sobre el par de cobre telefónico con equipos del operador.",
+  "Frame Relay es un servicio WAN antiguo de conmutación de tramas, prestado por el operador."
+ ],
+ "28-22": [
+  "El LER está en el borde de la red MPLS: pone y quita etiquetas, no conmuta en el núcleo.",
+  "ABR es el router de frontera de área de OSPF, no un router MPLS.",
+  "NAT es la traducción de direcciones, una función, no un tipo de router de MPLS."
+ ],
+ "28-23": [
+  "La clase de servicio prioriza el tráfico, pero no lo cifra; MPLS por sí solo no cifra.",
+  "Las direcciones IP las asigna DHCP o la configuración, no la clase de servicio de MPLS.",
+  "Las etiquetas las quita el LER a la salida; la clase de servicio no tiene esa función."
+ ],
+ "28-24": [
+  "Usar siempre el mismo enlace es lo que hace una WAN estática; SD-WAN cambia según el estado de cada enlace.",
+  "SD-WAN aprovecha los enlaces de respaldo de forma activa en lugar de apagarlos.",
+  "El reparto no es aleatorio: sigue políticas por aplicación y mediciones de latencia, pérdida y ancho de banda."
+ ],
+ "28-25": [
+  "SARA es una red interna entre Administraciones; no da acceso a Internet a los ciudadanos.",
+  "La telefonía móvil de los funcionarios la contratan las Administraciones con operadores; no la presta SARA.",
+  "La televisión digital se emite por la TDT o por operadores; SARA no la ofrece."
+ ]
+}

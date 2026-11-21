@@ -1060,7 +1060,7 @@ q:[
 ["El ENS vigente se regula en el:",["RD 311/2022, de 3 de mayo","RD 3/2010, de 8 de enero","RD 4/2010, de 8 de enero","RD 1720/2007"],"El RD 4/2010 es el ENI."],
 ["NO es una dimensión de seguridad del ENS:",["La legalidad","La trazabilidad","La autenticidad","La disponibilidad"],"Son confidencialidad, integridad, trazabilidad, autenticidad y disponibilidad."],
 ["Un sistema con confidencialidad BAJA, integridad MEDIA y disponibilidad ALTA es de categoría:",["ALTA","MEDIA","BÁSICA","Depende de la media"],"La marca la dimensión más alta."],
-["Los sistemas de categoría MEDIA o ALTA deben auditarse al menos:",["Cada 2 años","Cada año","Cada 3 años","Una sola vez"],"Los de categoría BÁSICA solo necesitan autoevaluación."],
+["Los sistemas de categoría MEDIA o ALTA deben auditarse al menos:",["Cada 2 años","Cada año","Cada 3 años","Una sola vez"],"Art. 31 del ENS: todos los sistemas pasan una auditoría ordinaria al menos cada dos años. Para declarar la conformidad, a los de categoría BÁSICA les basta una autoevaluación y los de MEDIA o ALTA necesitan certificación."],
 ["Las medidas de seguridad del ENS se agrupan en:",["Marco organizativo, marco operacional y medidas de protección","Físicas, lógicas y legales","Preventivas, correctivas y disuasorias","Básicas, medias y altas"],"Anexo II del RD 311/2022."],
 ["La herramienta del CCN para análisis y gestión de riesgos es:",["PILAR","LUCIA","INES","CLARA"],"LUCIA es para incidentes."],
 ["La metodología de análisis de riesgos de la Administración española es:",["MAGERIT","OCTAVE","CRAMM","COBIT"],"Va por la versión 3."]

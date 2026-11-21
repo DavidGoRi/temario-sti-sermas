@@ -52,11 +52,12 @@
 - GÉANT
 - Internet sin cifrado
 
-? La gestión de la red SARA corresponde a:
-+ La Secretaría General de Administración Digital
-- El Centro Criptológico Nacional
-- La Comisión Nacional de los Mercados y la Competencia
-- Cada Comunidad Autónoma por separado
+? En una VPN MPLS de capa 3, la tabla de enrutamiento separada que mantiene el router de borde del operador para cada cliente se llama:
++ VRF (Virtual Routing and Forwarding)
+- LSP (Label Switched Path)
+- FEC (Forwarding Equivalence Class)
+- VLAN
+= Gracias a las VRF, varios clientes pueden usar las mismas direcciones privadas sin mezclarse.
 
 ? ¿Qué ventaja aporta SD-WAN frente a una WAN tradicional?
 + Gestión centralizada, uso de enlaces más baratos combinados y aprovisionamiento rápido de sedes

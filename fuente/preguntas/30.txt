@@ -4,11 +4,12 @@
 - Aprender por recompensas y castigos
 - No necesitar datos
 
-? Agrupar pacientes con características parecidas sin categorías previas es una tarea de aprendizaje:
-+ No supervisado (clustering)
-- Supervisado de clasificación
-- Por refuerzo
-- De regresión
+? En aprendizaje automático, un modelo de regresión sirve para:
++ Predecir un valor numérico continuo, como los días de estancia hospitalaria
+- Asignar una categoría, como sano o enfermo
+- Agrupar datos sin etiquetas previas
+- Reducir el número de variables de un conjunto de datos
+= Clasificación y regresión son aprendizaje supervisado; la primera predice categorías y la segunda, números.
 
 ? El aprendizaje por refuerzo consiste en:
 + Un agente que aprende a actuar en un entorno maximizando una recompensa
@@ -40,11 +41,12 @@
 - Controlar robots industriales
 - Comprimir vídeo
 
-? La técnica RAG (generación aumentada por recuperación) consiste en:
-+ Dar al modelo de lenguaje documentos recuperados de una fuente propia para que base en ellos su respuesta
-- Entrenar el modelo desde cero
-- Reducir el tamaño del modelo
-- Traducir el modelo a otro idioma
+? En un modelo de lenguaje, un «token» es:
++ La unidad de texto (una palabra o un fragmento de palabra) que el modelo procesa
+- Un parámetro entrenado de la red neuronal
+- Una frase completa del documento
+- La respuesta final que genera el modelo
+= Los límites de contexto y los costes de uso de los modelos se miden en tokens.
 
 ? Las «alucinaciones» de un modelo de IA generativa son:
 + Respuestas plausibles pero falsas o inventadas
@@ -114,11 +116,12 @@
 - El conjunto de datos de entrenamiento
 - El hardware donde se ejecuta
 
-? Según el Reglamento europeo de IA, quien interactúa con un chatbot debe:
-+ Ser informado de que está interactuando con un sistema de IA (obligación de transparencia)
-- Firmar un contrato
-- Ser mayor de 25 años
-- Pagar una tasa
+? Según el Reglamento europeo de IA, los sistemas de riesgo mínimo, como un filtro antispam:
++ No tienen obligaciones específicas, aunque pueden adherirse a códigos de conducta voluntarios
+- Están prohibidos
+- Necesitan una evaluación de conformidad previa
+- Deben inscribirse en la base de datos de la UE de sistemas de alto riesgo
+= El Reglamento gradúa las obligaciones por riesgo: inaceptable (prohibido), alto, de transparencia y mínimo.
 
 ? El sesgo en un modelo de IA puede provenir de:
 + Datos de entrenamiento no representativos o con prejuicios
