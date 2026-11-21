@@ -959,6 +959,65 @@ body{background:radial-gradient(900px 520px at 12% -8%,var(--glow),transparent 7
 ::view-transition-old(root),::view-transition-new(root){animation:none;mix-blend-mode:normal}
 ::view-transition-new(root){z-index:2}
 
+/* ===== Efectos de la barra lateral ===== */
+/* Aurora detrás del logo */
+.side{isolation:isolate}
+.side::before{content:"";position:absolute;z-index:-1;left:-50px;right:-50px;top:-110px;height:260px;background:radial-gradient(closest-side,color-mix(in srgb,var(--accent) 24%,transparent),transparent);filter:blur(12px);pointer-events:none;animation:aurora 12s ease-in-out infinite alternate}
+@keyframes aurora{0%{transform:translateX(-36px) scale(1);opacity:.75}100%{transform:translateX(44px) scale(1.18);opacity:1}}
+/* Nombre con un destello que lo recorre */
+.brand b{background:linear-gradient(90deg,var(--ink) 42%,var(--accent) 50%,var(--ink) 58%);background-size:260% 100%;background-position:100% 0;-webkit-background-clip:text;background-clip:text;color:transparent;animation:brilloT 7s ease-in-out infinite}
+@keyframes brilloT{0%,72%{background-position:100% 0}100%{background-position:0 0}}
+/* Buscador: halo al enfocarlo */
+.search input{transition:border-color .2s,box-shadow .25s,background .2s}
+.search input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 18%,transparent);background:var(--surface)}
+.search svg{transition:color .2s,transform .25s cubic-bezier(.3,1.6,.5,1)}
+.search:focus-within svg{color:var(--accent);transform:translateY(-50%) scale(1.15)}
+.search .kq{transition:opacity .2s}
+.search:focus-within .kq{opacity:0}
+/* Resaltado deslizante */
+.sbody{position:relative;--fa:0px;--fb:0px;-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 var(--fa),#000 calc(100% - var(--fb)),transparent 100%);mask-image:linear-gradient(to bottom,transparent 0,#000 var(--fa),#000 calc(100% - var(--fb)),transparent 100%)}
+.side.s-arr .sbody{--fa:22px}
+.side.s-aba .sbody{--fb:30px}
+.shov{position:absolute;left:0;top:0;width:0;height:0;border-radius:9px;background:var(--sunk);opacity:0;pointer-events:none;z-index:0;transition:opacity .2s}
+.shov.on{opacity:1;transition:transform .28s cubic-bezier(.3,1.25,.5,1),width .28s,height .28s,opacity .2s}
+.nav a,.toc a,.tocb summary{position:relative;z-index:1}
+.nav a:not(.on):hover,.toc a:not(.on):hover,.tocb summary:hover{background:transparent}
+/* Elemento activo */
+.nav a.on{background:linear-gradient(90deg,var(--accent-soft),color-mix(in srgb,var(--accent-soft) 30%,transparent));box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--accent) 22%,transparent)}
+.nav a.on svg{filter:drop-shadow(0 0 6px color-mix(in srgb,var(--accent) 60%,transparent));animation:icoOn .55s cubic-bezier(.3,1.6,.5,1)}
+@keyframes icoOn{40%{transform:scale(1.28) rotate(-10deg)}}
+.nav a[href="#noticias"] .cnt{background:var(--accent);color:var(--accent-ink);animation:late 2.4s ease-out infinite}
+@keyframes late{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--accent) 55%,transparent)}70%,100%{box-shadow:0 0 0 8px transparent}}
+/* Títulos de grupo con una línea */
+.navh{display:flex;align-items:center;gap:8px}
+.navh::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--line),transparent);transform-origin:left center}
+/* Entrada escalonada al cargar, al cambiar de pestaña y al abrir el menú en el móvil */
+.side.entra .nav>*{animation:aparece .4s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--k,0)*22ms)}
+.side.entra .toc>*{animation:aparece .4s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--k,0)*45ms)}
+.side.entra .navh::after{animation:linea .7s .25s cubic-bezier(.2,.8,.2,1) both}
+@keyframes linea{from{transform:scaleX(0)}}
+.side.entra .nav .cnt{animation:cuenta .45s .3s cubic-bezier(.3,1.6,.5,1) both}
+@keyframes cuenta{from{transform:scale(0)}}
+/* Temas: barra del color del bloque y entrada al desplegar */
+.toc a::before{content:"";position:absolute;left:2px;top:7px;bottom:7px;width:3px;border-radius:3px;background:var(--bc);transform:scaleY(0);transition:transform .22s cubic-bezier(.3,1.5,.5,1)}
+.toc a:hover::before,.toc a.on::before{transform:scaleY(1)}
+.toc a .n{transition:color .15s}
+.toc a:hover .n,.toc a.on .n{color:var(--bc)}
+.toc a .st{transition:transform .25s cubic-bezier(.3,1.6,.5,1)}
+.toc a:hover .st{transform:scale(1.3)}
+.tocb summary::after{content:"▸";transition:transform .25s cubic-bezier(.3,1.4,.5,1)}
+.tocb[open] summary::after{content:"▸";transform:rotate(90deg)}
+.tocb summary i{transition:transform .25s cubic-bezier(.3,1.6,.5,1),box-shadow .25s}
+.tocb summary:hover i{transform:scale(1.4);box-shadow:0 0 0 4px color-mix(in srgb,var(--bc) 22%,transparent)}
+.tocb.abre>a{animation:aparece .35s cubic-bezier(.2,.8,.2,1) both}
+.tocb.abre>a:nth-of-type(2){animation-delay:.03s}.tocb.abre>a:nth-of-type(3){animation-delay:.06s}.tocb.abre>a:nth-of-type(4){animation-delay:.09s}.tocb.abre>a:nth-of-type(5){animation-delay:.12s}.tocb.abre>a:nth-of-type(6){animation-delay:.15s}.tocb.abre>a:nth-of-type(7){animation-delay:.18s}.tocb.abre>a:nth-of-type(n+8){animation-delay:.21s}
+/* Pie: brillo que recorre la barra de progreso */
+.sprog .meter i{position:relative;overflow:hidden}
+.sprog .meter i::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.5),transparent);transform:translateX(-100%);animation:brilloB 3s 1.2s ease-in-out infinite}
+@keyframes brilloB{to{transform:translateX(100%)}}
+.sfoot .themeBtn:hover svg{transform:rotate(40deg) scale(1.1)}
+.sbody>.shov{animation:none!important}
+
 @media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}.logo-a .lg-pulse{stroke-dasharray:none}}
 </style>
 
@@ -1137,7 +1196,7 @@ function renderToc(h){
     if(term) ts=ts.filter(t=>(t.t+" "+t.s+" "+t.e+" "+t.k.join(" ")+" "+t.n).toLowerCase().includes(term));
     if(!ts.length) return;
     const abierto=term||ts.some(t=>String(t.n)===cur)||(S.tocAb||{})[b];
-    html+=`<details class="tocb" data-b="${b}" ${abierto?"open":""}><summary style="${bc(b)}"><i></i>${BLOQUES[b].n}<span class="mono">${ts.filter(t=>S.est[t.n]).length}/${ts.length}</span></summary>`+ts.map(t=>`<a href="#tema-${t.n}" class="${String(t.n)===cur?"on":""}"><span class="n">${String(t.n).padStart(2,"0")}</span><span>${esc(t.s)}</span><span class="st ${temaState(t.n)}" title="${temaState(t.n)==="done"?"Estudiado y test superado":temaState(t.n)==="half"?"En progreso":"Sin empezar"}"></span></a>`).join("")+`</details>`;
+    html+=`<details class="tocb" data-b="${b}" style="${bc(b)}" ${abierto?"open":""}><summary><i></i>${BLOQUES[b].n}<span class="mono">${ts.filter(t=>S.est[t.n]).length}/${ts.length}</span></summary>`+ts.map(t=>`<a href="#tema-${t.n}" class="${String(t.n)===cur?"on":""}"><span class="n">${String(t.n).padStart(2,"0")}</span><span>${esc(t.s)}</span><span class="st ${temaState(t.n)}" title="${temaState(t.n)==="done"?"Estudiado y test superado":temaState(t.n)==="half"?"En progreso":"Sin empezar"}"></span></a>`).join("")+`</details>`;
   });
   const todo=term.length>=2?`<a class="buscaTodo" href="#buscar/${encodeURIComponent(term)}">${ICON.search}<span>Buscar «${esc(term)}» en todo el temario, preguntas y leyes</span></a>`:"";
   $("#toc").innerHTML=todo+(html||`<div class="empty">Ningún título de tema contiene «${esc(term)}».</div>`);
@@ -2775,6 +2834,30 @@ function efectoResultado(el,pct){
     setTimeout(()=>capa.remove(),2000);
   },350);
 }
+
+/* ---------- Efectos de la barra lateral ---------- */
+(function(){
+  const sd=$("#side"),sb=sd.querySelector(".sbody");if(!sb)return;
+  const entra=()=>{if(QUIETO())return;sd.classList.remove("entra");void sd.offsetWidth;sd.classList.add("entra");clearTimeout(sd._e);sd._e=setTimeout(()=>sd.classList.remove("entra"),1000)};
+  const numera=()=>{sd.querySelectorAll("#nav>*").forEach((x,k)=>x.style.setProperty("--k",k));sd.querySelectorAll("#toc>*").forEach((x,k)=>x.style.setProperty("--k",k))};
+  const sombras=()=>{sd.classList.toggle("s-arr",sb.scrollTop>4);sd.classList.toggle("s-aba",sb.scrollTop+sb.clientHeight<sb.scrollHeight-4)};
+  new MutationObserver(()=>{numera();requestAnimationFrame(sombras)}).observe(sb,{childList:true,subtree:true});
+  numera();entra();setTimeout(sombras,300);
+  sb.addEventListener("scroll",sombras,{passive:true});addEventListener("resize",sombras,{passive:true});
+  document.querySelectorAll(".stabs button").forEach(b=>b.addEventListener("click",()=>{entra();requestAnimationFrame(sombras)}));
+  let abierto=false;new MutationObserver(()=>{const o=sd.classList.contains("open");if(o&&!abierto)entra();abierto=o}).observe(sd,{attributes:true,attributeFilter:["class"]});
+  /* Resaltado que se desliza hasta el elemento bajo el puntero */
+  const ind=document.createElement("span");ind.className="shov";ind.setAttribute("aria-hidden","true");sb.prepend(ind);
+  sb.addEventListener("pointerover",e=>{
+    const a=e.target.closest(".nav a, .toc a, .tocb summary");if(!a||!sb.contains(a))return;
+    const r=a.getBoundingClientRect(),rb=sb.getBoundingClientRect();
+    ind.style.transform=`translate(${r.left-rb.left}px,${r.top-rb.top+sb.scrollTop}px)`;ind.style.width=r.width+"px";ind.style.height=r.height+"px";ind.classList.add("on");
+  });
+  sb.addEventListener("pointerleave",()=>ind.classList.remove("on"));
+  sb.addEventListener("scroll",()=>ind.classList.remove("on"),{passive:true});
+  /* Los temas de un bloque entran uno tras otro al desplegarlo */
+  $("#toc").addEventListener("toggle",e=>{const d=e.target;if(d.matches&&d.matches("details.tocb")&&d.open&&!QUIETO()){d.classList.add("abre");setTimeout(()=>d.classList.remove("abre"),800)}},true);
+})();
 
 /* ---------- Fallos ---------- */
 function viewFallos(){
