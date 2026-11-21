@@ -854,8 +854,9 @@ body{background:radial-gradient(900px 520px at 12% -8%,var(--glow),transparent 7
 .bl-i .meter i{background:var(--bc)}
 .home-pie{font-size:12.5px;margin:4px 0 0;text-align:center;text-wrap:balance}
 .home-pie a{color:var(--accent)}
-.noti-ini .row{flex-wrap:nowrap;align-items:flex-start}
-@media (max-width:480px){.noti-ini .row{flex-wrap:wrap}}
+.noti-ini .row{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:start}
+@media (max-width:420px){.noti-ini .row{grid-template-columns:minmax(0,1fr)}.noti-ini .row .btn{justify-self:start}}
+.nueva{white-space:nowrap;display:inline-block}
 @media (max-width:640px){.home-hero{padding:20px}.hoy-i{gap:10px;padding:9px 10px}}
 .noti-ini .btn{white-space:nowrap;flex:none}
 
