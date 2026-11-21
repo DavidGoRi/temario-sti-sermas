@@ -859,7 +859,106 @@ body{background:radial-gradient(900px 520px at 12% -8%,var(--glow),transparent 7
 .noti-ini .row{flex-wrap:nowrap;align-items:flex-start}
 @media (max-width:480px){.noti-ini .row{flex-wrap:wrap}}
 @media (max-width:640px){.home-hero{padding:20px}.hoy-i{gap:10px;padding:9px 10px}}
-.noti-ini .btn{white-space:nowrap}
+.noti-ini .btn{white-space:nowrap;flex:none}
+
+/* ===== Efectos visuales ===== */
+@property --p{syntax:"<number>";inherits:true;initial-value:0}
+@keyframes sube{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes aparece{from{opacity:0;transform:translateX(-6px)}to{opacity:1;transform:none}}
+/* Entrada escalonada de cada vista y aparición al desplazarse */
+.wrap{animation:none}
+.wrap>*{animation:sube .5s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--i,0)*55ms)}
+.rv:not(.in){opacity:0;animation:none}
+.rv.in{animation:sube .6s cubic-bezier(.2,.8,.2,1) both}
+@media print{.rv{opacity:1!important;transform:none!important}.lectura,.confeti{display:none!important}}
+/* Anillos y barras que se llenan */
+.ring{animation:anillo 1.1s cubic-bezier(.2,.8,.2,1) both}
+@keyframes anillo{from{--p:0}}
+.meter i{transform-origin:left center;animation:barra 1s .15s cubic-bezier(.2,.8,.2,1) both}
+@keyframes barra{from{transform:scaleX(0)}}
+/* Portada: luces que flotan detrás del saludo */
+.home-hero{position:relative;overflow:hidden;isolation:isolate}
+.home-hero::before,.home-hero::after{content:"";position:absolute;z-index:-1;border-radius:50%;filter:blur(42px);pointer-events:none}
+.home-hero::before{width:340px;height:340px;right:-70px;top:-140px;background:color-mix(in srgb,var(--accent) 32%,transparent);animation:flota 14s ease-in-out infinite alternate}
+.home-hero::after{width:280px;height:280px;left:28%;bottom:-190px;background:color-mix(in srgb,var(--c-sis) 24%,transparent);animation:flota 19s ease-in-out infinite alternate-reverse}
+@keyframes flota{to{transform:translate(-70px,46px) scale(1.18)}}
+/* Botones: onda al pulsar, brillo y elevación */
+.btn,.op,.hoy-i,.iconbtn,.stabs button,.tcard,.bnav a,.bnav button,.bl-i{position:relative;overflow:hidden}
+.rip{position:absolute;border-radius:50%;background:currentColor;opacity:.2;transform:scale(0);animation:rip .65s cubic-bezier(.2,.7,.3,1) forwards;pointer-events:none}
+.btn.pri .rip{background:#fff;opacity:.35}
+@keyframes rip{to{transform:scale(1);opacity:0}}
+.btn{transition:background .15s,border-color .15s,transform .18s,box-shadow .2s}
+.btn:hover{transform:translateY(-1px)}
+.btn:active{transform:translateY(1px) scale(.98)}
+.btn.pri::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.3) 50%,transparent 70%);transform:translateX(-120%);transition:transform .75s ease;pointer-events:none}
+.btn.pri:hover::after{transform:translateX(120%)}
+.btn.pri:hover{box-shadow:0 12px 26px -10px var(--accent)}
+.iconbtn{transition:background .15s,transform .2s}
+.iconbtn:hover svg{transform:rotate(-12deg) scale(1.08)}
+.iconbtn svg{transition:transform .3s cubic-bezier(.3,1.5,.5,1)}
+/* Tarjetas: se elevan y una luz sigue al puntero */
+.hoy-i,.tcard,.qa,.noti,.exa,.xp{background-image:radial-gradient(240px circle at var(--mx,-400px) var(--my,-400px),color-mix(in srgb,var(--accent) 12%,transparent),transparent 70%)}
+.hoy-i,.tcard,.qa,.exa{transition:border-color .2s,background-color .2s,transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s}
+.hoy-i:hover,.tcard:hover,.qa:hover,.exa:hover{transform:translateY(-2px);box-shadow:0 16px 30px -20px color-mix(in srgb,var(--accent) 70%,#000)}
+.hoy-ic{transition:transform .3s cubic-bezier(.3,1.5,.5,1)}
+.hoy-i:hover .hoy-ic{transform:scale(1.1) rotate(-5deg)}
+.bl-i .meter i{transition:filter .2s}
+.bl-i:hover .meter i{filter:brightness(1.25)}
+.bl-i>i{transition:transform .25s cubic-bezier(.3,1.5,.5,1)}
+.bl-i:hover>i{transform:scale(1.5)}
+/* Menú lateral */
+.nav a svg{transition:transform .22s cubic-bezier(.3,1.5,.5,1),opacity .15s}
+.nav a:hover svg{transform:translateX(2px) scale(1.08)}
+.nav a.on::before{animation:marca .4s cubic-bezier(.3,1.5,.5,1)}
+@keyframes marca{from{transform:scaleY(0)}}
+.toc a{transition:background .15s,padding-left .2s}
+.toc a:hover{padding-left:14px}
+.stabs{position:relative}
+.stabs::before{content:"";position:absolute;top:4px;bottom:4px;left:4px;width:calc(50% - 6px);border-radius:9px;background:var(--surface);box-shadow:0 1px 4px rgba(0,0,0,.18);transition:transform .34s cubic-bezier(.3,1.3,.5,1)}
+.side[data-tab="temas"] .stabs::before{transform:translateX(calc(100% + 4px))}
+.stabs button{z-index:1}
+.stabs button[aria-selected="true"]{background:none;box-shadow:none}
+.sbody>*{animation:aparece .3s ease both}
+.go .logo-a{animation:logoGo .7s cubic-bezier(.3,1.5,.5,1)}
+.go .lg-pulse{animation-duration:.9s}
+@keyframes logoGo{0%{transform:none}30%{transform:scale(.8) rotate(-12deg)}65%{transform:scale(1.16) rotate(6deg)}100%{transform:none}}
+.bnav a.on svg{animation:salta .5s cubic-bezier(.3,1.6,.5,1)}
+@keyframes salta{40%{transform:translateY(-4px) scale(1.14)}}
+/* Test: preguntas que entran, acierto que late y fallo que tiembla */
+.qz .qq{animation:sube .35s cubic-bezier(.2,.8,.2,1) both}
+.ops .op{animation:sube .4s cubic-bezier(.2,.8,.2,1) both}
+.ops .op:nth-child(2){animation-delay:.05s}
+.ops .op:nth-child(3){animation-delay:.1s}
+.ops .op:nth-child(4){animation-delay:.15s}
+.op{transition:border-color .15s,background-color .2s,transform .18s}
+.op:hover:not([disabled]){transform:translateX(3px)}
+.op.ok{animation:acierto .55s cubic-bezier(.3,1.5,.5,1)}
+.op.bad{animation:sacude .45s ease}
+@keyframes acierto{0%{transform:none;box-shadow:0 0 0 0 transparent}40%{transform:scale(1.025);box-shadow:0 0 0 7px color-mix(in srgb,var(--ok) 25%,transparent)}100%{transform:none;box-shadow:0 0 0 0 transparent}}
+@keyframes sacude{0%,100%{transform:none}20%{transform:translateX(-7px)}40%{transform:translateX(6px)}60%{transform:translateX(-4px)}80%{transform:translateX(2px)}}
+.fb{animation:sube .35s cubic-bezier(.2,.8,.2,1) both}
+.res{animation:sube .45s cubic-bezier(.2,.8,.2,1) both}
+.res-head h2{animation:sube .5s .25s cubic-bezier(.2,.8,.2,1) both}
+.res.top .ring{animation:anillo 1.2s cubic-bezier(.2,.8,.2,1) both,brilla 1.4s 1s ease-out}
+@keyframes brilla{from{box-shadow:0 0 0 0 color-mix(in srgb,var(--accent) 55%,transparent)}to{box-shadow:0 0 0 24px transparent}}
+.fc.flip .fc-b{box-shadow:0 20px 44px -24px var(--accent)}
+.fc:hover .fc-in{transform:translateY(-2px)}
+.fc.flip:hover .fc-in{transform:rotateY(180deg) translateY(-2px)}
+.confeti{position:fixed;inset:0;pointer-events:none;z-index:95;overflow:hidden}
+.confeti i{position:absolute;animation:confeti 1.7s cubic-bezier(.15,.7,.3,1) forwards}
+@keyframes confeti{0%{transform:translate(-50%,-50%) scale(.4);opacity:1}70%{opacity:1}100%{transform:translate(calc(-50% + var(--dx)),calc(-50% + var(--dy) + 150px)) rotate(var(--r));opacity:0}}
+/* Buscador rápido y avisos */
+.cmdk:not([hidden]){animation:velo .2s ease both}
+.cmdk:not([hidden]) .cmdk-c{animation:paleta .28s cubic-bezier(.2,.9,.3,1.2) both}
+@keyframes velo{from{opacity:0}}
+@keyframes paleta{from{opacity:0;transform:translateY(-12px) scale(.97)}}
+.toast:not([hidden]){animation:tostada .4s cubic-bezier(.2,.9,.3,1.2) both}
+@keyframes tostada{from{opacity:0;transform:translate(-50%,18px) scale(.95)}}
+/* Barra de lectura */
+.lectura{position:fixed;left:0;right:0;top:env(safe-area-inset-top,0px);height:3px;background:linear-gradient(90deg,var(--accent),var(--c-sis));transform-origin:left center;transform:scaleX(0);z-index:60;pointer-events:none;border-radius:0 3px 3px 0}
+/* Cambio de tema con círculo que se expande */
+::view-transition-old(root),::view-transition-new(root){animation:none;mix-blend-mode:normal}
+::view-transition-new(root){z-index:2}
 
 @media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}.logo-a .lg-pulse{stroke-dasharray:none}}
 </style>
@@ -931,8 +1030,13 @@ function applyTheme(){
   document.querySelectorAll(".themeBtn").forEach(b=>{b.innerHTML=(m==="oscuro"?SUN:MOON)+"<span>"+l+"</span>";b.setAttribute("aria-label","Cambiar a "+l.toLowerCase());b.title="Cambiar a "+l.toLowerCase()});
 }
 applyTheme();
-document.querySelectorAll(".themeBtn").forEach(b=>b.addEventListener("click",()=>{
-  S.modo=S.modo==="claro"?"oscuro":"claro"; save(); applyTheme();
+document.querySelectorAll(".themeBtn").forEach(b=>b.addEventListener("click",e=>{
+  const cambia=()=>{S.modo=S.modo==="claro"?"oscuro":"claro"; save(); applyTheme();};
+  if(!document.startViewTransition||matchMedia("(prefers-reduced-motion: reduce)").matches){cambia();return}
+  const x=e.clientX||innerWidth/2,y=e.clientY||40,rad=Math.hypot(Math.max(x,innerWidth-x),Math.max(y,innerHeight-y));
+  try{const vt=document.startViewTransition(cambia);
+    vt.ready.then(()=>document.documentElement.animate({clipPath:["circle(0px at "+x+"px "+y+"px)","circle("+rad+"px at "+x+"px "+y+"px)"]},{duration:560,easing:"cubic-bezier(.4,0,.2,1)",pseudoElement:"::view-transition-new(root)"})).catch(()=>{});
+  }catch(err){cambia()}
 }));
 
 /* Utilidades */
@@ -1265,6 +1369,7 @@ function quiz(el,items,opt){
       <div class="row"><button class="btn pri" id="re">Repetir el test</button>${wrong.length?'<button class="btn" id="reW">Repetir solo los fallos</button>':""}${opt.tema?`<button class="btn ghost" id="toE">Volver al esquema</button>`:""}</div>
       ${wrong.length?`<div class="rev">${wrong.map(w=>`<div class="rev-it"><span class="tg">TEMA ${w.n}</span><b>${md(w.q)}</b><span class="c">✓ ${md(w.o[0])}</span>${w.x?`<span class="muted">${md(w.x)}</span>`:""}${refLink(w)}</div>`).join("")}</div>`:""}
     </div>`;
+    efectoResultado(el,pct);
     $("#re").addEventListener("click",()=>quiz(el,items,opt));
     const rw=$("#reW"); if(rw) rw.addEventListener("click",()=>quiz(el,wrong,Object.assign({},opt,{tema:null,onW:1})));
     const te=$("#toE"); if(te) te.addEventListener("click",()=>{tab="esquema";renderTab(TM[opt.tema]);window.scrollTo({top:0})});
@@ -2611,6 +2716,65 @@ document.addEventListener("keydown",e=>{if((e.ctrlKey||e.metaKey)&&e.key.toLower
 /* ---------- Instalación y uso sin conexión (solo en la versión web de GitHub) ---------- */
 if("serviceWorker" in navigator&&location.protocol==="https:"&&!enMarco()&&/github\.io$/.test(location.hostname)){
   window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));
+}
+
+/* ---------- Efectos visuales ---------- */
+const QUIETO=()=>matchMedia("(prefers-reduced-motion: reduce)").matches;
+function contar(elm){
+  const tn=[...elm.childNodes].find(n=>n.nodeType===3&&/\d/.test(n.nodeValue));if(!tn)return;
+  const m=tn.nodeValue.match(/^(\D*)(\d+)([\s\S]*)$/);if(!m)return;const fin=+m[2];if(fin<2)return;
+  const t0=performance.now(),dur=Math.min(1100,500+fin*4);
+  const paso=t=>{const k=Math.min(1,(t-t0)/dur),e=1-Math.pow(1-k,3);tn.nodeValue=m[1]+Math.round(fin*e)+m[3];if(k<1)requestAnimationFrame(paso)};
+  tn.nodeValue=m[1]+"0"+m[3];requestAnimationFrame(paso);
+}
+function revelar(){main.querySelectorAll(".rv:not(.in)").forEach(x=>{if(x.getBoundingClientRect().top<innerHeight*0.94)x.classList.add("in")})}
+addEventListener("scroll",revelar,{passive:true});
+function animarVista(){
+  const w=main.querySelector(".wrap");if(!w)return;
+  [...w.children].forEach((c,k)=>c.style.setProperty("--i",Math.min(k,10)));
+  if(QUIETO())return;
+  main.querySelectorAll(".ring b, .stat .v").forEach(contar);
+  const alto=innerHeight;
+  main.querySelectorAll(".panel, .tcard, .xp, .noti, figure.dg, .exa, .tbx, .blk, .eq").forEach(x=>{
+    if(x.parentElement.closest(".rv"))return;
+    if(x.getBoundingClientRect().top>alto){x.classList.add("rv")}});
+  setTimeout(revelar,60);
+}
+new MutationObserver(ms=>{if(ms.some(m=>[...m.addedNodes].some(n=>n.nodeType===1&&n.classList.contains("wrap"))))animarVista()}).observe(main,{childList:true});
+/* Onda al pulsar */
+document.addEventListener("pointerdown",e=>{
+  if(QUIETO()||e.button>0)return;
+  const b=e.target.closest(".btn, .op:not([disabled]), .hoy-i, .qa, .iconbtn, .stabs button, .bnav a, .bnav button, .tcard, .bl-i");if(!b)return;
+  const r=b.getBoundingClientRect(),d=Math.max(r.width,r.height)*2.2,s=document.createElement("span");
+  s.className="rip";s.style.cssText=`width:${d}px;height:${d}px;left:${e.clientX-r.left-d/2}px;top:${e.clientY-r.top-d/2}px`;
+  b.appendChild(s);setTimeout(()=>s.remove(),700);
+},{passive:true});
+/* Foco de luz que sigue al puntero en las tarjetas */
+document.addEventListener("pointermove",e=>{
+  const c=e.target.closest&&e.target.closest(".hoy-i, .tcard, .qa, .noti, .exa, .xp");if(!c)return;
+  const r=c.getBoundingClientRect();c.style.setProperty("--mx",(e.clientX-r.left)+"px");c.style.setProperty("--my",(e.clientY-r.top)+"px");
+},{passive:true});
+/* El logo da un salto al pulsarlo */
+document.querySelectorAll(".brand,.tb-brand").forEach(a=>a.addEventListener("click",()=>{a.classList.remove("go");void a.offsetWidth;a.classList.add("go");setTimeout(()=>a.classList.remove("go"),750)}));
+/* Barra de lectura */
+const barL=document.createElement("div");barL.className="lectura noHL";barL.setAttribute("aria-hidden","true");document.body.appendChild(barL);
+function pintaLectura(){const h=document.documentElement,max=h.scrollHeight-innerHeight;barL.hidden=max<700;barL.style.transform=`scaleX(${max>0?Math.min(1,h.scrollTop/max):0})`}
+addEventListener("scroll",pintaLectura,{passive:true});addEventListener("resize",pintaLectura,{passive:true});
+new MutationObserver(()=>requestAnimationFrame(pintaLectura)).observe(main,{childList:true,subtree:true});
+/* Confeti al terminar un test con buena nota */
+function efectoResultado(el,pct){
+  const r=el.querySelector(".res");if(r)r.classList.add(pct>=70?"top":pct>=50?"mid":"low");
+  if(pct<70||QUIETO())return;
+  const ring=el.querySelector(".res .ring");if(!ring)return;
+  setTimeout(()=>{
+    const b=ring.getBoundingClientRect(),cols=["var(--accent)","var(--ok)","var(--warn)","var(--c-sis)","var(--c-seg)","var(--c-leg)"];
+    const capa=document.createElement("div");capa.className="confeti noHL";capa.setAttribute("aria-hidden","true");document.body.appendChild(capa);
+    const n=pct>=90?64:38;
+    for(let k=0;k<n;k++){const p=document.createElement("i"),ang=Math.random()*Math.PI*2,dist=90+Math.random()*200;
+      p.style.cssText=`left:${b.left+b.width/2}px;top:${b.top+b.height/2}px;background:${cols[k%cols.length]};--dx:${(Math.cos(ang)*dist).toFixed(0)}px;--dy:${(Math.sin(ang)*dist-70).toFixed(0)}px;--r:${(Math.random()*720-360).toFixed(0)}deg;animation-delay:${(Math.random()*90).toFixed(0)}ms;width:${(6+Math.random()*5).toFixed(1)}px;height:${(8+Math.random()*7).toFixed(1)}px;border-radius:${k%3?2:50}px`;
+      capa.appendChild(p)}
+    setTimeout(()=>capa.remove(),2000);
+  },350);
 }
 
 /* ---------- Fallos ---------- */
