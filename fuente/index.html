@@ -2786,7 +2786,7 @@ function contar(elm){
   tn.nodeValue=m[1]+"0"+m[3];requestAnimationFrame(paso);
 }
 function revelar(){main.querySelectorAll(".rv:not(.in)").forEach(x=>{if(x.getBoundingClientRect().top<innerHeight*0.94)x.classList.add("in")})}
-addEventListener("scroll",revelar,{passive:true});
+addEventListener("scroll",revelar,{passive:true});addEventListener("resize",revelar,{passive:true});
 function animarVista(){
   const w=main.querySelector(".wrap");if(!w)return;
   [...w.children].forEach((c,k)=>c.style.setProperty("--i",Math.min(k,10)));
