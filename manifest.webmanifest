@@ -1,0 +1,14 @@
+{
+  "name": "Temario STI · SERMAS",
+  "short_name": "Temario STI",
+  "description": "Web de estudio de la oposición de Técnico Especialista de Sistemas y Tecnologías de la Información del SERMAS.",
+  "lang": "es",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0c1214",
+  "theme_color": "#0c1214",
+  "icons": [
+    { "src": "icono.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

@@ -2,6 +2,10 @@
 <html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Temario STI SERMAS</title>
 <meta name="claude:viewport-fit-sides" content="cover">
+<meta name="theme-color" content="#0c1214">
+<meta name="description" content="Temario completo, legislación, test y simulacros de la oposición de Técnico Especialista STI del SERMAS.">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icono.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap">
@@ -683,15 +687,108 @@ body.conAudio .main{padding-bottom:140px}
 .plazo.prox{border-color:var(--warn);background:var(--warn-soft)}.plazo.prox .pe{color:var(--warn)}
 .plazo.cerrado{opacity:.7}.plazo.cerrado .pe{color:var(--muted)}
 .noti-ini{display:flex;flex-direction:column;gap:2px}
+/* ===== Rediseño: cuaderno de estudio clínico-digital. Pizarra verdosa, verde mar y el ámbar del rotulador. ===== */
+:root.oscuro{
+  --bg:#0c1214; --surface:#131b1e; --sunk:#1a2427; --ink:#e7efed; --muted:#93a6a2; --line:#243136;
+  --accent:#45c9a2; --accent-ink:#04231a; --accent-soft:#163a30;
+  --shadow:0 1px 0 rgba(255,255,255,.035) inset,0 10px 28px -16px rgba(0,0,0,.75);
+  --glow:rgba(69,201,162,.09); color-scheme:dark}
+:root.claro{
+  --bg:#f2f6f4; --surface:#ffffff; --sunk:#e8efec; --ink:#13201c; --muted:#53655e; --line:#d3ded9;
+  --accent:#0b7356; --accent-ink:#ffffff; --accent-soft:#d6eee4;
+  --shadow:0 1px 2px rgba(16,40,32,.06),0 10px 26px -18px rgba(16,40,32,.35);
+  --glow:rgba(11,115,86,.07); color-scheme:light}
+:root{--shadow:0 1px 2px rgba(16,40,32,.06),0 10px 26px -18px rgba(16,40,32,.35);--glow:rgba(11,115,86,.07);--r:14px}
+body{background:radial-gradient(900px 520px at 12% -8%,var(--glow),transparent 70%) fixed,var(--bg)}
+.panel,.stat,.tcard,.eq,.noti,.xp,.tbx,.exa,.cta a,.qa,figure.dg{box-shadow:var(--shadow)}
+.panel,.stat{border-radius:var(--r)}
+.wrap{animation:entra .22s ease-out both}
+@keyframes entra{from{opacity:.55;transform:translateY(5px)}to{opacity:1;transform:none}}
+.side{background:color-mix(in srgb,var(--surface) 94%,var(--bg))}
+.nav a{position:relative;transition:background .15s,color .15s}
+.nav a.on::before{content:"";position:absolute;left:-10px;top:8px;bottom:8px;width:3px;border-radius:3px;background:var(--accent)}
+.navh{margin-top:16px}
+.btn{transition:background .15s,border-color .15s,transform .1s}
+.btn:active{transform:translateY(1px)}
+.btn.pri{box-shadow:0 6px 18px -8px var(--accent)}
+.search .kq{position:absolute;right:8px;top:50%;transform:translateY(-50%);font:600 10.5px var(--f-m);color:var(--muted);border:1px solid var(--line);border-bottom-width:2px;border-radius:6px;padding:1px 6px;background:var(--surface);cursor:pointer}
+.search input{padding-right:62px}
+/* Índice lateral plegable */
+.tocb{border-radius:10px}
+.tocb summary{list-style:none;display:flex;align-items:center;gap:8px;margin:10px 4px 2px;padding:6px 6px;border-radius:8px;cursor:pointer;font:600 11px/1.3 var(--f-b);text-transform:uppercase;letter-spacing:.07em;color:var(--muted)}
+.tocb summary::-webkit-details-marker{display:none}
+.tocb summary:hover{background:var(--sunk);color:var(--ink)}
+.tocb summary i{width:8px;height:8px;border-radius:50%;background:var(--bc);flex:none}
+.tocb summary .mono{margin-left:auto;font-size:10.5px;letter-spacing:0;text-transform:none}
+.tocb summary::after{content:"▸";font-size:10px}
+.tocb[open] summary::after{content:"▾"}
+/* Portada */
+.home-hero{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:center;padding:26px 26px 24px;border-radius:20px;border:1px solid var(--line);background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 14%,var(--surface)),var(--surface) 62%);box-shadow:var(--shadow)}
+.home-hero h1{font-size:clamp(30px,5vw,46px);font-weight:800;letter-spacing:-.025em;margin:6px 0 8px}
+.home-hero p{margin:0 0 16px;max-width:58ch;color:var(--muted);font-size:16px}
+.home-hero p b{color:var(--ink)}
+.hh-r{display:flex;flex-direction:column;align-items:center;gap:8px;font-size:12px}
+.ring.big{width:150px;height:150px}
+.ring.big>div{width:120px;height:120px}
+.ring.big b{font-size:32px}
+@media (max-width:640px){.home-hero{grid-template-columns:minmax(0,1fr);padding:20px}.hh-r{flex-direction:row;justify-content:flex-start}.ring.big{width:96px;height:96px}.ring.big>div{width:76px;height:76px}.ring.big b{font-size:20px}}
+.qas{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px}
+@media (max-width:1100px){.qas{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:520px){.qas{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.qa{position:relative;display:flex;flex-direction:column;gap:3px;padding:14px;border-radius:var(--r);border:1px solid var(--line);background:var(--surface);text-decoration:none;color:var(--ink);transition:border-color .15s,transform .15s}
+.qa:hover{border-color:var(--accent);transform:translateY(-2px)}
+.qa svg{width:22px;height:22px;color:var(--accent);margin-bottom:6px}
+.qa b{font:700 14.5px/1.25 var(--f-d)}
+.qa span{font-size:12.5px;color:var(--muted);line-height:1.35}
+.qa-c{position:absolute;top:10px;right:10px;font:700 11px var(--f-m);font-style:normal;background:var(--accent);color:var(--accent-ink);border-radius:20px;padding:2px 8px}
+.home-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px;align-items:start}
+.hg-c{display:flex;flex-direction:column;gap:14px;min-width:0}
+@media (max-width:860px){.home-grid{grid-template-columns:minmax(0,1fr)}}
+.blk-h{justify-content:space-between}
+/* Barra inferior en el móvil */
+.bnav{display:none}
+@media (max-width:900px){
+  .bnav{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));position:fixed;left:0;right:0;bottom:0;z-index:30;background:color-mix(in srgb,var(--surface) 92%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid var(--line);padding:6px max(8px,env(safe-area-inset-right,0px)) calc(6px + env(safe-area-inset-bottom,0px)) max(8px,env(safe-area-inset-left,0px))}
+  .bnav a,.bnav button{position:relative;display:flex;flex-direction:column;align-items:center;gap:2px;padding:6px 2px;border:0;background:none;color:var(--muted);text-decoration:none;font:600 11px var(--f-b);border-radius:10px;cursor:pointer}
+  .bnav svg{width:22px;height:22px}
+  .bnav a.on{color:var(--accent);background:var(--accent-soft)}
+  .bnav .bdot{position:absolute;top:4px;right:calc(50% - 16px);width:8px;height:8px;border-radius:50%;background:var(--bad)}
+  .main{padding-bottom:calc(84px + env(safe-area-inset-bottom,0px))}
+  body.conAudio .abar{bottom:calc(74px + env(safe-area-inset-bottom,0px))}
+  .hlbar,.hlpop{bottom:calc(74px + env(safe-area-inset-bottom,0px))}
+  .toast{bottom:calc(78px + env(safe-area-inset-bottom,0px))}
+}
+/* Buscador rápido */
+.cmdk{position:fixed;inset:0;z-index:80;background:rgba(0,0,0,.45);backdrop-filter:blur(3px);display:flex;justify-content:center;align-items:flex-start;padding:max(10vh,calc(16px + env(safe-area-inset-top,0px))) max(16px,env(safe-area-inset-right,0px)) 16px max(16px,env(safe-area-inset-left,0px))}
+.cmdk[hidden]{display:none}
+.cmdk-c{width:min(620px,100%);background:var(--surface);border:1px solid var(--line);border-radius:16px;box-shadow:0 24px 60px -20px rgba(0,0,0,.6);overflow:hidden;display:flex;flex-direction:column}
+.cmdk-c input{border:0;border-bottom:1px solid var(--line);background:transparent;color:var(--ink);font:500 17px var(--f-b);padding:16px 18px;outline:none}
+.cmdl{max-height:min(56vh,440px);overflow:auto;padding:6px}
+.cmdl a{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 12px;border-radius:10px;color:var(--ink);text-decoration:none;font-size:14.5px}
+.cmdl a small{color:var(--muted);font-size:12px;white-space:nowrap}
+.cmdl a.on,.cmdl a:hover{background:var(--accent-soft)}
+.cmdk-p{margin:0;padding:8px 14px;border-top:1px solid var(--line);font-size:12px}
+/* Avisos */
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:max(16px,env(safe-area-inset-bottom,0px));z-index:90;max-width:min(520px,calc(100vw - 32px));background:var(--ink);color:var(--bg);padding:12px 16px;border-radius:12px;font-size:14px;box-shadow:0 12px 30px -10px rgba(0,0,0,.5)}
+.toast a{color:inherit;font-weight:700}
+.toast[hidden]{display:none}
 @media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
 </style>
 
 <div class="topbar">
   <button class="iconbtn" id="menuBtn" aria-label="Abrir índice" style="margin-left:0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
   <b>Temario STI · SERMAS</b>
+  <button class="iconbtn" id="cmdBtn" aria-label="Buscar o ir a… (Ctrl+K)" style="margin-left:auto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></button>
   <button class="iconbtn themeBtn" aria-label="Cambiar entre tema claro y oscuro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
 </div>
 <div class="scrim" id="scrim"></div>
+<nav class="bnav" id="bnav" aria-label="Navegación principal">
+  <a href="#inicio" data-b="inicio"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/></svg><span>Inicio</span></a>
+  <a href="#temario" data-b="temario"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 21V5M8 7h7M8 11h7"/></svg><span>Temario</span></a>
+  <a href="#adaptativo" data-b="adaptativo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg><span>Practicar</span></a>
+  <a href="#noticias" data-b="noticias"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h13v14a2 2 0 0 0 2 2H6a2 2 0 0 1-2-2z"/><path d="M17 9h3v10a2 2 0 0 1-2 2M8 9h5M8 13h5M8 17h3"/></svg><span>Noticias</span><i class="bdot" hidden></i></a>
+  <button type="button" id="bmas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg><span>Más</span></button>
+</nav>
 <div class="app">
   <aside class="side" id="side" aria-label="Índice del temario">
     <div class="brand">
@@ -699,7 +796,7 @@ body.conAudio .main{padding-bottom:140px}
       <div><b>Temario STI</b><small>Técnico Especialista · SERMAS</small></div>
       <button class="iconbtn themeBtn" aria-label="Cambiar entre tema claro y oscuro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
     </div>
-    <label class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="q" type="search" placeholder="Buscar en todo (Intro)…" aria-label="Buscar en el temario" autocomplete="off"></label>
+    <label class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="q" type="search" placeholder="Buscar en todo (Intro)…" aria-label="Buscar en el temario" autocomplete="off"><kbd class="kq" title="Buscador rápido">Ctrl K</kbd></label>
     <nav class="nav" id="nav"></nav>
     <div class="toc" id="toc"></div>
   </aside>
@@ -708,10 +805,7 @@ body.conAudio .main{padding-bottom:140px}
 
 <script src="datos.js"></script>
 <script src="preguntas.js"></script>
-<script src="diagramas.js"></script>
 <script src="examenes.js"></script>
-<script src="trampas.js"></script>
-<script src="tablas.js"></script>
 <script src="nemotecnias.js"></script>
 <script src="noticias.js"></script>
 <script src="temas/indice.js"></script>
@@ -763,7 +857,7 @@ function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random
 const bc=b=>`--bc:var(${BLOQUES[b].c})`;
 const main=$("#main");
 let keyH=null, timer=null;
-document.addEventListener("keydown",e=>{ if(e.target.matches("input,textarea,select")) return; if(keyH) keyH(e); });
+document.addEventListener("keydown",e=>{ if(e.target.matches&&e.target.matches("input,textarea,select")) return; if(keyH) keyH(e); });
 
 const ICON={
  home:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/></svg>',
@@ -791,9 +885,10 @@ const ICON={
 };
 
 /* Datos derivados */
-function allCards(filter){const r=[];TEMAS.forEach(t=>{if(filter&&!filter(t))return;t.f.forEach((c,i)=>r.push({id:t.n+"-"+i,n:t.n,f:c[0],a:c[1]}))});return r}
+let _cards=null,_qs=null;
+function allCards(filter){if(!_cards){_cards=[];TEMAS.forEach(t=>t.f.forEach((c,i)=>_cards.push({id:t.n+"-"+i,n:t.n,f:c[0],a:c[1]})))}return filter?_cards.filter(c=>filter(TM[c.n])):_cards.slice()}
 const qItem=(t,q,i)=>({id:t.n+"-"+i,n:t.n,q:q[0],o:q[1],x:q[2]||"",r:q[3]||""});
-function allQs(filter){const r=[];TEMAS.forEach(t=>{if(filter&&!filter(t))return;t.q.forEach((q,i)=>r.push(qItem(t,q,i)))});return r}
+function allQs(filter){if(!_qs){_qs=[];TEMAS.forEach(t=>t.q.forEach((q,i)=>_qs.push(qItem(t,q,i))))}return filter?_qs.filter(q=>filter(TM[q.n])):_qs.slice()}
 /* Enlace a la fuente de una pregunta: el artículo de la ley si lo tiene, o el tema completo */
 function refLink(it){
   const m=(it.r||"").match(/^([A-Za-z0-9-]+)#([A-Za-z0-9-]+)$/);
@@ -809,6 +904,8 @@ function temaState(n){const est=!!S.est[n],best=S.best[n];if(est&&best>=70)retur
 
 /* Barra lateral */
 function renderNav(h){
+  const hb0=h.split(/[-\/]/)[0];document.querySelectorAll("#bnav a").forEach(a=>a.classList.toggle("on",a.dataset.b===hb0||(a.dataset.b==="temario"&&/^(leer|tema)$/.test(hb0))||(a.dataset.b==="adaptativo"&&/^(adaptativo|repaso|simulacro|trampas|practicas|fallos)$/.test(hb0))));
+  const bd=document.querySelector("#bnav .bdot");if(bd)bd.hidden=!noticiasNuevas();
   const nf=Object.keys(S.fail).length, nd=dueCards().length;
   const pend=planHoyPendientes();
   const nn=Object.values(S.hl||{}).reduce((a,x)=>a+x.length,0);
@@ -847,12 +944,14 @@ function renderToc(h){
     let ts=TEMAS.filter(t=>t.b===b);
     if(term) ts=ts.filter(t=>(t.t+" "+t.s+" "+t.e+" "+t.k.join(" ")+" "+t.n).toLowerCase().includes(term));
     if(!ts.length) return;
-    html+=`<h4 style="${bc(b)}"><i></i>${BLOQUES[b].n}</h4>`+ts.map(t=>`<a href="#tema-${t.n}" class="${String(t.n)===cur?"on":""}"><span class="n">${String(t.n).padStart(2,"0")}</span><span>${esc(t.s)}</span><span class="st ${temaState(t.n)}" title="${temaState(t.n)==="done"?"Estudiado y test superado":temaState(t.n)==="half"?"En progreso":"Sin empezar"}"></span></a>`).join("");
+    const abierto=term||ts.some(t=>String(t.n)===cur)||(S.tocAb||{})[b];
+    html+=`<details class="tocb" data-b="${b}" ${abierto?"open":""}><summary style="${bc(b)}"><i></i>${BLOQUES[b].n}<span class="mono">${ts.filter(t=>S.est[t.n]).length}/${ts.length}</span></summary>`+ts.map(t=>`<a href="#tema-${t.n}" class="${String(t.n)===cur?"on":""}"><span class="n">${String(t.n).padStart(2,"0")}</span><span>${esc(t.s)}</span><span class="st ${temaState(t.n)}" title="${temaState(t.n)==="done"?"Estudiado y test superado":temaState(t.n)==="half"?"En progreso":"Sin empezar"}"></span></a>`).join("")+`</details>`;
   });
   const todo=term.length>=2?`<a class="buscaTodo" href="#buscar/${encodeURIComponent(term)}">${ICON.search}<span>Buscar «${esc(term)}» en todo el temario, preguntas y leyes</span></a>`:"";
   $("#toc").innerHTML=todo+(html||`<div class="empty">Ningún título de tema contiene «${esc(term)}».</div>`);
 }
 $("#q").addEventListener("input",()=>renderToc(location.hash.slice(1)));
+$("#toc").addEventListener("toggle",e=>{const d=e.target.closest&&e.target.closest("details.tocb");if(d&&!($("#q").value||"").trim()){S.tocAb=S.tocAb||{};S.tocAb[d.dataset.b]=d.open;save()}},true);
 $("#q").addEventListener("keydown",e=>{if(e.key==="Enter"){const v=e.target.value.trim();if(v.length>=2){closeSide();location.hash="#buscar/"+encodeURIComponent(v)}}});
 const side=$("#side"),scrim=$("#scrim");
 $("#menuBtn").addEventListener("click",()=>{side.classList.add("open");scrim.classList.add("open")});
@@ -881,8 +980,8 @@ function route(){
   else if(h==="notas") viewNotas();
   else if(h==="estadisticas") viewEstadisticas();
   else if(h==="adaptativo") viewAdaptativo();
-  else if(h==="trampas") viewTrampas();
-  else if(h==="tablas") viewTablas();
+  else if(h==="trampas") necesita(["trampas.js"],viewTrampas);
+  else if(h==="tablas") necesita(["tablas.js"],viewTablas);
   else if(h==="ensayo") viewEnsayo();
   else if(h==="mapas") viewMapas();
   else if(h==="nemotecnias") viewNemo();
@@ -900,50 +999,58 @@ function refreshSide(){const h=location.hash.slice(1)||"inicio";renderNav(h);ren
 
 /* ---------- Inicio ---------- */
 function viewInicio(){
-  const nEst=Object.keys(S.est).length, totC=allCards().length;
+  const nEst=Object.keys(S.est).length,nLei=Object.keys(S.leido||{}).length,totC=allCards().length;
   const mast=Object.values(S.box).filter(r=>r.b>=3).length;
-  const bests=Object.values(S.best); const avg=bests.length?Math.round(bests.reduce((a,b)=>a+b,0)/bests.length):null;
-  const nd=dueCards().length, nf=Object.keys(S.fail).length;
+  const bests=Object.values(S.best);const avg=bests.length?Math.round(bests.reduce((a,b)=>a+b,0)/bests.length):null;
+  const nd=dueCards().length,nf=Object.keys(S.fail).length,due=Object.values(S.qb||{}).filter(r=>r.d<=diaLocal()).length;
   const last=S.last&&TM[S.last];
+  const hr=new Date().getHours(),saludo=hr<7?"Buenas noches":hr<14?"Buenos días":hr<21?"Buenas tardes":"Buenas noches";
+  const exOf=(NOT().estado||{}).examen,exD=exOf?diaDe(exOf):S.plan?diaDe(S.plan.fecha):null,falta=exD!=null?exD-diaLocal():null;
+  const pend=planHoyPendientes(),nn=noticiasNuevas();
+  const pct=Math.round((nLei+nEst)/80*100);
+  const frase=falta!=null&&falta>=0?`Faltan <b>${falta} ${falta===1?"día":"días"}</b> para el examen${exOf?"":" (fecha estimada en tu plan)"}.${S.plan?` Hoy tienes <b>${pend}</b> ${pend===1?"tarea pendiente":"tareas pendientes"}.`:""}`:`La fecha del examen aún no se ha publicado. Crea tu <a href="#plan">plan de estudio</a> con una fecha estimada y la web te dirá qué toca cada día.`;
+  const tile=(h,ic,t,s,c)=>`<a class="qa" href="#${h}">${ICON[ic]}<b>${t}</b><span>${s}</span>${c?`<i class="qa-c">${c}</i>`:""}</a>`;
   main.innerHTML=`<div class="wrap">
-  <section class="hero">
-    <span class="eyebrow">Oposición SERMAS 2025 · Grupo C1 · 40 temas</span>
-    <h1>Técnico Especialista en Sistemas y Tecnologías de la Información</h1>
-    <p>Todo el temario oficial en esquemas para subrayar de memoria, tarjetas con repaso espaciado y test con explicación. Tu progreso se guarda en este navegador.</p>
+  <section class="home-hero">
+    <div class="hh-t"><span class="eyebrow">Oposición SERMAS · Técnico Especialista STI · grupo C1</span>
+      <h1>${saludo}</h1><p>${frase}</p>
+      <div class="row">${last?`<a class="btn pri" href="#leer-${last.n}">Seguir con el tema ${last.n}</a>`:`<a class="btn pri" href="#leer-1">Empezar por el tema 1</a>`}<a class="btn" href="#adaptativo">Practicar ahora</a></div></div>
+    <div class="hh-r" title="Temas leídos y estudiados"><div class="ring big" style="--p:${pct}"><div><div><b>${pct}%</b><small>del temario</small></div></div></div>
+      <span class="muted mono">${nLei}/40 leídos · ${nEst}/40 estudiados</span></div>
   </section>
-  ${cuentaAtras()}
-  ${noticiasInicio()}
-  ${pddHTML()}
+  <section class="qas" aria-label="Accesos rápidos">
+    ${tile("adaptativo","target","Test adaptativo","Lo que más fallas",due)}
+    ${tile("repaso","cards","Tarjetas","Repaso espaciado",nd)}
+    ${tile("simulacro","exam","Simulacro oficial","95 preguntas · 115 min","")}
+    ${tile("expres","bolt","Repaso exprés","Lo que más cae","")}
+    ${tile("mapas","mapa","Mapas mentales","Cada tema de un vistazo","")}
+    ${tile("noticias","news","Noticias","Listas, plazos y examen",nn)}
+  </section>
+  <div class="home-grid">
+    <div class="hg-c">${planInicio()}${pddHTML()}</div>
+    <div class="hg-c">${noticiasInicio()}<section class="panel">${predHTML(true)}<a class="btn sm ghost" href="#estadisticas" style="align-self:flex-start;margin-top:8px">Ver estadísticas →</a></section></div>
+  </div>
   <section class="stats" aria-label="Tu progreso">
     <div class="stat"><span class="v mono">${nEst}<small>/40</small></span><span class="l">temas estudiados</span><div class="meter"><i style="width:${nEst/40*100}%"></i></div></div>
     <div class="stat"><span class="v mono">${mast}<small>/${totC}</small></span><span class="l">tarjetas dominadas</span><div class="meter"><i style="width:${mast/totC*100}%"></i></div></div>
-    <div class="stat"><span class="v mono">${avg==null?"–":avg+"<small>%</small>"}</span><span class="l">acierto medio en test</span><div class="meter"><i style="width:${avg||0}%"></i></div></div>
-    <div class="stat"><span class="v mono">${nf}</span><span class="l">preguntas falladas por repasar</span></div>
+    <div class="stat"><span class="v mono">${avg==null?"–":avg+"<small>%</small>"}</span><span class="l">acierto medio en los test</span><div class="meter"><i style="width:${avg||0}%"></i></div></div>
+    <div class="stat"><span class="v mono">${nf}</span><span class="l">falladas por repasar</span><a class="btn sm ghost" href="#fallos" style="align-self:flex-start;margin-top:4px">Repasarlas</a></div>
   </section>
-  <section class="cta">
-    ${last?`<a class="main-cta" href="#tema-${last.n}"><span>Seguir donde lo dejaste</span><b>Tema ${last.n} · ${esc(last.s)}</b></a>`:`<a class="main-cta" href="#tema-1"><span>Empieza por aquí</span><b>Tema 1 · Constitución Española</b></a>`}
-    <a href="#repaso"><b>Repaso de hoy</b><span>${nd} tarjetas pendientes</span></a>
-    <a href="#simulacro"><b>Simulacro oficial</b><span>95 preguntas, 115 minutos, −¼ por error</span></a>
-  </section>
-  ${planInicio()}
-  <section class="panel">${predHTML(true)}<a class="btn sm ghost" href="#estadisticas" style="align-self:flex-start;margin-top:8px">Ver estadísticas →</a></section>
-  <section class="panel" style="display:flex;flex-direction:column;gap:12px">
-    <h2 style="font-size:18px">Cómo estudiar cada tema</h2>
-    <div class="steps">
-      <div><b>Lee el tema</b>Primero el tema completo; después el esquema, con lo más preguntado subrayado.</div>
-      <div><b>Modo memoria</b>Oculta las claves e intenta recordarlas antes de tocarlas.</div>
-      <div><b>Tarjetas</b>Responde en voz alta y marca si lo sabías.</div>
-      <div><b>Test del tema</b>Mira la explicación de cada fallo.</div>
-      <div><b>Repasa a diario</b>Las tarjetas vuelven a 1, 3, 7, 14 y 30 días.</div>
-    </div>
-  </section>
-  ${ORDEN.map(b=>{const ts=TEMAS.filter(t=>t.b===b);return `<section class="blk" style="${bc(b)}">
-    <div class="blk-h"><span class="chip" style="${bc(b)}"><i></i>${ts.length} temas</span><h2>${BLOQUES[b].n}</h2></div>
+  ${ORDEN.map(b=>{const ts=TEMAS.filter(t=>t.b===b);const hechos=ts.filter(t=>S.est[t.n]).length;return `<section class="blk" style="${bc(b)}">
+    <div class="blk-h"><h2>${BLOQUES[b].n}</h2><span class="chip" style="${bc(b)}"><i></i>${hechos}/${ts.length} estudiados</span></div>
     <div class="cards">${ts.map(t=>{const best=S.best[t.n];return `<a class="tcard" href="#tema-${t.n}" style="${bc(b)}">
       ${S.est[t.n]?`<span class="ok" title="Estudiado">${ICON.check}</span>`:""}
-      <span class="n">Tema ${String(t.n).padStart(2,"0")}</span><span class="t">${esc(t.s)}</span>
+      <span class="n">Tema ${pad(t.n)}</span><span class="t">${esc(t.s)}</span>
       <span class="p"><span class="meter"><i style="width:${best||0}%"></i></span>${best==null?"sin test":best+" %"}</span></a>`}).join("")}</div></section>`}).join("")}
-  <section class="note"><b>Sobre la convocatoria.</b> Proceso E6231 del SERMAS (Resolución de 17-7-2025, BOCM n.º 181 de 31-7-2025): concurso-oposición por turno libre, grupo C1. Se convocaron 16 plazas y la Resolución de 24-9-2026 (BOCM del 8-10-2026) las amplió a 39 (36 de cupo general y 3 de discapacidad). La oposición es un único test de <b>95 preguntas + 10 de reserva en 115 minutos</b>, con 4 respuestas y una sola correcta; cada error resta un cuarto de acierto. Vale 50 puntos y se supera con 5 sobre 10. El concurso de méritos vale otros 50 puntos. La fecha del examen se anunciará con al menos un mes de antelación. Estos resúmenes son material de estudio: contrasta los datos legales con el texto consolidado en el BOE o el BOCM.</section>
+  <details class="panel det"><summary><b>Cómo estudiar cada tema</b> <span class="muted">· el método en cinco pasos</span></summary>
+    <div class="steps" style="margin-top:12px">
+      <div><b>Lee el tema</b>Primero el mapa mental y el tema completo; después el esquema.</div>
+      <div><b>Modo memoria</b>Oculta las claves e intenta recordarlas antes de tocarlas.</div>
+      <div><b>Tarjetas</b>Responde en voz alta y marca si lo sabías.</div>
+      <div><b>Test del tema</b>Mira la explicación de cada fallo y su artículo.</div>
+      <div><b>Repasa a diario</b>Test adaptativo y tarjetas: vuelven a 1, 3, 7, 14 y 30 días.</div>
+    </div></details>
+  <section class="note"><b>Sobre la convocatoria.</b> Proceso E6231 del SERMAS (Resolución de 17-7-2025, BOCM n.º 181 de 31-7-2025): concurso-oposición por turno libre, grupo C1, ampliado a 39 plazas (36 de cupo general y 3 de discapacidad) por la Resolución de 24-9-2026. La oposición es un único test de <b>95 preguntas + 10 de reserva en 115 minutos</b>, con 4 respuestas y una sola correcta; cada error resta un cuarto de acierto. Vale 50 puntos y se supera con 5 sobre 10; el concurso de méritos vale otros 50. Estos materiales son de estudio: ante la duda, manda el texto del BOE o del BOCM.</section>
   </div>`;
   enlazarTareas(main);enlazarPdd();
 }
@@ -1167,7 +1274,7 @@ function viewSim(){
     let pool=allQs(t=>bs.has(t.b));const w=f.get("w");
     if(w==="new")pool=pool.filter(q=>!(S.vistas||{})[q.id]);
     if(w==="fail")pool=pool.filter(q=>S.fail[q.id]);
-    if(!pool.length){alert("No hay preguntas con ese filtro.");return}
+    if(!pool.length){aviso("No hay preguntas con ese filtro: elige más bloques o «Todas».");return}
     pool=shuffle(pool).slice(0,+f.get("n"));
     runExam(pool,+f.get("p"),Math.round(+f.get("t")*pool.length),{});
   });
@@ -1352,7 +1459,7 @@ function viewLeer(n){
   window.scrollTo(0,0);
   const doc=$("#doc");
   $("#fsb").innerHTML=tamLetra(doc);enlazarLetra(main,doc);
-  cargar(`temas/${pad(n)}.js`).then(()=>{
+  Promise.all([cargar(`temas/${pad(n)}.js`),cargar("diagramas.js")]).then(()=>{
     if(location.hash!=="#leer-"+n) return;
     const src=(window.TEMARIO||{})[n];
     if(!src){doc.innerHTML=`<p class="muted">Este tema todavía no tiene desarrollo completo. Mientras tanto, estudia su <a href="#tema-${n}">esquema</a>.</p>`;return}
@@ -1529,7 +1636,7 @@ function viewPlan(editar){
         </div><p class="muted" style="font-size:13px;margin:10px 0 0">Todos los días se añade el repaso de las tarjetas pendientes.</p></section></div>`;
     const pc=$("#pcan");if(pc)pc.addEventListener("click",e=>{e.preventDefault();viewPlan()});
     $("#pf").addEventListener("submit",e=>{e.preventDefault();const f=new FormData(e.target);
-      const dias=f.getAll("d").map(Number);if(!dias.length){alert("Elige al menos un día de estudio.");return}
+      const dias=f.getAll("d").map(Number);if(!dias.length){aviso("Elige al menos un día de estudio.");return}
       const fecha=$("#pfe").value;if(!fecha)return;
       S.plan={fecha,dias,orden:f.get("o"),inicio:p&&!editar?p.inicio:(p?Math.min(p.inicio,diaLocal()):diaLocal())};save();refreshSide();viewPlan()});
     return;
@@ -2016,6 +2123,7 @@ function viewEnsayo(){
   $("#ecor").addEventListener("click",()=>{hoja({id:"ensayo",org:"Ensayo",conv:"",cuadernillo:"#ensayo",clave},OFICIAL.n,OFICIAL.pen,0,qs)});
 }
 function imprimir(qs,ord,conPreguntas){
+  if(enMarco()){sinImpresion();return}
   const old=document.getElementById("printz");if(old)old.remove();
   const z=document.createElement("div");z.id="printz";z.className="printz";
   const hoja=`<section class="ph"><h1>Hoja de respuestas · Ensayo SERMAS · Técnico Especialista STI</h1><p>Nombre: ____________________________ Fecha: ____________ Hora de inicio: ________</p>
@@ -2070,7 +2178,7 @@ function audioBarra(){
   return b;
 }
 function audioIniciar(root,desdeEl){
-  if(!window.speechSynthesis){alert("Este navegador no permite la lectura en voz alta.");return}
+  if(!window.speechSynthesis){aviso("Este navegador no permite la lectura en voz alta. Prueba con Microsoft Edge, Chrome o Safari.");return}
   Audio.root=root;Audio.cola=audioPreparar(root);if(!Audio.cola.length)return;
   let i=0;if(desdeEl){const k=Audio.cola.findIndex(x=>x.el===desdeEl||desdeEl.contains(x.el));if(k>=0)i=k}
   const b=audioBarra();b.hidden=false;document.body.classList.add("conAudio");audioDesde(i);
@@ -2130,6 +2238,7 @@ function viewMapas(){
     $("#mma").addEventListener("click",()=>imprimirHTML(TEMAS.map(t=>`<section class="pmap">${mapaHTML(t.n)}</section>`).join("")))});
 }
 function imprimirHTML(html){
+  if(enMarco()){sinImpresion();return}
   const old=document.getElementById("printz");if(old)old.remove();
   const z=document.createElement("div");z.id="printz";z.className="printz";z.innerHTML=html;document.body.appendChild(z);document.body.classList.add("imprimiendo");
   const fin=()=>{document.body.classList.remove("imprimiendo");z.remove();window.removeEventListener("afterprint",fin)};window.addEventListener("afterprint",fin);setTimeout(()=>window.print(),100);
@@ -2381,6 +2490,53 @@ function noticiasInicio(){
     <p class="muted" style="margin:6px 0 0;font-size:13px">Fecha del examen: <b>${E.examen?fechaLarga(diaDe(E.examen)):"aún no publicada"}</b></p></section>`;
 }
 
+/* ---------- Avisos breves (sustituyen a alert, que el visor no muestra) ---------- */
+function aviso(html,ms){
+  let t=$("#toast");if(!t){t=document.createElement("div");t.id="toast";t.className="toast noHL";t.setAttribute("role","status");document.body.appendChild(t)}
+  t.innerHTML=html;t.hidden=false;clearTimeout(t._k);t._k=setTimeout(()=>{t.hidden=true},ms||5000);
+}
+const WEB_GH="https://davidgori.github.io/temario-sti-sermas/";
+const enMarco=()=>{try{return window.self!==window.top}catch(e){return true}};
+function sinImpresion(){aviso(`Desde aquí no se puede imprimir. Ábrelo en <a href="${WEB_GH}${location.hash}" target="_blank" rel="noopener">la versión web</a> y usa el mismo botón.`,9000)}
+
+/* ---------- Carga diferida de datos que solo usan algunas vistas ---------- */
+function necesita(files,fn){
+  const h=location.hash;main.innerHTML=`<div class="wrap"><p class="muted">Cargando…</p></div>`;
+  Promise.all(files.map(cargar)).then(()=>{if(location.hash===h)fn()}).catch(e=>{main.innerHTML=`<div class="wrap"><p class="muted">No se ha podido cargar (${esc(e.message)}). Comprueba la conexión y recarga.</p></div>`});
+}
+
+/* ---------- Buscador rápido (Ctrl+K) ---------- */
+const DESTINOS=[["inicio","Inicio"],["noticias","Noticias del proceso"],["plan","Plan de estudio"],["estadisticas","Estadísticas y nota"],["temario","Temario completo"],["expres","Repaso exprés"],["mapas","Mapas mentales"],["tablas","Tablas para memorizar"],["nemotecnias","Reglas para recordar"],["leyes","Legislación"],["notas","Mis notas y subrayados"],["adaptativo","Test adaptativo"],["repaso","Repaso de tarjetas"],["trampas","Preguntas trampa"],["practicas","Ejercicios prácticos"],["simulacro","Simulacro de examen"],["ensayo","Ensayo del examen"],["examenes","Exámenes anteriores"],["impugnar","Impugnaciones"],["fallos","Mis fallos"]];
+function abrirPaleta(){
+  let p=$("#cmdk");
+  if(!p){p=document.createElement("div");p.id="cmdk";p.className="cmdk noHL";p.innerHTML=`<div class="cmdk-c" role="dialog" aria-modal="true" aria-label="Ir a"><input id="cmdq" type="search" placeholder="Ir a un tema, una ley o una sección… o buscar en todo" autocomplete="off"><div id="cmdl" class="cmdl" role="listbox"></div><p class="cmdk-p muted">↑ ↓ para moverte · Intro para abrir · Esc para cerrar</p></div>`;document.body.appendChild(p);
+    p.addEventListener("click",e=>{if(e.target===p)cerrarPaleta();const a=e.target.closest("[data-h]");if(a){cerrarPaleta();location.hash=a.dataset.h}});
+    $("#cmdq").addEventListener("input",pintaPaleta);
+    $("#cmdq").addEventListener("keydown",e=>{const its=[...p.querySelectorAll("[data-h]")];let i=its.findIndex(x=>x.classList.contains("on"));
+      if(e.key==="ArrowDown"||e.key==="ArrowUp"){e.preventDefault();i=(i+(e.key==="ArrowDown"?1:-1)+its.length)%its.length;its.forEach((x,k)=>x.classList.toggle("on",k===i));its[i]&&its[i].scrollIntoView({block:"nearest"})}
+      if(e.key==="Enter"){e.preventDefault();const a=its[i<0?0:i];if(a){cerrarPaleta();location.hash=a.dataset.h}}
+      if(e.key==="Escape")cerrarPaleta()})}
+  p.hidden=false;$("#cmdq").value="";pintaPaleta();setTimeout(()=>$("#cmdq").focus(),20);
+}
+function cerrarPaleta(){const p=$("#cmdk");if(p)p.hidden=true}
+function pintaPaleta(){
+  const v=($("#cmdq").value||"").trim(),q=norm(v);
+  const items=[];
+  DESTINOS.forEach(([h,t])=>items.push({h:"#"+h,t,g:"Sección"}));
+  TEMAS.forEach(t=>items.push({h:"#tema-"+t.n,t:`Tema ${t.n} · ${t.s}`,g:BLOQUES[t.b].n,s:t.t}));
+  LIDX.forEach(l=>items.push({h:"#ley-"+l.id,t:l.c,g:"Legislación"}));
+  let r=q?items.filter(x=>norm(x.t+" "+(x.s||"")).includes(q)):items.slice(0,8).concat(S.last?[{h:"#leer-"+S.last,t:"Seguir leyendo el tema "+S.last,g:"Continuar"}]:[]);
+  r=r.slice(0,12);
+  if(v.length>=2)r.push({h:"#buscar/"+encodeURIComponent(v),t:`Buscar «${v}» en todo el temario, preguntas y leyes`,g:"Buscador"});
+  $("#cmdl").innerHTML=r.length?r.map((x,i)=>`<a href="${x.h}" data-h="${esc(x.h)}" class="${i===0?"on":""}" role="option"><span>${esc(x.t)}</span><small>${esc(x.g)}</small></a>`).join(""):`<p class="muted" style="padding:10px">Sin resultados.</p>`;
+}
+document.addEventListener("keydown",e=>{if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==="k"){e.preventDefault();abrirPaleta()}else if(e.key==="/"&&!e.target.matches("input,textarea,select")){e.preventDefault();abrirPaleta()}});
+
+/* ---------- Instalación y uso sin conexión (solo en la versión web de GitHub) ---------- */
+if("serviceWorker" in navigator&&location.protocol==="https:"&&!enMarco()&&/github\.io$/.test(location.hostname)){
+  window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));
+}
+
 /* ---------- Fallos ---------- */
 function viewFallos(){
   const ids=Object.keys(S.fail);
@@ -2404,6 +2560,9 @@ function viewFallos(){
 }
 
 route();
+$("#bmas").addEventListener("click",()=>{side.classList.add("open");scrim.classList.add("open")});
+$("#cmdBtn").addEventListener("click",abrirPaleta);
+document.querySelector(".kq").addEventListener("click",e=>{e.preventDefault();abrirPaleta()});
 })();
 </script>
 

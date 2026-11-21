@@ -95,7 +95,8 @@ if (fs.existsSync(dirP)) for (const f of fs.readdirSync(dirP).filter(f => /^\d\d
 }
 fs.writeFileSync(path.join(R, "preguntas.js"), `var PREGUNTAS=${JSON.stringify(PQ)};\n`);
 
-for (const f of ["datos.js", "diagramas.js", "examenes.js", "trampas.js", "tablas.js", "nemotecnias.js", "noticias.js"]) fs.copyFileSync(path.join(F, f), path.join(R, f));
+for (const f of ["datos.js", "diagramas.js", "examenes.js", "trampas.js", "tablas.js", "nemotecnias.js", "noticias.js", "icono.svg", "manifest.webmanifest"]) fs.copyFileSync(path.join(F, f), path.join(R, f));
+fs.writeFileSync(path.join(R, "sw.js"), fs.readFileSync(path.join(F, "sw.js"), "utf8").replace("VERSION", Date.now().toString(36)));
 const pagina = fs.readFileSync(path.join(F, "index.html"), "utf8");
 fs.writeFileSync(path.join(R, "index.html"),
   '<!doctype html>\n<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">\n' + pagina + "\n</html>\n");
