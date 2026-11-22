@@ -1911,7 +1911,7 @@ function viewLeer(n){
     if(innerWidth>1100) $("#tocD").open=true;
     renderDiagramas(doc);
     $("#aud").addEventListener("click",()=>audioIniciar(doc,null,n));
-    audioGrabado(n).then(T=>{const ab=$("#aud");if(T&&ab&&location.hash==="#leer-"+n){ab.innerHTML=`🔊 Escuchar el tema <small class="mono">· ${Math.round(T.d/60)} min</small>`;ab.title="Audio grabado con una voz natural (Elvira)";
+    audioGrabado(n).then(T=>{const ab=$("#aud");if(T&&ab&&location.hash==="#leer-"+n){ab.innerHTML=`🔊 Escuchar el tema <small class="mono">· ${Math.round(T.d/60)} min</small>`;ab.title="Audio grabado con la voz Ximena (español de España)";
       if(Grab.a&&Grab.n===n){Grab.bl=bloquesAudio(doc);Grab.k=-1;grabTick()}}});
     espiarIndice(doc,tl);
     barraProgreso(f=>{S.pos[n]=f;if(f>.97&&!S.leido[n]){S.leido[n]=1}save()});
@@ -2611,7 +2611,7 @@ function audioBarra(){
   let b=$("#abar");if(b)return b;
   b=document.createElement("div");b.id="abar";b.className="abar noHL";b.hidden=true;
   b.innerHTML=`<button class="iconbtn" data-a="prev" aria-label="Párrafo anterior">⏮</button><button class="iconbtn ap" data-a="play" aria-label="Pausar o continuar">⏸</button><button class="iconbtn" data-a="next" aria-label="Párrafo siguiente">⏭</button>
-    <input type="range" class="aprog" min="0" max="1" step="1" value="0" aria-label="Posición en el tema"><span class="atime mono"></span><span class="avz" title="Audio grabado con una voz neuronal">Voz Elvira</span>
+    <input type="range" class="aprog" min="0" max="1" step="1" value="0" aria-label="Posición en el tema"><span class="atime mono"></span><span class="avz" title="Audio grabado con la voz neuronal Ximena de Microsoft (español de España)">Voz Ximena</span>
     <label class="as"><span class="muted">Velocidad</span><select data-a="vel">${[.8,.9,1,1.1,1.2,1.35,1.5].map(v=>`<option value="${v}">${String(v).replace(".",",")}×</option>`).join("")}</select></label>
     <label class="as av"><span class="muted">Voz</span><select data-a="voz"></select></label><button class="iconbtn" data-a="x" aria-label="Cerrar el audio">✕</button>
     <p class="aaviso" hidden></p>`;
