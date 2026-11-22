@@ -565,6 +565,33 @@ svg.evo .t5{fill:var(--warn)}
   .ph-r b{width:22pt;text-align:right}
   .ph-r span{width:13pt;height:13pt;border:1px solid #000;border-radius:50%;display:inline-grid;place-items:center;font-size:7pt}
 }
+/* Esquema imprimible: una hoja por tema */
+@media print{
+  @page esquema{margin:10mm 11mm}
+  .printz .pesq{page:esquema}
+  body.imprimiendo .printz .pesq{break-after:page;font:8pt/1.28 Arial,sans-serif}
+  .pesq header{border-bottom:2px solid #000;padding-bottom:3pt;margin-bottom:6pt}
+  .pesq header span{font:700 8pt Arial,sans-serif;letter-spacing:.06em}
+  .printz .pesq h1{font:700 13pt Arial,sans-serif;margin:2pt 0 0}
+  body.imprimiendo .printz .pesq.denso{font-size:7.4pt}
+  .pesq-c{columns:2;column-gap:12pt;column-fill:balance}
+  .pesq section{margin:0 0 5pt}
+  .pesq h2{font:700 9.5pt Arial,sans-serif;text-transform:uppercase;letter-spacing:.05em;margin:0 0 2pt;border-bottom:1px solid #999}
+  .pesq ol,.pesq ul{margin:0;padding-left:13pt}.pesq li{margin:0 0 1pt}.pesq p{margin:0 0 3pt}
+  .pesq h3,.pesq h4{font:700 9pt Arial,sans-serif;margin:3pt 0 1pt}
+  .pesq table{border-collapse:collapse;font-size:8pt}.pesq td,.pesq th{border:1px solid #999;padding:1pt 3pt}
+  .pesq footer{margin-top:6pt;font-size:7.5pt;color:#444;border-top:1px solid #999;padding-top:2pt}
+}
+/* Artículos clave */
+.art-f{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}
+.art-l details{border-top:1px solid var(--line);padding:8px 0}
+.art-l details:first-child{border-top:0}
+.art-l summary{cursor:pointer}
+.art-l ul{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:4px}
+.art-l li{display:flex;gap:10px;align-items:center;justify-content:space-between}
+.art-l li a{color:inherit;text-decoration:none;min-width:0}
+.art-l li a:hover{color:var(--accent)}
+.art-l li .mono{color:var(--accent);margin-right:4px}
 /* Hoja de respuestas: anuladas */
 .hq.anul{opacity:.45}
 .hq.anul>span::after{content:" anulada";font-size:9px;color:var(--bad)}
@@ -1393,6 +1420,7 @@ function renderNav(h){
     "Practicar",
     ["adaptativo","Test adaptativo",ICON.target,due||""],
     ["repaso","Tarjetas",ICON.cards,nd||""],
+    ["articulos","Artículos clave",ICON.law,window.ARTICULOS?(artPendientes()||""):""],
     ["trampas","Preguntas trampa",ICON.fail,""],
     ["practicas","Ejercicios prácticos",ICON.puzzle,""],
     ["reto","Contrarreloj",ICON.reloj,""],
@@ -1442,6 +1470,8 @@ function route(){
   else if(h==="leyes") viewLeyes();
   else if(m=h.match(/^ley-(.+?)(?:--(.+))?$/)) {viewLey(m[1],m[2]);renderNav(h);renderToc(h);return}
   else if(h==="repaso") viewRepaso();
+  else if(h==="articulos") necesita(["articulos.js"],()=>viewArticulos());
+  else if((m=h.match(/^articulos-(\d+)$/))&&TM[+m[1]]) necesita(["articulos.js"],()=>viewArticulos(+m[1]));
   else if(h==="simulacro") viewSim();
   else if(h==="fallos") viewFallos();
   else if(h==="plan") viewPlan();
@@ -1566,7 +1596,7 @@ function renderTab(t){
     ${nemoTema(t.n).length?`<section class="panel nemo-t"><h3 style="font-size:15px">Reglas para recordar</h3>${nemoHTML(nemoTema(t.n))}</section>`:""}
     <details class="ofi"><summary>Epígrafe oficial del tema</summary><p>${esc(t.e)}</p></details>
     <div class="row"><button class="btn ${S.est[t.n]?"":"pri"}" id="est">${S.est[t.n]?ICON.check.replace("<svg",'<svg width="16" height="16"')+" Tema marcado como estudiado":"Marcar como estudiado"}</button>
-      <button class="btn" data-go="tarjetas">Pasar a las tarjetas →</button></div>
+      <button class="btn" data-go="tarjetas">Pasar a las tarjetas →</button>${enMarco()?"":`<button class="btn ghost" id="pesq">${ICON.print.replace("<svg",'<svg width="16" height="16"')} Imprimir el esquema</button>`}<a class="btn ghost" id="artT" href="#articulos-${t.n}" hidden>Artículos clave del tema</a></div>
   </div>`;
   const pts=$("#pts"),cb=$("#cloze"),ra=$("#revAll");
   const upd=()=>{const left=pts.querySelectorAll("b.k:not(.rev)").length;$("#clozeHint").textContent=cb.checked?(left?`Te quedan ${left} huecos por descubrir.`:"¡Todos descubiertos! Vuelve a activarlo para repetir."):`Oculta las ${nk} palabras clave. Intenta recordar cada una y tócala para comprobarla.`};
@@ -1575,6 +1605,8 @@ function renderTab(t){
   ra.addEventListener("click",()=>{pts.querySelectorAll("b.k").forEach(k=>k.classList.add("rev"));upd()});
   $("#est").addEventListener("click",()=>{if(S.est[t.n])delete S.est[t.n];else S.est[t.n]=1;save();renderTab(t);refreshSide()});
   el.querySelector("[data-go]").addEventListener("click",()=>{tab="tarjetas";renderTab(t);window.scrollTo({top:0})});
+  if($("#pesq"))$("#pesq").addEventListener("click",()=>imprimirEsquemas([t.n]));
+  cargar("articulos.js").then(()=>{const k=artCards(c=>c.temas.includes(t.n)).length,a=$("#artT");if(a&&k){a.textContent=`Artículos clave del tema (${k})`;a.hidden=false}}).catch(()=>{});
 }
 
 /* ---------- Tarjetas ---------- */
@@ -1591,12 +1623,12 @@ function deck(el,cards,opt){
     const c=q[0], t=TM[c.n], box=(S.box[c.id]||{b:0}).b;
     flipped=false;
     el.innerHTML=`<div class="deck">
-      <div class="deck-top"><span>${opt.title||""} · quedan <b class="mono">${q.length}</b></span><span class="row" style="gap:6px"><span class="box" title="Caja de repaso (0-5)">caja ${box}</span><span class="chip" style="${bc(t.b)}"><i></i>Tema ${t.n}</span></span></div>
+      <div class="deck-top"><span>${opt.title||""} · quedan <b class="mono">${q.length}</b></span><span class="row" style="gap:6px"><span class="box" title="Caja de repaso (0-5)">caja ${box}</span><span class="chip" style="${bc(t.b)}"><i></i>${c.chip?esc(c.chip):"Tema "+t.n}</span></span></div>
       <div class="dots">${cards.map(k=>`<i class="${k.id===c.id?"cur":res[k.id]===true?"ok":res[k.id]===false?"bad":""}"></i>`).join("")}</div>
       <div class="fc" id="fc" role="button" tabindex="0" aria-label="Tarjeta: pulsa para girarla">
         <div class="fc-in">
           <div class="fc-f"><span class="lab">Pregunta</span><div class="q">${md(c.f)}</div><span class="tap">Toca la tarjeta o pulsa <span class="kbd">espacio</span> para ver la respuesta</span></div>
-          <div class="fc-b"><span class="lab">Respuesta</span><div class="a">${md(c.a)}</div><span class="tap">${esc(t.s)}</span></div>
+          <div class="fc-b"><span class="lab">Respuesta</span><div class="a">${md(c.a)}</div><span class="tap">${esc(c.pie||t.s)}</span></div>
         </div>
       </div>
       <div class="grade" id="grade" hidden><button class="btn no" data-g="0">No lo sabía <span class="kbd">1</span></button><button class="btn si" data-g="1">Lo sabía <span class="kbd">2</span></button></div>
@@ -1683,6 +1715,55 @@ function viewRepaso(){
   $("#goDue").addEventListener("click",()=>start(shuffle(allCards(filt()).filter(c=>isDue(c.id))).slice(0,40)));
   $("#goRand").addEventListener("click",()=>start(shuffle(allCards(filt())).slice(0,20)));
 }
+
+/* ---------- Artículos clave de las leyes ---------- */
+/* ARTICULOS (articulos.js) lo genera build.js con fuente/generar_articulos.js: los artículos que citan las preguntas y el temario */
+const leyCorta=id=>id==="RGPD"?"RGPD":id==="BOE-A-1978-31229"?"Constitución":((LIDXF(id)||{}).c||id).split(",")[0];
+function artCards(filtro){const pos={};return (window.ARTICULOS||[]).map(x=>{const i=pos[x.ley]=(pos[x.ley]==null?-1:pos[x.ley])+1;
+  return {id:x.id,n:x.temas[0],i,au:x.ley,f:x.f,a:x.a,ley:x.ley,art:x.art,ref:x.id.split("#")[1],peso:x.peso,temas:x.temas,
+    chip:leyCorta(x.ley)+" · art. "+x.art,et:leyCorta(x.ley)+" · art. "+x.art,pie:"Tema"+(x.temas.length>1?"s ":" ")+x.temas.join(", ")}}).filter(c=>!filtro||filtro(c))}
+const artPendientes=()=>artCards().filter(c=>S.box[c.id]&&isDue(c.id)).length;
+const artTitulo=c=>((c.a.match(/^\*\*(.+?)\.\*\*/)||[])[1]||(t=>t.length>72?t.slice(0,t.lastIndexOf(" ",72))+"…":t)(c.a.replace(/^\d+\.\s*/,"")));
+let artLeySel="";
+function viewArticulos(temaF){
+  const leyes=[...new Set(artCards().map(c=>c.ley))];
+  if(artLeySel&&!leyes.includes(artLeySel))artLeySel="";
+  const filt=()=>c=>(!artLeySel||c.ley===artLeySel)&&(!temaF||c.temas.includes(temaF));
+  const todas=artCards(filt()),vistas=todas.filter(c=>S.box[c.id]).length,due=todas.filter(c=>isDue(c.id));
+  main.innerHTML=`<div class="wrap">
+    <header class="th"><span class="eyebrow">Legislación · repetición espaciada</span><h1>Artículos clave</h1>
+    <p class="muted" style="margin:0;max-width:64ch">Los ${artCards().length} artículos que más caen, sacados de las preguntas de examen y de los enlaces del temario, con su texto del BOE. Funcionan como las tarjetas de los temas: si aciertas, vuelven más tarde; si fallas, los ves hoy otra vez.</p></header>
+    ${temaF?`<div class="panel art-f"><span>Solo los artículos del <b>tema ${temaF}</b> · ${esc(TM[temaF].s)}</span><a class="btn sm ghost" href="#articulos">Ver todos</a></div>`:""}
+    <div class="panel cfg">
+      <div class="row" style="justify-content:space-between;align-items:flex-end"><div><b class="mono" style="font-size:28px">${due.length}</b> <span class="muted">pendientes de ${todas.length} · has visto ${vistas}</span></div>
+        <label class="as"><span class="muted">Ley</span><select id="arl"><option value="">Todas las leyes</option>${leyes.map(l=>`<option value="${esc(l)}" ${l===artLeySel?"selected":""}>${esc(leyCorta(l))} (${artCards(c=>c.ley===l&&(!temaF||c.temas.includes(temaF))).length})</option>`).join("")}</select></label></div>
+      <div class="row"><button class="btn pri" id="arDue">Repasar los pendientes</button><button class="btn" id="arRand">20 al azar</button><button class="btn" id="arAud">🎧 Escuchar los pendientes</button><span id="aroff"></span></div>
+    </div>
+    <div id="dk"></div>
+    <section class="panel"><div class="ph"><h2>Lista de artículos</h2><span class="muted">${todas.length}</span></div>
+      <div class="art-l">${[...new Set(todas.map(c=>c.ley))].map(l=>{const cs=todas.filter(c=>c.ley===l);return `<details ${artLeySel||temaF?"open":""}><summary><b>${esc(leyCorta(l))}</b><span class="muted"> · ${cs.length} ${cs.length===1?"artículo":"artículos"}</span></summary>
+        <ul>${cs.map(c=>{const b=S.box[c.id];return `<li><a href="#ley-${c.ley}--${c.ref}"><span class="mono">Art. ${esc(c.art)}</span> ${esc(artTitulo(c))}</a><span class="box" title="Caja de repaso (0-5)">${b?"caja "+b.b:"nuevo"}</span></li>`}).join("")}</ul></details>`}).join("")}</div></section>
+  </div>`;
+  $("#arl").addEventListener("change",e=>{artLeySel=e.target.value;viewArticulos(temaF)});
+  const start=cs=>{if(!cs.length){$("#dk").innerHTML=`<div class="panel empty-state">${ICON.party}<h2>Nada pendiente</h2><p class="muted">Prueba con 20 al azar o elige otra ley.</p></div>`;return}
+    deck($("#dk"),cs,{title:"Artículos",onEnd:1});$("#dk").scrollIntoView({behavior:"smooth",block:"start"})};
+  $("#arDue").addEventListener("click",()=>start(shuffle(artCards(filt()).filter(c=>isDue(c.id))).slice(0,30)));
+  $("#arRand").addEventListener("click",()=>start(shuffle(artCards(filt())).slice(0,20)));
+  $("#arAud").addEventListener("click",()=>{let cs=artCards(filt()).filter(c=>isDue(c.id));if(!cs.length){cs=shuffle(artCards(filt())).slice(0,20);aviso("No tienes artículos pendientes: escuchas 20 al azar.")}else cs=cs.slice(0,40);tarjetasAudio(cs)});
+  tjPista(todas[0]||artCards()[0]).datos().then(T=>{if(T)offBoton($("#aroff"),leyes.flatMap(l=>[`audio/articulos/${l}.mp3`,`audio/articulos/${l}.js`]),{no:"Guardar los artículos sin conexión",ok:"Artículos sin conexión",hecho:"Artículos guardados para escucharlos sin conexión."})});
+}
+
+/* ---------- Esquema imprimible de cada tema (una hoja por tema) ---------- */
+function esquemaHTML(n){const t=TM[n],x=(window.EXPRES||{})[n]||"",arts=artCards(c=>c.temas.includes(n)).sort((a,b)=>b.peso-a.peso).slice(0,8),nm=nemoTema(n);
+  const largo=t.k.join(" ").length+x.length+t.m.length;
+  return `<article class="pesq${largo>7050?" denso":""}"><header><span>TEMA ${pad(n)} · ${esc(BLOQUES[t.b].n)}</span><h1>${esc(t.t)}</h1></header>
+    <div class="pesq-c"><section><h2>Puntos clave</h2><ol>${t.k.map(k=>`<li>${md(k)}</li>`).join("")}</ol></section>
+    ${x?`<section><h2>Ideas que más caen en el examen</h2>${mdDoc(x).html}</section>`:""}
+    <section><h2>Para recordar</h2><p>${md(t.m)}</p>${nm.map(r=>`<p><b>${esc(r.t)}</b>: ${md(r.d)}</p>`).join("")}</section>
+    ${arts.length?`<section><h2>Artículos que más caen</h2><p>${arts.map(c=>`<b>${esc(c.chip)}</b>${/^\*\*/.test(c.a)?" ("+esc(artTitulo(c))+")":""}`).join(" · ")}</p></section>`:""}
+    <footer>Epígrafe oficial: ${esc(t.e)}</footer></div></article>`}
+function imprimirEsquemas(ns){if(enMarco()){sinImpresion();return}
+  Promise.all([cargar("temas/expres.js"),cargar("articulos.js").catch(()=>null)]).then(()=>imprimirHTML(ns.map(esquemaHTML).join(""))).catch(e=>aviso("No se ha podido preparar el esquema: "+esc(e.message)))}
 
 /* ---------- Simulacro ---------- */
 /* Formato oficial: base 9.2 de la convocatoria (Resolución de 17-7-2025, BOCM n.º 181 de 31-7-2025) */
@@ -1913,10 +1994,11 @@ function viewTemario(){
   const nl=Object.keys(S.leido).length;
   main.innerHTML=`<div class="wrap">
     <header class="th"><span class="eyebrow">Desarrollo de los 40 temas</span><h1>Temario completo</h1><div class="rtools" id="todoOff"></div>
-    <p class="muted" style="margin:0;max-width:64ch">Cada tema desarrollado según su epígrafe oficial, con índice, tablas y enlaces a los artículos de la legislación. ${tot?`En total, unas ${tot.toLocaleString("es-ES")} palabras (${Math.round(tot/200/60)} horas de lectura). `:""}Llevas ${nl} de 40 temas leídos.</p></header>
+    <p class="muted" style="margin:0;max-width:64ch">Cada tema desarrollado según su epígrafe oficial, con índice, tablas y enlaces a los artículos de la legislación. ${tot?`En total, unas ${tot.toLocaleString("es-ES")} palabras (${Math.round(tot/200/60)} horas de lectura). `:""}Llevas ${nl} de 40 temas leídos.</p>${enMarco()?"":`<div class="row"><button class="btn sm" id="pesqT">${ICON.print.replace("<svg",'<svg width="16" height="16"')} Imprimir los esquemas de los 40 temas</button><span class="muted" style="font-size:13px">Una hoja por tema con lo esencial, para repasar en papel.</span></div>`}</header>
     ${ORDEN.map(b=>`<section class="blk" style="${bc(b)}"><div class="blk-h"><h2>${BLOQUES[b].n}</h2></div><div class="tlist">${TEMAS.filter(t=>t.b===b).map(t=>{const x=IDX[t.n]||{};const pos=(S.pos||{})[t.n];
       return `<a href="#leer-${t.n}" style="${bc(b)}"><span class="n">${pad(t.n)}</span><span class="t">${esc(t.t)}<small>${x.h?esc(x.h.slice(0,4).join(" · ")):""}</small></span><span class="m">${S.leido[t.n]?"<b>✓ leído</b>":pos?Math.round(pos*100)+" % leído":x.w?minLect(x.w)+" min":"pendiente"}</span></a>`}).join("")}</div></section>`).join("")}
   </div>`;
+  if($("#pesqT"))$("#pesqT").addEventListener("click",()=>imprimirEsquemas(TEMAS.map(t=>t.n)));
 }
 
 /* ---------- Lector de un tema ---------- */
@@ -2211,7 +2293,7 @@ function viewHoja(id){
         ${x.n?`<label><input type="radio" name="n" value="${x.n}" checked> Las ${x.n} preguntas (y ${K-x.n} de reserva)</label>`:`<label><input type="radio" name="n" value="${K-10}" checked> Las ${K-10} primeras (las 10 últimas como reserva)</label>
         <label><input type="radio" name="n" value="${K}"> Las ${K}</label>`}</div>
         <span class="muted" style="font-size:13px">${x.n?"Las preguntas anuladas por el tribunal no cuentan y se sustituyen por las de reserva, en orden.":"Comprueba en las instrucciones de la primera página del cuadernillo cuántas son de reserva."}</span></fieldset>
-      <fieldset><legend>Penalización</legend><div class="pick"><label><input type="radio" name="p" value="0.25" ${x.pen?"":"checked"}> Resta 1/4 (como en el SERMAS)</label><label><input type="radio" name="p" value="0.3333" ${x.pen?"checked":""}> Resta 1/3${x.pen?" (la de este examen)":""}</label><label><input type="radio" name="p" value="0"> Sin penalización</label></div></fieldset>
+      <fieldset><legend>Penalización</legend><div class="pick"><label><input type="radio" name="p" value="0.25" ${x.pen==null?"checked":""}> Resta 1/4 (como en el SERMAS)</label><label><input type="radio" name="p" value="0.3333" ${x.pen?"checked":""}> Resta 1/3${x.pen?" (la de este examen)":""}</label><label><input type="radio" name="p" value="0" ${x.pen===0?"checked":""}> Sin penalización${x.pen===0?" (la de este examen)":""}</label></div></fieldset>
       <fieldset><legend>Tiempo</legend><div class="pick">${x.min?`<label><input type="radio" name="t" value="${x.min}" checked> ${x.min} minutos (el ritmo de ese examen)</label>`:""}<label><input type="radio" name="t" value="115" ${x.min?"":"checked"}> 115 minutos (como en el SERMAS)</label><label><input type="radio" name="t" value="120"> 120 minutos</label><label><input type="radio" name="t" value="0"> Sin límite</label></div></fieldset>
       <div class="row"><button class="btn pri" type="submit">Empezar</button></div></form></div>`;
   $("#hc").addEventListener("submit",e=>{e.preventDefault();const f=new FormData(e.target);hoja(x,+f.get("n"),+f.get("p"),+f.get("t")*60)});
@@ -3026,7 +3108,7 @@ function necesita(files,fn){
 }
 
 /* ---------- Buscador rápido (Ctrl+K) ---------- */
-const DESTINOS=[["inicio","Inicio"],["noticias","Noticias del proceso"],["plan","Plan de estudio"],["estadisticas","Estadísticas y nota"],["temario","Temario completo"],["expres","Repaso exprés"],["mapas","Mapas mentales"],["tablas","Tablas para memorizar"],["nemotecnias","Reglas para recordar"],["leyes","Legislación"],["notas","Mis notas y subrayados"],["adaptativo","Test adaptativo"],["repaso","Repaso de tarjetas"],["trampas","Preguntas trampa"],["practicas","Ejercicios prácticos"],["simulacro","Simulacro de examen"],["ensayo","Ensayo del examen"],["examenes","Exámenes anteriores"],["impugnar","Impugnaciones"],["fallos","Mis fallos"],["siglas","Glosario de siglas"],["debiles","Puntos débiles"],["logros","Racha y logros"],["reto","Contrarreloj y supervivencia"],["semana","Repaso semanal"]];
+const DESTINOS=[["inicio","Inicio"],["noticias","Noticias del proceso"],["plan","Plan de estudio"],["estadisticas","Estadísticas y nota"],["temario","Temario completo"],["expres","Repaso exprés"],["mapas","Mapas mentales"],["tablas","Tablas para memorizar"],["nemotecnias","Reglas para recordar"],["leyes","Legislación"],["notas","Mis notas y subrayados"],["adaptativo","Test adaptativo"],["repaso","Repaso de tarjetas"],["articulos","Artículos clave de las leyes"],["trampas","Preguntas trampa"],["practicas","Ejercicios prácticos"],["simulacro","Simulacro de examen"],["ensayo","Ensayo del examen"],["examenes","Exámenes anteriores"],["impugnar","Impugnaciones"],["fallos","Mis fallos"],["siglas","Glosario de siglas"],["debiles","Puntos débiles"],["logros","Racha y logros"],["reto","Contrarreloj y supervivencia"],["semana","Repaso semanal"]];
 function abrirPaleta(){
   let p=$("#cmdk");
   if(!p){p=document.createElement("div");p.id="cmdk";p.className="cmdk noHL";p.innerHTML=`<div class="cmdk-c" role="dialog" aria-modal="true" aria-label="Ir a"><input id="cmdq" type="search" placeholder="Ir a un tema, una ley o una sección… o buscar en todo" autocomplete="off"><div id="cmdl" class="cmdl" role="listbox"></div><p class="cmdk-p muted">↑ ↓ para moverte · Intro para abrir · Esc para cerrar</p></div>`;document.body.appendChild(p);
@@ -3439,6 +3521,9 @@ function audioExpres(n,lista){
 /* ---------- Tarjetas en audio ---------- */
 const Tj={a:null,lista:[],i:0,fase:"",T:null,n:0,pausa:null};
 function tarjetasGrabadas(n){return cargar(`audio/tarjetas/${pad(n)}.js`).then(()=>(window.AUDIO_F||{})[n]||null).catch(()=>null)}
+/* Cada tarjeta sabe de qué audio sale: el de su tema (audio/tarjetas/NN) o, si es de un artículo, el de su ley (audio/articulos/ID) */
+function tjPista(c){return c.au?{mp3:`audio/articulos/${c.au}.mp3`,datos:()=>cargar(`audio/articulos/${c.au}.js`).then(()=>(window.AUDIO_A||{})[c.au]||null).catch(()=>null)}
+  :{mp3:`audio/tarjetas/${pad(c.n)}.mp3`,datos:()=>tarjetasGrabadas(c.n)}}
 function tarjetasAudio(cards){
   if(!cards.length){aviso("No hay tarjetas para escuchar.");return}
   audioParar();if(Grab.a)Grab.a.pause();
@@ -3451,18 +3536,18 @@ function tarjetasAudio(cards){
       if(k==="next")tjIr(Tj.i+1);if(k==="prev")tjIr(Tj.i-1);if(k==="ver"){clearTimeout(Tj.pausa);tjRespuesta()}});
     p.addEventListener("change",e=>{if(e.target.dataset.t==="seg"){S.tjSeg=+e.target.value;save()}})}
   p.hidden=false;document.body.classList.add("conAudio");tjIr(0);
-  if("mediaSession" in navigator){try{navigator.mediaSession.metadata=new MediaMetadata({title:"Tarjetas en audio",artist:"Temario STI · SERMAS",album:"Repaso de tarjetas"})}catch(e){}
+  if("mediaSession" in navigator){try{navigator.mediaSession.metadata=new MediaMetadata({title:cards[0].au?"Artículos clave en audio":"Tarjetas en audio",artist:"Temario STI · SERMAS",album:cards[0].au?"Artículos clave":"Repaso de tarjetas"})}catch(e){}
     [["play",tjSeguir],["pause",tjPausa],["nexttrack",()=>tjIr(Tj.i+1)],["previoustrack",()=>tjIr(Tj.i-1)]].forEach(([x,f])=>{try{navigator.mediaSession.setActionHandler(x,f)}catch(e){}})}
 }
 function tjPintar(){const c=Tj.lista[Tj.i],p=$("#tjbar");if(!p||!c)return;
-  p.innerHTML=`<div class="tj-top"><span class="mono">${Tj.i+1} / ${Tj.lista.length} · Tema ${c.n}</span><label class="as"><span class="muted">Pausa para pensar</span><select data-t="seg">${[3,5,8,12].map(s=>`<option value="${s}" ${(S.tjSeg||5)===s?"selected":""}>${s} s</option>`).join("")}</select></label></div>
+  p.innerHTML=`<div class="tj-top"><span class="mono">${Tj.i+1} / ${Tj.lista.length} · ${c.et?esc(c.et):"Tema "+c.n}</span><label class="as"><span class="muted">Pausa para pensar</span><select data-t="seg">${[3,5,8,12].map(s=>`<option value="${s}" ${(S.tjSeg||5)===s?"selected":""}>${s} s</option>`).join("")}</select></label></div>
     <p class="tj-q">${md(c.f)}</p><p class="tj-a" ${Tj.fase==="a"||Tj.fase==="fin"?"":"hidden"}>${md(c.a)}</p>
     <div class="tj-ctl"><button class="iconbtn" data-t="prev" aria-label="Tarjeta anterior">⏮</button><button class="iconbtn ap" data-t="play" aria-label="Pausar o continuar">${Tj.fase==="pausa"?"▶":"⏸"}</button><button class="iconbtn" data-t="next" aria-label="Tarjeta siguiente">⏭</button>
     <button class="btn sm" data-t="ver" ${Tj.fase==="espera"?"":"hidden"}>Ver la respuesta ya</button><button class="iconbtn" data-t="x" aria-label="Cerrar">✕</button></div>`}
 function tjIr(i){clearTimeout(Tj.pausa);if(i<0)i=0;if(i>=Tj.lista.length){tjParar();Tj.fase="fin";aviso("Has terminado las tarjetas.");tjPintar();return}
   Tj.i=i;const c=Tj.lista[i];Tj.fase="q";tjPintar();
-  tarjetasGrabadas(c.n).then(T=>{if(Tj.lista[Tj.i]!==c)return;Tj.T=T;
-    if(T&&T.c&&T.c[c.i]){const src=`audio/tarjetas/${pad(c.n)}.mp3`;if(!Tj.a.src.endsWith(src))Tj.a.src=src;
+  const pista=tjPista(c);pista.datos().then(T=>{if(Tj.lista[Tj.i]!==c)return;Tj.T=T;
+    if(T&&T.c&&T.c[c.i]){const src=pista.mp3;if(!Tj.a.src.endsWith(src))Tj.a.src=src;
       const go=()=>{Tj.a.currentTime=T.c[c.i][0];Tj.a.playbackRate=S.vel||1;Tj.a.play().catch(()=>{})};
       if(Tj.a.readyState>=1&&Tj.a.src.endsWith(src))go();else Tj.a.addEventListener("loadedmetadata",go,{once:true})}
     else tjVoz(c.f,()=>tjEspera())})}

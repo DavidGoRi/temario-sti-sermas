@@ -105,6 +105,8 @@ if (fs.existsSync(dirPq)) for (const f of fs.readdirSync(dirPq).filter(f => /^\d
 }
 
 for (const f of ["datos.js", "diagramas.js", "examenes.js", "trampas.js", "tablas.js", "nemotecnias.js", "noticias.js", "siglas.js", "icono.svg", "manifest.webmanifest"]) fs.copyFileSync(path.join(F, f), path.join(R, f));
+const nart = require("./generar_articulos")(F, R);
+console.log(nart, "tarjetas de artículos clave;");
 fs.writeFileSync(path.join(R, "sw.js"), fs.readFileSync(path.join(F, "sw.js"), "utf8").replace("VERSION", Date.now().toString(36)));
 const pagina = fs.readFileSync(path.join(F, "index.html"), "utf8");
 fs.writeFileSync(path.join(R, "index.html"),
@@ -121,6 +123,6 @@ if (pub) {
     for (const f of fs.readdirSync(path.join(R, d))) fs.copyFileSync(path.join(R, d, f), path.join(pub, d, f));
   }
   fs.copyFileSync(path.join(F, "index.html"), path.join(pub, "index.html"));
-  for (const f of ["datos.js", "diagramas.js", "examenes.js", "trampas.js", "tablas.js", "nemotecnias.js", "noticias.js", "siglas.js", "preguntas.js", "icono.svg", "manifest.webmanifest"]) fs.copyFileSync(path.join(R, f), path.join(pub, f));
+  for (const f of ["datos.js", "diagramas.js", "examenes.js", "trampas.js", "tablas.js", "nemotecnias.js", "noticias.js", "siglas.js", "preguntas.js", "articulos.js", "icono.svg", "manifest.webmanifest"]) fs.copyFileSync(path.join(R, f), path.join(pub, f));
   console.log("Publicación preparada en", pub);
 }

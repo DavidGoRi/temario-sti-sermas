@@ -2,6 +2,16 @@
    Las preguntas están en los cuadernillos oficiales (enlace); aquí solo se guarda la plantilla de respuestas
    transcrita de la publicación oficial para poder corregir la hoja de respuestas. */
 var EXAMENES=[
+ {id:"sacyl-2025-pi",
+  org:"Servicio de Salud de Castilla y León (SACYL)",
+  cat:"Técnico/a Especialista de Informática · promoción interna",
+  conv:"Orden SAN/1372/2023 (BOCYL n.º 232, de 4-12-2023) · examen del 25-10-2025",
+  nota:"Categoría equivalente de otro servicio de salud (grupo C1). 80 preguntas + 8 de reserva en 105 minutos; en este examen los errores no restan. El tribunal anuló las preguntas 3 y 78 (la 3 tenía solo tres respuestas y la 78, dos iguales), que se sustituyen por las de reserva. Plantilla de respuestas correctas publicada por el tribunal el 27-10-2025. Su legislación autonómica es la de Castilla y León, no la de Madrid.",
+  cuadernillo:"https://www.saludcastillayleon.es/profesionales/fr/procesos_selectivos/convocatorias-2023-procesos-ordinarios-reposicion/categorias-convocadas/tecnico-especialista-informatica-promocion-interna.fichiers/3150930-CUESTIONARIO%20EXAMEN%20TE%20INFORMATICA%20PI.pdf",
+  plantilla:"https://www.saludcastillayleon.es/profesionales/fr/procesos_selectivos/convocatorias-2023-procesos-ordinarios-reposicion/categorias-convocadas/tecnico-especialista-informatica-promocion-interna.fichiers/3150931-PLANTILLA%20RESPUESTAS%20EXAMEN%20TE%20INFORMATICA%20PI.pdf",
+  pagina:"https://www.saludcastillayleon.es/profesionales/es/procesos_selectivos/convocatorias-2023-procesos-ordinarios-reposicion/categorias-convocadas/tecnico-especialista-informatica-promocion-interna",
+  n:80,pen:0,min:105,
+  clave:"CBXABBAABA"+"ABBDBDCBAC"+"CCAAACDBAC"+"CABDDCDCCA"+"BBCBCBAABC"+"BADBBAABCC"+"CBBACCCBBC"+"DBAACDAXDD"+"CCCBBCCD"},
  {id:"tai-2025",
   org:"INAP · Administración General del Estado",
   cat:"Técnicos Auxiliares de Informática (TAI), ingreso libre · primera parte (cuestionario)",
