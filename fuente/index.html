@@ -576,6 +576,13 @@ svg.evo .t5{fill:var(--warn)}
 .abar .as{display:flex;align-items:center;gap:6px;font-size:12.5px}
 .abar select{border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:inherit;padding:5px 6px;max-width:220px}
 .abar .aaviso{flex-basis:100%;margin:2px 4px 0;font-size:12px;color:var(--warn);max-width:560px}
+.abar .aprog,.abar .atime,.abar .avz{display:none}
+.abar.grab .av,.abar.grab .aaviso{display:none}
+.abar.grab .aprog{display:block;flex:1 1 180px;min-width:120px;accent-color:var(--accent);cursor:pointer}
+.abar.grab .atime{display:inline;font-size:12px;color:var(--muted);white-space:nowrap}
+.abar.grab .avz{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;font-weight:600;color:var(--accent);background:var(--accent-soft);border-radius:20px;padding:3px 9px;white-space:nowrap}
+.abar.grab .avz::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent);animation:late 2.4s ease-out infinite}
+@media (max-width:560px){.abar.grab{bottom:calc(74px + env(safe-area-inset-bottom,0px))}.abar.grab .avz{display:none}.abar.grab .aprog{flex-basis:100%;order:9}}
 body.conAudio .hlbar,body.conAudio .hlpop{bottom:calc(max(12px,env(safe-area-inset-bottom,0px)) + 84px)}
 body.conAudio .main{padding-bottom:140px}
 .leyendo{background:color-mix(in srgb,var(--accent) 16%,transparent);border-radius:6px;box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 16%,transparent)}
@@ -1835,7 +1842,7 @@ function limpiarLector(){
   const p=$("#rprog");if(p)p.remove();
   leyAbierta=null;
   if(typeof hlDesactivar==="function")hlDesactivar();
-  if(typeof audioParar==="function"&&Audio.cola.length){audioParar();const ab=document.getElementById("abar");if(ab){ab.hidden=true;document.body.classList.remove("conAudio")}}
+  if(typeof audioParar==="function"&&Audio.cola.length&&!(document.getElementById("abar")||{classList:{contains:()=>0}}).classList.contains("grab")){audioParar();const ab=document.getElementById("abar");if(ab){ab.hidden=true;document.body.classList.remove("conAudio")}}
 }
 function espiarIndice(cont,toc){
   const links=new Map([...toc.querySelectorAll("a")].map(a=>[a.getAttribute("href").slice(1),a]));
@@ -1901,7 +1908,9 @@ function viewLeer(n){
     tl.innerHTML=r.toc.map(([lv,id,tx])=>`<a class="l${lv}" href="#${id}">${esc(tx)}</a>`).join("");
     if(innerWidth>1100) $("#tocD").open=true;
     renderDiagramas(doc);
-    $("#aud").addEventListener("click",()=>audioIniciar(doc));
+    $("#aud").addEventListener("click",()=>audioIniciar(doc,null,n));
+    audioGrabado(n).then(T=>{const ab=$("#aud");if(T&&ab&&location.hash==="#leer-"+n){ab.innerHTML=`🔊 Escuchar el tema <small class="mono">· ${Math.round(T.d/60)} min</small>`;ab.title="Audio grabado con una voz natural (Elvira)";
+      if(Grab.a&&Grab.n===n){Grab.bl=bloquesAudio(doc);Grab.k=-1;grabTick()}}});
     espiarIndice(doc,tl);
     barraProgreso(f=>{S.pos[n]=f;if(f>.97&&!S.leido[n]){S.leido[n]=1}save()});
     hlActivar(doc,"t:"+n);
@@ -2579,22 +2588,28 @@ function vozElegida(){const vs=vocesES();return vs.find(v=>v.name===S.voz)||vs[0
 const esNatural=v=>v&&/natural|neural|premium|enhanced|mejorad|siri|google/i.test(v.name);
 function textoHablado(t){
   return String(t).replace(/\barts?\.\s*/gi,m=>/s/i.test(m[3])?"artículos ":"artículo ").replace(/\bn\.º\s*/gi,"número ").replace(/\bpág\.\s*/gi,"página ")
-    .replace(/→|←|↻|·/g,", ").replace(/\s*\/\s*/g," o ").replace(/\b(\d+)\s*%/g,"$1 por ciento").replace(/[«»"“”]/g,"").replace(/\s+/g," ").trim();
+    .replace(/\bp\. ?ej\./gi,"por ejemplo").replace(/\betc\./gi,"etcétera").replace(/\bEE\. ?UU\./g,"Estados Unidos").replace(/\by ss\./g,"y siguientes")
+    .replace(/\bRDL\b/g,"Real Decreto Legislativo").replace(/\bRD\b/g,"Real Decreto").replace(/\bLO\b/g,"Ley Orgánica").replace(/\bDA\b/g,"disposición adicional").replace(/\bDT\b/g,"disposición transitoria").replace(/\bDF\b/g,"disposición final")
+    .replace(/\b(\d+)\/((?:19|20)\d\d)\b/g,"$1 de $2").replace(/\b([1-9])\/([2-9]|10)\b/g,(m,a,b)=>{const N=["","un","dos","tres","cuatro","cinco","seis","siete","ocho","nueve"],D={2:["medio","medios"],3:["tercio","tercios"],4:["cuarto","cuartos"],5:["quinto","quintos"],6:["sexto","sextos"],7:["séptimo","séptimos"],8:["octavo","octavos"],9:["noveno","novenos"],10:["décimo","décimos"]};return N[a]+" "+D[b][a==="1"?0:1]})
+    .replace(/\b(\d+)\/(\d+)\b/g,"$1 barra $2").replace(/\b([A-Z]{2,})\/([A-Z]{2,})\b/g,"$1 $2").replace(/(\d)\s*€/g,"$1 euros")
+    .replace(/→|←|↻|·/g,", ").replace(/\s*\/\s*/g," o ").replace(/\b(\d+)\s*%/g,"$1 por ciento").replace(/[«»"“”*_`]/g,"").replace(/\s+/g," ").trim();
 }
 function trocear(t){const out=[];String(t).split(/(?<=[.;:!?])\s+/).forEach(f=>{while(f.length>230){let c=f.lastIndexOf(",",230);if(c<80)c=f.lastIndexOf(" ",230);out.push(f.slice(0,c+1));f=f.slice(c+1)}if(f.trim())out.push(f)});return out}
-function audioPreparar(root){
+function bloquesAudio(root){
   const bloques=[...root.querySelectorAll("h2,h3,h4,p,li,tr")].filter(el=>!el.closest("figure.dg,pre,.noHL,.leyes-tema,.row")&&!(el.tagName==="P"&&el.closest("li")));
-  const cola=[];bloques.forEach(el=>{let t;
+  return bloques.map(el=>{let t;
     if(el.tagName==="LI"){const c=el.cloneNode(true);c.querySelectorAll("ul,ol").forEach(x=>x.remove());t=c.textContent}
     else if(el.tagName==="TR"){t=[...el.children].map(c=>c.textContent.trim()).filter(Boolean).join(". ")}
     else t=el.textContent;
-    t=textoHablado(t);if(t.length>1)trocear(t).forEach(f=>cola.push({el,t:f}))});
-  return cola;
+    return {el,t:textoHablado(t)}}).filter(x=>x.t.length>1);
 }
+window.bloquesAudio=bloquesAudio; /* lo usa la herramienta que graba el audio de los temas */
+function audioPreparar(root){const cola=[];bloquesAudio(root).forEach(x=>trocear(x.t).forEach(f=>cola.push({el:x.el,t:f})));return cola}
 function audioBarra(){
   let b=$("#abar");if(b)return b;
   b=document.createElement("div");b.id="abar";b.className="abar noHL";b.hidden=true;
   b.innerHTML=`<button class="iconbtn" data-a="prev" aria-label="Párrafo anterior">⏮</button><button class="iconbtn ap" data-a="play" aria-label="Pausar o continuar">⏸</button><button class="iconbtn" data-a="next" aria-label="Párrafo siguiente">⏭</button>
+    <input type="range" class="aprog" min="0" max="1" step="1" value="0" aria-label="Posición en el tema"><span class="atime mono"></span><span class="avz" title="Audio grabado con una voz neuronal">Voz Elvira</span>
     <label class="as"><span class="muted">Velocidad</span><select data-a="vel">${[.8,.9,1,1.1,1.2,1.35,1.5].map(v=>`<option value="${v}">${String(v).replace(".",",")}×</option>`).join("")}</select></label>
     <label class="as av"><span class="muted">Voz</span><select data-a="voz"></select></label><button class="iconbtn" data-a="x" aria-label="Cerrar el audio">✕</button>
     <p class="aaviso" hidden></p>`;
@@ -2603,13 +2618,60 @@ function audioBarra(){
     const av=b.querySelector(".aaviso");av.hidden=esNatural(v);av.innerHTML=vs.length?"Esta voz puede sonar algo robótica. Para una voz natural, abre la web en <b>Microsoft Edge</b> y elige una voz «Natural» (Elvira, Álvaro, Ximena…), o en iPhone y Mac descarga una voz «mejorada» en Ajustes › Accesibilidad › Contenido leído.":"Tu navegador no tiene voces en español instaladas."};
   llenar();if(window.speechSynthesis)speechSynthesis.onvoiceschanged=llenar;
   b.querySelector('[data-a="vel"]').value=String(S.vel||1);
-  b.addEventListener("change",e=>{const a=e.target.dataset.a;if(a==="vel"){S.vel=+e.target.value;save();audioReanudar()}if(a==="voz"){S.voz=e.target.value;save();llenar();audioReanudar()}});
+  b.addEventListener("change",e=>{const a=e.target.dataset.a;if(a==="vel"){S.vel=+e.target.value;save();if(b.classList.contains("grab")){if(Grab.a)Grab.a.playbackRate=S.vel}else audioReanudar()}if(a==="voz"){S.voz=e.target.value;save();llenar();audioReanudar()}});
+  const pr=b.querySelector(".aprog");
+  pr.addEventListener("input",()=>{pr._drag=true;const tt=b.querySelector(".atime");if(tt&&Grab.T)tt.textContent=fmtT(+pr.value)+" / "+fmtT(Grab.T.d)});
+  pr.addEventListener("change",()=>{pr._drag=false;if(Grab.a){Grab.a.currentTime=+pr.value;if(Grab.a.paused)Grab.a.play().catch(()=>{})}});
   b.addEventListener("click",e=>{const a=e.target.closest("[data-a]");if(!a||a.tagName==="SELECT")return;const k=a.dataset.a;
+    if(b.classList.contains("grab")){if(k==="play"){Grab.a.paused?Grab.a.play().catch(()=>{}):Grab.a.pause()}if(k==="next")grabSalto(1);if(k==="prev")grabSalto(-1);
+      if(k==="x"){Grab.a.pause();b.hidden=true;b.classList.remove("grab");document.body.classList.remove("conAudio");document.querySelectorAll(".leyendo").forEach(x=>x.classList.remove("leyendo"))}return}
     if(k==="play"){Audio.act?audioPausa():audioDesde(Audio.i)}
     if(k==="next"){audioSalto(1)}if(k==="prev"){audioSalto(-1)}if(k==="x"){audioParar();b.hidden=true;document.body.classList.remove("conAudio")}});
   return b;
 }
-function audioIniciar(root,desdeEl){
+/* ---------- Audio grabado con voz neuronal (temas completos) ---------- */
+const Grab={a:null,n:0,bl:[],T:null,k:-1};
+function audioGrabado(n){return cargar(`audio/${pad(n)}.js`).then(()=>(window.AUDIO_T||{})[n]||null).catch(()=>null)}
+function fmtT(s){s=Math.max(0,Math.floor(s||0));const h=Math.floor(s/3600),m=Math.floor(s%3600/60),x=s%60;return (h?h+":"+String(m).padStart(2,"0"):m)+":"+String(x).padStart(2,"0")}
+function grabBoton(on){const b=$("#abar");if(b)b.querySelector(".ap").textContent=on?"⏸":"▶"}
+function grabTick(){
+  const a=Grab.a,T=Grab.T;if(!T)return;const t=a.currentTime,s=T.s;let k=Grab.k;
+  if(k<0||t<s[k]||(k+1<s.length&&t>=s[k+1])){k=s.length-1;for(let i=0;i<s.length;i++){if(s[i]>t){k=i-1;break}}}
+  if(k!==Grab.k&&k>=0){Grab.k=k;document.querySelectorAll(".leyendo").forEach(e=>e.classList.remove("leyendo"));
+    const x=Grab.bl[k];if(x&&x.el.isConnected){x.el.classList.add("leyendo");const r=x.el.getBoundingClientRect();if(r.top<70||r.bottom>innerHeight-120)x.el.scrollIntoView({block:"center",behavior:"smooth"})}}
+  const b=$("#abar");if(b){const p=b.querySelector(".aprog");if(p&&!p._drag){p.max=Math.floor(T.d);p.value=Math.floor(t)}const tt=b.querySelector(".atime");if(tt&&!(p&&p._drag))tt.textContent=fmtT(t)+" / "+fmtT(T.d)}
+  if(!Grab._g||Date.now()-Grab._g>5000){Grab._g=Date.now();S.audPos=S.audPos||{};S.audPos[Grab.n]=Math.max(0,t-2);save()}
+}
+function grabSalto(d){const a=Grab.a,s=Grab.T.s,k=Math.max(0,Grab.k);let t;
+  if(d>0)t=s[Math.min(k+1,s.length-1)];else t=a.currentTime-s[k]>2.5?s[k]:s[Math.max(0,k-1)];
+  a.currentTime=t;Grab.k=-1;grabTick();if(a.paused)a.play().catch(()=>{})}
+function grabIniciar(root,bl,T,n,desdeEl){
+  audioParar();Audio.cola=[];
+  if(!Grab.a){const a=Grab.a=document.createElement("audio");a.preload="metadata";a.className="noHL";document.body.appendChild(a);
+    a.addEventListener("timeupdate",grabTick);a.addEventListener("play",()=>grabBoton(true));a.addEventListener("pause",()=>grabBoton(false));
+    a.addEventListener("ended",()=>{grabBoton(false);S.audPos=S.audPos||{};S.audPos[Grab.n]=0;save();aviso(`Has terminado de escuchar el tema ${Grab.n}.`)});
+    a.addEventListener("error",()=>{aviso("No se ha podido cargar el audio grabado: se usará la voz del navegador.");const b=$("#abar");if(b)b.classList.remove("grab");vozIniciar(Grab.root)})}
+  const nuevo=Grab.n!==n;Grab.n=n;Grab.bl=bl;Grab.T=T;Grab.k=-1;Grab.root=root;
+  if(nuevo)Grab.a.src=`audio/${pad(n)}.mp3`;
+  Grab.a.playbackRate=S.vel||1;Grab.a.preservesPitch=true;
+  let t0=nuevo?((S.audPos||{})[n]||0):Grab.a.currentTime;
+  if(desdeEl){const k=bl.findIndex(x=>x.el===desdeEl||desdeEl.contains(x.el));if(k>=0)t0=T.s[k]}
+  const b=audioBarra();b.hidden=false;b.classList.add("grab");document.body.classList.add("conAudio");
+  b.querySelector('[data-a="vel"]').value=String(S.vel||1);
+  const go=()=>{try{Grab.a.currentTime=t0}catch(e){}Grab.a.play().catch(()=>grabBoton(false));grabTick()};
+  if(Grab.a.readyState>=1)go();else Grab.a.addEventListener("loadedmetadata",go,{once:true});
+  if(t0>5&&nuevo)aviso(`Continúas donde lo dejaste (${fmtT(t0)}). Usa la barra para volver al principio.`,4500);
+  if("mediaSession" in navigator){try{navigator.mediaSession.metadata=new MediaMetadata({title:`Tema ${n}${TM[n]?" · "+TM[n].s:""}`,artist:"Temario STI · SERMAS",album:"Escuchar el temario"})}catch(e){}
+    [["play",()=>Grab.a.play()],["pause",()=>Grab.a.pause()],["previoustrack",()=>grabSalto(-1)],["nexttrack",()=>grabSalto(1)],["seekbackward",()=>{Grab.a.currentTime=Math.max(0,Grab.a.currentTime-15)}],["seekforward",()=>{Grab.a.currentTime+=15}]].forEach(([x,f])=>{try{navigator.mediaSession.setActionHandler(x,f)}catch(e){}})}
+}
+function audioIniciar(root,desdeEl,n){
+  if(n){audioGrabado(n).then(T=>{const bl=bloquesAudio(root);
+    if(T&&T.b===bl.length)grabIniciar(root,bl,T,n,desdeEl);
+    else{if(T)aviso("El texto del tema ha cambiado desde que se grabó el audio: de momento se usa la voz del navegador.");vozIniciar(root,desdeEl)}});return}
+  vozIniciar(root,desdeEl);
+}
+function vozIniciar(root,desdeEl){
+  if(Grab.a)Grab.a.pause();const bb=$("#abar");if(bb)bb.classList.remove("grab");
   if(!window.speechSynthesis){aviso("Este navegador no permite la lectura en voz alta. Prueba con Microsoft Edge, Chrome o Safari.");return}
   Audio.root=root;Audio.cola=audioPreparar(root);if(!Audio.cola.length)return;
   let i=0;if(desdeEl){const k=Audio.cola.findIndex(x=>x.el===desdeEl||desdeEl.contains(x.el));if(k>=0)i=k}
