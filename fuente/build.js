@@ -115,7 +115,7 @@ console.log(Object.keys(indice).length, "temas,", total.toLocaleString("es-ES"),
 const pub = process.argv[2];
 if (pub) {
   fs.rmSync(pub, { recursive: true, force: true });
-  for (const d of ["temas", "leyes", "porque", "audio"]) {
+  for (const d of ["temas", "leyes", "porque"]) {
     if (!fs.existsSync(path.join(R, d))) continue;
     fs.mkdirSync(path.join(pub, d), { recursive: true });
     for (const f of fs.readdirSync(path.join(R, d))) fs.copyFileSync(path.join(R, d, f), path.join(pub, d, f));

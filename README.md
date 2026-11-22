@@ -13,7 +13,7 @@ Funciona en el navegador, también en el móvil, sin instalar nada. El progreso 
 - **Esquemas, tarjetas y test**: más de 1.000 preguntas con explicación y enlace a su fuente.
 - **Simulacro oficial** (95 preguntas + 10 de reserva, 115 minutos, cada error resta ¼), test adaptativo con repetición espaciada, preguntas trampa, tablas para memorizar, reglas nemotécnicas y ejercicios prácticos (subredes, cambio de base, plazos, nulidad, contratos, RAID, ordenar fases).
 - **Exámenes anteriores** de la misma categoría (Servicio Aragonés de Salud 2019 y 2025) y del TAI del Estado (2026), corregidos con la plantilla oficial.
-- **Plan de estudio** por fechas con cuenta atrás, **estadísticas** con nota estimada, **ensayo** imprimible del día del examen, **impugnaciones**, **subrayado y notas**, **buscador global**, **audio** de los 40 temas grabado con la voz neuronal Ximena de Microsoft (español de España), con el párrafo que se lee resaltado, y modo oscuro.
+- **Plan de estudio** por fechas con cuenta atrás, **estadísticas** con nota estimada, **ensayo** imprimible del día del examen, **impugnaciones**, **subrayado y notas**, **buscador global**, **audio** de los 40 temas, del repaso exprés y de las tarjetas grabado con la voz neuronal Ximena de Microsoft (español de España), con el párrafo que se lee resaltado y descarga para escuchar sin conexión; **ajustes de lectura** (interlineado, ancho, tipografías Lexend y Atkinson Hyperlegible y modo lectura), **repaso semanal** con minisimulacro y modo oscuro.
 
 ## Cómo se construye
 

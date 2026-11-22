@@ -1189,6 +1189,42 @@ mark.dp{background:var(--ok-soft);color:var(--ok);font-weight:700;border-radius:
 .sim-bq b{font:700 14px var(--f-d)}
 .sim-bq small{color:var(--muted);font-size:12px}
 
+/* ===== Ajustes de lectura, tarjetas en audio, repaso semanal y audios sin conexión ===== */
+.reader .doc{line-height:var(--rlh,1.7);font-family:var(--rff,inherit);letter-spacing:var(--rls,0)}
+.reader .doc p,.reader .doc li,.reader .doc h2,.reader .doc h3,.reader .doc h4,.reader .doc blockquote{max-width:var(--rmw,70ch)}
+body.modo-lectura .side,body.modo-lectura .topbar,body.modo-lectura .bnav,body.modo-lectura .rtoc,body.modo-lectura .pn,body.modo-lectura .lectura{display:none!important}
+body.modo-lectura .app{grid-template-columns:minmax(0,1fr)}
+body.modo-lectura .reader{grid-template-columns:minmax(0,1fr)!important}
+body.modo-lectura .wrap{max-width:900px}
+body.modo-lectura .main{padding-top:max(28px,env(safe-area-inset-top,0px))}
+.salir-lect{position:fixed;top:calc(12px + env(safe-area-inset-top,0px));right:max(12px,env(safe-area-inset-right,0px));z-index:60;box-shadow:var(--shadow)}
+.lectp{position:fixed;right:max(16px,env(safe-area-inset-right,0px));z-index:85;width:min(360px,calc(100vw - 32px));max-height:calc(100vh - 120px);overflow:auto;background:var(--surface);border:1px solid var(--line);border-radius:16px;box-shadow:0 24px 60px -20px rgba(0,0,0,.55);padding:14px 16px 16px;display:flex;flex-direction:column;gap:8px;animation:paleta .22s cubic-bezier(.2,.9,.3,1.2) both}
+.lectp-h{display:flex;align-items:center;justify-content:space-between;margin-bottom:2px}
+.lectp-h b{font:700 16px var(--f-d)}
+.lectp .chips.col{flex-direction:column;align-items:stretch}
+.lectp .chips.col .chipb{justify-content:flex-start}
+.lectp-foco{margin-top:6px;font-size:14px}
+.ok-off{border-color:var(--ok);color:var(--ok)}
+.tjbar{position:fixed;left:50%;transform:translateX(-50%);bottom:max(12px,env(safe-area-inset-bottom,0px));z-index:58;width:min(620px,calc(100vw - 24px));background:var(--surface);border:1px solid var(--line);border-radius:16px;box-shadow:0 18px 40px -16px rgba(0,0,0,.5);padding:12px 14px;display:flex;flex-direction:column;gap:8px;animation:sube .3s cubic-bezier(.2,.8,.2,1) both}
+.tjbar[hidden]{display:none}
+.tj-top{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:12.5px;color:var(--muted);flex-wrap:wrap}
+.tj-top select{border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:inherit;padding:3px 6px}
+.tj-q{margin:0;font:700 16.5px/1.35 var(--f-d)}
+.tj-a{margin:0;padding:8px 10px;border-radius:10px;background:var(--accent-soft);font-size:15px;animation:sube .3s both}
+.tj-a[hidden]{display:none}
+.tj-ctl{display:flex;align-items:center;gap:6px}
+.tj-ctl [data-t="x"]{margin-left:auto}
+.tj-ctl .ap{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+@media (max-width:900px){.tjbar{bottom:calc(74px + env(safe-area-inset-bottom,0px))}}
+.sem-g{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px;align-items:end;height:170px}
+.sem-d{display:flex;flex-direction:column;align-items:center;gap:4px;height:100%;font-size:12px;color:var(--muted)}
+.sem-b{flex:1;width:min(42px,100%);display:flex;flex-direction:column-reverse;border-radius:8px;overflow:hidden;background:var(--sunk)}
+.sem-b i{display:block;transform-origin:bottom;animation:crece .8s cubic-bezier(.2,.8,.2,1) both}
+.sem-b i.ok{background:var(--ok)}
+.sem-b i.ko{background:var(--bad)}
+@keyframes crece{from{transform:scaleY(0)}}
+.sem-d small{min-height:1em}
+
 @media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}.logo-a .lg-pulse{stroke-dasharray:none}}
 </style>
 
@@ -1345,6 +1381,7 @@ function renderNav(h){
     ["plan","Plan de estudio",ICON.cal,pend||""],
     ["estadisticas","Progreso y nota",ICON.chart,""],
     ["debiles","Puntos débiles",ICON.target,""],
+    ["semana","Repaso semanal",ICON.cal,semanaInicio()?"nuevo":""],
     ["logros","Racha y logros",ICON.medalla,racha().n||""],
     "Estudiar",
     ["temario","Temario completo",ICON.book,""],
@@ -1429,6 +1466,7 @@ function route(){
   else if(h==="debiles") viewDebiles();
   else if(h==="logros") viewLogros();
   else if(h==="reto") viewReto();
+  else if(h==="semana") viewSemana();
   else if(h==="buscar"||h.startsWith("buscar/")) viewBuscar(decodeURIComponent(h.slice(7)));
   else viewInicio();
   renderNav(h); renderToc(h);
@@ -1453,6 +1491,7 @@ function viewInicio(){
     last?fila(`leer-${last.n}`,"book",`Sigue con el tema ${last.n}`,esc(last.s),""):fila("leer-1","book","Empieza por el tema 1",esc(TM[1].s),""),
     fila("adaptativo","target","Test adaptativo",due?`${due} ${due===1?"pregunta te toca":"preguntas te tocan"} hoy`:"Te pregunta más lo que fallas",due),
     fila("repaso","cards","Tarjetas",nd?`${nd} pendientes de repasar`:"Al día · repaso espaciado",nd),
+    semanaInicio()?fila("semana","chart","Tu repaso semanal","Resumen de la semana y minisimulacro de 20 preguntas","nuevo"):"",
     (dbl=>dbl?fila("debiles","target",`Refuerza el tema ${dbl.n}`,esc(dbl.s)+" · tu punto más débil",""):"")(debilInicio()),
     nf?fila("fallos","x","Mis fallos",`${nf} ${nf===1?"pregunta":"preguntas"} por repasar`,nf):fila("simulacro","exam","Simulacro oficial","95 preguntas · 115 minutos","")
   ].join("");
@@ -1634,10 +1673,13 @@ function viewRepaso(){
     <div class="panel cfg">
       <div class="row" style="justify-content:space-between"><div><b class="mono" style="font-size:28px">${due.length}</b> <span class="muted">tarjetas pendientes hoy de ${tot}</span></div></div>
       <fieldset><legend>Bloques</legend><div class="pick" id="bl">${ORDEN.map(b=>`<label style="${bc(b)}"><input type="checkbox" value="${b}" checked> ${BLOQUES[b].n}</label>`).join("")}</div></fieldset>
-      <div class="row"><button class="btn pri" id="goDue">Repasar las pendientes</button><button class="btn" id="goRand">20 tarjetas al azar</button></div>
+      <div class="row"><button class="btn pri" id="goDue">Repasar las pendientes</button><button class="btn" id="goRand">20 tarjetas al azar</button><button class="btn" id="goAud">🎧 Escuchar las pendientes</button><span id="tjoff"></span></div>
     </div>
     <div id="dk"></div></div>`;
   const filt=()=>{const s=new Set([...main.querySelectorAll("#bl input:checked")].map(x=>x.value));return t=>s.has(t.b)};
+  $("#goAud").addEventListener("click",()=>{let cs=dueCards().filter(c=>filt()(TM[c.n]));if(!cs.length){cs=shuffle(allCards(filt())).slice(0,20);aviso("No tienes tarjetas pendientes: escuchas 20 al azar.")}
+    tarjetasAudio(cs.map(c=>({n:c.n,i:+c.id.split("-")[1],f:c.f,a:c.a})))});
+  tarjetasGrabadas(1).then(T=>{if(T)offBoton($("#tjoff"),TEMAS.flatMap(t=>[`audio/tarjetas/${pad(t.n)}.mp3`,`audio/tarjetas/${pad(t.n)}.js`]),{no:"Guardar las tarjetas sin conexión",ok:"Tarjetas sin conexión",hecho:"Tarjetas guardadas para escucharlas sin conexión."})});
   const start=cs=>{ if(!cs.length){$("#dk").innerHTML=`<div class="panel empty-state">${ICON.party}<h2>Nada pendiente en esos bloques</h2><p class="muted">Prueba con 20 tarjetas al azar o estudia un tema nuevo.</p></div>`;return}
     deck($("#dk"),cs,{title:"Repaso",onEnd:1}); $("#dk").scrollIntoView({behavior:"smooth",block:"start"}) };
   $("#goDue").addEventListener("click",()=>start(shuffle(allCards(filt()).filter(c=>isDue(c.id))).slice(0,40)));
@@ -1844,6 +1886,7 @@ function limpiarLector(){
   const p=$("#rprog");if(p)p.remove();
   leyAbierta=null;
   if(typeof hlDesactivar==="function")hlDesactivar();
+  document.body.classList.remove("modo-lectura");{const sl=document.getElementById("salirLect");if(sl)sl.remove();const lp=document.getElementById("lectp");if(lp)lp.remove()}
   if(typeof audioParar==="function"&&Audio.cola.length&&!(document.getElementById("abar")||{classList:{contains:()=>0}}).classList.contains("grab")){audioParar();const ab=document.getElementById("abar");if(ab){ab.hidden=true;document.body.classList.remove("conAudio")}}
 }
 function espiarIndice(cont,toc){
@@ -1867,11 +1910,11 @@ function enlazarLetra(cont,el){cont.querySelectorAll("[data-fs]").forEach(b=>b.a
 
 /* ---------- Índice del temario completo ---------- */
 function viewTemario(){
-  S.leido=S.leido||{};
+  S.leido=S.leido||{};setTimeout(()=>audioGrabado(1).then(T=>{if(T)offBoton($("#todoOff"),TEMAS.flatMap(t=>[`audio/${pad(t.n)}.mp3`,`audio/${pad(t.n)}.js`]),{no:"Descargar los audios de los 40 temas (unos 300 MB)",ok:"Los 40 temas están disponibles sin conexión",hecho:"Audios de los 40 temas guardados."})}),0);
   const tot=Object.values(IDX).reduce((a,x)=>a+(x.w||0),0);
   const nl=Object.keys(S.leido).length;
   main.innerHTML=`<div class="wrap">
-    <header class="th"><span class="eyebrow">Desarrollo de los 40 temas</span><h1>Temario completo</h1>
+    <header class="th"><span class="eyebrow">Desarrollo de los 40 temas</span><h1>Temario completo</h1><div class="rtools" id="todoOff"></div>
     <p class="muted" style="margin:0;max-width:64ch">Cada tema desarrollado según su epígrafe oficial, con índice, tablas y enlaces a los artículos de la legislación. ${tot?`En total, unas ${tot.toLocaleString("es-ES")} palabras (${Math.round(tot/200/60)} horas de lectura). `:""}Llevas ${nl} de 40 temas leídos.</p></header>
     ${ORDEN.map(b=>`<section class="blk" style="${bc(b)}"><div class="blk-h"><h2>${BLOQUES[b].n}</h2></div><div class="tlist">${TEMAS.filter(t=>t.b===b).map(t=>{const x=IDX[t.n]||{};const pos=(S.pos||{})[t.n];
       return `<a href="#leer-${t.n}" style="${bc(b)}"><span class="n">${pad(t.n)}</span><span class="t">${esc(t.t)}<small>${x.h?esc(x.h.slice(0,4).join(" · ")):""}</small></span><span class="m">${S.leido[t.n]?"<b>✓ leído</b>":pos?Math.round(pos*100)+" % leído":x.w?minLect(x.w)+" min":"pendiente"}</span></a>`}).join("")}</div></section>`).join("")}
@@ -1888,7 +1931,7 @@ function viewLeer(n){
     <header class="th">
       <div class="top"><span class="num">TEMA ${pad(n)} / 40</span><span class="chip" style="${bc(t.b)}"><i></i>${BLOQUES[t.b].n}</span>${x.w?`<span class="muted" style="font-size:13px">${x.w.toLocaleString("es-ES")} palabras · ${minLect(x.w)} min de lectura</span>`:""}</div>
       <h1>${esc(t.t)}</h1>
-      <div class="rtools"><a class="btn sm" href="#tema-${n}">Esquema, tarjetas y test</a><span id="fsb"></span><button class="btn sm" id="aud">🔊 Escuchar el tema</button><span class="muted" style="font-size:12.5px">Selecciona un texto para subrayarlo o añadir una nota</span></div>
+      <div class="rtools"><a class="btn sm" href="#tema-${n}">Esquema, tarjetas y test</a><span id="fsb"></span><button class="btn sm" id="lectB" aria-haspopup="dialog" title="Tamaño, interlineado, tipografía y modo lectura">Aa</button><button class="btn sm" id="aud">🔊 Escuchar el tema</button><span id="offB"></span><span class="muted" style="font-size:12.5px">Selecciona un texto para subrayarlo o añadir una nota</span></div>
     </header>
     <div class="reader"><nav class="rtoc" aria-label="Índice del tema"><details id="tocD"><summary>Índice del tema</summary><div class="rtoc-l" id="rtl"></div></details></nav>
       <article class="doc" id="doc"><p class="muted">Cargando el tema…</p></article></div>
@@ -1898,7 +1941,7 @@ function viewLeer(n){
     </nav></div>`;
   window.scrollTo(0,0);
   const doc=$("#doc");
-  $("#fsb").innerHTML=tamLetra(doc);enlazarLetra(main,doc);
+  $("#fsb").innerHTML=tamLetra(doc);enlazarLetra(main,doc);lectAplicar(doc);$("#lectB").addEventListener("click",e=>{e.stopPropagation();lectPanel(e.currentTarget,doc)});
   Promise.all([cargar(`temas/${pad(n)}.js`),cargar("diagramas.js")]).then(()=>{
     if(location.hash!=="#leer-"+n) return;
     const src=(window.TEMARIO||{})[n];
@@ -1911,7 +1954,7 @@ function viewLeer(n){
     if(innerWidth>1100) $("#tocD").open=true;
     renderDiagramas(doc);
     $("#aud").addEventListener("click",()=>audioIniciar(doc,null,n));
-    audioGrabado(n).then(T=>{const ab=$("#aud");if(T&&ab&&location.hash==="#leer-"+n){ab.innerHTML=`🔊 Escuchar el tema <small class="mono">· ${Math.round(T.d/60)} min</small>`;ab.title="Audio grabado con la voz Ximena (español de España)";
+    audioGrabado(n).then(T=>{const ab=$("#aud");if(T&&ab&&location.hash==="#leer-"+n){offBoton($("#offB"),[`audio/${pad(n)}.mp3`,`audio/${pad(n)}.js`],{no:"Guardar sin conexión",ok:"Disponible sin conexión",hecho:"Tema guardado para escucharlo sin conexión."});ab.innerHTML=`🔊 Escuchar el tema <small class="mono">· ${Math.round(T.d/60)} min</small>`;ab.title="Audio grabado con la voz Ximena (español de España)";
       if(Grab.a&&Grab.n===n){Grab.bl=bloquesAudio(doc);Grab.k=-1;grabTick()}}});
     espiarIndice(doc,tl);
     barraProgreso(f=>{S.pos[n]=f;if(f>.97&&!S.leido[n]){S.leido[n]=1}save()});
@@ -2124,17 +2167,18 @@ function viewExpres(){
       <header class="th"><span class="eyebrow">Para los últimos días</span><h1>Repaso exprés</h1>
       <p class="muted" style="margin:0;max-width:64ch">Solo lo que más cae de cada tema: los cuadros «Ideas que más caen en el examen» y la regla para recordar. Has repasado ${nrep} de 40 temas.</p></header>
       <div class="tools"><div class="pick" id="xpb"><label><input type="radio" name="xb" value="todos" ${xpBloque==="todos"?"checked":""}> Todos</label>${ORDEN.map(b=>`<label style="${bc(b)}"><input type="radio" name="xb" value="${b}" ${xpBloque===b?"checked":""}> ${BLOQUES[b].n}</label>`).join("")}</div>
-        <label class="sw"><input type="checkbox" id="xpc"> Modo memoria</label><span class="hint">Oculta las palabras clave: tócalas para comprobarlas.</span><button class="btn sm" id="xpa">🔊 Escuchar todo</button></div>
+        <label class="sw"><input type="checkbox" id="xpc"> Modo memoria</label><span class="hint">Oculta las palabras clave: tócalas para comprobarlas.</span><button class="btn sm" id="xpa">🔊 Escuchar todo</button><span id="xpoff"></span></div>
       <div id="xpl" class="xpl">${ts.map(t=>{const r=S.xp[t.n];const src=(window.EXPRES||{})[t.n]||"";
         return `<article class="xp panel" style="${bc(t.b)}" id="xp${t.n}"><header><span class="n mono">${pad(t.n)}</span><h2>${esc(t.s)}</h2><span class="st muted">${r?(r===hoyD?"✓ repasado hoy":"repasado hace "+(hoyD-r)+" días"):"sin repasar"}</span></header>
           <div class="doc xpdoc">${mdDoc(src).html.replace(/<strong>/g,'<b class="k">').replace(/<\/strong>/g,"</b>")}</div>
           <p class="xpm"><b>Para recordar:</b> ${md(t.m)}</p>
           <div class="row"><button class="btn sm ${r===hoyD?"":"pri"}" data-xp="${t.n}">${r===hoyD?"✓ Repasado hoy":"Marcar como repasado"}</button><a class="btn sm" href="#tema-${t.n}">Test del tema</a><a class="btn sm ghost" href="#leer-${t.n}">Tema completo</a><button class="btn sm ghost" data-xa="${t.n}">🔊 Escuchar</button></div></article>`}).join("")}</div></div>`;
-    $("#xpa").addEventListener("click",()=>audioIniciar($("#xpl")));
+    $("#xpa").addEventListener("click",()=>{const ns=ts.map(t=>t.n);audioExpres(ns[0],ns)});
+    audioExpresGrabado(1).then(T=>{if(T)offBoton($("#xpoff"),TEMAS.flatMap(t=>[`audio/expres/${pad(t.n)}.mp3`,`audio/expres/${pad(t.n)}.js`]),{no:"Guardar el repaso sin conexión",ok:"Repaso exprés sin conexión",hecho:"Repaso exprés guardado para escucharlo sin conexión."})});
     main.querySelectorAll("#xpb input").forEach(i=>i.addEventListener("change",()=>{xpBloque=i.value;dibujar()}));
     $("#xpc").addEventListener("change",e=>$("#xpl").classList.toggle("cloze",e.target.checked));
     $("#xpl").addEventListener("click",e=>{const k=e.target.closest("b.k");if(k&&$("#xpl").classList.contains("cloze")){k.classList.add("rev");return}
-      const xa=e.target.closest("[data-xa]");if(xa){audioIniciar($("#xp"+xa.dataset.xa));return}
+      const xa=e.target.closest("[data-xa]");if(xa){audioExpres(+xa.dataset.xa);return}
       const b=e.target.closest("[data-xp]");if(b){const n=+b.dataset.xp;if(S.xp[n]===hoyD)delete S.xp[n];else S.xp[n]=hoyD;save();const y=scrollY;dibujar();window.scrollTo(0,y);if($("#xpc"))$("#xpc").checked=false}});
   }
 }
@@ -2400,6 +2444,7 @@ function renderDiagramas(root){
 function registrar(id,ok){
   marcarDia();
   S.hq=S.hq||{};S.qb=S.qb||{};const d=diaLocal();
+  S.sem=S.sem||{};const sm=S.sem[d]||{a:0,f:0};if(ok)sm.a++;else sm.f++;S.sem[d]=sm;if(!ok){S.failD=S.failD||{};S.failD[id]=d}
   const h=S.hq[id]||{a:0,f:0};if(ok)h.a++;else h.f++;h.d=d;S.hq[id]=h;
   const r=S.qb[id]||{b:0};const b=ok?Math.min((r.b||0)+1,5):0;S.qb[id]={b,d:d+(ok?INT[b]:0)};
 }
@@ -2605,7 +2650,7 @@ function bloquesAudio(root){
     else t=el.textContent;
     return {el,t:textoHablado(t)}}).filter(x=>x.t.length>1);
 }
-window.bloquesAudio=bloquesAudio; /* lo usa la herramienta que graba el audio de los temas */
+window.bloquesAudio=bloquesAudio;window.textoHablado=textoHablado; /* lo usa la herramienta que graba el audio de los temas */
 function audioPreparar(root){const cola=[];bloquesAudio(root).forEach(x=>trocear(x.t).forEach(f=>cola.push({el:x.el,t:f})));return cola}
 function audioBarra(){
   let b=$("#abar");if(b)return b;
@@ -2647,25 +2692,6 @@ function grabTick(){
 function grabSalto(d){const a=Grab.a,s=Grab.T.s,k=Math.max(0,Grab.k);let t;
   if(d>0)t=s[Math.min(k+1,s.length-1)];else t=a.currentTime-s[k]>2.5?s[k]:s[Math.max(0,k-1)];
   a.currentTime=t;Grab.k=-1;grabTick();if(a.paused)a.play().catch(()=>{})}
-function grabIniciar(root,bl,T,n,desdeEl){
-  audioParar();Audio.cola=[];
-  if(!Grab.a){const a=Grab.a=document.createElement("audio");a.preload="metadata";a.className="noHL";document.body.appendChild(a);
-    a.addEventListener("timeupdate",grabTick);a.addEventListener("play",()=>grabBoton(true));a.addEventListener("pause",()=>grabBoton(false));
-    a.addEventListener("ended",()=>{grabBoton(false);S.audPos=S.audPos||{};S.audPos[Grab.n]=0;save();aviso(`Has terminado de escuchar el tema ${Grab.n}.`)});
-    a.addEventListener("error",()=>{aviso("No se ha podido cargar el audio grabado: se usará la voz del navegador.");const b=$("#abar");if(b)b.classList.remove("grab");vozIniciar(Grab.root)})}
-  const nuevo=Grab.n!==n;Grab.n=n;Grab.bl=bl;Grab.T=T;Grab.k=-1;Grab.root=root;
-  if(nuevo)Grab.a.src=`audio/${pad(n)}.mp3`;
-  Grab.a.playbackRate=S.vel||1;Grab.a.preservesPitch=true;
-  let t0=nuevo?((S.audPos||{})[n]||0):Grab.a.currentTime;
-  if(desdeEl){const k=bl.findIndex(x=>x.el===desdeEl||desdeEl.contains(x.el));if(k>=0)t0=T.s[k]}
-  const b=audioBarra();b.hidden=false;b.classList.add("grab");document.body.classList.add("conAudio");
-  b.querySelector('[data-a="vel"]').value=String(S.vel||1);
-  const go=()=>{try{Grab.a.currentTime=t0}catch(e){}Grab.a.play().catch(()=>grabBoton(false));grabTick()};
-  if(Grab.a.readyState>=1)go();else Grab.a.addEventListener("loadedmetadata",go,{once:true});
-  if(t0>5&&nuevo)aviso(`Continúas donde lo dejaste (${fmtT(t0)}). Usa la barra para volver al principio.`,4500);
-  if("mediaSession" in navigator){try{navigator.mediaSession.metadata=new MediaMetadata({title:`Tema ${n}${TM[n]?" · "+TM[n].s:""}`,artist:"Temario STI · SERMAS",album:"Escuchar el temario"})}catch(e){}
-    [["play",()=>Grab.a.play()],["pause",()=>Grab.a.pause()],["previoustrack",()=>grabSalto(-1)],["nexttrack",()=>grabSalto(1)],["seekbackward",()=>{Grab.a.currentTime=Math.max(0,Grab.a.currentTime-15)}],["seekforward",()=>{Grab.a.currentTime+=15}]].forEach(([x,f])=>{try{navigator.mediaSession.setActionHandler(x,f)}catch(e){}})}
-}
 function audioIniciar(root,desdeEl,n){
   if(n){audioGrabado(n).then(T=>{const bl=bloquesAudio(root);
     if(T&&T.b===bl.length)grabIniciar(root,bl,T,n,desdeEl);
@@ -3002,7 +3028,7 @@ function necesita(files,fn){
 }
 
 /* ---------- Buscador rápido (Ctrl+K) ---------- */
-const DESTINOS=[["inicio","Inicio"],["noticias","Noticias del proceso"],["plan","Plan de estudio"],["estadisticas","Estadísticas y nota"],["temario","Temario completo"],["expres","Repaso exprés"],["mapas","Mapas mentales"],["tablas","Tablas para memorizar"],["nemotecnias","Reglas para recordar"],["leyes","Legislación"],["notas","Mis notas y subrayados"],["adaptativo","Test adaptativo"],["repaso","Repaso de tarjetas"],["trampas","Preguntas trampa"],["practicas","Ejercicios prácticos"],["simulacro","Simulacro de examen"],["ensayo","Ensayo del examen"],["examenes","Exámenes anteriores"],["impugnar","Impugnaciones"],["fallos","Mis fallos"],["siglas","Glosario de siglas"],["debiles","Puntos débiles"],["logros","Racha y logros"],["reto","Contrarreloj y supervivencia"]];
+const DESTINOS=[["inicio","Inicio"],["noticias","Noticias del proceso"],["plan","Plan de estudio"],["estadisticas","Estadísticas y nota"],["temario","Temario completo"],["expres","Repaso exprés"],["mapas","Mapas mentales"],["tablas","Tablas para memorizar"],["nemotecnias","Reglas para recordar"],["leyes","Legislación"],["notas","Mis notas y subrayados"],["adaptativo","Test adaptativo"],["repaso","Repaso de tarjetas"],["trampas","Preguntas trampa"],["practicas","Ejercicios prácticos"],["simulacro","Simulacro de examen"],["ensayo","Ensayo del examen"],["examenes","Exámenes anteriores"],["impugnar","Impugnaciones"],["fallos","Mis fallos"],["siglas","Glosario de siglas"],["debiles","Puntos débiles"],["logros","Racha y logros"],["reto","Contrarreloj y supervivencia"],["semana","Repaso semanal"]];
 function abrirPaleta(){
   let p=$("#cmdk");
   if(!p){p=document.createElement("div");p.id="cmdk";p.className="cmdk noHL";p.innerHTML=`<div class="cmdk-c" role="dialog" aria-modal="true" aria-label="Ir a"><input id="cmdq" type="search" placeholder="Ir a un tema, una ley o una sección… o buscar en todo" autocomplete="off"><div id="cmdl" class="cmdl" role="listbox"></div><p class="cmdk-p muted">↑ ↓ para moverte · Intro para abrir · Esc para cerrar</p></div>`;document.body.appendChild(p);
@@ -3378,6 +3404,180 @@ function repartoHTML(bs,n){const R=repartoBloques(bs,n);return `<div class="rep"
 
 function leyCambio(id){const c=((typeof NOTICIAS!=="undefined"&&NOTICIAS.leyes)||{})[id];
   return c?`<div class="note ley-cambio"><b>Actualizada en el BOE el ${fechaISO(c.fecha)}.</b> ${esc(c.resumen||"Revisa los temas que la citan")}${(c.temas||[]).length?": "+c.temas.map(n=>`<a href="#leer-${n}">tema ${n}</a>`).join(", "):""}.</div>`:""}
+
+/* ---------- Reproductor de audio grabado (temas, repaso exprés) ---------- */
+function grabIniciar(root,bl,T,clave,desdeEl,o){
+  o=o||{};audioParar();Audio.cola=[];
+  if(!Grab.a){const a=Grab.a=document.createElement("audio");a.preload="metadata";a.className="noHL";document.body.appendChild(a);
+    a.addEventListener("timeupdate",grabTick);a.addEventListener("play",()=>grabBoton(true));a.addEventListener("pause",()=>grabBoton(false));
+    a.addEventListener("ended",()=>{grabBoton(false);S.audPos=S.audPos||{};S.audPos[Grab.n]=0;save();
+      if(Grab.sig){const f=Grab.sig;Grab.sig=null;f();return}aviso(`Has terminado de escuchar ${Grab.fin||"el tema"}.`)});
+    a.addEventListener("error",()=>{aviso("No se ha podido cargar el audio grabado: se usará la voz del navegador.");const b=$("#abar");if(b)b.classList.remove("grab");vozIniciar(Grab.root)})}
+  const src=o.src||`audio/${pad(clave)}.mp3`,nuevo=Grab.src!==src;
+  Grab.n=clave;Grab.bl=bl;Grab.T=T;Grab.k=-1;Grab.root=root;Grab.src=src;Grab.fin=o.fin||`el tema ${clave}`;Grab.sig=o.sig||null;
+  if(nuevo)Grab.a.src=src;
+  Grab.a.playbackRate=S.vel||1;Grab.a.preservesPitch=true;
+  let t0=nuevo?(o.desdeInicio?0:((S.audPos||{})[clave]||0)):Grab.a.currentTime;
+  if(desdeEl){const k=bl.findIndex(x=>x.el===desdeEl||desdeEl.contains(x.el));if(k>=0)t0=T.s[k]}
+  const b=audioBarra();b.hidden=false;b.classList.add("grab");document.body.classList.add("conAudio");
+  b.querySelector('[data-a="vel"]').value=String(S.vel||1);
+  const go=()=>{try{Grab.a.currentTime=t0}catch(e){}Grab.a.play().catch(()=>grabBoton(false));grabTick()};
+  if(Grab.a.readyState>=1&&!nuevo)go();else Grab.a.addEventListener("loadedmetadata",go,{once:true});
+  if(t0>5&&nuevo)aviso(`Continúas donde lo dejaste (${fmtT(t0)}). Usa la barra para volver al principio.`,4500);
+  if("mediaSession" in navigator){try{navigator.mediaSession.metadata=new MediaMetadata({title:o.titulo||`Tema ${clave}${TM[clave]?" · "+TM[clave].s:""}`,artist:"Temario STI · SERMAS",album:o.album||"Escuchar el temario"})}catch(e){}
+    [["play",()=>Grab.a.play()],["pause",()=>Grab.a.pause()],["previoustrack",()=>grabSalto(-1)],["nexttrack",()=>grabSalto(1)],["seekbackward",()=>{Grab.a.currentTime=Math.max(0,Grab.a.currentTime-15)}],["seekforward",()=>{Grab.a.currentTime+=15}]].forEach(([x,f])=>{try{navigator.mediaSession.setActionHandler(x,f)}catch(e){}})}
+}
+
+/* ---------- Repaso exprés en audio ---------- */
+function audioExpresGrabado(n){return cargar(`audio/expres/${pad(n)}.js`).then(()=>(window.AUDIO_X||{})[n]||null).catch(()=>null)}
+function audioExpres(n,lista){
+  const card=$("#xp"+n);if(!card)return;
+  audioExpresGrabado(n).then(T=>{const bl=bloquesAudio(card);
+    const sig=lista&&lista.length?()=>{const r=lista.slice(1);if(r.length){const c=$("#xp"+r[0]);if(c)c.scrollIntoView({block:"start",behavior:"smooth"});audioExpres(r[0],r)}else aviso("Has terminado el repaso exprés.")}:null;
+    if(T&&T.b===bl.length){card.scrollIntoView({block:"start",behavior:"smooth"});grabIniciar(card,bl,T,"x"+n,null,{src:`audio/expres/${pad(n)}.mp3`,titulo:`Repaso exprés · Tema ${n}`,album:"Repaso exprés",fin:`el repaso del tema ${n}`,sig,desdeInicio:true})}
+    else audioIniciar(card)});
+}
+
+/* ---------- Tarjetas en audio ---------- */
+const Tj={a:null,lista:[],i:0,fase:"",T:null,n:0,pausa:null};
+function tarjetasGrabadas(n){return cargar(`audio/tarjetas/${pad(n)}.js`).then(()=>(window.AUDIO_F||{})[n]||null).catch(()=>null)}
+function tarjetasAudio(cards){
+  if(!cards.length){aviso("No hay tarjetas para escuchar.");return}
+  audioParar();if(Grab.a)Grab.a.pause();
+  Tj.lista=cards;Tj.i=0;
+  if(!Tj.a){const a=Tj.a=document.createElement("audio");a.preload="auto";a.className="noHL";document.body.appendChild(a);a.addEventListener("timeupdate",tjTick)}
+  let p=$("#tjbar");if(!p){p=document.createElement("div");p.id="tjbar";p.className="tjbar noHL";document.body.appendChild(p);
+    p.addEventListener("click",e=>{const b=e.target.closest("[data-t]");if(!b)return;const k=b.dataset.t;
+      if(k==="x"){tjParar();p.hidden=true;document.body.classList.remove("conAudio");return}
+      if(k==="play"){Tj.fase==="pausa"?tjSeguir():tjPausa()}
+      if(k==="next")tjIr(Tj.i+1);if(k==="prev")tjIr(Tj.i-1);if(k==="ver"){clearTimeout(Tj.pausa);tjRespuesta()}});
+    p.addEventListener("change",e=>{if(e.target.dataset.t==="seg"){S.tjSeg=+e.target.value;save()}})}
+  p.hidden=false;document.body.classList.add("conAudio");tjIr(0);
+  if("mediaSession" in navigator){try{navigator.mediaSession.metadata=new MediaMetadata({title:"Tarjetas en audio",artist:"Temario STI · SERMAS",album:"Repaso de tarjetas"})}catch(e){}
+    [["play",tjSeguir],["pause",tjPausa],["nexttrack",()=>tjIr(Tj.i+1)],["previoustrack",()=>tjIr(Tj.i-1)]].forEach(([x,f])=>{try{navigator.mediaSession.setActionHandler(x,f)}catch(e){}})}
+}
+function tjPintar(){const c=Tj.lista[Tj.i],p=$("#tjbar");if(!p||!c)return;
+  p.innerHTML=`<div class="tj-top"><span class="mono">${Tj.i+1} / ${Tj.lista.length} · Tema ${c.n}</span><label class="as"><span class="muted">Pausa para pensar</span><select data-t="seg">${[3,5,8,12].map(s=>`<option value="${s}" ${(S.tjSeg||5)===s?"selected":""}>${s} s</option>`).join("")}</select></label></div>
+    <p class="tj-q">${md(c.f)}</p><p class="tj-a" ${Tj.fase==="a"||Tj.fase==="fin"?"":"hidden"}>${md(c.a)}</p>
+    <div class="tj-ctl"><button class="iconbtn" data-t="prev" aria-label="Tarjeta anterior">⏮</button><button class="iconbtn ap" data-t="play" aria-label="Pausar o continuar">${Tj.fase==="pausa"?"▶":"⏸"}</button><button class="iconbtn" data-t="next" aria-label="Tarjeta siguiente">⏭</button>
+    <button class="btn sm" data-t="ver" ${Tj.fase==="espera"?"":"hidden"}>Ver la respuesta ya</button><button class="iconbtn" data-t="x" aria-label="Cerrar">✕</button></div>`}
+function tjIr(i){clearTimeout(Tj.pausa);if(i<0)i=0;if(i>=Tj.lista.length){tjParar();Tj.fase="fin";aviso("Has terminado las tarjetas.");tjPintar();return}
+  Tj.i=i;const c=Tj.lista[i];Tj.fase="q";tjPintar();
+  tarjetasGrabadas(c.n).then(T=>{if(Tj.lista[Tj.i]!==c)return;Tj.T=T;
+    if(T&&T.c&&T.c[c.i]){const src=`audio/tarjetas/${pad(c.n)}.mp3`;if(!Tj.a.src.endsWith(src))Tj.a.src=src;
+      const go=()=>{Tj.a.currentTime=T.c[c.i][0];Tj.a.playbackRate=S.vel||1;Tj.a.play().catch(()=>{})};
+      if(Tj.a.readyState>=1&&Tj.a.src.endsWith(src))go();else Tj.a.addEventListener("loadedmetadata",go,{once:true})}
+    else tjVoz(c.f,()=>tjEspera())})}
+function tjTick(){const c=Tj.lista[Tj.i],T=Tj.T;if(!c||!T||!T.c[c.i])return;const [q,a,e]=T.c[c.i],t=Tj.a.currentTime;
+  if(Tj.fase==="q"&&t>=a-0.05){Tj.a.pause();tjEspera()}
+  else if(Tj.fase==="a"&&t>=e-0.05){Tj.a.pause();Tj.fase="fin";tjPintar();Tj.pausa=setTimeout(()=>tjIr(Tj.i+1),900)}}
+function tjEspera(){Tj.fase="espera";tjPintar();Tj.pausa=setTimeout(tjRespuesta,(S.tjSeg||5)*1000)}
+function tjRespuesta(){const c=Tj.lista[Tj.i],T=Tj.T;Tj.fase="a";tjPintar();
+  if(T&&T.c&&T.c[c.i]){Tj.a.currentTime=T.c[c.i][1];Tj.a.play().catch(()=>{})}else tjVoz(c.a,()=>{Tj.fase="fin";tjPintar();Tj.pausa=setTimeout(()=>tjIr(Tj.i+1),900)})}
+function tjPausa(){clearTimeout(Tj.pausa);if(Tj.a)Tj.a.pause();if(window.speechSynthesis)speechSynthesis.cancel();Tj.prev=Tj.fase;Tj.fase="pausa";tjPintar()}
+function tjSeguir(){const f=Tj.prev;Tj.fase=f||"q";if(f==="espera"||f==="a"||f==="fin")tjRespuesta();else tjIr(Tj.i)}
+function tjParar(){clearTimeout(Tj.pausa);if(Tj.a)Tj.a.pause();if(window.speechSynthesis)speechSynthesis.cancel()}
+function tjVoz(t,fin){if(!window.speechSynthesis){fin();return}speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(textoHablado(t));const v=vozElegida();if(v){u.voice=v;u.lang=v.lang}else u.lang="es-ES";u.rate=S.vel||1;u.onend=fin;speechSynthesis.speak(u)}
+
+/* ---------- Audios sin conexión (solo en la versión de GitHub, con el service worker) ---------- */
+const AUD_CACHE="temario-audio";
+const puedeOffline=()=>"caches" in window&&"serviceWorker" in navigator&&!enMarco()&&location.protocol==="https:";
+const absURL=u=>new URL(u,location.href).href;
+async function offEsta(urls){try{const c=await caches.open(AUD_CACHE);for(const u of urls){if(!(await c.match(absURL(u))))return false}return true}catch(e){return false}}
+async function offGuardar(urls,b){const c=await caches.open(AUD_CACHE);try{if(navigator.storage&&navigator.storage.persist)navigator.storage.persist()}catch(e){}
+  let k=0;for(const u of urls){if(b)b.textContent=`Guardando… ${Math.round(k/urls.length*100)} %`;const url=absURL(u);if(!(await c.match(url))){const r=await fetch(url,{cache:"no-store"});if(!r.ok)throw new Error("HTTP "+r.status);await c.put(url,r)}k++}}
+async function offQuitar(urls){const c=await caches.open(AUD_CACHE);await Promise.all(urls.map(u=>c.delete(absURL(u))))}
+async function offUso(){try{const c=await caches.open(AUD_CACHE);const ks=await c.keys();let t=0;for(const k of ks){const r=await c.match(k);const l=+r.headers.get("content-length");if(l)t+=l;else t+=(await r.clone().blob()).size}return t}catch(e){return 0}}
+const mb=b=>(b/1048576).toLocaleString("es-ES",{maximumFractionDigits:b<1e7?1:0})+" MB";
+function offBoton(cont,urls,etq){if(!cont||!puedeOffline())return;
+  const pinta=async()=>{const ok=await offEsta(urls);cont.innerHTML=ok?`<button class="btn sm ok-off" data-off="q" title="Quitar la copia guardada">✓ ${etq.ok}</button>`:`<button class="btn sm" data-off="g">⬇ ${etq.no}</button>`};
+  cont.onclick=async e=>{const b=e.target.closest("[data-off]");if(!b)return;b.disabled=true;
+    try{if(b.dataset.off==="g"){await offGuardar(urls,b);aviso(`${etq.hecho} Ocupa ${mb(await offUso())} en total en este dispositivo.`)}else{await offQuitar(urls);aviso("Copia sin conexión eliminada.")}}
+    catch(err){aviso("No se ha podido guardar: "+esc(err.message)+". Comprueba la conexión y el espacio libre.")}pinta()};
+  pinta()}
+
+/* ---------- Ajustes de lectura ---------- */
+const FUENTES_LECT={normal:{n:"La de la web",f:""},lexend:{n:"Lexend · lectura más fluida",f:"'Lexend',system-ui,sans-serif",g:"Lexend:wght@300..700"},
+  atkinson:{n:"Atkinson Hyperlegible · dislexia y baja visión",f:"'Atkinson Hyperlegible',system-ui,sans-serif",g:"Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400"},
+  libro:{n:"Literata · con serifa, tipo libro",f:"'Literata',Georgia,serif",g:"Literata:opsz,wght@7..72,400..700"}};
+function lectAplicar(el){const L=S.lect||{},F=FUENTES_LECT[L.f]||FUENTES_LECT.normal;
+  if(F.g&&!document.getElementById("gf-"+L.f)){const l=document.createElement("link");l.id="gf-"+L.f;l.rel="stylesheet";l.href="https://fonts.googleapis.com/css2?family="+F.g+"&display=swap";document.head.appendChild(l)}
+  if(el){el.style.setProperty("--rlh",L.lh||1.7);el.style.setProperty("--rmw",(L.w||70)+"ch");el.style.setProperty("--rff",F.f||"inherit");el.style.setProperty("--rls",(L.ls||0)+"em")}
+  const foco=!!L.foco&&/^#leer-/.test(location.hash);document.body.classList.toggle("modo-lectura",foco);
+  let sb=$("#salirLect");if(foco&&!sb){sb=document.createElement("button");sb.id="salirLect";sb.className="btn sm salir-lect noHL";sb.textContent="Salir del modo lectura";
+    sb.addEventListener("click",()=>{S.lect.foco=false;save();lectAplicar($("#doc"))});document.body.appendChild(sb)}
+  if(!foco&&sb)sb.remove()}
+function lectPanel(btn,el){let p=$("#lectp");if(p){p.remove();return}
+  const L=S.lect=S.lect||{};p=document.createElement("div");p.id="lectp";p.className="lectp noHL";p.setAttribute("role","dialog");p.setAttribute("aria-label","Ajustes de lectura");
+  const op=(k,vals,act)=>vals.map(([v,t])=>`<button type="button" class="chipb ${String(act)===String(v)?"on":""}" data-k="${k}" data-v="${v}">${t}</button>`).join("");
+  p.innerHTML=`<div class="lectp-h"><b>Ajustes de lectura</b><button class="iconbtn" data-k="cerrar" aria-label="Cerrar">✕</button></div>
+    <span class="pq-l">Tamaño de letra</span><div class="chips">${op("fs",[[.9,"Pequeña"],[1,"Normal"],[1.12,"Grande"],[1.25,"Muy grande"]],S.rfs||1)}</div>
+    <span class="pq-l">Interlineado</span><div class="chips">${op("lh",[[1.5,"Compacto"],[1.7,"Normal"],[1.9,"Amplio"],[2.15,"Muy amplio"]],L.lh||1.7)}</div>
+    <span class="pq-l">Ancho de las líneas</span><div class="chips">${op("w",[[58,"Estrecho"],[70,"Normal"],[85,"Ancho"]],L.w||70)}</div>
+    <span class="pq-l">Espacio entre letras</span><div class="chips">${op("ls",[[0,"Normal"],[.03,"Algo más"],[.06,"Amplio"]],L.ls||0)}</div>
+    <span class="pq-l">Tipografía</span><div class="chips col">${op("f",Object.entries(FUENTES_LECT).map(([k,x])=>[k,x.n]),L.f||"normal")}</div>
+    <label class="sw lectp-foco"><input type="checkbox" data-k="foco" ${L.foco?"checked":""}> Modo lectura: oculta el menú y las barras</label>
+    <button class="btn sm ghost" data-k="reset">Volver a los ajustes de siempre</button>`;
+  document.body.appendChild(p);const r=btn.getBoundingClientRect();p.style.top=Math.min(r.bottom+8,innerHeight-40)+"px";
+  p.addEventListener("click",e=>{const b=e.target.closest("[data-k]");if(!b||b.tagName==="INPUT")return;const k=b.dataset.k;
+    if(k==="cerrar"){p.remove();return}
+    if(k==="reset"){S.lect={};S.rfs=1;save();el.style.setProperty("--rfs",1);lectAplicar(el);p.remove();lectPanel(btn,el);return}
+    if(k==="fs"){S.rfs=+b.dataset.v;el.style.setProperty("--rfs",S.rfs)}else L[k]=k==="f"?b.dataset.v:+b.dataset.v;
+    save();lectAplicar(el);b.parentElement.querySelectorAll(".chipb").forEach(x=>x.classList.toggle("on",x===b))});
+  p.addEventListener("change",e=>{if(e.target.dataset.k==="foco"){L.foco=e.target.checked;save();lectAplicar(el)}});
+  setTimeout(()=>document.addEventListener("click",function f(e){if(!p.isConnected){document.removeEventListener("click",f);return}if(!p.contains(e.target)&&e.target!==btn){p.remove();document.removeEventListener("click",f)}}),0);
+}
+
+/* ---------- Repaso semanal ---------- */
+function semanaDatos(){
+  const hoyD=diaLocal(),sem=S.sem||{},act=S.act||{},R={a:0,f:0,dias:0},P={a:0,f:0},dias=[];
+  for(let k=6;k>=0;k--){const d=hoyD-k,x=sem[d]||{a:0,f:0};R.a+=x.a;R.f+=x.f;if(act[d])R.dias++;dias.push({d,a:x.a,f:x.f,act:act[d]||0})}
+  for(let k=7;k<14;k++){const x=sem[hoyD-k];if(x){P.a+=x.a;P.f+=x.f}}
+  const fallos=Object.entries(S.failD||{}).filter(([id,d])=>d>hoyD-7&&S.fail[id]).map(([id])=>id);
+  const porTema={};fallos.forEach(id=>{const n=+id.split("-")[0];porTema[n]=(porTema[n]||0)+1});
+  return {R,P,dias,fallos,porTema,hoyD};
+}
+function semanaClave(){const d=diaLocal(),dow=(new Date(d*864e5).getUTCDay()+6)%7;return d-dow}
+function semanaInicio(){return new Date().getDay()===1&&S.semVisto!==semanaClave()}
+function viewSemana(){
+  S.semVisto=semanaClave();save();
+  const D=semanaDatos(),{R,P}=D,pct=x=>x.a+x.f?Math.round(x.a/(x.a+x.f)*100):null,p1=pct(R),p0=pct(P);
+  const f=d=>new Date(d*864e5).toLocaleDateString("es-ES",{day:"numeric",month:"short",timeZone:"UTC"});
+  const max=Math.max(1,...D.dias.map(x=>x.a+x.f));
+  const temas=Object.entries(D.porTema).sort((a,b)=>b[1]-a[1]).slice(0,5);
+  const dbl=debilInicio(),nd=dueCards().length,rc=racha();
+  main.innerHTML=`<div class="wrap">
+    <header class="th"><span class="eyebrow">Del ${f(D.hoyD-6)} al ${f(D.hoyD)}</span><h1>Tu repaso semanal</h1>
+    <p class="muted" style="margin:0;max-width:64ch">Lo que has hecho en los últimos siete días, dónde has fallado y un minisimulacro de 20 preguntas con tus fallos de la semana.</p></header>
+    <section class="stats">
+      <div class="stat"><span class="v mono">${R.dias}<small>/7</small></span><span class="l">días con estudio</span><div class="meter"><i style="width:${R.dias/7*100}%"></i></div></div>
+      <div class="stat"><span class="v mono">${R.a+R.f}</span><span class="l">preguntas respondidas${P.a+P.f?` (${R.a+R.f>=P.a+P.f?"+":""}${R.a+R.f-(P.a+P.f)} frente a la semana anterior)`:""}</span></div>
+      <div class="stat"><span class="v mono">${p1==null?"–":p1+"<small>%</small>"}</span><span class="l">de acierto${p0!=null&&p1!=null?` · ${p1>=p0?"▲":"▼"} ${Math.abs(p1-p0)} puntos`:""}</span></div>
+      <div class="stat"><span class="v mono">${D.fallos.length}</span><span class="l">fallos de la semana sin corregir</span></div>
+    </section>
+    <section class="panel"><h2 style="font-size:18px;margin-bottom:12px">Día a día</h2>
+      <div class="sem-g">${D.dias.map(x=>{const n=x.a+x.f;return `<div class="sem-d" title="${f(x.d)}: ${n} respuestas, ${x.a} aciertos"><div class="sem-b"><i class="ok" style="height:${x.a/max*100}%"></i><i class="ko" style="height:${x.f/max*100}%"></i></div><span>${new Date(x.d*864e5).toLocaleDateString("es-ES",{weekday:"short",timeZone:"UTC"})}</span><small class="mono">${n||""}</small></div>`}).join("")}</div>
+      <div class="heat-ley muted"><span><i style="background:var(--ok)"></i>Aciertos</span><span><i style="background:var(--bad)"></i>Fallos</span></div></section>
+    <div class="home-grid">
+      <section class="panel"><h2 style="font-size:18px;margin-bottom:10px">Temas con más fallos esta semana</h2>
+        ${temas.length?`<div class="list">${temas.map(([n,k])=>`<a href="#tema-${n}"><span><span class="mono muted">Tema ${pad(n)}</span> · ${esc(TM[n].s)}</span><span class="mono">${k} ✗</span></a>`).join("")}</div>`:`<p class="muted" style="margin:0">Ningún fallo pendiente de esta semana. ¡Bien hecho!</p>`}</section>
+      <section class="panel"><h2 style="font-size:18px;margin-bottom:10px">Para la semana que empieza</h2><div class="hoy-l">
+        ${dbl?`<a class="hoy-i" href="#tema-${dbl.n}"><span class="hoy-ic">${ICON.target}</span><span class="hoy-t"><b>Refuerza el tema ${dbl.n}</b><small>${esc(dbl.s)}</small></span><span></span><span class="hoy-go">→</span></a>`:""}
+        <a class="hoy-i" href="#repaso"><span class="hoy-ic">${ICON.cards}</span><span class="hoy-t"><b>Tarjetas</b><small>${nd} pendientes · también en audio</small></span><span></span><span class="hoy-go">→</span></a>
+        <a class="hoy-i" href="#expres"><span class="hoy-ic">${ICON.bolt}</span><span class="hoy-t"><b>Repaso exprés</b><small>Lo que más cae, para leer o escuchar</small></span><span></span><span class="hoy-go">→</span></a>
+        <a class="hoy-i" href="#logros"><span class="hoy-ic">${ICON.fuego}</span><span class="hoy-t"><b>Racha de ${rc.n} ${rc.n===1?"día":"días"}</b><small>${rc.hoy?"Hoy ya has estudiado":"Estudia hoy para no perderla"}</small></span><span></span><span class="hoy-go">→</span></a></div></section>
+    </div>
+    <section class="panel ofic"><div><span class="eyebrow">20 preguntas · ritmo oficial · resta ¼</span><h2>Minisimulacro de la semana</h2>
+      <p class="muted" style="margin:4px 0 0">${D.fallos.length?`Con tus ${Math.min(20,D.fallos.length)} fallos de la semana${D.fallos.length<20?" y preguntas de tus temas más débiles":""}.`:"Sin fallos esta semana: preguntas de tus temas más débiles y de los que menos has practicado."}</p></div>
+      <div class="row"><button class="btn pri" id="semGo">Empezar el minisimulacro</button></div></section>
+  </div>`;
+  $("#semGo").addEventListener("click",()=>{
+    const ids=new Set(shuffle(D.fallos).slice(0,20));let pool=allQs().filter(q=>ids.has(q.id));
+    if(pool.length<20){const R2=statsTema(),pc=t=>{const r=R2[t.n];return r.a+r.f?r.a/(r.a+r.f):.5};
+      const orden=TEMAS.slice().sort((a,b)=>pc(a)-pc(b)).slice(0,8).map(t=>t.n),ya=new Set(pool.map(q=>q.id));
+      pool=pool.concat(shuffle(allQs(t=>orden.includes(t.n)).filter(q=>!ya.has(q.id))).slice(0,20-pool.length))}
+    runExam(shuffle(pool),.25,Math.round(72.6*pool.length),{})});
+}
 
 /* ---------- Fallos ---------- */
 function viewFallos(){
