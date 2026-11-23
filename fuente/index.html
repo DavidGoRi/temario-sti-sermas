@@ -582,6 +582,12 @@ svg.evo .t5{fill:var(--warn)}
   .pesq table{border-collapse:collapse;font-size:8pt}.pesq td,.pesq th{border:1px solid #999;padding:1pt 3pt}
   .pesq footer{margin-top:6pt;font-size:7.5pt;color:#444;border-top:1px solid #999;padding-top:2pt}
 }
+/* Tu progreso */
+.prog{display:flex;flex-direction:column;gap:10px}
+.prog-e{font-size:13px;font-weight:600;padding:3px 10px;border-radius:999px}
+.prog-e.ok{color:var(--ok);background:var(--ok-soft)}
+.prog-e.ko{color:var(--bad);background:var(--bad-soft)}
+.prta{width:100%;min-height:90px;font:12px/1.4 var(--f-m);background:var(--sunk);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:8px;resize:vertical;word-break:break-all}
 /* Artículos clave */
 .art-f{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}
 .art-l details{border-top:1px solid var(--line);padding:8px 0}
@@ -1306,9 +1312,21 @@ const KEY="temarioSTI.v1";
 const INT=[0,1,3,7,14,30];
 const hoy=()=>Math.floor(Date.now()/864e5);
 
-let S={est:{},box:{},best:{},fail:{},last:null,theme:null};
-try{const r=localStorage.getItem(KEY); if(r){const o=JSON.parse(r); if(o&&typeof o==="object") S=Object.assign(S,o);}}catch(e){}
-function save(){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
+/* Progreso de cada persona: se guarda solo en su navegador, por duplicado (localStorage y una copia en IndexedDB),
+   y se pide al navegador que no lo borre al liberar espacio. No se envía a ningún servidor. */
+const S0=()=>({est:{},box:{},best:{},fail:{},last:null,theme:null});
+let S=S0();
+const Guardado={local:true,idb:null,t:null,timer:null,listo:false,deLocal:false,t0:0};
+try{const r=localStorage.getItem(KEY); if(r){const o=JSON.parse(r); if(o&&typeof o==="object"){S=Object.assign(S,o);Guardado.deLocal=true;Guardado.t0=o._t||0}}}catch(e){Guardado.local=false}
+function progDB(){return new Promise((ok,ko)=>{try{const r=indexedDB.open("temarioSTI",1);r.onupgradeneeded=()=>r.result.createObjectStore("progreso");r.onsuccess=()=>ok(r.result);r.onerror=()=>ko(r.error)}catch(e){ko(e)}})}
+function progPut(txt){return progDB().then(db=>new Promise((ok,ko)=>{const t=db.transaction("progreso","readwrite");t.objectStore("progreso").put(txt,KEY);t.oncomplete=()=>{db.close();ok()};t.onerror=()=>ko(t.error)}))}
+function progGet(){return progDB().then(db=>new Promise((ok,ko)=>{const r=db.transaction("progreso").objectStore("progreso").get(KEY);r.onsuccess=()=>{db.close();ok(r.result||null)};r.onerror=()=>ko(r.error)}))}
+function progPersistir(){try{if(navigator.storage&&navigator.storage.persist)navigator.storage.persisted().then(p=>p||navigator.storage.persist()).catch(()=>{})}catch(e){}}
+function save(){S._t=Date.now();const txt=JSON.stringify(S);
+  try{localStorage.setItem(KEY,txt);Guardado.local=true}catch(e){Guardado.local=false}
+  if(Guardado.local)Guardado.t=S._t;
+  if(!Guardado.listo)return; /* hasta comparar con la copia al arrancar no se toca */
+  clearTimeout(Guardado.timer);Guardado.timer=setTimeout(()=>progPut(JSON.stringify(S)).then(()=>{Guardado.idb=true;Guardado.t=S._t}).catch(()=>{Guardado.idb=false}),500)}
 
 /* Tema visual */
 const SUN='<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>';
@@ -1542,7 +1560,7 @@ function viewInicio(){
   <section class="panel"><div class="ph"><h2>Tu temario por bloques</h2><a class="lnk" href="#temario">Los 40 temas →</a></div>
     <div class="bl-l">${ORDEN.map(b=>{const ts=TEMAS.filter(t=>t.b===b),he=ts.filter(t=>S.est[t.n]).length,le=ts.filter(t=>(S.leido||{})[t.n]).length,p=Math.round((he+le)/(ts.length*2)*100),pr=ts.find(t=>!S.est[t.n])||ts[0];
       return `<a class="bl-i" href="#tema-${pr.n}" style="${bc(b)}" title="Ir al tema ${pr.n}"><i></i><span class="bl-n">${BLOQUES[b].n}</span><span class="bl-r mono">${he}/${ts.length}</span><span class="meter"><i style="width:${p}%"></i></span></a>`}).join("")}</div></section>
-  <p class="home-pie muted">Proceso E6231 del SERMAS · grupo C1 · 39 plazas · test de 95 preguntas + 10 de reserva en 115 minutos; cada error resta ¼. <a href="#noticias">Novedades →</a></p>
+  <p class="home-pie muted">Proceso E6231 del SERMAS · grupo C1 · 39 plazas · test de 95 preguntas + 10 de reserva en 115 minutos; cada error resta ¼. <a href="#noticias">Novedades →</a> · <a href="#estadisticas" onclick="setTimeout(()=>{const e=document.getElementById('tuprogreso');if(e)e.scrollIntoView({behavior:'smooth'})},300)">Tu progreso se guarda en este navegador →</a></p>
   </div>`;
   enlazarTareas(main);enlazarPdd();
 }
@@ -2563,6 +2581,34 @@ function svgEvolucion(sims){
     <polyline points="${pts}" class="lp"/>${sims.map((s,i)=>`<circle cx="${x(i)}" cy="${y(s.nota)}" r="4.5" class="${s.nota>=5?"ok":"ko"}"><title>${new Date(s.d).toLocaleDateString("es-ES")}: ${s.nota.toFixed(2)}${s.o?" (oficial)":""}</title></circle>`).join("")}
     <text x="${W-pd}" y="${y(5)-6}" text-anchor="end" class="t5">aprobado</text></svg>`;
 }
+/* ---------- Tu progreso: dónde se guarda, copia de seguridad y restauración ---------- */
+const progCodigo=()=>"STI1:"+btoa(unescape(encodeURIComponent(JSON.stringify(S))));
+function progLeer(t){t=(t||"").trim();if(t.startsWith("STI1:"))t=decodeURIComponent(escape(atob(t.slice(5).replace(/\s+/g,""))));const o=JSON.parse(t);
+  if(!o||typeof o!=="object"||typeof o.est!=="object"||typeof o.box!=="object")throw new Error("no es una copia del temario");return o}
+function progResumen(o){const n=(x,u,v)=>{const k=Object.keys(x||{}).length;return k+" "+(k===1?u:v)};return `${n(o.est,"tema estudiado","temas estudiados")} · ${n(o.box,"tarjeta vista","tarjetas vistas")} · ${n(o.qb||o.qs,"pregunta con historial","preguntas con historial")}${o._t?" · guardada el "+new Date(o._t).toLocaleString("es-ES",{dateStyle:"short",timeStyle:"short"}):""}`}
+function progresoHTML(){const ok=Guardado.local||Guardado.idb;
+  return `<section class="panel prog" id="tuprogreso"><div class="ph"><h2>Dónde se guarda tu progreso</h2><span class="prog-e ${ok?"ok":"ko"}">${ok?"✓ Guardado en este navegador":"⚠ Este navegador no deja guardar"}</span></div>
+    <p class="muted" style="margin:0;max-width:68ch">${ok?`Todo lo que haces (temas estudiados, tarjetas, test, notas, plan…) se guarda solo, al momento, en <b>este navegador y este dispositivo</b>, con una copia doble para que no se pierda. Es individual: no se envía a ningún servidor y cada persona o navegador tiene el suyo. ${Guardado.t?`Último guardado: ${new Date(Guardado.t).toLocaleTimeString("es-ES",{hour:"2-digit",minute:"2-digit"})}.`:""}`:`Puede que estés en una ventana privada o que el navegador bloquee el almacenamiento. Lo que hagas ahora se perderá al cerrar: copia el código de abajo para no perderlo.`}</p>
+    <p class="muted" style="margin:0;max-width:68ch">Si borras los datos del navegador lo perderás. Para pasarlo a otro dispositivo o guardar una copia, usa estos botones.</p>
+    <div class="row">${enMarco()?"":`<button class="btn sm pri" id="prDes">⬇ Descargar copia</button>`}<button class="btn sm" id="prCop">Copiar código de copia</button><button class="btn sm" id="prRes">Restaurar una copia…</button><button class="btn sm ghost" id="prBor">Borrar mi progreso</button></div>
+    <div id="prZona"></div></section>`}
+function enlazarProgreso(){const z=$("#prZona");if(!z)return;
+  if($("#prDes"))$("#prDes").addEventListener("click",()=>{const b=new Blob([JSON.stringify(S)],{type:"application/json"}),a=document.createElement("a");a.href=URL.createObjectURL(b);a.download=`progreso-temario-sti-${new Date().toISOString().slice(0,10)}.json`;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},500);aviso("Copia descargada. Guárdala donde quieras.")});
+  $("#prCop").addEventListener("click",()=>{const c=progCodigo();
+    const mostrar=()=>{z.innerHTML=`<p class="muted">Copia este código y guárdalo (por ejemplo, envíatelo por correo). Para recuperarlo, pulsa «Restaurar una copia…» y pégalo.</p><textarea class="prta" readonly>${esc(c)}</textarea>`;const ta=z.querySelector("textarea");ta.focus();ta.select()};
+    mostrar();try{navigator.clipboard.writeText(c).then(()=>aviso("Código copiado. Pégalo donde quieras guardarlo."),()=>{})}catch(e){}});
+  $("#prRes").addEventListener("click",()=>{z.innerHTML=`<p class="muted">Elige el archivo de copia descargado o pega el código de copia. Sustituirá el progreso que tienes ahora en este navegador.</p>
+      <div class="row"><label class="btn sm">Elegir archivo<input type="file" accept=".json,application/json,text/plain" id="prFile" hidden></label></div>
+      <textarea class="prta" id="prTxt" placeholder="…o pega aquí el código (empieza por STI1:)"></textarea><div id="prConf"></div>`;
+    const preparar=t=>{let o;try{o=progLeer(t)}catch(e){$("#prConf").innerHTML=`<p class="prog-e ko">No es una copia válida: ${esc(e.message)}.</p>`;return}
+      $("#prConf").innerHTML=`<p>Copia encontrada: <b>${esc(progResumen(o))}</b>.</p><div class="row"><button class="btn sm pri" id="prSi">Sí, restaurarla</button><button class="btn sm ghost" id="prNo">Cancelar</button></div>`;
+      $("#prSi").addEventListener("click",()=>{S=Object.assign(S0(),o);save();progPut(JSON.stringify(S)).catch(()=>{});aviso("Progreso restaurado.");route()});
+      $("#prNo").addEventListener("click",()=>{z.innerHTML=""})};
+    $("#prFile").addEventListener("change",e=>{const f=e.target.files[0];if(!f)return;f.text().then(preparar)});
+    $("#prTxt").addEventListener("input",e=>{if(e.target.value.trim().length>10)preparar(e.target.value)})});
+  $("#prBor").addEventListener("click",()=>{z.innerHTML=`<p><b>¿Seguro?</b> Se borrará todo tu progreso de este navegador y no se puede deshacer. Si quieres, descarga antes una copia.</p><div class="row"><button class="btn sm no" id="prBorSi">Sí, borrarlo todo</button><button class="btn sm ghost" id="prBorNo">Cancelar</button></div>`;
+    $("#prBorSi").addEventListener("click",()=>{const th=S.theme;S=S0();S.theme=th;save();progPut(JSON.stringify(S)).catch(()=>{});aviso("Progreso borrado.");route()});
+    $("#prBorNo").addEventListener("click",()=>{z.innerHTML=""})})}
 function viewEstadisticas(){
   const R=statsTema();let A=0,F=0,Q=0;Object.values(R).forEach(r=>{A+=r.a;F+=r.f;Q+=r.q});
   const tot=allQs().length,sims=(S.sims||[]).slice(-30);
@@ -2589,7 +2635,9 @@ function viewEstadisticas(){
       <div class="row" style="margin-top:10px"><a class="btn pri" href="#adaptativo">Practicar con el test adaptativo</a></div></section>
     <section class="panel"><h2 class="h18">Mapa de los 40 temas</h2><p class="muted" style="font-size:13px;margin:0 0 10px">Color según tu acierto: verde ≥ 80 %, ámbar 60-79 %, rojo &lt; 60 %, gris sin datos. Toca un tema para practicarlo.</p>
       <div class="mapa">${TEMAS.map(t=>{const p=pct(R[t.n]);return `<a href="#tema-${t.n}" style="--mc:var(${col(p)})" title="Tema ${t.n} · ${esc(t.s)}: ${p==null?"sin datos":p+" %"}"><b>${t.n}</b><span>${p==null?"–":p+"%"}</span></a>`}).join("")}</div></section>
+    ${progresoHTML()}
   </div>`;
+  enlazarProgreso();
 }
 
 /* ---------- Test adaptativo ---------- */
@@ -3684,6 +3732,12 @@ function viewFallos(){
     S.fail={};save();route()});
 }
 
+/* Al arrancar: si la copia de IndexedDB es más reciente (por ejemplo, el navegador vació localStorage), se recupera */
+progGet().then(txt=>{Guardado.idb=true;let o=null;try{o=txt&&JSON.parse(txt)}catch(e){}
+  Guardado.listo=true;
+  if(o&&typeof o==="object"&&(!Guardado.deLocal||(o._t||0)>Guardado.t0)){S=Object.assign(S0(),o);try{localStorage.setItem(KEY,txt)}catch(e){}Guardado.t=o._t;route();aviso("Se ha recuperado tu progreso de la copia guardada en este navegador.")}
+  else save()}).catch(()=>{Guardado.idb=false;Guardado.listo=true});
+progPersistir();
 route();
 $("#bmas").addEventListener("click",()=>{side.classList.add("open");scrim.classList.add("open")});
 $("#cmdBtn").addEventListener("click",abrirPaleta);

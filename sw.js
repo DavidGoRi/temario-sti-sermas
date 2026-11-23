@@ -1,6 +1,6 @@
 /* Uso sin conexión (solo en la versión web de GitHub Pages).
    Las páginas y los datos se sirven desde la red cuando hay conexión y se guardan en caché;
-   sin conexión se usa la copia guardada. build.js sustituye mwrztzhx en cada compilación.
+   sin conexión se usa la copia guardada. build.js sustituye mwtdmhu2 en cada compilación.
    Los audios solo se guardan cuando el usuario pulsa «Guardar sin conexión» (caché «temario-audio»),
    y se sirven también por trozos (peticiones Range), que es como los pide el reproductor. */
 const CACHE = "temario-sti-VERSION";
