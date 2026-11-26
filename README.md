@@ -37,3 +37,15 @@ node build.js
 ## Aviso
 
 Es material de estudio personal, no oficial. Contrasta siempre los datos legales con el texto consolidado del BOE o del BOCM. Los cuadernillos de examen se enlazan a sus webs oficiales; aquí solo se guardan las plantillas de respuestas para poder corregirlos.
+
+## Autor
+
+<!-- author-section -->
+Hecho por **David Gómez Rivas**, técnico de soporte IT y sistemas. **Disponible para trabajar** en soporte IT o administración de sistemas (presencial o remoto).
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-David_G%C3%B3mez_Rivas-0A66C2?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/david-gomez-rivas-6026501b7/) [![Email](https://img.shields.io/badge/Email-david.gm.ri%40gmail.com-EA4335?logo=gmail&logoColor=white)](mailto:david.gm.ri@gmail.com) [![Ko-fi](https://img.shields.io/badge/Ko--fi-Ap%C3%B3yame-FF5E5B?logo=kofi&logoColor=white)](https://ko-fi.com/davidgmri)
+
+Si este proyecto te ahorra tiempo, puedes [apoyarlo en Ko-fi](https://ko-fi.com/davidgmri). Es totalmente opcional: seguirá siendo gratis. Una ⭐ también ayuda.
+
+Más proyectos en [github.com/DavidGoRi](https://github.com/DavidGoRi).
+
