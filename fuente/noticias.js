@@ -5,10 +5,14 @@
    tipo: convocatoria | provisionales | definitivas | tribunal | plazas | examen | plantilla | calificaciones | concurso | nombramiento | otro
    La tarea de aviso diario añade aquí las novedades nuevas (al principio de la lista) y actualiza «estado». */
 var NOTICIAS={
-actualizado:"2026-11-21",
+actualizado:"2026-11-26",
 estado:{plazas:39,cupo:"36 de cupo general y 3 de discapacidad",fase:"Listas provisionales de admitidos y excluidos (ampliación de plazas)",examen:null,lugar:null},
-leyes:{},
+leyes:{"BOE-A-2003-23101":{fecha:"2026-11-25",temas:[6],resumen:"Se ha modificado el artículo 61.2: el régimen de permisos y licencias del personal estatutario remite ahora al TREBEP (Real Decreto Legislativo 5/2015) y su normativa de desarrollo, además de a la LO 3/2007, en lugar de a la Ley 39/1999."}},
 lista:[
+ {id:"2026-11-25-ley-55-2003",fecha:"2026-11-25",tipo:"otro",
+  titulo:"Cambio en la Ley 55/2003, del Estatuto Marco del personal estatutario",
+  resumen:"El BOE ha actualizado el texto consolidado (25/11/2026). Se modifica el artículo 61 (Régimen de fiestas y permisos): su apartado 2 remite ahora al TREBEP (RDLeg 5/2015) y su normativa de desarrollo y a la LO 3/2007, en lugar de a la Ley 39/1999. No hay artículos nuevos ni suprimidos. Afecta al tema 6.",
+  enlaces:[{t:"Ley 55/2003 en el BOE",u:"https://www.boe.es/buscar/act.php?id=BOE-A-2003-23101"}]},
  {id:"2026-11-20-provisionales",fecha:"2026-11-20",tipo:"provisionales",
   titulo:"Nuevas listas provisionales de admitidos y excluidos",
   resumen:"Resolución de 18 de noviembre de 2026: relaciones provisionales de admitidos y excluidos tras la ampliación de plazas, incluidas las solicitudes del nuevo plazo.",
